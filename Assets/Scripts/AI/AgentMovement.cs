@@ -3,8 +3,9 @@ using UnityEngine.AI;
 
 public class AgentMovement : MonoBehaviour
 {
-    public Transform destination; // Waypoints to move between
+    public Waypoint destination; // Waypoints to move between
     private NavMeshAgent agent;
+    private Transform destinationPos;
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
@@ -13,15 +14,17 @@ public class AgentMovement : MonoBehaviour
 
     void SetNextDestination()
     {
-        Vector3 destination = this.destination.position;
+        destinationPos = this.destination.transform;
+        Vector3 destination = destinationPos.position;
+
         agent.SetDestination(destination);
     }
 
     void Update()
     {
-        Vector3 direction = (destination.position - transform.position).normalized;
-        float distanceToNextWaypoint = Vector3.Distance(transform.position, destination.position);
-        if (distanceToNextWaypoint > agent.stoppingDistance)
+        Vector3 direction = (destinationPos.position - transform.position).normalized;
+        float distanceToNextWaypoint = Vector3.Distance(transform.position, destinationPos.position);
+        if (distanceToNextWaypoint > 0f)
         {
             if (Mathf.Abs(direction.x) > Mathf.Abs(direction.z))
             {

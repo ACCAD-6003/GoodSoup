@@ -6,13 +6,14 @@ using UnityEditor;
 
 public class Waypoint : MonoBehaviour
 {
+    [SerializeField] Color color = Color.blue;
     // Vertical line dimensions
     readonly float lineHeight = 2f;
 
     #if UNITY_EDITOR
     void OnDrawGizmos()
     {
-        Handles.color = Color.blue;
+        Handles.color = color;
         Vector3 startPoint = transform.position;
         Vector3 endPoint = transform.position + (Vector3.up * lineHeight);
         Handles.DrawWireDisc(startPoint, Vector3.up, 0.25f);
