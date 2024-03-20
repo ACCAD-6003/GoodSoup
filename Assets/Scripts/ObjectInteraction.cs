@@ -9,10 +9,14 @@ public class ObjectInteraction : MonoBehaviour
     [SerializeField]
     Camera PlayerCamera;
 
+    [SerializeField]
+    Transform Amber;
+
     float searchDistance = 100f;
 
     bool CanInteractWith(InteractableObject o)
     {
+        // check that it's not within amber sightlines
         return true;
     }
 
@@ -43,7 +47,10 @@ public class ObjectInteraction : MonoBehaviour
         {
             InteractableObject? targettedObject = GetTarget(c);
 
-            if (targettedObject != null)
+            if (
+                targettedObject != null 
+                && CanInteractWith(targettedObject)
+            )
             {
                 targettedObject.DoAction();
             }
