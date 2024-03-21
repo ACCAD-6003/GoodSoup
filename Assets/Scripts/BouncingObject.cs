@@ -31,12 +31,14 @@ public class BouncingObject : MonoBehaviour, InteractableObject
 
         float endTime = impulseVelocity / -g;
 
-        for (float t = 0; t < endTime; t += Time.deltaTime)
+        for (float t = 0; t <= endTime; t += Time.deltaTime)
         {
             transform.position = initialPosition 
                 + Vector3.up * (impulseVelocity * t + g * t * t);
             yield return new WaitForEndOfFrame();
         }
+
+        transform.position = initialPosition;
 
         OnActionEnding?.Invoke();
         IsInProgress = false;
