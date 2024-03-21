@@ -6,12 +6,12 @@ using UnityEditor;
 
 
 #if UNITY_EDITOR
-[CustomEditor(typeof(grid_manager)), CanEditMultipleObjects]
+[CustomEditor(typeof(Grid_Manager)), CanEditMultipleObjects]
 class grid_editor : Editor
 {
     public override void OnInspectorGUI()
     {
-        grid_manager gm_s = (grid_manager)target;
+        Grid_Manager gm_s = (Grid_Manager)target;
         if (GUILayout.Button("Make Grid"))
             gm_s.make_grid();
         if (GUILayout.Button("Make Circle"))
@@ -23,14 +23,14 @@ class grid_editor : Editor
 #endif
 
 
-public class grid_manager : MonoBehaviour
+public class Grid_Manager : MonoBehaviour
 {
     public efind_path find_path;
     public Vector2 v2_grid;
     public RectTransform rt;
     public GridLayoutGroup glg;
     public GameObject go_pref_tile;
-    public character char_s;
+    public GridCharacter char_s;
     public List<tile> db_tiles;
     public List<int> db_direction_order;
 
@@ -38,21 +38,61 @@ public class grid_manager : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(1) && !char_s.moving && char_s.tile_s != char_s.selected_tile_s && char_s.selected_tile_s != null)
+        if (Input.GetMouseButtonDown(1) && char_s != null && !char_s.moving && char_s.tile_s != char_s.selected_tile_s && char_s.selected_tile_s != null)
         {
             if (find_path == efind_path.on_click)
+            {
                 find_paths_realtime(char_s, char_s.selected_tile_s);
+            }
 
             if (char_s.selected_tile_s.db_path_lowest.Count > 0)
+            {
                 char_s.move_tile(char_s.selected_tile_s);
+            }
             else
-                print("no valid tile selected");
+            {
+                print("No valid tile selected");
+            }
+        }
+        else if (Input.GetMouseButtonDown(1) && char_s != null && char_s.moving)
+        {
+            char_s.moving = false; // Cancel the current movement
+            char_s.moving_tiles = false;
+            char_s.db_moves[4].gameObject.SetActive(false);
+            if (find_path == efind_path.once_per_turn || find_path == efind_path.max_tiles)
+            {
+                find_paths_static(char_s);
+            }
+
+            // Handle the new target selection here...
+            var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
+            if (Physics.Raycast(ray, out hit))
+            {
+                var newTargetTile = hit.collider.gameObject.GetComponent<tile>();
+                if (newTargetTile != null && newTargetTile != char_s.selected_tile_s)
+                {
+                    char_s.selected_tile_s = newTargetTile;
+                    if (find_path == efind_path.on_click)
+                    {
+                        find_paths_realtime(char_s, char_s.selected_tile_s);
+                    }
+                    if (char_s.selected_tile_s.db_path_lowest.Count > 0)
+                    {
+                        char_s.move_tile(char_s.selected_tile_s);
+                    }
+                    else
+                    {
+                        print("No valid path to the selected tile");
+                    }
+                }
+            }
         }
     }
 
 
     //**Once Per Turn/Max Tile Pathfinding**//
-    public void find_paths_static(character tchar)
+    public void find_paths_static(GridCharacter tchar)
     {
         var ttile = tchar.tile_s;
         for (int x = 0; x < db_tiles.Count; x++)
@@ -63,7 +103,7 @@ public class grid_manager : MonoBehaviour
     }
 
 
-    void find_next_path_static(character tchar, tile ttile, List<tile> db_tpath)
+    void find_next_path_static(GridCharacter tchar, tile ttile, List<tile> db_tpath)
     {
         for (int x = 0; x < ttile.db_neighbors.Count; x++)
         {
@@ -94,7 +134,7 @@ public class grid_manager : MonoBehaviour
 
 
     //**On_hover/On_Click Pathfinding**//
-    public void find_paths_realtime(character tchar, tile tar_tile_s)
+    public void find_paths_realtime(GridCharacter tchar, tile tar_tile_s)
     {
         var ttile = char_s.tile_s;
         for (int x = 0; x < db_tiles.Count; x++)
@@ -143,7 +183,7 @@ public class grid_manager : MonoBehaviour
     }
 
 
-    void find_next_path_realtime(character tchar, tile ttile, List<tile> db_tpath, tile tar_tile_s)
+    void find_next_path_realtime(GridCharacter tchar, tile ttile, List<tile> db_tpath, tile tar_tile_s)
     {
         for (int x = 0; x < ttile.db_neighbors.Count; x++)
         {
@@ -301,7 +341,7 @@ public class grid_manager : MonoBehaviour
         {
             for (int y = 0; y < v2_grid.y; y++)
             {
-                var tgo = (GameObject) Instantiate(go_pref_tile, go_pref_tile.transform.position, go_pref_tile.transform.rotation, go_pref_tile.transform.parent);
+                var tgo = (GameObject)Instantiate(go_pref_tile, go_pref_tile.transform.position, go_pref_tile.transform.rotation, go_pref_tile.transform.parent);
                 tgo.SetActive(true);
                 tgo.name = "tile_" + x + "_" + y;
                 var ttile = tgo.GetComponent<tile>();
@@ -344,7 +384,7 @@ public class grid_manager : MonoBehaviour
         {
             var ttile = db_tiles[i];
             var tdist = Vector3.Distance(pos_mid, ttile.transform.position);
-            
+
             if (tdist > circle_dist)
             {
                 db_tiles.Remove(ttile);
