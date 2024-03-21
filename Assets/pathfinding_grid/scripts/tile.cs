@@ -31,7 +31,7 @@ class tile_editor : Editor
 
 public class tile : MonoBehaviour
 {
-    public Grid_Manager gm_s;
+    public grid_manager gm_s;
     public Vector2 v2xy;
     public walls walls_s;
     public Image im;

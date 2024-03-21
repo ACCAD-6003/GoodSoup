@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class GridCharacter : MonoBehaviour
 {
-    public Grid_Manager gm_s;
+    public grid_manager gm_s;
     public bool big;
     public bool body_looking;
     public bool moving;

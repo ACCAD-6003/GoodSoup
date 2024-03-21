@@ -6,12 +6,12 @@ using UnityEditor;
 
 
 #if UNITY_EDITOR
-[CustomEditor(typeof(Grid_Manager)), CanEditMultipleObjects]
+[CustomEditor(typeof(grid_manager)), CanEditMultipleObjects]
 class grid_editor : Editor
 {
     public override void OnInspectorGUI()
     {
-        Grid_Manager gm_s = (Grid_Manager)target;
+        grid_manager gm_s = (grid_manager)target;
         if (GUILayout.Button("Make Grid"))
             gm_s.make_grid();
         if (GUILayout.Button("Make Circle"))
@@ -23,7 +23,7 @@ class grid_editor : Editor
 #endif
 
 
-public class Grid_Manager : MonoBehaviour
+public class grid_manager : MonoBehaviour
 {
     public efind_path find_path;
     public Vector2 v2_grid;
