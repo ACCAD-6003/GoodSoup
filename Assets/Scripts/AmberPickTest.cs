@@ -1,4 +1,4 @@
-using Pathfinding;
+/*using Pathfinding;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -30,3 +30,4 @@ public class AmberPickTest : MonoBehaviour
 		if (waypoint != null && ai != null) ai.destination = waypoint.transform.position;
 	}
 }
+*/
