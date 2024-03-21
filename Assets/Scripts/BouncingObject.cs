@@ -1,12 +1,8 @@
-using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class BouncingObject : InteractableObject
 {
-    public override event Action OnActionStarted;
-    public override event Action OnActionEnding;
 
     // Update is called once per frame
     override
@@ -17,8 +13,6 @@ public class BouncingObject : InteractableObject
         }
 
         IsInProgress = true;
-        OnActionStarted?.Invoke();
-
         StartCoroutine(Bounce());
     }
 
@@ -39,7 +33,6 @@ public class BouncingObject : InteractableObject
 
         transform.position = initialPosition;
 
-        OnActionEnding?.Invoke();
         IsInProgress = false;
     }
 }
