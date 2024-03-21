@@ -3,13 +3,33 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Assets.Scripts
+[RequireComponent(typeof(Outline))]
+public abstract class InteractableObject : MonoBehaviour
 {
-    interface InteractableObject
-    {
-        public event Action OnActionStarted;
-        public event Action OnActionEnding;
+    public event Action OnActionStarted;
+    public event Action OnActionEnding;
 
-        public void DoAction();
+    public bool IsInProgress { 
+        private set { 
+            if (value == IsInProgress)
+            {
+                return;
+            }
+
+            if (value)
+            {
+                OnActionStarted?.Invoke();
+            }
+            else
+            {
+                OnActionEnding?.Invoke();
+            }
+        }
+
+        get { 
+            return IsInProgress; 
+        }
     }
+
+    public abstract void DoAction();
 }

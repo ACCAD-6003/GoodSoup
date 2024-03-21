@@ -1,16 +1,15 @@
-using Assets.Scripts;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BouncingObject : MonoBehaviour, InteractableObject
+public class BouncingObject : InteractableObject
 {
-    public event Action OnActionStarted;
-    public event Action OnActionEnding;
-    public bool IsInProgress { private set; get; }
+    public override event Action OnActionStarted;
+    public override event Action OnActionEnding;
 
     // Update is called once per frame
+    override
     public void DoAction() {
         if (IsInProgress)
         {
