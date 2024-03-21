@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public class character : MonoBehaviour
+public class GridCharacter : MonoBehaviour
 {
-    public grid_manager gm_s;
+    public Grid_Manager gm_s;
     public bool big;
     public bool body_looking;
     public bool moving;
@@ -21,15 +21,14 @@ public class character : MonoBehaviour
     public int max_tiles = 7;
     public int num_tile;
 
-
     void Update()
     {
         if (body_looking)
         {
             Vector3 tar_dir = db_moves[1].position - tr_body.position;
-            Vector3 new_dir = Vector3.RotateTowards(tr_body.forward, tar_dir, rotate_speed * Time.deltaTime / 2, 0f);
-            new_dir.y = 0;
-            tr_body.transform.rotation = Quaternion.LookRotation(new_dir);
+            tar_dir.y = 0; // Ensure no rotation in the y-axis
+            Quaternion new_rot = Quaternion.LookRotation(tar_dir);
+            tr_body.transform.rotation = new_rot;
         }
 
         if (moving)
@@ -69,9 +68,18 @@ public class character : MonoBehaviour
         }
     }
 
-
     public void move_tile(tile ttile)
     {
+        if (moving) // Cancel the current movement if character is already moving
+        {
+            moving = false;
+            moving_tiles = false;
+            db_moves[4].gameObject.SetActive(false);
+            tile_s.db_chars.Remove(this);
+            if (gm_s.find_path == efind_path.once_per_turn || gm_s.find_path == efind_path.max_tiles)
+                gm_s.find_paths_static(this);
+        }
+
         num_tile = 0;
         tar_tile_s = ttile;
 
@@ -87,8 +95,7 @@ public class character : MonoBehaviour
         {
             tpos = tar_tile_s.transform.position;
         }
-        else
-        if (big)
+        else if (big)
         {
             tpos += tar_tile_s.transform.position + tar_tile_s.db_neighbors[1].tile_s.transform.position + tar_tile_s.db_neighbors[2].tile_s.transform.position + tar_tile_s.db_neighbors[1].tile_s.db_neighbors[2].tile_s.transform.position;
             tpos /= 4;
@@ -102,8 +109,7 @@ public class character : MonoBehaviour
         {
             tpos += tar_tile_s.db_path_lowest[num_tile].transform.position;
         }
-        else
-        if (big)
+        else if (big)
         {
             tpos += tar_tile_s.db_path_lowest[num_tile].transform.position + tar_tile_s.db_path_lowest[num_tile].db_neighbors[1].tile_s.transform.position + tar_tile_s.db_path_lowest[num_tile].db_neighbors[2].tile_s.transform.position + tar_tile_s.db_path_lowest[num_tile].db_neighbors[1].tile_s.db_neighbors[2].tile_s.transform.position;
             tpos /= 4;
