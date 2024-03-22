@@ -30,9 +30,16 @@ public class ObjectInteraction : MonoBehaviour
             return null;
         }
 
-        hitInfo.transform.TryGetComponent<InteractableObject>(out InteractableObject obj);
+        hitInfo.transform.TryGetComponent(out InteractableObject obj);
 
         return obj;
+    }
+
+    void TurnOffOutlines()
+    {
+        foreach (Outline o in FindObjectsOfType<Outline>()) {
+            o.enabled = false;
+        }
     }
 
     [SerializeField]
@@ -52,6 +59,21 @@ public class ObjectInteraction : MonoBehaviour
             )
             {
                 targettedObject.DoAction();
+            }
+        };
+
+        interactions.Interactions.Hover.performed += (CallbackContext c) =>
+        {
+            InteractableObject? targettedObject = GetTarget(c);
+
+            TurnOffOutlines();
+
+            if (
+                targettedObject != null
+                && CanInteractWith(targettedObject)
+            )
+            {
+                targettedObject.GetComponent<Outline>().enabled = true;
             }
         };
 

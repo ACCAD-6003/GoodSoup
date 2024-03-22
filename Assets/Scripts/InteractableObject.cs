@@ -9,9 +9,13 @@ public abstract class InteractableObject : MonoBehaviour
     public event Action OnActionStarted;
     public event Action OnActionEnding;
 
+    private bool _isInProgress;
     public bool IsInProgress {
+        get { 
+            return _isInProgress;
+        }
         protected set {
-            if (value == IsInProgress)
+            if (value == _isInProgress)
             {
                 return;
             }
@@ -24,10 +28,8 @@ public abstract class InteractableObject : MonoBehaviour
             {
                 OnActionEnding?.Invoke();
             }
-        }
 
-        get {
-            return IsInProgress;
+            _isInProgress = value;
         }
     }
 

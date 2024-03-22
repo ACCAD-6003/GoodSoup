@@ -1,5 +1,5 @@
 {
-    "name": "Input",
+    "name": "GhostInput",
     "maps": [
         {
             "name": "Interactions",
@@ -10,6 +10,15 @@
                     "type": "Button",
                     "id": "7bd0d6ee-9861-4de3-a992-3e667c744868",
                     "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Hover",
+                    "type": "PassThrough",
+                    "id": "e0b97245-cf6b-49ab-a83e-82c2498f4b1c",
+                    "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
@@ -24,6 +33,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "Interact",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "0d3b5434-a19b-4ac8-bfad-b545edd8df54",
+                    "path": "<Mouse>/delta",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Hover",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
