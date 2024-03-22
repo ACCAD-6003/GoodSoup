@@ -5,14 +5,7 @@ public class BouncingObject : Interaction
 {
 
     // Update is called once per frame
-    override
-    public void DoAction() {
-        if (IsInProgress)
-        {
-            return;
-        }
-
-        IsInProgress = true;
+    override protected void DoAction() {
         StartCoroutine(Bounce());
     }
 
@@ -33,6 +26,6 @@ public class BouncingObject : Interaction
 
         transform.position = initialPosition;
 
-        IsInProgress = false;
+        EndAction();
     }
 }

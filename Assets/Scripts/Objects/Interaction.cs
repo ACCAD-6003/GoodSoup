@@ -8,17 +8,18 @@ public abstract class Interaction : MonoBehaviour
     public event Action OnActionStarted;
     public event Action OnActionEnding;
 
+    public bool isPlayer = true;
+
     [SerializeField]
     private bool _isInProgress;
 
-    public bool isPlayer = true;
     public bool IsInProgress
     {
         get
         {
             return _isInProgress;
         }
-        protected set
+        private set
         {
             if (value == _isInProgress)
             {
@@ -38,5 +39,22 @@ public abstract class Interaction : MonoBehaviour
         }
     }
 
-    public abstract void DoAction();
+    public void StartAction()
+    {
+        if (IsInProgress)
+        {
+            return;
+        }
+
+        IsInProgress = true;
+
+        DoAction();
+    }
+
+    protected abstract void DoAction();
+
+    protected void EndAction()
+    {
+        IsInProgress = false;
+    }
 }

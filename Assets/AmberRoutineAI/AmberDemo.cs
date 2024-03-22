@@ -22,7 +22,7 @@ public class AmberDemo : MonoBehaviour {
     private void CheckIfICareAboutBurner(float oldVal, float newVal) {
         if (newVal >= Globals.HEAT_THRESHOLD && focus != AmberFocus.Burner) {
             focus = AmberFocus.Burner;
-            grid.Target(burner.AssociatedTile, burner.AmberInteraction.DoAction, Vector3.forward);
+            grid.Target(burner.AssociatedTile, burner.AmberInteraction.StartAction, Vector3.forward);
             burner.AmberInteraction.OnActionEnding += () => { 
                 focus = AmberFocus.Fridge;
                 PathFindToFridge(); 

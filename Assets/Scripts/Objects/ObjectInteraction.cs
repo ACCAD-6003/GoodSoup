@@ -68,7 +68,7 @@ public class ObjectInteraction : MonoBehaviour
                 && CanInteractWith(targettedObject)
             )
             {
-                targettedObject.PlayerInteraction.DoAction();
+                targettedObject.PlayerInteraction.StartAction();
             }
         };
 

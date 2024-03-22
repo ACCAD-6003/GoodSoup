@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 237448595541380044}
   - component: {fileID: 237448595541380045}
-  - component: {fileID: 237448595541380042}
   - component: {fileID: 443695876104506281}
-  - component: {fileID: 2849174491503861342}
+  - component: {fileID: 2646368670118166732}
+  - component: {fileID: 697920347236861071}
   m_Layer: 0
   m_Name: StoveBurner
   m_TagString: Untagged
@@ -81,20 +81,6 @@ MonoBehaviour:
     - {x: 0.57735026, y: 0.57735026, z: -0.57735026}
     - {x: 0.57735026, y: 0.57735026, z: 0.57735026}
     - {x: 0.57735026, y: -0.57735026, z: 0.57735026}
---- !u!114 &237448595541380042
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 237448595541380047}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 85a8f19c75b096541b8072e259933775, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _isInProgress: 0
-  isPlayer: 1
 --- !u!114 &443695876104506281
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -108,7 +94,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AssociatedTile: {fileID: 0}
---- !u!114 &2849174491503861342
+--- !u!114 &2646368670118166732
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -117,11 +103,25 @@ MonoBehaviour:
   m_GameObject: {fileID: 237448595541380047}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7e7e3fdc5e48ccb4a9354af021583255, type: 3}
+  m_Script: {fileID: 11500000, guid: 8bfaa1e692f15434d99bea6d09dbb1ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isPlayer: 1
   _isInProgress: 0
+--- !u!114 &697920347236861071
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 237448595541380047}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d89e5a651afe9104392b161d1f7ff907, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   isPlayer: 0
+  _isInProgress: 0
 --- !u!1 &237448596096904132
 GameObject:
   m_ObjectHideFlags: 0

@@ -11,14 +11,8 @@ public class TurnUpHeat : Interaction
     }
 
     // Update is called once per frame
-    override public void DoAction() {
-        if (IsInProgress)
-        {
-            return;
-        }
-
-        IsInProgress = true;
+    override protected void DoAction() {
         data.BurnerHeat.Value += 10;
-        IsInProgress = false;
+        EndAction();
     }
 }

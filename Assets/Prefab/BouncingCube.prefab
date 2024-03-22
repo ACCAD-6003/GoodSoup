@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 2094201238792968692}
   - component: {fileID: 2094201238792968693}
   - component: {fileID: 2094201238792968690}
-  - component: {fileID: 2094201238792968694}
-  - component: {fileID: 1139675693226092669}
   - component: {fileID: 2094201238792968649}
+  - component: {fileID: 1139675693226092669}
+  - component: {fileID: 7741091752321470564}
   m_Layer: 0
   m_Name: BouncingCube
   m_TagString: Untagged
@@ -100,33 +100,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &2094201238792968694
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2094201238792968691}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a17a3a63e2aad804fb72ccb8ff9b1d36, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _isInProgress: 0
-  isPlayer: 1
---- !u!114 &1139675693226092669
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2094201238792968691}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9ff7e8f1a3fecad43abe811d6e2e1697, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  AssociatedTile: {fileID: 0}
 --- !u!114 &2094201238792968649
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -171,3 +144,30 @@ MonoBehaviour:
     - {x: 0.57735026, y: 0.57735026, z: -0.57735026}
     - {x: 0.57735026, y: 0.57735026, z: 0.57735026}
     - {x: 0.57735026, y: -0.57735026, z: 0.57735026}
+--- !u!114 &1139675693226092669
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2094201238792968691}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ff7e8f1a3fecad43abe811d6e2e1697, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AssociatedTile: {fileID: 0}
+--- !u!114 &7741091752321470564
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2094201238792968691}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bedb3b45bfb85e646978e98893efd361, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isPlayer: 1
+  _isInProgress: 0

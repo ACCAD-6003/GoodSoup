@@ -11,14 +11,7 @@ public class TurnDownHeat : Interaction
     }
 
     // Update is called once per frame
-    override
-    public void DoAction() {
-        if (IsInProgress)
-        {
-            return;
-        }
-
-        IsInProgress = true;
+    override protected void DoAction() {
         StartCoroutine(DecreaseHeat());
     }
 
@@ -28,6 +21,6 @@ public class TurnDownHeat : Interaction
             data.BurnerHeat.Value -= 1f;
             yield return new WaitForSeconds(1/10f);
         }
-        IsInProgress = false;
+        EndAction();
     }
 }
