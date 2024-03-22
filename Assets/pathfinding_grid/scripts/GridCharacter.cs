@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -20,6 +21,8 @@ public class GridCharacter : MonoBehaviour
     public List<Transform> db_moves;
     public int max_tiles = 7;
     public int num_tile;
+
+    public event Action PathfindingCompleted;
 
     void Update()
     {
@@ -57,6 +60,7 @@ public class GridCharacter : MonoBehaviour
                 }
                 else
                 {
+                    PathfindingCompleted?.Invoke();
                     db_moves[4].gameObject.SetActive(false);
                     moving = false;
                     moving_tiles = false;
