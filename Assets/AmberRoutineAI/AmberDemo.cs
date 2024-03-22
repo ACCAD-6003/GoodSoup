@@ -11,7 +11,10 @@ public class AmberDemo : MonoBehaviour {
     {
         data = FindObjectOfType<StoryDatastore>();
         data.BurnerHeat.Changed += CheckIfICareAboutBurner;
-        grid.Target(fridge, Arrived, Vector3.forward);
+        PathFindToFridge();
+    }
+    private void PathFindToFridge() {
+        grid.Target(fridge, Arrived, Vector3.back);
     }
     private void Arrived() {
         Debug.Log("Arrived at fridge.");
@@ -20,6 +23,11 @@ public class AmberDemo : MonoBehaviour {
         if (newVal >= Globals.HEAT_THRESHOLD && focus != AmberFocus.Burner) {
             focus = AmberFocus.Burner;
             grid.Target(burner.AssociatedTile, burner.AmberInteraction.DoAction, Vector3.forward);
+            burner.AmberInteraction.OnActionEnding += () => { 
+                focus = AmberFocus.Fridge;
+                PathFindToFridge(); 
+            };
         }
     }
+
 }
