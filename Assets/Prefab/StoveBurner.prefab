@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 237448595541380044}
   - component: {fileID: 237448595541380045}
   - component: {fileID: 237448595541380042}
+  - component: {fileID: 443695876104506281}
+  - component: {fileID: 2849174491503861342}
   m_Layer: 0
   m_Name: StoveBurner
   m_TagString: Untagged
@@ -91,6 +93,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85a8f19c75b096541b8072e259933775, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _isInProgress: 0
+  isPlayer: 1
+--- !u!114 &443695876104506281
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 237448595541380047}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ff7e8f1a3fecad43abe811d6e2e1697, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AssociatedTile: {fileID: 0}
+--- !u!114 &2849174491503861342
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 237448595541380047}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e7e3fdc5e48ccb4a9354af021583255, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _isInProgress: 0
+  isPlayer: 0
 --- !u!1 &237448596096904132
 GameObject:
   m_ObjectHideFlags: 0

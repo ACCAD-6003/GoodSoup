@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-public class BouncingObject : InteractableObject
+public class BouncingObject : Interaction
 {
 
     // Update is called once per frame

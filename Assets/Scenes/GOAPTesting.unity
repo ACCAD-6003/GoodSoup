@@ -5735,7 +5735,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &139869707
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11098,7 +11098,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh30894
+  m_Name: pb_Mesh224228
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -18193,7 +18193,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!64 &545489140
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -18925,7 +18925,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!64 &554968104
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -26634,7 +26634,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh30948
+  m_Name: pb_Mesh224282
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -53071,9 +53071,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 986d81cb5005b824f9ca4e1662003560, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spaceSize: 1
-  gridSize: {x: 10, y: 10}
-  prefab: {fileID: 3308193537063540035, guid: 3c1a99371b75bfa4bb719ab711c8eb9c, type: 3}
 --- !u!4 &1539628809
 Transform:
   m_ObjectHideFlags: 0
@@ -57249,6 +57246,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1710934532}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &1714597977 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5817474576940391884, guid: 7ab5c9be395e95f40b75ba429250bf02, type: 3}
+  m_PrefabInstance: {fileID: 5817474576186980274}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1714806518
 GameObject:
   m_ObjectHideFlags: 0
@@ -57988,6 +57990,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 722104231}
     m_Modifications:
+    - target: {fileID: 237448595541380042, guid: b1e3134df719f774e8d70237835694e3, type: 3}
+      propertyPath: AssociatedTile
+      value: 
+      objectReference: {fileID: 2074153410}
     - target: {fileID: 237448595541380044, guid: b1e3134df719f774e8d70237835694e3, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -62202,8 +62208,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ddfdc612b8933554e9ad15a59ad7e1d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerCamera: {fileID: 0}
-  Amber: {fileID: 0}
+  PlayerCamera: {fileID: 1418238175}
+  Amber: {fileID: 1714597977}
 --- !u!4 &1876602447
 Transform:
   m_ObjectHideFlags: 0

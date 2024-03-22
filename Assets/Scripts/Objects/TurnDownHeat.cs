@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-public class Burner : InteractableObject
+public class TurnDownHeat : Interaction
 {
     StoryDatastore data;
 
@@ -19,7 +19,15 @@ public class Burner : InteractableObject
         }
 
         IsInProgress = true;
-        data.BurnerHeat.Value += 10;
+        StartCoroutine(DecreaseHeat());
+    }
+
+    IEnumerator DecreaseHeat()
+    {
+        while (data.BurnerHeat.Value > Globals.PREFERABLE_HEAT) {
+            data.BurnerHeat.Value -= 1f;
+            yield return new WaitForSeconds(1/10f);
+        }
         IsInProgress = false;
     }
 }

@@ -18,7 +18,7 @@ public class ObjectInteraction : MonoBehaviour
     bool CanInteractWith(InteractableObject o)
     {
         // check that it's not within amber sightlines
-        return true;
+        return o.PlayerInteraction != null;
     }
 
     InteractableObject? GetTarget(CallbackContext c)
@@ -55,7 +55,7 @@ public class ObjectInteraction : MonoBehaviour
                 && CanInteractWith(targettedObject)
             )
             {
-                targettedObject.DoAction();
+                targettedObject.PlayerInteraction.DoAction();
             }
         };
 

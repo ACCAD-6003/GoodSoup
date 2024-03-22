@@ -4,34 +4,33 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Outline))]
-public abstract class InteractableObject : MonoBehaviour
+public class InteractableObject : MonoBehaviour
 {
-    public event Action OnActionStarted;
-    public event Action OnActionEnding;
+    public tile AssociatedTile;
 
-    private bool _isInProgress;
-    public bool IsInProgress {
-        get { 
-            return _isInProgress;
-        }
-        protected set {
-            if (value == _isInProgress)
-            {
-                return;
-            }
+    [NonSerialized]
+    public Interaction PlayerInteraction;
+    [NonSerialized]
+    public Interaction AmberInteraction;
 
-            if (value)
+
+    private void Awake()
+    {
+        Interaction[] interactions = GetComponents<Interaction>();
+
+        Debug.Assert(interactions.Length < 2);
+
+        foreach (Interaction i in interactions)
+        {
+            if (i.isPlayer)
             {
-                OnActionStarted?.Invoke();
+                PlayerInteraction = i;
             }
             else
             {
-                OnActionEnding?.Invoke();
+                AmberInteraction = i;
             }
-
-            _isInProgress = value;
         }
     }
 
-    public abstract void DoAction();
 }
