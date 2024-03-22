@@ -5524,6 +5524,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 135850501}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &136034568 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5817474577247795047, guid: 7ab5c9be395e95f40b75ba429250bf02, type: 3}
+  m_PrefabInstance: {fileID: 5817474576186980274}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &137237757
 GameObject:
   m_ObjectHideFlags: 0
@@ -57202,11 +57207,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1710934532}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!4 &1714597977 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5817474576940391884, guid: 7ab5c9be395e95f40b75ba429250bf02, type: 3}
-  m_PrefabInstance: {fileID: 5817474576186980274}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1714806518
 GameObject:
   m_ObjectHideFlags: 0
@@ -62185,7 +62185,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerCamera: {fileID: 1418238175}
-  Amber: {fileID: 1714597977}
+  Amber: {fileID: 136034568}
+  amberSightAngle: 40
 --- !u!4 &1876602447
 Transform:
   m_ObjectHideFlags: 0
