@@ -42,9 +42,6 @@ public class ObjectInteraction : MonoBehaviour
         }
     }
 
-    [SerializeField]
-    BouncingObject a;
-
     private void Start()
     {
         GhostInput interactions = new();
@@ -78,11 +75,5 @@ public class ObjectInteraction : MonoBehaviour
         };
 
         interactions.Interactions.Enable();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
