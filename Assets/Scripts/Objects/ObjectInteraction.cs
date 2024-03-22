@@ -11,6 +11,8 @@ public class ObjectInteraction : MonoBehaviour
     [SerializeField]
     Transform Amber;
 
+#nullable enable
+
     float searchDistance = 100f;
 
     bool CanInteractWith(InteractableObject o)
