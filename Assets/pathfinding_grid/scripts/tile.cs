@@ -36,7 +36,6 @@ public class tile : MonoBehaviour
     public walls walls_s;
     public Image im;
     public MeshRenderer mr;
-    public Button btn;
     public List<GridCharacter> db_chars;
     public List<sub_tile> db_neighbors;
     public List<tile> db_path_lowest;
