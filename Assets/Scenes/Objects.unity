@@ -227,6 +227,7 @@ GameObject:
   m_Component:
   - component: {fileID: 358557706}
   - component: {fileID: 358557707}
+  - component: {fileID: 358557708}
   m_Layer: 0
   m_Name: StoveBurner
   m_TagString: Untagged
@@ -268,7 +269,7 @@ MonoBehaviour:
   outlineWidth: 7
   precomputeOutline: 1
   bakeKeys:
-  - {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+  - {fileID: 10202, guid: 0000000000000000e000000000000000, type: 3}
   bakeValues:
   - data:
     - {x: 0.57735026, y: -0.57735026, z: 0.57735026}
@@ -295,6 +296,18 @@ MonoBehaviour:
     - {x: 0.57735026, y: 0.57735026, z: -0.57735026}
     - {x: 0.57735026, y: 0.57735026, z: 0.57735026}
     - {x: 0.57735026, y: -0.57735026, z: 0.57735026}
+--- !u!114 &358557708
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 358557705}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85a8f19c75b096541b8072e259933775, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &371233095
 GameObject:
   m_ObjectHideFlags: 0
@@ -393,6 +406,52 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
+--- !u!1 &431037234
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 431037236}
+  - component: {fileID: 431037235}
+  m_Layer: 0
+  m_Name: StoryData
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &431037235
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 431037234}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13c204556b7bfec4f9858a39fa93aa4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BurnerHeat:
+    _value: 0
+--- !u!4 &431037236
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 431037234}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -6.7349052, y: -9.705611, z: 9.657794}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &535759244
 GameObject:
   m_ObjectHideFlags: 0
@@ -673,7 +732,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 909281282}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.000000012117, y: 0.902, z: -0.000000024234}
+  m_LocalPosition: {x: 0.000000012117, y: 1.157, z: -0.000000024234}
   m_LocalScale: {x: 0.79671, y: 0.13319398, z: 0.79671}
   m_ConstrainProportionsScale: 0
   m_Children: []
