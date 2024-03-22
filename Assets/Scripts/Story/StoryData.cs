@@ -2,7 +2,7 @@
 using System.Collections;
 using UnityEngine;
 
-public class StoryData<T> where T : class
+public class StoryData<T>
 {
     T _value;
 
@@ -13,7 +13,7 @@ public class StoryData<T> where T : class
         }
         set
         {
-            if (value != _value)
+            if (!value.Equals(_value))
             {
                 return;
             }
