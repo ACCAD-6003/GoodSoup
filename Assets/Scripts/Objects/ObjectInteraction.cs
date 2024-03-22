@@ -11,14 +11,27 @@ public class ObjectInteraction : MonoBehaviour
     [SerializeField]
     Transform Amber;
 
+    [SerializeField]
+    float amberSightAngle = 40;
+
 #nullable enable
 
     float searchDistance = 100f;
 
+    private Vector3 toXZ(Vector3 v)
+    {
+        return Vector3.Scale(Vector3.one - Vector3.up, v);
+    }
+
     bool CanInteractWith(InteractableObject o)
     {
         // check that it's not within amber sightlines
-        return o.PlayerInteraction != null;
+        Vector3 amberFacing = toXZ(Amber.rotation * Vector3.forward);
+        Vector3 fromAmberToObject = toXZ(o.transform.position - Amber.position);
+
+        float angle = Vector3.Angle(amberFacing, fromAmberToObject);
+
+        return o.PlayerInteraction != null && angle > amberSightAngle;
     }
 
     InteractableObject? GetTarget(CallbackContext c)

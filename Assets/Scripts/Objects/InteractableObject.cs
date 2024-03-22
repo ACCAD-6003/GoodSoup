@@ -18,7 +18,7 @@ public class InteractableObject : MonoBehaviour
     {
         Interaction[] interactions = GetComponents<Interaction>();
 
-        Debug.Assert(interactions.Length < 2);
+        Debug.Assert(interactions.Length <= 2);
 
         foreach (Interaction i in interactions)
         {
