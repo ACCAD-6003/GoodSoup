@@ -23,6 +23,7 @@ public class GridCharacter : MonoBehaviour
     public int num_tile;
 
     public event Action PathfindingCompleted;
+    public Vector3 LookVectorWhenComplete = Vector3.forward;
 
     void Update()
     {
@@ -61,6 +62,12 @@ public class GridCharacter : MonoBehaviour
                 else
                 {
                     PathfindingCompleted?.Invoke();
+
+                    body_looking = false;
+
+                    Quaternion new_rot = Quaternion.LookRotation(LookVectorWhenComplete);
+                    tr_body.transform.rotation = new_rot;
+
                     db_moves[4].gameObject.SetActive(false);
                     moving = false;
                     moving_tiles = false;

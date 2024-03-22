@@ -19,9 +19,10 @@ public class grid_manager : MonoBehaviour
     private tile end_destination_tile;
     // controls where we are trying to go
     public tile dest_tile;
-    public void Target(tile t, Action destinationReachedEvent) {
+    public void Target(tile t, Action destinationReachedEvent, Vector3 lookVectorWhenComplete) {
         dest_tile = t;
         char_s.PathfindingCompleted += destinationReachedEvent;
+        char_s.LookVectorWhenComplete = lookVectorWhenComplete;
     }
     private void Update()
     {
