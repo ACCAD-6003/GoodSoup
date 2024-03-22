@@ -6,9 +6,4 @@ public class StoryDatastore : MonoBehaviour
 {
     [SerializeField]
     public StoryData<float> BurnerHeat;
-
-    public void Awake()
-    {
-        BurnerHeat = new(100f);
-    }
 }
