@@ -30,9 +30,7 @@ public class ObjectInteraction : MonoBehaviour
             return null;
         }
 
-        hitInfo.transform.TryGetComponent(out InteractableObject obj);
-
-        return obj;
+        return hitInfo.transform.GetComponentInParent<InteractableObject>();
     }
 
     void TurnOffOutlines()

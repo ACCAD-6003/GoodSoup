@@ -5,5 +5,10 @@ using UnityEngine;
 public class StoryDatastore : MonoBehaviour
 {
     [SerializeField]
-    StoryData<int> BurnerHeat;
+    public StoryData<float> BurnerHeat;
+
+    public void Awake()
+    {
+        BurnerHeat = new(100f);
+    }
 }

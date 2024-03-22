@@ -2,8 +2,10 @@
 using System.Collections;
 using UnityEngine;
 
+[Serializable]
 public class StoryData<T>
 {
+    [SerializeField]
     T _value;
 
     public T Value { 
@@ -13,7 +15,7 @@ public class StoryData<T>
         }
         set
         {
-            if (!value.Equals(_value))
+            if (value.Equals(_value))
             {
                 return;
             }
@@ -24,7 +26,17 @@ public class StoryData<T>
         }
     }
 
-    [SerializeField]
     public event Action<T, T> Changed;
+
+    public StoryData(T initialValue)
+    {
+        _value = initialValue;
+    }
+
+    override
+    public string ToString()
+    {
+        return "" + _value;
+    }
         
 }
