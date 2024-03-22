@@ -20,6 +20,7 @@ public class Burner : InteractableObject
 
         IsInProgress = true;
         data.BurnerHeat.Value += 10;
+        Debug.Log(data.BurnerHeat.Value);
         IsInProgress = false;
     }
 }
