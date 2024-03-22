@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -15,24 +16,72 @@ public class grid_manager : MonoBehaviour
     public List<int> db_direction_order;
 
     public tile start_tile;
-    public tile end_destination_tile; // New public variable for the end destination tile
-    //public tile dest_tile;
-
-    void Target(tile t)
+    private tile end_destination_tile;
+    // controls where we are trying to go
+    public tile dest_tile;
+    public void Target(tile t, Action destinationReachedEvent) {
+        dest_tile = t;
+        char_s.PathfindingCompleted += destinationReachedEvent;
+    }
+    private void Update()
     {
+        TargetHelper(dest_tile);
+    }
+    void TargetHelper(tile t)
+    {
+        if (dest_tile == null) {
+            return;
+        }
+        if (char_s != null && char_s.moving && char_s.selected_tile_s != t)
+        {
+            //new
+            hover_tile(t);
+            end_destination_tile = t;
+
+            char_s.moving = false; // Cancel the current movement
+            char_s.moving_tiles = false;
+            char_s.db_moves[4].gameObject.SetActive(false);
+            if (find_path == efind_path.once_per_turn || find_path == efind_path.max_tiles)
+            {
+                find_paths_static(char_s);
+            }
+
+            var newTargetTile = t;
+            if (newTargetTile != null && newTargetTile != char_s.selected_tile_s)
+            {
+                char_s.selected_tile_s = newTargetTile;
+                if (find_path == efind_path.on_click)
+                {
+                    find_paths_realtime(char_s, end_destination_tile);
+                }
+                if (char_s.selected_tile_s.db_path_lowest.Count > 0)
+                {
+                    char_s.move_tile(end_destination_tile);
+                }
+                else
+                {
+                    print("No valid path to the selected tile");
+                }
+            }
+            return;
+        }
+
         hover_tile(t);
         end_destination_tile = t;
+
         if (char_s != null && !char_s.moving && char_s.tile_s != end_destination_tile && end_destination_tile != null) // Check if character is not moving and hasn't reached the end destination
         {
             find_paths_realtime(char_s, end_destination_tile); // Perform pathfinding to the end destination tile
             if (end_destination_tile.db_path_lowest.Count > 0) // Check if there is a valid path to the end destination tile
             {
+                char_s.selected_tile_s = end_destination_tile;
                 char_s.move_tile(end_destination_tile); // Move the character to the end destination tile
             }
             else
             {
                 print("No valid path to the end destination tile");
             }
+
         }
     }
 
@@ -364,9 +413,9 @@ public class grid_manager : MonoBehaviour
 
     void Start()
     {
-        char_s.tile_s = end_destination_tile; //Slight delay in start game, this gives the char a tile so we don't get an onhover error during that milisecond//
+        char_s.tile_s = dest_tile; //Slight delay in start game, this gives the char a tile so we don't get an onhover error during that milisecond//
         StartCoroutine(start_game());
         //char_s.move_tile(_tile);
-        Target(end_destination_tile);
+        //TargetHelper(dest_tile);
     }
 }
