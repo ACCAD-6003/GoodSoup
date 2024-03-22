@@ -16,9 +16,12 @@ public class grid_manager : MonoBehaviour
 
     public tile start_tile;
     public tile end_destination_tile; // New public variable for the end destination tile
+    //public tile dest_tile;
 
-    void Update()
+    void Target(tile t)
     {
+        hover_tile(t);
+        end_destination_tile = t;
         if (char_s != null && !char_s.moving && char_s.tile_s != end_destination_tile && end_destination_tile != null) // Check if character is not moving and hasn't reached the end destination
         {
             find_paths_realtime(char_s, end_destination_tile); // Perform pathfinding to the end destination tile
@@ -364,5 +367,6 @@ public class grid_manager : MonoBehaviour
         char_s.tile_s = end_destination_tile; //Slight delay in start game, this gives the char a tile so we don't get an onhover error during that milisecond//
         StartCoroutine(start_game());
         //char_s.move_tile(_tile);
+        Target(end_destination_tile);
     }
 }
