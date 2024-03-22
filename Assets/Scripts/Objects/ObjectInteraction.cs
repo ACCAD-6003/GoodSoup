@@ -30,9 +30,7 @@ public class ObjectInteraction : MonoBehaviour
             return null;
         }
 
-        hitInfo.transform.TryGetComponent(out InteractableObject obj);
-
-        return obj;
+        return hitInfo.transform.GetComponentInParent<InteractableObject>();
     }
 
     void TurnOffOutlines()
@@ -41,9 +39,6 @@ public class ObjectInteraction : MonoBehaviour
             o.enabled = false;
         }
     }
-
-    [SerializeField]
-    BouncingObject a;
 
     private void Start()
     {
@@ -78,11 +73,5 @@ public class ObjectInteraction : MonoBehaviour
         };
 
         interactions.Interactions.Enable();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
