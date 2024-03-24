@@ -12,13 +12,17 @@ namespace Assets.Scripts.AI
         grid_manager grid;
         [SerializeField]
         InteractableObject interactableObject;
+        [SerializeField]
+        tile _fridgeTile;
         protected override Node SetupTree()
         {
             // initialize to real first node
-            Node root = new Sequence(new List<Node>(){
+            Node turnDownHeat = new Sequence(new List<Node>(){
                 new MoveToTile(grid, interactableObject.AssociatedTile), new PerformInteraction(interactableObject, grid)
             });
-            return root;
+            Node standByFridge = new MoveToTile(grid, _fridgeTile);
+            Node selector = new Selector(new List<Node>() { turnDownHeat, standByFridge });
+            return selector;
         }
     }
 }

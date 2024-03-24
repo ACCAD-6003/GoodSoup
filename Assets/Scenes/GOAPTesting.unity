@@ -61180,6 +61180,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1819798398}
   - component: {fileID: 1819798397}
+  - component: {fileID: 1819798399}
   m_Layer: 0
   m_Name: AmberDemo
   m_TagString: Untagged
@@ -61194,7 +61195,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1819798396}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 246486fd6d07c7d48b5dbad4d1e399b3, type: 3}
   m_Name: 
@@ -61217,6 +61218,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1819798399
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1819798396}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12345a9c906756f4890d2570e508fc65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  grid: {fileID: 1381026445}
+  interactableObject: {fileID: 1730069174}
+  _fridgeTile: {fileID: 379916579}
 --- !u!1 &1827167624
 GameObject:
   m_ObjectHideFlags: 0

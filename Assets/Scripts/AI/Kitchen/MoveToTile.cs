@@ -20,7 +20,7 @@ namespace Assets.Scripts.AI.Kitchen
             _tile = tile;
         }
         private void ReachedDest() {
-            _destReached = false;
+            _destReached = true;
         }
         public override NodeState Evaluate()
         {

@@ -12,6 +12,7 @@ public class TurnDownHeat : Interaction
 
     // Update is called once per frame
     override protected void DoAction() {
+        Debug.Log("Turning down the heat!");
         StartCoroutine(DecreaseHeat());
     }
 
