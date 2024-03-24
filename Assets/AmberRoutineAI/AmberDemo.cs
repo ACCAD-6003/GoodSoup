@@ -1,5 +1,4 @@
 using UnityEngine;
-
 public class AmberDemo : MonoBehaviour {
     [SerializeField] grid_manager grid;
     [SerializeField] tile fridge;
