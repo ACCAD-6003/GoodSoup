@@ -24,6 +24,15 @@ public class grid_manager : MonoBehaviour
         char_s.PathfindingCompleted += destinationReachedEvent;
         char_s.LookVectorWhenComplete = lookVectorWhenComplete;
     }
+    public void Target(tile t, Action destinationReachedEvent)
+    {
+        dest_tile = t;
+        char_s.PathfindingCompleted += destinationReachedEvent;
+        char_s.LookVectorWhenComplete = Vector3.zero;
+    }
+    public void SetLookRot(Vector3 rot) {
+        char_s.SetLookRot(rot);
+    }
     private void Update()
     {
         TargetHelper(dest_tile);

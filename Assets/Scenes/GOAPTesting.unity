@@ -11103,7 +11103,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh224228
+  m_Name: pb_Mesh30974
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -24685,7 +24685,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh226704
+  m_Name: pb_Mesh33472
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -26639,7 +26639,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh224282
+  m_Name: pb_Mesh31028
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -45000,8 +45000,8 @@ Light:
   m_Shape: 0
   m_Color: {r: 0.6650944, g: 0.85950184, b: 1, a: 1}
   m_Intensity: 3
-  m_Range: 34.13
-  m_SpotAngle: 136.51166
+  m_Range: 346.16022
+  m_SpotAngle: 179
   m_InnerSpotAngle: 1
   m_CookieSize: 10
   m_Shadows:
@@ -45057,7 +45057,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1259062318}
   m_LocalRotation: {x: 0.35355338, y: -0.35355276, z: 0.14644635, w: 0.8535537}
-  m_LocalPosition: {x: 5, y: 10, z: -5}
+  m_LocalPosition: {x: 43.8, y: 64.9, z: -43.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

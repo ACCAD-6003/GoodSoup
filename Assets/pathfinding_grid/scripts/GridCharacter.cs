@@ -65,8 +65,7 @@ public class GridCharacter : MonoBehaviour
 
                     body_looking = false;
 
-                    Quaternion new_rot = Quaternion.LookRotation(LookVectorWhenComplete);
-                    tr_body.transform.rotation = new_rot;
+                    SetLookRot(LookVectorWhenComplete);
 
                     db_moves[4].gameObject.SetActive(false);
                     moving = false;
@@ -76,6 +75,13 @@ public class GridCharacter : MonoBehaviour
                     gm_s.hover_tile(selected_tile_s);
                 }
             }
+        }
+    }
+    public void SetLookRot(Vector3 lookRot) {
+        if (LookVectorWhenComplete != Vector3.zero)
+        {
+            Quaternion new_rot = Quaternion.LookRotation(LookVectorWhenComplete);
+            tr_body.transform.rotation = new_rot;
         }
     }
 

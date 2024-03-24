@@ -8,6 +8,8 @@ public abstract class Interaction : MonoBehaviour
     public event Action OnActionStarted;
     public event Action OnActionEnding;
 
+    public Vector3 AssociatedDirection = Vector3.forward;
+
     public bool isPlayer = true;
 
     [SerializeField]
