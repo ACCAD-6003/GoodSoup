@@ -17,6 +17,7 @@ namespace Assets.Scripts.AI
             if (!_mounted && !_mounting) {
                 _mounting = true;
                 _mount.Mount();
+                
                 _mount.CompletedMounting += FinishMounting;
             }
             if (_mounted)

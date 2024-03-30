@@ -8,17 +8,24 @@ namespace Assets.Scripts.AI
     internal class AmberMount : MonoBehaviour
     {
         public Action CompletedMounting;
-        [SerializeField] private readonly GameObject _mount;
-        [SerializeField] private readonly bool _enabledOnLoad = false;
+        [SerializeField] private GameObject _mount;
+        [SerializeField] private bool _enabledOnLoad = false;
         void Awake() {
-            _mount.SetActive(_enabledOnLoad);
+            if (_enabledOnLoad) {
+                PerformMount();
+                return;
+            }
+            _mount.SetActive(false);
         }
         public void Mount() {
-            StartCoroutine("MountWithDelay");
+            StartCoroutine(nameof(MountWithDelay));
         }
-        private IEnumerator MountWithDelay() {
-            yield return new WaitForSeconds(0.3f);
+        private void PerformMount() {
             _mount.SetActive(true);
+            ObjectInteraction.Amber = _mount.transform;
+
+        }
+        private void UnMountAllOthers() {
             foreach (AmberMount mount in FindObjectsOfType<AmberMount>())
             {
                 if (mount != this)
@@ -26,6 +33,11 @@ namespace Assets.Scripts.AI
                     mount.UnMount();
                 }
             }
+        }
+        private IEnumerator MountWithDelay() {
+            yield return new WaitForSeconds(0.3f);
+            PerformMount();
+            UnMountAllOthers();
             yield return new WaitForSeconds(0.3f);
             CompletedMounting?.Invoke();
         }

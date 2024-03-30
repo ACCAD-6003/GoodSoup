@@ -15,7 +15,7 @@ namespace Assets.Scripts.AI
             _performed = true;
         }
         public override NodeState Evaluate() {
-            return _performed ? NodeState.RUNNING : NodeState.SUCCESS;
+            return _performed ?  NodeState.SUCCESS : NodeState.RUNNING;
         }
     }
 }
