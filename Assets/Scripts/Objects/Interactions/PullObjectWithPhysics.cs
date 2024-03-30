@@ -2,18 +2,35 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(Animator))]
 public class PullObjectWithPhysics : Interaction
 {
+    [SerializeField] StoryDatastore storyData;
+    public float moveDistance = 1.184389f;
+    public float duration = 1f;
     bool _inPhysicsMode = false;
-    Animator _anim;
     override protected void DoAction()
     {
-        _anim = GetComponent<Animator>();
-        _anim.SetBool("Pull", true);
+        StartCoroutine(nameof(PullOut));
+    }
+    IEnumerator PullOut()
+    {
+        Vector3 startPosition = transform.position;
+        Vector3 endPosition = startPosition + new Vector3(moveDistance, 0f, 0f);
+        float elapsedTime = 0f;
+
+        while (elapsedTime < duration)
+        {
+            float t = elapsedTime / duration;
+            transform.position = Vector3.Lerp(startPosition, endPosition, t);
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+
+        transform.position = endPosition;
+        EnableRigidBody();
     }
     public void EnableRigidBody() {
-        Destroy(_anim);
+
         var rb = gameObject.AddComponent<Rigidbody>();
         rb.isKinematic = false;
         rb.useGravity = true;
@@ -24,6 +41,7 @@ public class PullObjectWithPhysics : Interaction
         if (!_inPhysicsMode) {
             return;
         }
+        storyData.AnyBookDropped.Value = true;
         EndAction();
     }
 }

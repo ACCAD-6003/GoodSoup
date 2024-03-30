@@ -16,13 +16,15 @@ namespace Assets.Scripts.AI
         AmberMount sitInBed, navigation;
         [SerializeField]
         tile _bathroomDoor;
+        [SerializeField]
+        StoryDatastore storyData;
         protected override Node SetupTree()
         {
             Node routine = new Sequence(new List<Node>()
             {
                 new WaitForPlayerInteractionCompleted(alarmClockClick), 
                 new SwitchAmberMount(sitInBed), 
-                new WaitForPlayerInteractionCompleted(bookClick),
+                new WaitForBookHit(storyData.AnyBookDropped),
                 new SwitchAmberMount(navigation),
                 new MoveToTile(grid, _bathroomDoor),
                 //new AmberMoveToRoom("Bathroom"),

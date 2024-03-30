@@ -5,5 +5,7 @@ using UnityEngine;
 public class StoryDatastore : MonoBehaviour
 {
     [SerializeField]
+    public StoryData<bool> AnyBookDropped;
+    [SerializeField]
     public StoryData<float> BurnerHeat;
 }
