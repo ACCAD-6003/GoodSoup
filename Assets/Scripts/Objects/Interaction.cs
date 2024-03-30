@@ -7,6 +7,7 @@ public abstract class Interaction : MonoBehaviour
 {
     public event Action OnActionStarted;
     public event Action OnActionEnding;
+    public bool singleUse = false;
 
     public Vector3 AssociatedDirection = Vector3.forward;
 
@@ -58,5 +59,8 @@ public abstract class Interaction : MonoBehaviour
     protected void EndAction()
     {
         IsInProgress = false;
+        if (singleUse) {
+            Destroy(this);
+        }
     }
 }

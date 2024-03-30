@@ -9039,11 +9039,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 135850501}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!4 &136034568 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5817474577247795047, guid: 7ab5c9be395e95f40b75ba429250bf02, type: 3}
-  m_PrefabInstance: {fileID: 5817474576186980274}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &137237757
 GameObject:
   m_ObjectHideFlags: 0
@@ -25133,6 +25128,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bedb3b45bfb85e646978e98893efd361, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  singleUse: 0
   AssociatedDirection: {x: 0, y: 0, z: 1}
   isPlayer: 1
   _isInProgress: 0
@@ -36397,7 +36393,7 @@ GameObject:
   - component: {fileID: 541230175}
   - component: {fileID: 541230174}
   - component: {fileID: 541230173}
-  m_Layer: 7
+  m_Layer: 2
   m_Name: Cube (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -64669,9 +64665,10 @@ GameObject:
   - component: {fileID: 959336477}
   - component: {fileID: 959336476}
   - component: {fileID: 959336475}
-  - component: {fileID: 959336482}
   - component: {fileID: 959336481}
   - component: {fileID: 959336480}
+  - component: {fileID: 959336483}
+  - component: {fileID: 959336484}
   m_Layer: 7
   m_Name: Book
   m_TagString: Untagged
@@ -65033,7 +65030,27 @@ MonoBehaviour:
   precomputeOutline: 0
   bakeKeys: []
   bakeValues: []
---- !u!114 &959336482
+--- !u!95 &959336483
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 959336473}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e854de7f945489140b56855cc6f69fc1, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &959336484
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -65042,9 +65059,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 959336473}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bedb3b45bfb85e646978e98893efd361, type: 3}
+  m_Script: {fileID: 11500000, guid: a57832dfecf2b1c40a84742699c034fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  singleUse: 1
   AssociatedDirection: {x: 0, y: 0, z: 1}
   isPlayer: 1
   _isInProgress: 0
@@ -95171,7 +95189,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6510825319568144824, guid: 20c19ff6004434442aae784fa8cb83f6, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6510825319568144825, guid: 20c19ff6004434442aae784fa8cb83f6, type: 3}
       propertyPath: m_RootOrder
@@ -111106,7 +111124,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerCamera: {fileID: 1418238175}
-  Amber: {fileID: 136034568}
   amberSightAngle: 40
 --- !u!4 &1876602447
 Transform:
