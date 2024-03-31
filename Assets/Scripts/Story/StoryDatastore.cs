@@ -8,4 +8,6 @@ public class StoryDatastore : MonoBehaviour
     public StoryData<bool> AnyBookDropped;
     [SerializeField]
     public StoryData<float> BurnerHeat;
+    [SerializeField]
+    public StoryData<bool> CurtainsOpen;
 }
