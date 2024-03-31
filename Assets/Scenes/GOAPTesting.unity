@@ -61233,6 +61233,7 @@ MonoBehaviour:
   grid: {fileID: 1381026445}
   interactableObject: {fileID: 1730069174}
   _fridgeTile: {fileID: 379916579}
+  storyDatastore: {fileID: 303411876}
 --- !u!1 &1827167624
 GameObject:
   m_ObjectHideFlags: 0

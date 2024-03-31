@@ -29,8 +29,10 @@ namespace Assets.Scripts.AI.Kitchen
                 _grid.Target(_tile, ReachedDest);
             }
             if (_destReached) {
+                state = NodeState.SUCCESS;
                 return NodeState.SUCCESS;
             }
+            state = NodeState.RUNNING;
             return NodeState.RUNNING;
         }
     }

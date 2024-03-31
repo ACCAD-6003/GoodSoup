@@ -28,8 +28,10 @@ namespace Assets.Scripts.AI
                 _interactableObject.AmberInteraction.OnActionEnding += InteractionCompleted;
             }
             if (_interactionCompleted) {
+                state = NodeState.SUCCESS;
                 return NodeState.SUCCESS;
             }
+            state = NodeState.RUNNING;
             return NodeState.RUNNING;
         }
     }

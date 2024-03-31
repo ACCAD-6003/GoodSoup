@@ -14,14 +14,18 @@ namespace Assets.Scripts.AI
         InteractableObject interactableObject;
         [SerializeField]
         tile _fridgeTile;
+        [SerializeField]
+        StoryDatastore storyDatastore;
         protected override Node SetupTree()
         {
             // initialize to real first node
             Node turnDownHeat = new Sequence(new List<Node>(){
-                new MoveToTile(grid, interactableObject.AssociatedTile), new PerformInteraction(interactableObject, grid)
+                new CheckIfICareAboutBurner(storyDatastore), new MoveToTile(grid, interactableObject.AssociatedTile), new PerformInteraction(interactableObject, grid)
             });
-            Node standByFridge = new MoveToTile(grid, _fridgeTile);
-            Node selector = new Selector(new List<Node>() { turnDownHeat, standByFridge });
+            Node standByFridge = new Sequence(new List<Node>() {
+                new MoveToTile(grid, _fridgeTile)
+            });
+            Node selector = new Selector(new List<Node>() { standByFridge, turnDownHeat });
             return selector;
         }
     }
