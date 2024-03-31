@@ -5,16 +5,19 @@ using System.Collections;
 
 public class ThoughtBubble : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
+
+
     public static Vector3 offset;
-    public float hoverTransparency = 0.5f; // Transparency value when hovered
-    public float transitionDuration = 0.5f; // Duration of the transparency transition
+    public float hoverTransparency = 0.5f; 
+    public float transitionDuration = 0.5f;
+    public Image mainIcon, secondaryIcon, timerIcon;
 
     private RectTransform canvasRectTransform;
     private RectTransform imageRectTransform;
-    private Image[] images; // Array to hold all images in the RectTransform and its children
-    private Color[] originalColors; // Array to hold original colors of the images
+    private Image[] images;
+    private Color[] originalColors; 
 
-    void Awake()
+    private void Awake()
     {
         // Get the RectTransform of the canvas and the image
         canvasRectTransform = GetComponentInParent<Canvas>().GetComponent<RectTransform>();
