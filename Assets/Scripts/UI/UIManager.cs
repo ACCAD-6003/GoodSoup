@@ -1,13 +1,13 @@
 ﻿using System.Collections;
 using UnityEngine;
-using static Assets.Scripts.UI.UIIcons;
+using static Assets.Scripts.UI.UIElements;
 
 namespace Assets.Scripts.UI
 {
     internal class UIManager : MonoBehaviour
     {
         [SerializeField] ThoughtBubble bubble;
-        [SerializeField] UIIcons icons;
+        [SerializeField] UIElements icons;
         private Coroutine bubbleCoroutine;
 
         public static UIManager Instance { get; private set; }

@@ -22,19 +22,19 @@ namespace Assets.Scripts.AI
         {
             Node routine = new Sequence(new List<Node>()
             {
-                new DisplayUIIcon(UI.UIIcons.BubbleIcon.SLEEPING),
+                new DisplayUIIcon(UI.UIElements.BubbleIcon.SLEEPING),
                 new WaitForPlayerInteractionCompleted(alarmClockClick),
-                new DisplayUIIcon(UI.UIIcons.BubbleIcon.ANNOYANCE),
+                new DisplayUIIcon(UI.UIElements.BubbleIcon.ANNOYANCE),
                 new WaitFor(1f),
                 new SwitchAmberMount(sitInBed),
                 new WaitFor(1f),
-                new DisplayUIIcon(UI.UIIcons.BubbleIcon.PHONE),
+                new DisplayUIIcon(UI.UIElements.BubbleIcon.PHONE),
                 new WaitForBookHit(storyData.AnyBookDropped),
-                new DisplayUIIcon(UI.UIIcons.BubbleIcon.ANNOYANCE),
+                new DisplayUIIcon(UI.UIElements.BubbleIcon.ANNOYANCE),
                 new WaitFor(1f),
                 new SwitchAmberMount(navigation),
                 new MoveToTile(grid, _bathroomDoor),
-                //new AmberMoveToRoom("Bathroom"),
+                new AmberMoveToRoom("Bathroom", "Bedroom")
             });
             return routine;
         }

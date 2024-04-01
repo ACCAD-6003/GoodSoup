@@ -22,6 +22,12 @@ MonoBehaviour:
     - {fileID: 21300000, guid: 0e0a4d6932c794b4781b24d72c69945f, type: 3}
     - {fileID: 21300000, guid: 4529914cb0cbc5744b74cba471511ec7, type: 3}
     - {fileID: 21300000, guid: d89a0683bc6eee544bf1225d5dc35acc, type: 3}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -29,11 +35,11 @@ MonoBehaviour:
     SerializationNodes:
     - Name: IconImages
       Entry: 7
-      Data: 0|System.Collections.Generic.Dictionary`2[[Assets.Scripts.UI.UIIcons+BubbleIcon,
+      Data: 0|System.Collections.Generic.Dictionary`2[[Assets.Scripts.UI.UIElements+BubbleIcon,
         Assembly-CSharp],[UnityEngine.Sprite, UnityEngine.CoreModule]], mscorlib
     - Name: comparer
       Entry: 7
-      Data: 1|System.Collections.Generic.EnumEqualityComparer`1[[Assets.Scripts.UI.UIIcons+BubbleIcon,
+      Data: 1|System.Collections.Generic.EnumEqualityComparer`1[[Assets.Scripts.UI.UIElements+BubbleIcon,
         Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
@@ -116,6 +122,104 @@ MonoBehaviour:
     - Name: $v
       Entry: 10
       Data: 5
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: EmailScreens
+      Entry: 7
+      Data: 2|System.Collections.Generic.Dictionary`2[[Assets.Scripts.UI.UIElements+EmailState,
+        Assembly-CSharp],[UnityEngine.GameObject, UnityEngine.CoreModule]], mscorlib
+    - Name: comparer
+      Entry: 7
+      Data: 3|System.Collections.Generic.EnumEqualityComparer`1[[Assets.Scripts.UI.UIElements+EmailState,
+        Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 12
+      Data: 6
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 0
+    - Name: $v
+      Entry: 10
+      Data: 6
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 1
+    - Name: $v
+      Entry: 10
+      Data: 7
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 2
+    - Name: $v
+      Entry: 10
+      Data: 8
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 5
+    - Name: $v
+      Entry: 10
+      Data: 9
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 3
+    - Name: $v
+      Entry: 10
+      Data: 10
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 4
+    - Name: $v
+      Entry: 10
+      Data: 11
     - Name: 
       Entry: 8
       Data: 
