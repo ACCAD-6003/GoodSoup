@@ -8,8 +8,7 @@ public class ObjectInteraction : MonoBehaviour
     [SerializeField]
     Camera PlayerCamera;
 
-    [SerializeField]
-    Transform Amber;
+    public static Transform Amber;
 
     [SerializeField]
     float amberSightAngle = 40;

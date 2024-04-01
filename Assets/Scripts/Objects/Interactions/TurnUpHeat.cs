@@ -5,6 +5,11 @@ public class TurnUpHeat : Interaction
 {
     StoryDatastore data;
 
+    public override void LoadData(StoryDatastore data)
+    {
+        throw new System.NotImplementedException();
+    }
+
     public void Start()
     {
         data = FindObjectOfType<StoryDatastore>();

@@ -16,6 +16,7 @@ public class InteractableObject : MonoBehaviour
 
     private void Awake()
     {
+
         Interaction[] interactions = GetComponents<Interaction>();
 
         Debug.Assert(interactions.Length > 0, name + " has no interactions tied to it");

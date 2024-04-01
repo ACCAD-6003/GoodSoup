@@ -5,8 +5,12 @@ using UnityEngine;
 
 public abstract class Interaction : MonoBehaviour
 {
+    [Tooltip("Optional ID used for some objects for persistence")]
+    public int interactionId;
+
     public event Action OnActionStarted;
     public event Action OnActionEnding;
+    public bool singleUse = false;
 
     public Vector3 AssociatedDirection = Vector3.forward;
 
@@ -14,6 +18,11 @@ public abstract class Interaction : MonoBehaviour
 
     [SerializeField]
     private bool _isInProgress;
+    private void Start()
+    {
+        LoadData(StoryDatastore.Instance);
+    }
+    public abstract void LoadData(StoryDatastore data);
 
     public bool IsInProgress
     {
@@ -58,5 +67,8 @@ public abstract class Interaction : MonoBehaviour
     protected void EndAction()
     {
         IsInProgress = false;
+        if (singleUse) {
+            Destroy(this);
+        }
     }
 }
