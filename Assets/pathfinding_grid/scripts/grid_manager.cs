@@ -423,6 +423,7 @@ public class grid_manager : MonoBehaviour
 
     void Start()
     {
+        char_s = GameObject.FindGameObjectWithTag("Player").GetComponent<GridCharacter>();
         char_s.tile_s = dest_tile; //Slight delay in start game, this gives the char a tile so we don't get an onhover error during that milisecond//
         StartCoroutine(start_game());
         //char_s.move_tile(_tile);

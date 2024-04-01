@@ -3,11 +3,12 @@ using System;
 using System.Collections;
 using UnityEngine;
 using static Assets.Scripts.UI.UIElements;
+using static ComputerHUD;
 
 public class ComputerEmail : Interaction
 {
     [SerializeField] GameObject PCUI, EmailHUDElement;
-    [SerializeField] UIElements elements;
+    [SerializeField] ComputerHUD hud;
     private StoryData<EmailState> _state;
     private StoryData<DateTime> _emailSentTime;
     private StoryData<bool> _awaitingResponse;
@@ -36,15 +37,15 @@ public class ComputerEmail : Interaction
         _awaitingResponse = data.AwaitingEmailReply;
     }
     private void DisplayEmailScreen() {
-        foreach (var element in elements.EmailScreens) {
+        foreach (var element in hud.EmailScreens) {
             element.Value.SetActive(false);
         }
         if (_awaitingResponse.Value)
         {
-            elements.EmailScreens[EmailState.EMAIL_SENT].SetActive(true);
+            hud.EmailScreens[EmailState.EMAIL_SENT].SetActive(true);
             return;
         }
-        elements.EmailScreens[_state.Value].SetActive(true);
+        hud.EmailScreens[_state.Value].SetActive(true);
     }
     public void SendEmail(int email) {
         _state.Value = (EmailState) email;

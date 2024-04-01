@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using static Assets.Scripts.UI.UIElements;
 using static ComputerEmail;
+using static ComputerHUD;
 
 public class StoryDatastore : MonoBehaviour
 {
@@ -46,7 +47,7 @@ public class StoryDatastore : MonoBehaviour
     [SerializeField]
     public StoryData<bool> CurtainsOpen = new StoryData<bool>(false);
     [SerializeField]
-    public StoryData<EmailState> EmailState = new StoryData<EmailState>(Assets.Scripts.UI.UIElements.EmailState.NOTHING_CHANGED);
+    public StoryData<EmailState> EmailState = new StoryData<EmailState>(ComputerHUD.EmailState.NOTHING_CHANGED);
     [SerializeField]
     public StoryData<bool> AwaitingEmailReply = new StoryData<bool>(false);
     [SerializeField]

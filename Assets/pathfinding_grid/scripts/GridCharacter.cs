@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 
 public class GridCharacter : MonoBehaviour
@@ -24,7 +25,14 @@ public class GridCharacter : MonoBehaviour
 
     public event Action PathfindingCompleted;
     public Vector3 LookVectorWhenComplete = Vector3.forward;
+    void OnAwake() {
+        SceneManager.sceneLoaded += ReassignGrid;
+    }
 
+    private void ReassignGrid(Scene arg0, LoadSceneMode arg1)
+    {
+        gm_s = FindObjectOfType<grid_manager>();
+    }
     void Update()
     {
         if (body_looking)

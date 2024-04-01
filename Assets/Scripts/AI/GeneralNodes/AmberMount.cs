@@ -5,7 +5,8 @@ using UnityEngine;
 
 namespace Assets.Scripts.AI
 {
-    internal class AmberMount : MonoBehaviour
+    public enum MountState { BED, NAVIGATION, SITTING }
+    public class AmberMount : MonoBehaviour
     {
         public Action CompletedMounting;
         public Vector3 bubbleOffset;
