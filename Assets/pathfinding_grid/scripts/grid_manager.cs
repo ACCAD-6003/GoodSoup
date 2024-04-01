@@ -1,11 +1,33 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
+using static UnityEngine.GraphicsBuffer;
+
+#if UNITY_EDITOR
+[CustomEditor(typeof(grid_manager)), CanEditMultipleObjects]
+class grid_editor : Editor
+{
+    public override void OnInspectorGUI()
+    {
+        grid_manager gm_s = (grid_manager)target;
+        if (GUILayout.Button("Make Grid"))
+            gm_s.make_grid();
+        if (GUILayout.Button("Make Circle"))
+            gm_s.make_circle();
+
+        DrawDefaultInspector();
+    }
+}
+#endif
+
 
 public class grid_manager : MonoBehaviour
 {
+
+
     public efind_path find_path;
     public Vector2 v2_grid;
     public RectTransform rt;
@@ -397,7 +419,6 @@ public class grid_manager : MonoBehaviour
             }
         }
     }
-
 
     IEnumerator start_game()
     {
