@@ -1,13 +1,46 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class StoryDatastore : MonoBehaviour
 {
+    private static StoryDatastore instance;
+
+    public static StoryDatastore Instance
+    {
+        get
+        {
+            if (instance == null)
+            {
+                instance = FindObjectOfType<StoryDatastore>();
+
+                if (instance == null)
+                {
+                    GameObject singletonObject = new GameObject("StoryDatastore");
+                    instance = singletonObject.AddComponent<StoryDatastore>();
+                }
+            }
+
+            return instance;
+        }
+    }
+    private void Awake()
+    {
+        if (instance != null && instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        instance = this;
+        DontDestroyOnLoad(gameObject);
+    }
+
     [SerializeField]
-    public StoryData<bool> AnyBookDropped;
+    public Dictionary<int, (bool dropped, Vector3 location)> BooksDropped = new Dictionary<int, (bool dropped, Vector3 location)>();
     [SerializeField]
-    public StoryData<float> BurnerHeat;
+    public StoryData<bool> AnyBookDropped = new StoryData<bool>(false);
     [SerializeField]
-    public StoryData<bool> CurtainsOpen;
+    public StoryData<float> BurnerHeat = new StoryData<float>(100);
+    [SerializeField]
+    public StoryData<bool> CurtainsOpen = new StoryData<bool>(false);
+
 }

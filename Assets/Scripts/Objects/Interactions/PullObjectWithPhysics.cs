@@ -44,4 +44,14 @@ public class PullObjectWithPhysics : Interaction
         storyData.AnyBookDropped.Value = true;
         EndAction();
     }
+
+    public override void LoadData(StoryDatastore data)
+    {
+        if (data.BooksDropped.ContainsKey(interactionId)) {
+            var rb = transform.gameObject.AddComponent<Rigidbody>();
+            rb.useGravity = true;
+            transform.position = data.BooksDropped[interactionId].location;
+            Destroy(this);
+        }
+    }
 }

@@ -3,6 +3,10 @@ using UnityEngine;
 
 public class BouncingObject : Interaction
 {
+    public override void LoadData(StoryDatastore data)
+    {
+
+    }
 
     // Update is called once per frame
     override protected void DoAction() {
