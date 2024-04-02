@@ -8,6 +8,11 @@ public class BouncingObject : Interaction
 
     }
 
+    public override void SaveData(StoryDatastore data)
+    {
+
+    }
+
     // Update is called once per frame
     override protected void DoAction() {
         StartCoroutine(Bounce());

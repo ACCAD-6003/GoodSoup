@@ -1,11 +1,36 @@
+using Assets.Scripts.Objects;
+using Sirenix.OdinInspector;
+using Sirenix.Serialization;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
+using static MainSceneLoading;
+using static UnityEngine.GraphicsBuffer;
+
+#if UNITY_EDITOR
+[CustomEditor(typeof(grid_manager)), CanEditMultipleObjects]
+class grid_editor : Editor
+{
+    public override void OnInspectorGUI()
+    {
+        grid_manager gm_s = (grid_manager)target;
+        if (GUILayout.Button("Make Grid"))
+            gm_s.make_grid();
+        if (GUILayout.Button("Make Circle"))
+            gm_s.make_circle();
+
+        DrawDefaultInspector();
+    }
+}
+#endif
 
 public class grid_manager : MonoBehaviour
 {
+    public Doors doors;
+
     public efind_path find_path;
     public Vector2 v2_grid;
     public RectTransform rt;
@@ -398,13 +423,16 @@ public class grid_manager : MonoBehaviour
         }
     }
 
-
     IEnumerator start_game()
     {
         yield return new WaitForSeconds(0.01f);
 
         var ttile = start_tile;
         char_s.tile_s = ttile;
+        Debug.Log("ttile is null");
+        Debug.Log(ttile == null);
+        Debug.Log("ttiledbchars is null");
+        Debug.Log(ttile.db_chars == null);
         ttile.db_chars.Add(char_s);
         var tpos = ttile.transform.position;
 
@@ -423,6 +451,18 @@ public class grid_manager : MonoBehaviour
 
     void Start()
     {
+        char_s = GameObject.FindGameObjectWithTag("Player").GetComponent<GridCharacter>();
+        if (doors.Entrance != null) {
+            start_tile = doors.Entrance;
+        }
+        Debug.Log("START TILE");
+        Debug.Log(start_tile == null);
+        Debug.Log("CHAR  IS NULL: " + char_s == null);
+        if (start_tile != null)
+        {
+            dest_tile = start_tile;
+        }
+
         char_s.tile_s = dest_tile; //Slight delay in start game, this gives the char a tile so we don't get an onhover error during that milisecond//
         StartCoroutine(start_game());
         //char_s.move_tile(_tile);

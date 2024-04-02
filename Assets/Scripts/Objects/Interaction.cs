@@ -11,6 +11,7 @@ public abstract class Interaction : MonoBehaviour
     public event Action OnActionStarted;
     public event Action OnActionEnding;
     public bool singleUse = false;
+    private bool usedUp = false;
 
     public Vector3 AssociatedDirection = Vector3.forward;
 
@@ -23,12 +24,13 @@ public abstract class Interaction : MonoBehaviour
         LoadData(StoryDatastore.Instance);
     }
     public abstract void LoadData(StoryDatastore data);
+    public abstract void SaveData(StoryDatastore data);
 
     public bool IsInProgress
     {
         get
         {
-            return _isInProgress;
+            return _isInProgress || usedUp;
         }
         private set
         {
@@ -68,7 +70,7 @@ public abstract class Interaction : MonoBehaviour
     {
         IsInProgress = false;
         if (singleUse) {
-            Destroy(this);
+            usedUp = true;
         }
     }
 }

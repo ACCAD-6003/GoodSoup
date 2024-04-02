@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class PullObjectWithPhysics : Interaction
 {
-    [SerializeField] StoryDatastore storyData;
     public float moveDistance = 1.184389f;
     public float duration = 1f;
     bool _inPhysicsMode = false;
@@ -41,17 +40,30 @@ public class PullObjectWithPhysics : Interaction
         if (!_inPhysicsMode) {
             return;
         }
-        storyData.AnyBookDropped.Value = true;
+        StoryDatastore.Instance.AnyBookDropped.Value = true;
+        SaveData(StoryDatastore.Instance);
         EndAction();
     }
 
     public override void LoadData(StoryDatastore data)
     {
+        Debug.Log("TRYING TO LOAD");
         if (data.BooksDropped.ContainsKey(interactionId)) {
+            Debug.Log("SETTING BOOK FROM SAVE");
             var rb = transform.gameObject.AddComponent<Rigidbody>();
             rb.useGravity = true;
             transform.position = data.BooksDropped[interactionId].location;
+            transform.rotation = data.BooksDropped[interactionId].rotation;
             Destroy(this);
+        }
+    }
+
+    public override void SaveData(StoryDatastore data)
+    {
+        if (_inPhysicsMode) {
+
+            Debug.Log("SAVING BOOK!");
+            data.BooksDropped[interactionId] = (transform.position, transform.rotation);
         }
     }
 }

@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using static Assets.Scripts.UI.UIIcons;
+using static Assets.Scripts.UI.UIElements;
 
 namespace Assets.Scripts.AI
 {

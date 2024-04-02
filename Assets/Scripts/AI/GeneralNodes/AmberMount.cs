@@ -1,18 +1,20 @@
-﻿using System;
+﻿using Sirenix.OdinInspector.Editor.GettingStarted;
+using System;
 using System.Collections;
 using System.Linq;
 using UnityEngine;
 
 namespace Assets.Scripts.AI
 {
-    internal class AmberMount : MonoBehaviour
+    public enum MountState { BED, NAVIGATION, SITTING }
+    public class AmberMount : MonoBehaviour
     {
         public Action CompletedMounting;
         public Vector3 bubbleOffset;
         [SerializeField] private GameObject _mount;
         [SerializeField] private bool _enabledOnLoad = false;
         void Awake() {
-            if (_enabledOnLoad) {
+            if (_enabledOnLoad && StoryDatastore.Instance.CurrentGamePhase.Value == GamePhase.TUTORIAL_BEDROOM) {
                 PerformMount();
                 return;
             }
