@@ -11,7 +11,7 @@ namespace Assets.Scripts.Objects
     public class BathroomInteractions : MonoBehaviour
     {
         public grid_manager Grid;
-        public tile showerTile;
+        public tile showerTile, LaundryBasketTile, sinkTile;
         public Shower Shower;
         public FlushToilet FlushToilet;
     }

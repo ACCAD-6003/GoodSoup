@@ -1,3 +1,4 @@
+using Assets.Scripts.AI.GeneralNodes;
 using Assets.Scripts.AI.Kitchen;
 using Assets.Scripts.Objects;
 using Assets.Scripts.UI;
@@ -45,6 +46,11 @@ namespace Assets.Scripts.AI
                     new SkipIfStoryDatastoreState<bool>(StoryDatastore.Instance.SinkRoutineDone, true),
                     new List<Node>() {
                         new WaitFor(0.5f),
+                        new MoveToTile(interactions.Grid, interactions.LaundryBasketTile),
+                        new EvaluateItemsPickedUp(new List<int>() { 0,1,2 }, UIElements.BubbleIcon.HAPPY_LAUNDRY, UIElements.BubbleIcon.SAD_LAUNDRY),
+                        new WaitFor(0.5f),
+                        new MoveToTile(interactions.Grid, interactions.sinkTile),
+                        new WaitFor(1f),
                         new MoveToTile(interactions.Grid, doors.doors[MainSceneLoading.AmberRoom.BEDROOM]),
                         new AmberMoveToRoom(MainSceneLoading.AmberRoom.BEDROOM)
                     }
