@@ -4,7 +4,8 @@ using UnityEngine;
 using static Assets.Scripts.UI.UIElements;
 using static ComputerEmail;
 using static ComputerHUD;
-
+using static MainSceneLoading;
+public enum GamePhase { TUTORIAL_BEDROOM, BEFORE_AMBER_LEAVES, AMBER_GONE, AMBER_BACK }
 public class StoryDatastore : MonoBehaviour
 {
     private static StoryDatastore instance;
@@ -52,5 +53,8 @@ public class StoryDatastore : MonoBehaviour
     public StoryData<bool> AwaitingEmailReply = new StoryData<bool>(false);
     [SerializeField]
     public StoryData<DateTime> EmailSentTime;
-
+    [SerializeField]
+    public StoryData<AmberRoom> CurrentAmberRoom = new StoryData<AmberRoom>(AmberRoom.BEDROOM);
+    [SerializeField]
+    public StoryData<GamePhase> CurrentGamePhase = new StoryData<GamePhase>(GamePhase.TUTORIAL_BEDROOM);
 }

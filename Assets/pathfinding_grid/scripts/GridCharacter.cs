@@ -3,8 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
-
 public class GridCharacter : MonoBehaviour
 {
     public grid_manager gm_s;
@@ -25,7 +23,7 @@ public class GridCharacter : MonoBehaviour
 
     public event Action PathfindingCompleted;
     public Vector3 LookVectorWhenComplete = Vector3.forward;
-    void OnAwake() {
+    void Awake() {
         SceneManager.sceneLoaded += ReassignGrid;
     }
 

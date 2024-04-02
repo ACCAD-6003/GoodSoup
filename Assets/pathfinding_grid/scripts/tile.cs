@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEditor;
+using Sirenix.OdinInspector;
 
 
 #if UNITY_EDITOR
@@ -29,7 +30,7 @@ class tile_editor : Editor
 #endif
 
 
-public class tile : MonoBehaviour
+public class tile : SerializedMonoBehaviour
 {
     public grid_manager gm_s;
     public Vector2 v2xy;
