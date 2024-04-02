@@ -92,6 +92,10 @@ public class GridCharacter : MonoBehaviour
             tr_body.transform.rotation = new_rot;
         }
     }
+    public void SetArbitraryRot(Vector3 rot) {
+        Quaternion new_rot = Quaternion.LookRotation(rot);
+        tr_body.transform.rotation = new_rot;
+    } 
 
     public void move_tile(tile ttile)
     {

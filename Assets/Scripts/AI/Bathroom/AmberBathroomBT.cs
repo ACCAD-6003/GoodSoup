@@ -12,8 +12,7 @@ namespace Assets.Scripts.AI
 {
     public class AmberBathroomBT : BehaviorTree.Tree
     {
-        [SerializeField] tile tile;
-        [SerializeField] grid_manager grid;
+        [SerializeField] BathroomInteractions interactions;
         AmberMount navigation;
         StoryDatastore storyData;
         Doors doors;
@@ -33,13 +32,22 @@ namespace Assets.Scripts.AI
             navigation = GameObject.FindGameObjectWithTag("Player").GetComponent<AmberMount>();
             storyData = StoryDatastore.Instance;
 
-            Node routine = new Sequence( new List<Node>() {
-                new WaitFor(0.25f),
-                new MoveToTile(grid, tile),
-                new WaitFor(1f),
-                new MoveToTile(grid, doors.doors[MainSceneLoading.AmberRoom.BEDROOM]),
-                new AmberMoveToRoom(MainSceneLoading.AmberRoom.BEDROOM)
+            Node routine = new Sequence(new List<Node>() {
+                new WrapperNode(
+                    new SkipIfStoryDatastoreState<bool>(StoryDatastore.Instance.DoneShowering, true),
+                    new List<Node>() {
+                        new WaitFor(0.25f),
+                        new MoveToTile(interactions.Grid, interactions.showerTile),
+                        new AmberShower(interactions.Shower)
+                    }
+                ),
+                new Sequence(new List<Node>() {
+                    new WaitFor(0.5f),
+                    new MoveToTile(interactions.Grid, doors.doors[MainSceneLoading.AmberRoom.BEDROOM]),
+                    new AmberMoveToRoom(MainSceneLoading.AmberRoom.BEDROOM)
+                })
             });
+
             return routine;
         }
     }

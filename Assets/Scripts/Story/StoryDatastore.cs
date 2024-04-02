@@ -57,4 +57,8 @@ public class StoryDatastore : MonoBehaviour
     public StoryData<AmberRoom> CurrentAmberRoom = new StoryData<AmberRoom>(AmberRoom.BEDROOM);
     [SerializeField]
     public StoryData<GamePhase> CurrentGamePhase = new StoryData<GamePhase>(GamePhase.TUTORIAL_BEDROOM);
+    [SerializeField]
+    public StoryData<float> ShowerTemperature = new StoryData<float>(40f);
+    [SerializeField]
+    public StoryData<bool> DoneShowering = new StoryData<bool>(false);
 }

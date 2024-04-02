@@ -11,6 +11,5 @@ namespace Assets.Scripts.UI
         public List<InteractableObject> Books;
         public AmberMount LayingInBed, SittingInBed;
         public grid_manager Grid;
-        public tile BathroomTile;
     }
 }
