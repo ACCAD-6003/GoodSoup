@@ -1,6 +1,5 @@
 fileFormatVersion: 2
-<<<<<<< Updated upstream
-guid: 1a0beb8e839cf7a44a386365c1d13040
+guid: 8e2a05012e1d7e24ba9cb9c43e34208b
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
@@ -105,6 +104,3 @@ ModelImporter:
   userData: 
   assetBundleName: 
   assetBundleVariant: 
-=======
-guid: 04f5cd79d748a25469b28055e4e00b02
->>>>>>> Stashed changes
