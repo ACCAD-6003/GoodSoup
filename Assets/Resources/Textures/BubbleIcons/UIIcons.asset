@@ -22,12 +22,11 @@ MonoBehaviour:
     - {fileID: 21300000, guid: 0e0a4d6932c794b4781b24d72c69945f, type: 3}
     - {fileID: 21300000, guid: 4529914cb0cbc5744b74cba471511ec7, type: 3}
     - {fileID: 21300000, guid: d89a0683bc6eee544bf1225d5dc35acc, type: 3}
-    - {fileID: 218950896105013636, guid: 7bbb1fa8714a42b43a68ea1f6a5c59a2, type: 3}
-    - {fileID: 5647360833497232870, guid: 0f6d6e2aebf33154784755a2bda3c176, type: 3}
-    - {fileID: 9007112587725636317, guid: eb890cbcdf8b34e499b3da08ddb9f21f, type: 3}
-    - {fileID: 8072915079671619931, guid: aebe98484a57d6d4b9c451100e5773ea, type: 3}
-    - {fileID: 3386584358399350614, guid: f9ff2527e4b33514688f4dd943529f57, type: 3}
-    - {fileID: 4683206472048551015, guid: 91ee79a184a372444b23682bb4035f49, type: 3}
+    - {fileID: 21300000, guid: fc5a068eb24cfa440ac4a2510f546b4c, type: 3}
+    - {fileID: 21300000, guid: c0e92e2b0c273e84c8ba32b3a0169819, type: 3}
+    - {fileID: 21300000, guid: f15d2c6e70b367941a6af8d855bf0de1, type: 3}
+    - {fileID: 21300000, guid: 6bd2972ca07d070409b797ff54afe399, type: 3}
+    - {fileID: 21300000, guid: 519d1596f13644a4a9e0d06744004086, type: 3}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -52,7 +51,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 12
-      Data: 6
+      Data: 11
     - Name: 
       Entry: 7
       Data: 
@@ -126,37 +125,11 @@ MonoBehaviour:
       Entry: 8
       Data: 
     - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: EmailScreens
-      Entry: 7
-      Data: 2|System.Collections.Generic.Dictionary`2[[Assets.Scripts.UI.UIElements+EmailState,
-        Assembly-CSharp],[UnityEngine.GameObject, UnityEngine.CoreModule]], mscorlib
-    - Name: comparer
-      Entry: 7
-      Data: 3|System.Collections.Generic.EnumEqualityComparer`1[[Assets.Scripts.UI.UIElements+EmailState,
-        Assembly-CSharp]], mscorlib
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 12
-      Data: 6
-    - Name: 
       Entry: 7
       Data: 
     - Name: $k
       Entry: 3
-      Data: 0
+      Data: 6
     - Name: $v
       Entry: 10
       Data: 6
@@ -168,7 +141,7 @@ MonoBehaviour:
       Data: 
     - Name: $k
       Entry: 3
-      Data: 1
+      Data: 7
     - Name: $v
       Entry: 10
       Data: 7
@@ -180,7 +153,7 @@ MonoBehaviour:
       Data: 
     - Name: $k
       Entry: 3
-      Data: 2
+      Data: 8
     - Name: $v
       Entry: 10
       Data: 8
@@ -192,7 +165,7 @@ MonoBehaviour:
       Data: 
     - Name: $k
       Entry: 3
-      Data: 5
+      Data: 9
     - Name: $v
       Entry: 10
       Data: 9
@@ -204,22 +177,10 @@ MonoBehaviour:
       Data: 
     - Name: $k
       Entry: 3
-      Data: 3
+      Data: 10
     - Name: $v
       Entry: 10
       Data: 10
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 3
-      Data: 4
-    - Name: $v
-      Entry: 10
-      Data: 11
     - Name: 
       Entry: 8
       Data: 

@@ -16,12 +16,7 @@ namespace Assets.Scripts.AI
         AmberMount navigation;
         StoryDatastore storyData;
         Doors doors;
-        private void Awake()
-        {
-            SceneManager.activeSceneChanged += AdaptToSceneChanges;
-        }
-
-        private void AdaptToSceneChanges(Scene arg0, Scene arg1)
+        private void AdaptToSceneChanges()
         {
             doors = FindObjectOfType<Doors>();
             FindObjectOfType<BedroomInteractions>();
@@ -29,6 +24,7 @@ namespace Assets.Scripts.AI
 
         protected override Node SetupTree()
         {
+            AdaptToSceneChanges();
             navigation = GameObject.FindGameObjectWithTag("Player").GetComponent<AmberMount>();
             storyData = StoryDatastore.Instance;
 
@@ -46,7 +42,7 @@ namespace Assets.Scripts.AI
                 new DisplayUIIcon(UI.UIElements.BubbleIcon.ANNOYANCE),
                 new WaitFor(1f),
                 new SwitchAmberMount(navigation),
-                new MoveToTile(interactions.Grid, interactions.BathroomTile),
+                new MoveToTile(interactions.Grid, doors.doors[MainSceneLoading.AmberRoom.BATHROOM]),
                 new AmberMoveToRoom(MainSceneLoading.AmberRoom.BATHROOM)
             });
             return routine;
