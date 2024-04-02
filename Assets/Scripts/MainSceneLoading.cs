@@ -34,19 +34,20 @@ public class MainSceneLoading : SerializedMonoBehaviour
             Destroy(gameObject);
         }
     }
-
-    void Start()
+    private void Start()
     {
         SceneManager.LoadScene("Bedroom", LoadSceneMode.Additive);
         CurrAdditiveScene = AmberRoom.BEDROOM;
-
     }
-
     public void SwitchAmberRooms(AmberRoom room)
     {
+        foreach(Interaction interaction in FindObjectsOfType<Interaction>()) {
+            interaction.SaveData(StoryDatastore.Instance);
+        }
         switch (StoryDatastore.Instance.CurrentGamePhase.Value)
         {
             case GamePhase.TUTORIAL_BEDROOM:
+                Debug.Log("Switched to BEFORE AMBER LEAVES state");
                 StoryDatastore.Instance.CurrentGamePhase.Value = GamePhase.BEFORE_AMBER_LEAVES;
                 break;
             case GamePhase.AMBER_GONE:
@@ -58,8 +59,9 @@ public class MainSceneLoading : SerializedMonoBehaviour
     private void UnloadAndLoadSceneAsync(AmberRoom room)
     {
         var unloadOperation = SceneManager.UnloadSceneAsync(rooms[CurrAdditiveScene]);
+        CurrAdditiveScene = room;
         unloadOperation.completed += (AsyncOperation operation) => {
-            SceneManager.LoadScene(rooms[room]);
+            SceneManager.LoadScene(rooms[room], LoadSceneMode.Additive);
         };
     }
 }

@@ -429,6 +429,10 @@ public class grid_manager : MonoBehaviour
 
         var ttile = start_tile;
         char_s.tile_s = ttile;
+        Debug.Log("ttile is null");
+        Debug.Log(ttile == null);
+        Debug.Log("ttiledbchars is null");
+        Debug.Log(ttile.db_chars == null);
         ttile.db_chars.Add(char_s);
         var tpos = ttile.transform.position;
 
@@ -448,10 +452,17 @@ public class grid_manager : MonoBehaviour
     void Start()
     {
         char_s = GameObject.FindGameObjectWithTag("Player").GetComponent<GridCharacter>();
-        if (StoryDatastore.Instance.CurrentGamePhase.Value != GamePhase.TUTORIAL_BEDROOM)
-        {
-            start_tile = GameObject.FindObjectOfType<Doors>().Entrance;
+        if (doors.Entrance != null) {
+            start_tile = doors.Entrance;
         }
+        Debug.Log("START TILE");
+        Debug.Log(start_tile == null);
+        Debug.Log("CHAR  IS NULL: " + char_s == null);
+        if (start_tile != null)
+        {
+            dest_tile = start_tile;
+        }
+
         char_s.tile_s = dest_tile; //Slight delay in start game, this gives the char a tile so we don't get an onhover error during that milisecond//
         StartCoroutine(start_game());
         //char_s.move_tile(_tile);

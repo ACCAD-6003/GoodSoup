@@ -22712,7 +22712,7 @@ PrefabInstance:
     - target: {fileID: 6609598689810238921, guid: c441a5397cf732e42a15bcb84815491c, type: 3}
       propertyPath: storyData
       value: 
-      objectReference: {fileID: 683439461}
+      objectReference: {fileID: 0}
     - target: {fileID: 6609598689810238924, guid: c441a5397cf732e42a15bcb84815491c, type: 3}
       propertyPath: outlineMode
       value: 1
@@ -34466,7 +34466,6 @@ Transform:
   m_Children:
   - {fileID: 768799387}
   - {fileID: 1388611650}
-  - {fileID: 683439462}
   - {fileID: 614161390}
   - {fileID: 774692455}
   - {fileID: 646411065}
@@ -38949,7 +38948,6 @@ MonoBehaviour:
   AssociatedDirection: {x: 0, y: 0, z: 1}
   isPlayer: 1
   _isInProgress: 0
-  story: {fileID: 683439461}
   stateOne: {fileID: 562083396}
   stateTwo: {fileID: 562083395}
 --- !u!114 &562083398
@@ -41635,7 +41633,7 @@ Transform:
   - {fileID: 201406653}
   - {fileID: 826627263}
   m_Father: {fileID: 473883202}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &614161391
 MonoBehaviour:
@@ -42787,7 +42785,7 @@ Transform:
   - {fileID: 969151721}
   - {fileID: 421954818}
   m_Father: {fileID: 473883202}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &649199226
 GameObject:
@@ -44041,62 +44039,6 @@ MonoBehaviour:
   - {fileID: 1192180525}
   - {fileID: 61604918}
   - {fileID: 1570265009}
---- !u!1 &683439460
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 683439462}
-  - component: {fileID: 683439461}
-  m_Layer: 0
-  m_Name: StoryData
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &683439461
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 683439460}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 13c204556b7bfec4f9858a39fa93aa4e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  AnyBookDropped:
-    _value: 0
-  BurnerHeat:
-    _value: 100
-  CurtainsOpen:
-    _value: 0
-  EmailState:
-    _value: 0
-  AwaitingEmailReply:
-    _value: 0
-  CurrentAmberRoom:
-    _value: 0
---- !u!4 &683439462
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 683439460}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -130.81564, y: -153.1361, z: -18.166262}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 473883202}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &685685462
 GameObject:
   m_ObjectHideFlags: 0
@@ -44508,7 +44450,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 473883202}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &691379195
 AudioSource:
@@ -47671,7 +47613,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 473883202}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &774692456
 MonoBehaviour:
@@ -50301,6 +50243,51 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 826627262}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &828070568
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 828070570}
+  - component: {fileID: 828070569}
+  m_Layer: 0
+  m_Name: AmberAI
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &828070569
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 828070568}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d93189dc014a36e4d925ae54b07761a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactions: {fileID: 614161391}
+--- !u!4 &828070570
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 828070568}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.21156311, y: -1.8362122, z: 5.882988}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &828156891
 GameObject:
   m_ObjectHideFlags: 0
@@ -71551,7 +71538,11 @@ PrefabInstance:
     - target: {fileID: 6609598689810238921, guid: c441a5397cf732e42a15bcb84815491c, type: 3}
       propertyPath: storyData
       value: 
-      objectReference: {fileID: 683439461}
+      objectReference: {fileID: 0}
+    - target: {fileID: 6609598689810238921, guid: c441a5397cf732e42a15bcb84815491c, type: 3}
+      propertyPath: interactionId
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6609598689810238924, guid: c441a5397cf732e42a15bcb84815491c, type: 3}
       propertyPath: outlineMode
       value: 1
@@ -73639,7 +73630,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-84336
+  m_Name: pb_Mesh-123290
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -83956,7 +83947,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 702ba4edecd47e24bb8d22627fec8ffb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  doors: {fileID: 0}
+  doors: {fileID: 1388611651}
   find_path: 2
   v2_grid: {x: 10, y: 10}
   rt: {fileID: 1034231517}
@@ -84222,6 +84213,7 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+  Entrance: {fileID: 0}
 --- !u!1 &1389305702
 GameObject:
   m_ObjectHideFlags: 0
@@ -96966,7 +96958,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-84486
+  m_Name: pb_Mesh-123440
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -116825,7 +116817,11 @@ PrefabInstance:
     - target: {fileID: 6609598689810238921, guid: c441a5397cf732e42a15bcb84815491c, type: 3}
       propertyPath: storyData
       value: 
-      objectReference: {fileID: 683439461}
+      objectReference: {fileID: 0}
+    - target: {fileID: 6609598689810238921, guid: c441a5397cf732e42a15bcb84815491c, type: 3}
+      propertyPath: interactionId
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6609598689810238924, guid: c441a5397cf732e42a15bcb84815491c, type: 3}
       propertyPath: outlineMode
       value: 1

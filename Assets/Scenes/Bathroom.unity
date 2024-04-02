@@ -252,6 +252,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ac14b87e5d5131498de1adbe93bf52b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
   gm_s: {fileID: 142665933}
   v2xy: {x: 5, y: 8}
   walls_s: {fileID: 1097557572}
@@ -474,6 +483,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ac14b87e5d5131498de1adbe93bf52b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
   gm_s: {fileID: 142665933}
   v2xy: {x: 1, y: 3}
   walls_s: {fileID: 681461475}
@@ -696,6 +714,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ac14b87e5d5131498de1adbe93bf52b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
   gm_s: {fileID: 142665933}
   v2xy: {x: 3, y: 8}
   walls_s: {fileID: 623103463}
@@ -1271,6 +1298,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ac14b87e5d5131498de1adbe93bf52b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
   gm_s: {fileID: 142665933}
   v2xy: {x: 6, y: 6}
   walls_s: {fileID: 527606685}
@@ -1784,6 +1820,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ac14b87e5d5131498de1adbe93bf52b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
   gm_s: {fileID: 142665933}
   v2xy: {x: 2, y: 6}
   walls_s: {fileID: 1272413242}
@@ -2394,6 +2439,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ac14b87e5d5131498de1adbe93bf52b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
   gm_s: {fileID: 142665933}
   v2xy: {x: 2, y: 4}
   walls_s: {fileID: 1092968927}
@@ -3842,6 +3896,7 @@ GameObject:
   - component: {fileID: 142665932}
   - component: {fileID: 142665931}
   - component: {fileID: 142665930}
+  - component: {fileID: 142665935}
   m_Layer: 0
   m_Name: Grid
   m_TagString: Untagged
@@ -3922,6 +3977,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 702ba4edecd47e24bb8d22627fec8ffb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  doors: {fileID: 142665935}
   find_path: 2
   v2_grid: {x: 7, y: 9}
   rt: {fileID: 95495059}
@@ -4016,6 +4072,67 @@ RectTransform:
   m_AnchoredPosition: {x: -0.5, y: 0.009994507}
   m_SizeDelta: {x: 1920, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &142665935
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 142665929}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e4820c5050b88b4694ae47bce039266, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects:
+    - {fileID: 21657871}
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: doors
+      Entry: 7
+      Data: 0|System.Collections.Generic.Dictionary`2[[MainSceneLoading+AmberRoom,
+        Assembly-CSharp],[tile, Assembly-CSharp]], mscorlib
+    - Name: comparer
+      Entry: 7
+      Data: 1|System.Collections.Generic.EnumEqualityComparer`1[[MainSceneLoading+AmberRoom,
+        Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 0
+    - Name: $v
+      Entry: 10
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+  Entrance: {fileID: 0}
 --- !u!1 &146874981
 GameObject:
   m_ObjectHideFlags: 0
@@ -5909,6 +6026,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ac14b87e5d5131498de1adbe93bf52b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
   gm_s: {fileID: 142665933}
   v2xy: {x: 0, y: 2}
   walls_s: {fileID: 1904819165}
@@ -6087,6 +6213,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ac14b87e5d5131498de1adbe93bf52b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
   gm_s: {fileID: 142665933}
   v2xy: {x: 4, y: 1}
   walls_s: {fileID: 2010580335}
@@ -7535,6 +7670,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ac14b87e5d5131498de1adbe93bf52b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
   gm_s: {fileID: 142665933}
   v2xy: {x: 3, y: 2}
   walls_s: {fileID: 147949003}
@@ -7855,6 +7999,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ac14b87e5d5131498de1adbe93bf52b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
   gm_s: {fileID: 142665933}
   v2xy: {x: 0, y: 7}
   walls_s: {fileID: 622999439}
@@ -8077,6 +8230,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ac14b87e5d5131498de1adbe93bf52b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
   gm_s: {fileID: 142665933}
   v2xy: {x: 3, y: 4}
   walls_s: {fileID: 335610589}
@@ -9495,6 +9657,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ac14b87e5d5131498de1adbe93bf52b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
   gm_s: {fileID: 142665933}
   v2xy: {x: 2, y: 0}
   walls_s: {fileID: 1575385948}
@@ -11425,6 +11596,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ac14b87e5d5131498de1adbe93bf52b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
   gm_s: {fileID: 142665933}
   v2xy: {x: 6, y: 4}
   walls_s: {fileID: 463394870}
@@ -11744,6 +11924,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ac14b87e5d5131498de1adbe93bf52b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
   gm_s: {fileID: 142665933}
   v2xy: {x: 3, y: 6}
   walls_s: {fileID: 1204149184}
@@ -12117,6 +12306,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ac14b87e5d5131498de1adbe93bf52b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
   gm_s: {fileID: 142665933}
   v2xy: {x: 2, y: 1}
   walls_s: {fileID: 694872045}
@@ -12639,6 +12837,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ac14b87e5d5131498de1adbe93bf52b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
   gm_s: {fileID: 142665933}
   v2xy: {x: 6, y: 0}
   walls_s: {fileID: 197242375}
@@ -12976,6 +13183,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ac14b87e5d5131498de1adbe93bf52b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
   gm_s: {fileID: 142665933}
   v2xy: {x: 5, y: 0}
   walls_s: {fileID: 29896114}
@@ -13639,6 +13855,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ac14b87e5d5131498de1adbe93bf52b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
   gm_s: {fileID: 142665933}
   v2xy: {x: 1, y: 1}
   walls_s: {fileID: 1545183374}
@@ -13958,6 +14183,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ac14b87e5d5131498de1adbe93bf52b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
   gm_s: {fileID: 142665933}
   v2xy: {x: 6, y: 8}
   walls_s: {fileID: 907354023}
@@ -14930,6 +15164,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ac14b87e5d5131498de1adbe93bf52b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
   gm_s: {fileID: 142665933}
   v2xy: {x: 1, y: 2}
   walls_s: {fileID: 1728199597}
@@ -15055,6 +15298,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ac14b87e5d5131498de1adbe93bf52b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
   gm_s: {fileID: 142665933}
   v2xy: {x: 6, y: 7}
   walls_s: {fileID: 312628330}
@@ -17200,6 +17452,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ac14b87e5d5131498de1adbe93bf52b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
   gm_s: {fileID: 142665933}
   v2xy: {x: 4, y: 3}
   walls_s: {fileID: 464662919}
@@ -17519,6 +17780,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ac14b87e5d5131498de1adbe93bf52b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
   gm_s: {fileID: 142665933}
   v2xy: {x: 1, y: 5}
   walls_s: {fileID: 780706078}
@@ -17644,6 +17914,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ac14b87e5d5131498de1adbe93bf52b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
   gm_s: {fileID: 142665933}
   v2xy: {x: 0, y: 3}
   walls_s: {fileID: 1667862296}
@@ -19936,6 +20215,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ac14b87e5d5131498de1adbe93bf52b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
   gm_s: {fileID: 142665933}
   v2xy: {x: 0, y: 4}
   walls_s: {fileID: 662712089}
@@ -20211,6 +20499,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ac14b87e5d5131498de1adbe93bf52b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
   gm_s: {fileID: 142665933}
   v2xy: {x: 3, y: 3}
   walls_s: {fileID: 110307047}
@@ -21002,6 +21299,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ac14b87e5d5131498de1adbe93bf52b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
   gm_s: {fileID: 142665933}
   v2xy: {x: 4, y: 4}
   walls_s: {fileID: 912256867}
@@ -21525,6 +21831,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ac14b87e5d5131498de1adbe93bf52b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
   gm_s: {fileID: 142665933}
   v2xy: {x: 6, y: 3}
   walls_s: {fileID: 373264257}
@@ -21650,6 +21965,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ac14b87e5d5131498de1adbe93bf52b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
   gm_s: {fileID: 142665933}
   v2xy: {x: 5, y: 5}
   walls_s: {fileID: 236256904}
@@ -22119,6 +22443,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ac14b87e5d5131498de1adbe93bf52b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
   gm_s: {fileID: 142665933}
   v2xy: {x: 4, y: 2}
   walls_s: {fileID: 347070696}
@@ -22729,6 +23062,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ac14b87e5d5131498de1adbe93bf52b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
   gm_s: {fileID: 142665933}
   v2xy: {x: 3, y: 1}
   walls_s: {fileID: 879188264}
@@ -23877,6 +24219,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ac14b87e5d5131498de1adbe93bf52b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
   gm_s: {fileID: 142665933}
   v2xy: {x: 5, y: 4}
   walls_s: {fileID: 2025761102}
@@ -25122,6 +25473,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ac14b87e5d5131498de1adbe93bf52b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
   gm_s: {fileID: 142665933}
   v2xy: {x: 6, y: 5}
   walls_s: {fileID: 776991036}
@@ -25688,6 +26048,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ac14b87e5d5131498de1adbe93bf52b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
   gm_s: {fileID: 142665933}
   v2xy: {x: 1, y: 6}
   walls_s: {fileID: 246561151}
@@ -26684,6 +27053,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ac14b87e5d5131498de1adbe93bf52b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
   gm_s: {fileID: 142665933}
   v2xy: {x: 6, y: 1}
   walls_s: {fileID: 225452842}
@@ -27391,6 +27769,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ac14b87e5d5131498de1adbe93bf52b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
   gm_s: {fileID: 142665933}
   v2xy: {x: 0, y: 1}
   walls_s: {fileID: 1083927192}
@@ -27957,6 +28344,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ac14b87e5d5131498de1adbe93bf52b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
   gm_s: {fileID: 142665933}
   v2xy: {x: 2, y: 8}
   walls_s: {fileID: 702115587}
@@ -28373,6 +28769,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ac14b87e5d5131498de1adbe93bf52b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
   gm_s: {fileID: 142665933}
   v2xy: {x: 0, y: 0}
   walls_s: {fileID: 1598808231}
@@ -28498,6 +28903,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ac14b87e5d5131498de1adbe93bf52b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
   gm_s: {fileID: 142665933}
   v2xy: {x: 1, y: 0}
   walls_s: {fileID: 1865236293}
@@ -28817,6 +29231,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ac14b87e5d5131498de1adbe93bf52b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
   gm_s: {fileID: 142665933}
   v2xy: {x: 2, y: 3}
   walls_s: {fileID: 402172983}
@@ -29039,6 +29462,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ac14b87e5d5131498de1adbe93bf52b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
   gm_s: {fileID: 142665933}
   v2xy: {x: 1, y: 7}
   walls_s: {fileID: 446884043}
@@ -30229,6 +30661,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ac14b87e5d5131498de1adbe93bf52b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
   gm_s: {fileID: 142665933}
   v2xy: {x: 5, y: 7}
   walls_s: {fileID: 1708595308}
@@ -30451,6 +30892,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ac14b87e5d5131498de1adbe93bf52b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
   gm_s: {fileID: 142665933}
   v2xy: {x: 5, y: 2}
   walls_s: {fileID: 27064514}
@@ -32375,6 +32825,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ac14b87e5d5131498de1adbe93bf52b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
   gm_s: {fileID: 142665933}
   v2xy: {x: 4, y: 7}
   walls_s: {fileID: 1960684928}
@@ -32941,6 +33400,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ac14b87e5d5131498de1adbe93bf52b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
   gm_s: {fileID: 142665933}
   v2xy: {x: 4, y: 0}
   walls_s: {fileID: 1801070794}
@@ -33260,6 +33728,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ac14b87e5d5131498de1adbe93bf52b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
   gm_s: {fileID: 142665933}
   v2xy: {x: 0, y: 5}
   walls_s: {fileID: 1683740459}
@@ -33482,6 +33959,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ac14b87e5d5131498de1adbe93bf52b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
   gm_s: {fileID: 142665933}
   v2xy: {x: 3, y: 5}
   walls_s: {fileID: 245253330}
@@ -34914,6 +35400,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ac14b87e5d5131498de1adbe93bf52b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
   gm_s: {fileID: 142665933}
   v2xy: {x: 4, y: 5}
   walls_s: {fileID: 837125669}
@@ -35921,6 +36416,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ac14b87e5d5131498de1adbe93bf52b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
   gm_s: {fileID: 142665933}
   v2xy: {x: 3, y: 7}
   walls_s: {fileID: 1836658544}
@@ -37683,6 +38187,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ac14b87e5d5131498de1adbe93bf52b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
   gm_s: {fileID: 142665933}
   v2xy: {x: 5, y: 1}
   walls_s: {fileID: 1715642728}
@@ -38585,6 +39098,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ac14b87e5d5131498de1adbe93bf52b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
   gm_s: {fileID: 142665933}
   v2xy: {x: 4, y: 6}
   walls_s: {fileID: 1639547641}
@@ -38904,6 +39426,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ac14b87e5d5131498de1adbe93bf52b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
   gm_s: {fileID: 142665933}
   v2xy: {x: 2, y: 7}
   walls_s: {fileID: 1033488531}
@@ -40017,6 +40548,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ac14b87e5d5131498de1adbe93bf52b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
   gm_s: {fileID: 142665933}
   v2xy: {x: 5, y: 6}
   walls_s: {fileID: 508175009}
@@ -40142,6 +40682,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ac14b87e5d5131498de1adbe93bf52b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
   gm_s: {fileID: 142665933}
   v2xy: {x: 1, y: 4}
   walls_s: {fileID: 1335386125}
@@ -40708,6 +41257,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ac14b87e5d5131498de1adbe93bf52b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
   gm_s: {fileID: 142665933}
   v2xy: {x: 6, y: 2}
   walls_s: {fileID: 33302536}
@@ -42037,6 +42595,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ac14b87e5d5131498de1adbe93bf52b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
   gm_s: {fileID: 142665933}
   v2xy: {x: 3, y: 0}
   walls_s: {fileID: 942012891}
@@ -42672,6 +43239,52 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1981061507}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1989036882
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1989036884}
+  - component: {fileID: 1989036883}
+  m_Layer: 0
+  m_Name: AmberAI
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1989036883
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1989036882}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca50b1eac678459488e787ad60a5546d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tile: {fileID: 7991136}
+  grid: {fileID: 142665933}
+--- !u!4 &1989036884
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1989036882}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 5.821857, y: 5.8810654, z: -0.10263839}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1991281707
 GameObject:
   m_ObjectHideFlags: 0
@@ -42704,6 +43317,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ac14b87e5d5131498de1adbe93bf52b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
   gm_s: {fileID: 142665933}
   v2xy: {x: 2, y: 5}
   walls_s: {fileID: 2035414110}
@@ -44219,6 +44841,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ac14b87e5d5131498de1adbe93bf52b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
   gm_s: {fileID: 142665933}
   v2xy: {x: 0, y: 6}
   walls_s: {fileID: 1426449551}
@@ -44635,6 +45266,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ac14b87e5d5131498de1adbe93bf52b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
   gm_s: {fileID: 142665933}
   v2xy: {x: 0, y: 8}
   walls_s: {fileID: 1300141682}
@@ -44760,6 +45400,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ac14b87e5d5131498de1adbe93bf52b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
   gm_s: {fileID: 142665933}
   v2xy: {x: 2, y: 2}
   walls_s: {fileID: 178409765}
@@ -45467,6 +46116,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ac14b87e5d5131498de1adbe93bf52b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
   gm_s: {fileID: 142665933}
   v2xy: {x: 5, y: 3}
   walls_s: {fileID: 631637143}
@@ -46174,6 +46832,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ac14b87e5d5131498de1adbe93bf52b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
   gm_s: {fileID: 142665933}
   v2xy: {x: 1, y: 8}
   walls_s: {fileID: 1808769830}
@@ -46687,6 +47354,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ac14b87e5d5131498de1adbe93bf52b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
   gm_s: {fileID: 142665933}
   v2xy: {x: 4, y: 8}
   walls_s: {fileID: 575241806}

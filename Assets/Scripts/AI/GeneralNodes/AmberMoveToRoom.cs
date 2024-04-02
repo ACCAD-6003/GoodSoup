@@ -12,7 +12,7 @@ namespace Assets.Scripts.AI
             _newRoom = newRoom;
         }
         public override NodeState Evaluate() {
-            if (_switchedRooms)
+            if (!_switchedRooms)
             {
                 _switchedRooms = true;
                 MainSceneLoading.Instance.SwitchAmberRooms(_newRoom);

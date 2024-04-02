@@ -64,4 +64,8 @@ public class ComputerEmail : Interaction
         DisplayEmailScreen();
     }
 
+    public override void SaveData(StoryDatastore data)
+    {
+
+    }
 }

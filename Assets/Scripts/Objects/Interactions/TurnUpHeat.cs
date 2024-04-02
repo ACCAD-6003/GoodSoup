@@ -10,6 +10,11 @@ public class TurnUpHeat : Interaction
         throw new System.NotImplementedException();
     }
 
+    public override void SaveData(StoryDatastore data)
+    {
+        throw new System.NotImplementedException();
+    }
+
     public void Start()
     {
         data = FindObjectOfType<StoryDatastore>();

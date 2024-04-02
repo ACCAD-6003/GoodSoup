@@ -10,7 +10,7 @@ using UnityEngine.SceneManagement;
 
 namespace Assets.Scripts.AI
 {
-    public class AmberBT : BehaviorTree.Tree
+    public class AmberBedroomBT : BehaviorTree.Tree
     {
         [SerializeField] BedroomInteractions interactions;
         AmberMount navigation;
@@ -32,7 +32,7 @@ namespace Assets.Scripts.AI
             navigation = GameObject.FindGameObjectWithTag("Player").GetComponent<AmberMount>();
             storyData = StoryDatastore.Instance;
 
-            Node routine = new Sequence(new List<Node>()
+            Node routine = new WrapperNode(new SkipIfStoryDatastoreState<GamePhase>(StoryDatastore.Instance.CurrentGamePhase, GamePhase.TUTORIAL_BEDROOM, true), new List<Node>()
             {
                 // change to evaluate if everything has been done one by one by wrapping these in classespho
                 new DisplayUIIcon(UI.UIElements.BubbleIcon.SLEEPING),

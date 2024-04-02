@@ -40,7 +40,7 @@ public class StoryDatastore : MonoBehaviour
     }
 
     [SerializeField]
-    public Dictionary<int, (bool dropped, Vector3 location)> BooksDropped = new Dictionary<int, (bool dropped, Vector3 location)>();
+    public Dictionary<int, (Vector3 location, Quaternion rotation)> BooksDropped = new Dictionary<int, (Vector3 location, Quaternion rotation)>();
     [SerializeField]
     public StoryData<bool> AnyBookDropped = new StoryData<bool>(false);
     [SerializeField]

@@ -30,6 +30,8 @@ public class GridCharacter : MonoBehaviour
     private void ReassignGrid(Scene arg0, LoadSceneMode arg1)
     {
         gm_s = FindObjectOfType<grid_manager>();
+        Debug.Log("Reassiging grid...");
+        Debug.Log(gm_s == null);
     }
     void Update()
     {

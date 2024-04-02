@@ -1,9 +1,7 @@
 ﻿using Sirenix.OdinInspector;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using UnityEngine;
 using static MainSceneLoading;
 
 namespace Assets.Scripts.Objects
@@ -12,7 +10,16 @@ namespace Assets.Scripts.Objects
     {
         public void Awake()
         {
-            Entrance = doors[StoryDatastore.Instance.CurrentAmberRoom.Value];
+            Debug.Log("This is the door i am looking for : " + StoryDatastore.Instance.CurrentAmberRoom.Value);
+            foreach (KeyValuePair<AmberRoom, tile> pair in doors) {
+                Debug.Log(pair.Key + " key  value" + pair.Value);
+            }
+            if (doors.ContainsKey(StoryDatastore.Instance.CurrentAmberRoom.Value))
+            {
+                Debug.Log("ENTRANCE SET TO: " + StoryDatastore.Instance.CurrentAmberRoom.Value);
+                Entrance = doors[StoryDatastore.Instance.CurrentAmberRoom.Value];
+                StoryDatastore.Instance.CurrentAmberRoom.Value = MainSceneLoading.Instance.CurrAdditiveScene;
+            }
         }
         public Dictionary<AmberRoom, tile> doors;
         public tile Entrance;

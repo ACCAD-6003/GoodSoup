@@ -4,38 +4,39 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
-namespace Assets.Scripts.AI.GeneralNodes
+public class SkipIfStoryDatastoreState<T> : ISkipCondition {
+    StoryData<T> _storyData;
+    T _necessaryValueToSkip;
+    bool _skipIfDNE = false;
+    public SkipIfStoryDatastoreState(StoryData<T> storyData, T necessaryValueToSkip) {
+        _storyData = storyData;
+        _necessaryValueToSkip = necessaryValueToSkip;
+    }
+    public SkipIfStoryDatastoreState(StoryData<T> storyData, T necessaryValueToSkip, bool skipIfDNE)
+    {
+        _storyData = storyData;
+        _necessaryValueToSkip = necessaryValueToSkip;
+        _skipIfDNE = skipIfDNE;
+    }
+    public bool ShouldSkip()  => _skipIfDNE ? !_storyData.Value.Equals(_necessaryValueToSkip) : _storyData.Value.Equals(_necessaryValueToSkip);
+}
+public interface ISkipCondition
 {
-    public class SkipIfStoryDatastoreState<T> : ISkipCondition {
-        StoryData<T> _storyData;
-        T _necessaryValueToSkip;
-        public SkipIfStoryDatastoreState(StoryData<T> storyData, T necessaryValueToSkip) {
-            _storyData = storyData;
-            _necessaryValueToSkip = necessaryValueToSkip;
-        }
-        public bool ShouldSkip() {
-            return _storyData.Value.Equals(_necessaryValueToSkip);
-        }
+    public bool ShouldSkip();
+}
+public class WrapperNode : Node
+{
+    private ISkipCondition _skipCondition;
+    private Sequence _sequence;
+    public WrapperNode(ISkipCondition skipCondition, List<Node> nodes) : base(nodes) {
+        _skipCondition = skipCondition;
+        _sequence = new Sequence(nodes);
     }
-    public interface ISkipCondition
+    public override NodeState Evaluate()
     {
-        public bool ShouldSkip();
-    }
-    public class WrapperNode : Node
-    {
-        private ISkipCondition _skipCondition;
-        private Sequence _sequence;
-        public WrapperNode(ISkipCondition skipCondition, List<Node> nodes) : base(nodes) {
-            _skipCondition = skipCondition;
-            _sequence = new Sequence(nodes);
+        if (_skipCondition.ShouldSkip()) {
+            return NodeState.SUCCESS;
         }
-        public override NodeState Evaluate()
-        {
-            if (_skipCondition.ShouldSkip()) {
-                return NodeState.SUCCESS;
-            }
-            return _sequence.Evaluate();
-        }
+        return _sequence.Evaluate();
     }
 }

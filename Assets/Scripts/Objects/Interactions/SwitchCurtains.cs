@@ -2,12 +2,11 @@ using Assets.Scripts.Objects.Interactions;
 using UnityEngine;
 public class SwitchCurtains : Interaction
 {
-    [SerializeField] StoryDatastore story;
     [SerializeField] InteractionObjectState stateOne, stateTwo;
     private StoryData<bool> _state;
     private void Awake()
     {
-        _state = story.CurtainsOpen;
+        _state = StoryDatastore.Instance.CurtainsOpen;
     }
     private void RefreshState() {
         stateOne.SetState(_state.Value);
@@ -24,5 +23,10 @@ public class SwitchCurtains : Interaction
     public override void LoadData(StoryDatastore data)
     {
         RefreshState();
+    }
+
+    public override void SaveData(StoryDatastore data)
+    {
+
     }
 }
