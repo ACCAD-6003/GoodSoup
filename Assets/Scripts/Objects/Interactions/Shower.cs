@@ -64,6 +64,7 @@ namespace Assets.Scripts.Objects.Interactions
                 _showerState = ShowerState.NOT_USING;
                 UIManager.Instance.ClearBubble();
                 _showered.Value = true;
+                StoryDatastore.Instance.DoneShowering.Value = true;
                 _tempHierarchy.SetActive(false);
                 _showering = false;
                 EndAction();

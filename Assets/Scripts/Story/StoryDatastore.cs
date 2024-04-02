@@ -65,4 +65,6 @@ public class StoryDatastore : MonoBehaviour
     public StoryData<bool> DoneShowering = new StoryData<bool>(false);
     [SerializeField]
     public StoryData<MirrorState> MirrorState = new StoryData<MirrorState>(global::MirrorState.NOT_FOGGED);
+    [SerializeField]
+    public StoryData<bool> SinkRoutineDone = new StoryData<bool>(false);
 }

@@ -41,11 +41,14 @@ namespace Assets.Scripts.AI
                         new AmberShower(interactions.Shower)
                     }
                 ),
-                new Sequence(new List<Node>() {
-                    new WaitFor(0.5f),
-                    new MoveToTile(interactions.Grid, doors.doors[MainSceneLoading.AmberRoom.BEDROOM]),
-                    new AmberMoveToRoom(MainSceneLoading.AmberRoom.BEDROOM)
-                })
+                new WrapperNode(
+                    new SkipIfStoryDatastoreState<bool>(StoryDatastore.Instance.SinkRoutineDone, true),
+                    new List<Node>() {
+                        new WaitFor(0.5f),
+                        new MoveToTile(interactions.Grid, doors.doors[MainSceneLoading.AmberRoom.BEDROOM]),
+                        new AmberMoveToRoom(MainSceneLoading.AmberRoom.BEDROOM)
+                    }
+                )
             });
 
             return routine;
