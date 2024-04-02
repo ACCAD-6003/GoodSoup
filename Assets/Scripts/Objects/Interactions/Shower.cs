@@ -13,7 +13,6 @@ namespace Assets.Scripts.Objects.Interactions
     {
         [SerializeField] private GameObject _tempHierarchy;
         [SerializeField] private TextMeshProUGUI temp;
-        float _hotShowerDuration = 0f;
         public enum ShowerState { RAISING_TEMP, SHOWERING, NOT_USING }
         bool _showering = false;
         private ShowerState _showerState = ShowerState.NOT_USING;
@@ -57,11 +56,11 @@ namespace Assets.Scripts.Objects.Interactions
                         UIManager.Instance.DisplaySimpleBubbleTilInterrupted(UIElements.BubbleIcon.COLD);
                     }
                     else {
-                        _hotShowerDuration += Time.deltaTime;
+                        StoryDatastore.Instance.HotShowerDuration.Value += Time.deltaTime;
                     }
                     break;
             }
-            if (_hotShowerDuration >= Globals.SECONDS_AMBER_NEEDS_TO_SHOWER_IN_WARM_WATER) {
+            if (StoryDatastore.Instance.HotShowerDuration.Value >= Globals.SECONDS_AMBER_NEEDS_TO_SHOWER_IN_WARM_WATER) {
                 _showerState = ShowerState.NOT_USING;
                 UIManager.Instance.ClearBubble();
                 _showered.Value = true;

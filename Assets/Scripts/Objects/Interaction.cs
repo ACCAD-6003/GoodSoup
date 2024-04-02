@@ -11,7 +11,7 @@ public abstract class Interaction : MonoBehaviour
     public event Action OnActionStarted;
     public event Action OnActionEnding;
     public bool singleUse = false;
-    private bool usedUp = false;
+    public bool usedUp = false;
 
     public Vector3 AssociatedDirection = Vector3.forward;
 

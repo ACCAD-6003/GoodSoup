@@ -60,5 +60,9 @@ public class StoryDatastore : MonoBehaviour
     [SerializeField]
     public StoryData<float> ShowerTemperature = new StoryData<float>(40f);
     [SerializeField]
+    public StoryData<float> HotShowerDuration = new StoryData<float>(0f);
+    [SerializeField]
     public StoryData<bool> DoneShowering = new StoryData<bool>(false);
+    [SerializeField]
+    public StoryData<MirrorState> MirrorState = new StoryData<MirrorState>(global::MirrorState.NOT_FOGGED);
 }
