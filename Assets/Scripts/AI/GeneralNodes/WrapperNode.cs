@@ -28,10 +28,9 @@ public interface ISkipCondition
 public class WrapperNode : Node
 {
     private ISkipCondition _skipCondition;
-    private Sequence _sequence;
     public WrapperNode(ISkipCondition skipCondition, List<Node> nodes) : base(nodes) {
         _skipCondition = skipCondition;
-        _sequence = new Sequence(nodes);
+
     }
     public override NodeState Evaluate()
     {
@@ -39,6 +38,24 @@ public class WrapperNode : Node
             state = NodeState.SUCCESS;
             return NodeState.SUCCESS;
         }
-        return _sequence.Evaluate();
+        foreach (Node node in children)
+        {
+            switch (node.Evaluate())
+            {
+                case NodeState.FAILURE:
+                    state = NodeState.FAILURE;
+                    return state;
+                case NodeState.SUCCESS:
+                    continue;
+                case NodeState.RUNNING:
+                    state = NodeState.RUNNING;
+                    return NodeState.RUNNING;
+                default:
+                    state = NodeState.SUCCESS;
+                    return NodeState.SUCCESS;
+            }
+        }
+        state = NodeState.SUCCESS;
+        return state;
     }
 }
