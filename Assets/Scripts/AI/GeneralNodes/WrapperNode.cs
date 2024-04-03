@@ -1,6 +1,7 @@
 ﻿using BehaviorTree;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -35,6 +36,7 @@ public class WrapperNode : Node
     public override NodeState Evaluate()
     {
         if (_skipCondition.ShouldSkip()) {
+            state = NodeState.SUCCESS;
             return NodeState.SUCCESS;
         }
         return _sequence.Evaluate();

@@ -129,6 +129,7 @@ public class GridCharacter : MonoBehaviour
             tpos += tar_tile_s.transform.position + tar_tile_s.db_neighbors[1].tile_s.transform.position + tar_tile_s.db_neighbors[2].tile_s.transform.position + tar_tile_s.db_neighbors[1].tile_s.db_neighbors[2].tile_s.transform.position;
             tpos /= 4;
         }
+        tpos.y = transform.position.y;
 
         db_moves[4].position = tpos; //Tar Tile Marker//
         db_moves[4].gameObject.SetActive(true); //Tar Tile Marker//
