@@ -61,9 +61,9 @@ namespace Assets.Scripts.AI
                             }
                         ),
                         new WaitFor(0.5f),
-                        new EvaluateItemsPickedUp(new List<int>() { 1000 }, UIElements.BubbleIcon.BRUSH, UIElements.BubbleIcon.OH_WHERE_IS_MY_HAIRBRUSH),
+                        new EvaluateItemsPickedUp(new List<int>() { 1000 }, UIElements.BubbleIcon.OH_WHERE_IS_MY_HAIRBRUSH, UIElements.BubbleIcon.BRUSH),
                         new WrapperNode(
-                            new SkipIfStoryDatastoreState<bool>(StoryDatastore.Instance.ResultOfEvaluation, false),
+                            new SkipIfStoryDatastoreState<bool>(StoryDatastore.Instance.ResultOfEvaluation, true),
                             new List<Node>() { 
                                 new WaitFor(3f),
                                 new AmberHairBrush()

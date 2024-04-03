@@ -1,7 +1,5 @@
-﻿using Sirenix.OdinInspector.Editor.GettingStarted;
-using System;
+﻿using System;
 using System.Collections;
-using System.Linq;
 using UnityEngine;
 
 namespace Assets.Scripts.AI
