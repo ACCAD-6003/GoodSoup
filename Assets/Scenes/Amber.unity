@@ -514,6 +514,16 @@ MonoBehaviour:
     _value: 0
   CurrentGamePhase:
     _value: 0
+  ShowerTemperature:
+    _value: 40
+  HotShowerDuration:
+    _value: 0
+  DoneShowering:
+    _value: 0
+  MirrorState:
+    _value: 0
+  SinkRoutineDone:
+    _value: 0
 --- !u!4 &1270958205
 Transform:
   m_ObjectHideFlags: 0
@@ -1087,7 +1097,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5817474576940391884, guid: 7ab5c9be395e95f40b75ba429250bf02, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.9999995
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5817474576940391884, guid: 7ab5c9be395e95f40b75ba429250bf02, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1099,15 +1109,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5817474576940391884, guid: 7ab5c9be395e95f40b75ba429250bf02, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 5817474576940391884, guid: 7ab5c9be395e95f40b75ba429250bf02, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 5817474576940391884, guid: 7ab5c9be395e95f40b75ba429250bf02, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 5817474576940391884, guid: 7ab5c9be395e95f40b75ba429250bf02, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
