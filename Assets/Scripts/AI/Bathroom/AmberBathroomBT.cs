@@ -69,7 +69,6 @@ namespace Assets.Scripts.AI
                             }
                         ),
                         new WaitFor(0.5f),
-
                         new MoveToTile(interactions.Grid, doors.doors[MainSceneLoading.AmberRoom.BEDROOM]),
                         new AmberMoveToRoom(MainSceneLoading.AmberRoom.BEDROOM)
                     });

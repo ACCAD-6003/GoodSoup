@@ -1,4 +1,5 @@
 ﻿using Assets.Scripts.AI;
+using Assets.Scripts.AI.Bedroom;
 using Sirenix.OdinInspector;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,7 +10,8 @@ namespace Assets.Scripts.UI
     {
         public InteractableObject AlarmClock, Laptop, Curtains;
         public List<InteractableObject> Books;
-        public AmberMount LayingInBed, SittingInBed;
+        public AmberMount LayingInBed, SittingInBed, SittingAtDesk;
+        public FarCrySwitcher switcher;
         public grid_manager Grid;
     }
 }

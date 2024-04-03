@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Basic Ground
+  - DontDestroyOnLoad
   layers:
   - Default
   - TransparentFX

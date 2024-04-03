@@ -73,4 +73,10 @@ public class StoryDatastore : MonoBehaviour
     public StoryData<bool> ResultOfEvaluation = new StoryData<bool>(false);
     [SerializeField]
     public StoryData<float> Paranoia = new StoryData<float>(0f);
+    [SerializeField]
+    public StoryData<float> Annoyance = new StoryData<float>(0f);
+    [SerializeField]
+    public StoryData<float> Happiness = new StoryData<float>(0f);
+    [SerializeField]
+    public StoryData<Ending> ChosenEnding = new StoryData<Ending>(Ending.FAR_CRY);
 }

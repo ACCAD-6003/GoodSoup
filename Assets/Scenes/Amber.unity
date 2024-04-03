@@ -578,7 +578,7 @@ GameObject:
   - component: {fileID: 1270958204}
   m_Layer: 0
   m_Name: StoryDatastore
-  m_TagString: Untagged
+  m_TagString: DontDestroyOnLoad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -622,6 +622,12 @@ MonoBehaviour:
   ResultOfEvaluation:
     _value: 0
   Paranoia:
+    _value: 0
+  Annoyance:
+    _value: 0
+  Happiness:
+    _value: 0
+  ChosenEnding:
     _value: 0
 --- !u!4 &1270958205
 Transform:
@@ -838,7 +844,7 @@ GameObject:
   - component: {fileID: 1474325873}
   m_Layer: 0
   m_Name: SceneManager
-  m_TagString: Untagged
+  m_TagString: DontDestroyOnLoad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1049,7 +1055,7 @@ GameObject:
   - component: {fileID: 1676769168}
   m_Layer: 0
   m_Name: UIManager
-  m_TagString: Untagged
+  m_TagString: DontDestroyOnLoad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

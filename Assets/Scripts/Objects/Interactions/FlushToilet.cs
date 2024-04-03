@@ -23,7 +23,7 @@ namespace Assets.Scripts.Objects.Interactions
 
         protected override void DoAction()
         {
-            Debug.Log("Trying to lower temp");
+            StoryDatastore.Instance.Annoyance.Value += 0.2f;
             _temperature.Value += Globals.FLUSH_SHOWER_TEMP_IMPACT;
             _temperature.Value = MathF.Max(0f, _temperature.Value);
             EndAction();
