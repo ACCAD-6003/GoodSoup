@@ -22,15 +22,19 @@ public class ObjectInteraction : MonoBehaviour
         return Vector3.Scale(Vector3.one - Vector3.up, v);
     }
 
-    bool CanInteractWith(InteractableObject o)
+    public bool IsInAmberSightlines(InteractableObject o)
     {
-        // check that it's not within amber sightlines
-        Vector3 amberFacing = toXZ(Amber.rotation * Vector3.forward);
-        Vector3 fromAmberToObject = toXZ(o.transform.position - Amber.position);
+        Vector3 amberFacing = Amber.forward;
+        Vector3 fromAmberToObject = o.transform.position - Amber.position;
 
         float angle = Vector3.Angle(amberFacing, fromAmberToObject);
 
-        return o.PlayerInteraction != null && angle > amberSightAngle;
+        return angle < amberSightAngle;
+    }
+
+    bool CanInteractWith(InteractableObject o)
+    {
+        return o.PlayerInteraction != null && !IsInAmberSightlines(o);
     }
 
     InteractableObject? GetTarget(CallbackContext c)
