@@ -36,18 +36,21 @@ namespace Assets.Scripts.AI.GeneralNodes
                     if (!StoryDatastore.Instance.MoveObjects.ContainsKey(identifier)) {
                         Debug.Log("Not all pickedup1");
                         AllItemsNotPickedUp();
+                        state = NodeState.SUCCESS;
                         return NodeState.SUCCESS;
                     }
                     if (!StoryDatastore.Instance.MoveObjects[identifier].Value)
                     {
                         Debug.Log("Not all picked up");
                         AllItemsNotPickedUp();
+                        state = NodeState.SUCCESS;
                         return NodeState.SUCCESS;
                     }
                     Debug.Log("Is in basket");
                 }
                 AllItemsPickedUp();
             }
+            state = NodeState.SUCCESS;
             return NodeState.SUCCESS;
         }
     }

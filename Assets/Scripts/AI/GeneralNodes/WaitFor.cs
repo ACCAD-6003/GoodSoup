@@ -18,14 +18,17 @@ namespace Assets.Scripts.AI
             if (_startTime == 0f)
             {
                 _startTime = Time.time;
+                state = NodeState.RUNNING;
                 return NodeState.RUNNING;
             }
             else if (Time.time - _startTime >= _seconds)
             {
+                state = NodeState.SUCCESS;
                 return NodeState.SUCCESS;
             }
             else
             {
+                state = NodeState.RUNNING;
                 return NodeState.RUNNING;
             }
         }

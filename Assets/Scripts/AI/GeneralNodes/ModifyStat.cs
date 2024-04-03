@@ -22,6 +22,7 @@ namespace Assets.Scripts.AI.GeneralNodes
                 _modified = true;
                 _data.Value = _value;
             }
+            state = NodeState.SUCCESS;
             return NodeState.SUCCESS;
         }
     }

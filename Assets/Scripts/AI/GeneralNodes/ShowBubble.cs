@@ -37,6 +37,7 @@ namespace Assets.Scripts.AI.GeneralNodes
                     UIManager.Instance.DisplaySimpleBubbleTilInterrupted(_icon);
                 }
             }
+            state = NodeState.SUCCESS;
             return NodeState.SUCCESS;
         }
     }
