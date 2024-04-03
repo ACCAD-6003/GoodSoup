@@ -1,10 +1,10 @@
 ﻿using BehaviorTree;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using UnityEngine;
 public class SkipIfStoryDatastoreState<T> : ISkipCondition {
     StoryData<T> _storyData;
     T _necessaryValueToSkip;
@@ -39,8 +39,6 @@ public class WrapperNode : Node
             state = NodeState.SUCCESS;
             return NodeState.SUCCESS;
         }
-        Debug.Log("state: " + state);
-        state = _sequence.Evaluate();
-        return state;
+        return _sequence.Evaluate();
     }
 }
