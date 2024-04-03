@@ -21,10 +21,12 @@ namespace Assets.Scripts.AI.GeneralNodes
         }
         void AllItemsNotPickedUp() {
             UIManager.Instance.DisplaySimpleBubbleForSeconds(_sadIcon, 2f);
+            StoryDatastore.Instance.ResultOfEvaluation.Value = false;
         }
         void AllItemsPickedUp()
         {
             UIManager.Instance.DisplaySimpleBubbleForSeconds(_happyIcon, 2f);
+            StoryDatastore.Instance.ResultOfEvaluation.Value = true;
         }
         public override NodeState Evaluate() {
             if (!_evaluated) {

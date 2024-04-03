@@ -7,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.XR;
 
 
 namespace Assets.Scripts.AI
@@ -50,7 +51,26 @@ namespace Assets.Scripts.AI
                         new EvaluateItemsPickedUp(new List<int>() { 0,1,2 }, UIElements.BubbleIcon.HAPPY_LAUNDRY, UIElements.BubbleIcon.SAD_LAUNDRY),
                         new WaitFor(0.5f),
                         new MoveToTile(interactions.Grid, interactions.sinkTile),
-                        new WaitFor(1f),
+                        new WrapperNode(
+                            new SkipIfStoryDatastoreState<MirrorState>(StoryDatastore.Instance.MirrorState, MirrorState.DRAWN_ON, true),
+                            new List<Node>() {
+                                new WaitFor(0.25f),
+                                new ModifyStat(StoryDatastore.Instance.Paranoia, 0.1f),
+                                new ShowBubble(UIElements.BubbleIcon.PARANOID),
+                                new WaitFor(1f)
+                            }
+                        ),
+                        new WaitFor(0.5f),
+                        new EvaluateItemsPickedUp(new List<int>() { 1000 }, UIElements.BubbleIcon.BRUSH, UIElements.BubbleIcon.OH_WHERE_IS_MY_HAIRBRUSH),
+                        new WrapperNode(
+                            new SkipIfStoryDatastoreState<bool>(StoryDatastore.Instance.ResultOfEvaluation, false),
+                            new List<Node>() { 
+                                new WaitFor(3f),
+                                new AmberHairBrush()
+                            }
+                        ),
+                        new WaitFor(0.5f),
+
                         new MoveToTile(interactions.Grid, doors.doors[MainSceneLoading.AmberRoom.BEDROOM]),
                         new AmberMoveToRoom(MainSceneLoading.AmberRoom.BEDROOM)
                     }

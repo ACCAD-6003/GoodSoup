@@ -69,4 +69,8 @@ public class StoryDatastore : MonoBehaviour
     public StoryData<bool> SinkRoutineDone = new StoryData<bool>(false);
     [SerializeField]
     public Dictionary<int, StoryData<bool>> MoveObjects = new Dictionary<int, StoryData<bool>>();
+    [SerializeField]
+    public StoryData<bool> ResultOfEvaluation = new StoryData<bool>(false);
+    [SerializeField]
+    public StoryData<float> Paranoia = new StoryData<float>(0f);
 }
