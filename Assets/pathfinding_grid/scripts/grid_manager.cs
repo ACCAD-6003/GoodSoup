@@ -435,6 +435,7 @@ public class grid_manager : MonoBehaviour
         Debug.Log(ttile.db_chars == null);
         ttile.db_chars.Add(char_s);
         var tpos = ttile.transform.position;
+        tpos.y += 1.3f;
 
         if (char_s.big)
         {
