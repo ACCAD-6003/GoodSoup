@@ -26,7 +26,7 @@ namespace Assets.Scripts.AI
         private void PerformMount() {
             ThoughtBubble.offset = bubbleOffset;
             _mount.SetActive(true);
-            ObjectInteraction.Amber = _mount.transform;
+            FindObjectOfType<ObjectInteraction>().Amber = _mount.transform;
 
         }
         private void UnMountAllOthers() {
