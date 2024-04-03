@@ -619,6 +619,10 @@ MonoBehaviour:
     _value: 0
   SinkRoutineDone:
     _value: 0
+  ResultOfEvaluation:
+    _value: 0
+  Paranoia:
+    _value: 0
 --- !u!4 &1270958205
 Transform:
   m_ObjectHideFlags: 0
@@ -687,7 +691,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 8.96
+  orthographic size: 8
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
