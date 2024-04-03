@@ -37,7 +37,7 @@ public class ThoughtBubble : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     void LateUpdate()
     {
         // Convert world position of character to viewport space
-        Vector3 viewportPos = Camera.main.WorldToViewportPoint(ObjectInteraction.Amber.position);
+        Vector3 viewportPos = Camera.main.WorldToViewportPoint(FindObjectOfType<ObjectInteraction>().Amber.position);
 
         // Convert viewport position to canvas space
         Vector2 canvasPos = new Vector2(

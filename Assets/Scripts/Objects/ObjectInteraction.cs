@@ -8,7 +8,8 @@ public class ObjectInteraction : MonoBehaviour
     [SerializeField]
     Camera PlayerCamera;
 
-    public static Transform Amber;
+    [SerializeField]
+    public Transform Amber;
 
     [SerializeField]
     float amberSightAngle = 40;
@@ -34,7 +35,7 @@ public class ObjectInteraction : MonoBehaviour
 
     bool CanInteractWith(InteractableObject o)
     {
-        return o.PlayerInteraction != null && !IsInAmberSightlines(o);
+        return o.PlayerInteraction != null && !o.PlayerInteraction.IsInProgress && !IsInAmberSightlines(o);
     }
 
     InteractableObject? GetTarget(CallbackContext c)
