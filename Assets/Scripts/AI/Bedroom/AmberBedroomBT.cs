@@ -38,9 +38,18 @@ namespace Assets.Scripts.AI
                 {
                     // change to evaluate if everything has been done one by one by wrapping these in classespho
                     new DisplayUIIcon(UI.UIElements.BubbleIcon.SLEEPING),
-                    new WaitForPlayerInteractionCompleted(interactions.AlarmClock),
-                    new StopFarCryEnding(interactions.switcher),
-                    new DisplayUIIcon(UI.UIElements.BubbleIcon.ANNOYANCE),
+                    new Sequence(new List<Node>() { 
+                        new Sequence(new List<Node>() {
+                            new WaitForPlayerInteractionCompleted(interactions.AlarmClock),
+                            new StopFarCryEnding(interactions.switcher),
+                            new DisplayUIIcon(UI.UIElements.BubbleIcon.ANNOYANCE),
+                            new DebugNode(1)
+                        }),
+                        new DebugNode(2)
+
+                    }),
+                    new DebugNode(3),
+                    
                     new WaitFor(1f),
                     new SwitchAmberMount(interactions.SittingInBed),
                     new WaitFor(1f),
