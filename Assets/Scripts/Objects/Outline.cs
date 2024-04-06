@@ -78,7 +78,7 @@ public class Outline : MonoBehaviour {
   private Material outlineMaskMaterial;
   private Material outlineFillMaterial;
 
-  private bool needsUpdate;
+  private bool needsUpdate, firstFrame = true;
 
   void Awake() {
 
@@ -100,6 +100,10 @@ public class Outline : MonoBehaviour {
   }
 
   void OnEnable() {
+    if (firstFrame) {
+       firstFrame = false;
+       return;
+    }
     foreach (var renderer in renderers) {
 
       // Append outline shaders
@@ -192,7 +196,7 @@ public class Outline : MonoBehaviour {
       var smoothNormals = (index >= 0) ? bakeValues[index].data : SmoothNormals(meshFilter.sharedMesh);
 
       // Store smooth normals in UV3
-      meshFilter.sharedMesh.SetUVs(3, smoothNormals);
+     meshFilter.sharedMesh.SetUVs(3, smoothNormals);
 
       // Combine submeshes
       var renderer = meshFilter.GetComponent<Renderer>();
