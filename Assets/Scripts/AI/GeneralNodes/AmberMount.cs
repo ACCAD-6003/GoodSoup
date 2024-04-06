@@ -25,7 +25,9 @@ namespace Assets.Scripts.AI
             ThoughtBubble.offset = bubbleOffset;
             _mount.SetActive(true);
             FindObjectOfType<ObjectInteraction>().Amber = _mount.transform;
-
+        }
+        public void RefreshAmberAppearance() { 
+            
         }
         private void UnMountAllOthers() {
             foreach (AmberMount mount in FindObjectsOfType<AmberMount>())
