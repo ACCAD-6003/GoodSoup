@@ -38,24 +38,30 @@ namespace Assets.Scripts.AI
                 {
                     // change to evaluate if everything has been done one by one by wrapping these in classespho
                     new DisplayUIIcon(UI.UIElements.BubbleIcon.SLEEPING),
-                    new Sequence(new List<Node>() { 
-                        new Sequence(new List<Node>() {
-                            new WaitForPlayerInteractionCompleted(interactions.AlarmClock),
-                            new StopFarCryEnding(interactions.switcher),
-                            new DisplayUIIcon(UI.UIElements.BubbleIcon.ANNOYANCE),
-                            new DebugNode(1)
-                        }),
-                        new DebugNode(2)
-
+                        // Wait for alarm clock
+                    new Sequence(new List<Node>() {
+                        new WaitForPlayerInteractionCompleted(interactions.AlarmClock),
+                        new DisplayUIIcon(UI.UIElements.BubbleIcon.ANNOYANCE),
                     }),
-                    new DebugNode(3),
+                    new StopFarCryEnding(interactions.switcher),
                     
                     new WaitFor(1f),
                     new SwitchAmberMount(interactions.SittingInBed),
                     new WaitFor(1f),
                     new DisplayUIIcon(UI.UIElements.BubbleIcon.PHONE),
-                    new WaitForBookHit(storyData.AnyBookDropped),
-                    new DisplayUIIcon(UI.UIElements.BubbleIcon.ANNOYANCE),
+
+                    // Wait for book hit
+                    new Selector(new List<Node>() {
+                        new Sequence(new List<Node>() {
+                            new WaitForStoryDataChange(new SkipIfStoryDatastoreState<bool>(StoryDatastore.Instance.CurtainsOpen, true)),
+                            new DisplayUIIcon(UI.UIElements.BubbleIcon.HAPPY),
+                        }),
+                        new Sequence(new List<Node>() {
+                            new WaitForBookHit(storyData.AnyBookDropped),
+                            new DisplayUIIcon(UI.UIElements.BubbleIcon.ANNOYANCE),
+                        })
+                    }),
+                    
                     new WaitFor(1f),
                     new SwitchAmberMount(navigation),
                     new MoveToTile(interactions.Grid, doors.doors[MainSceneLoading.AmberRoom.BATHROOM]),
