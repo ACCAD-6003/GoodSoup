@@ -36,7 +36,7 @@ public class MainSceneLoading : SerializedMonoBehaviour
     }
     private void Start()
     {
-        SceneManager.LoadScene("Bedroom", LoadSceneMode.Additive);
+        SceneManager.LoadScene(rooms[AmberRoom.BEDROOM], LoadSceneMode.Additive);
         CurrAdditiveScene = AmberRoom.BEDROOM;
     }
     public void SwitchAmberRooms(AmberRoom room)
