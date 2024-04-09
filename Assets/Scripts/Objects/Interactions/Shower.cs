@@ -11,7 +11,7 @@ namespace Assets.Scripts.Objects.Interactions
 {
     public class Shower : Interaction
     {
-        [SerializeField] private GameObject _tempHierarchy;
+        [SerializeField] private GameObject _tempHierarchy, _particleSystem;
         [SerializeField] private TextMeshProUGUI temp;
         public enum ShowerState { RAISING_TEMP, SHOWERING, NOT_USING }
         bool _showering = false;
@@ -71,9 +71,13 @@ namespace Assets.Scripts.Objects.Interactions
             }
             temp.text = MathF.Floor(_showerTemp.Value) + "F";
         }
+        public void TurnOffShower() {
+            _particleSystem.SetActive(false);        
+        }
         protected override void DoAction()
         {
             _showering = true;
+            _particleSystem.SetActive(true);
             _showerState = ShowerState.RAISING_TEMP;
             UIManager.Instance.DisplaySimpleBubbleTilInterrupted(UIElements.BubbleIcon.COLD);
             _tempHierarchy.SetActive(true);

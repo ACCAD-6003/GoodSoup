@@ -31,22 +31,37 @@ namespace Assets.Scripts.AI
             navigation = GameObject.FindGameObjectWithTag("Player").GetComponent<AmberMount>();
             storyData = StoryDatastore.Instance;
 
-            Node routine = 
+            Node routine =
             new Sequence(new List<Node>()
             {
                 new WrapperNode(new SkipIfStoryDatastoreState<GamePhase>(StoryDatastore.Instance.CurrentGamePhase, GamePhase.TUTORIAL_BEDROOM, true), new List<Node>()
                 {
                     // change to evaluate if everything has been done one by one by wrapping these in classespho
                     new DisplayUIIcon(UI.UIElements.BubbleIcon.SLEEPING),
-                    new WaitForPlayerInteractionCompleted(interactions.AlarmClock),
+                        // Wait for alarm clock
+                    new Sequence(new List<Node>() {
+                        new WaitForPlayerInteractionCompleted(interactions.AlarmClock),
+                        new DisplayUIIcon(UI.UIElements.BubbleIcon.ANNOYANCE),
+                    }),
                     new StopFarCryEnding(interactions.switcher),
-                    new DisplayUIIcon(UI.UIElements.BubbleIcon.ANNOYANCE),
+
                     new WaitFor(1f),
                     new SwitchAmberMount(interactions.SittingInBed),
                     new WaitFor(1f),
                     new DisplayUIIcon(UI.UIElements.BubbleIcon.PHONE),
-                    new WaitForBookHit(storyData.AnyBookDropped),
-                    new DisplayUIIcon(UI.UIElements.BubbleIcon.ANNOYANCE),
+
+                    // Wait for book hit
+                    new Selector(new List<Node>() {
+                        new Sequence(new List<Node>() {
+                            new WaitForStoryDataChange(new SkipIfStoryDatastoreState<bool>(StoryDatastore.Instance.CurtainsOpen, true)),
+                            new DisplayUIIcon(UI.UIElements.BubbleIcon.HAPPY_SUNSHINE),
+                        }),
+                        new Sequence(new List<Node>() {
+                            new WaitForBookHit(storyData.AnyBookDropped),
+                            new DisplayUIIcon(UI.UIElements.BubbleIcon.ANNOYANCE),
+                        })
+                    }),
+
                     new WaitFor(1f),
                     new SwitchAmberMount(navigation),
                     new MoveToTile(interactions.Grid, doors.doors[MainSceneLoading.AmberRoom.BATHROOM]),
@@ -61,7 +76,17 @@ namespace Assets.Scripts.AI
                     new WaitFor(1f),
                     new PerformAmberInteraction(interactions.Laptop.AmberInteraction)
                 }),
+                // make amber open curtains if she needs to
+                //new WrapperNode(new SkipIfStoryDatastoreState<>)
                 new WaitFor(2f),
+                new WrapperNode(new SkipIfStoryDatastoreState<bool>(StoryDatastore.Instance.AmberDressed, true), new List<Node>() {
+                    new MoveToTile(interactions.Grid, interactions.Dresser.AssociatedTile),
+                    new WaitFor(1f),
+                    //new PerformAmberInteraction(interactions.Dresser.AmberInteraction)
+                }),
+                new WaitFor(2f),
+                new MoveToTile(interactions.Grid, doors.doors[MainSceneLoading.AmberRoom.KITCHEN]),
+                new AmberMoveToRoom(MainSceneLoading.AmberRoom.KITCHEN),
                 new SelectEnding(),
             });
             return routine;

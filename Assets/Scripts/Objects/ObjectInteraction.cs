@@ -13,11 +13,9 @@ public class ObjectInteraction : MonoBehaviour
 
     [SerializeField]
     float amberSightAngle = 40;
-
-#nullable enable
+    #nullable enable
 
     float searchDistance = 100f;
-
     private Vector3 toXZ(Vector3 v)
     {
         return Vector3.Scale(Vector3.one - Vector3.up, v);
@@ -58,7 +56,10 @@ public class ObjectInteraction : MonoBehaviour
             o.enabled = false;
         }
     }
-
+    void Awake()
+    {
+        TurnOffOutlines();
+    }
     private void Start()
     {
         GhostInput interactions = new();
@@ -90,7 +91,6 @@ public class ObjectInteraction : MonoBehaviour
                 targettedObject.GetComponent<Outline>().enabled = true;
             }
         };
-
         interactions.Interactions.Enable();
     }
 }
