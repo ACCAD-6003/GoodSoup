@@ -8,7 +8,7 @@ namespace Assets.Scripts.UI
 {
     public class BedroomInteractions : MonoBehaviour
     {
-        public InteractableObject AlarmClock, Laptop, Curtains;
+        public InteractableObject AlarmClock, Laptop, Curtains, Dresser;
         public List<InteractableObject> Books;
         public AmberMount LayingInBed, SittingInBed, SittingAtDesk;
         public FarCrySwitcher switcher;

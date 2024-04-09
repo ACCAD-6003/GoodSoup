@@ -3,19 +3,17 @@ using UnityEngine;
 public class SwitchCurtains : Interaction
 {
     [SerializeField] InteractionObjectState stateOne, stateTwo;
-    private StoryData<bool> _state;
     private void Awake()
     {
-        _state = StoryDatastore.Instance.CurtainsOpen;
     }
     private void RefreshState() {
-        stateOne.SetState(_state.Value);
-        stateTwo.SetState(!_state.Value);
+        stateOne.SetState(StoryDatastore.Instance.CurtainsOpen.Value);
+        stateTwo.SetState(!StoryDatastore.Instance.CurtainsOpen.Value);
     }
 
     override protected void DoAction()
     {
-        _state.Value = !_state.Value;
+        StoryDatastore.Instance.CurtainsOpen.Value = !StoryDatastore.Instance.CurtainsOpen.Value;
         RefreshState();
         EndAction();
     }

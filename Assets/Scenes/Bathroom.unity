@@ -9870,7 +9870,7 @@ GameObject:
   - component: {fileID: 377163317}
   - component: {fileID: 377163316}
   m_Layer: 0
-  m_Name: Cylinder.001 (1)
+  m_Name: Showerhead
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -25949,6 +25949,7 @@ MonoBehaviour:
   isPlayer: 0
   _isInProgress: 0
   _tempHierarchy: {fileID: 88054855}
+  _particleSystem: {fileID: 1476462876}
   temp: {fileID: 1724714711}
 --- !u!114 &1096206248
 MonoBehaviour:
@@ -33140,12 +33141,12 @@ GameObject:
   - component: {fileID: 1476462879}
   - component: {fileID: 1476462878}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: ParticleSystem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1476462877
 Transform:
   m_ObjectHideFlags: 0
@@ -41480,7 +41481,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh313298
+  m_Name: pb_Mesh285144
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
