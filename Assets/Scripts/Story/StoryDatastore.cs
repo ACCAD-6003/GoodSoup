@@ -28,6 +28,7 @@ public class StoryDatastore : MonoBehaviour
             return instance;
         }
     }
+
     private void Awake()
     {
         if (instance != null && instance != this)
@@ -79,4 +80,6 @@ public class StoryDatastore : MonoBehaviour
     public StoryData<float> Happiness = new StoryData<float>(0f);
     [SerializeField]
     public StoryData<Ending> ChosenEnding = new StoryData<Ending>(Ending.FAR_CRY);
+    [SerializeField]
+    public StoryData<bool> AmberDressed = new StoryData<bool>(false);
 }

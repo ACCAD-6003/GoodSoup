@@ -23,6 +23,7 @@ namespace Assets.Scripts.AI
                 _performed = true;
                 UIManager.Instance.DisplaySimpleBubbleTilInterrupted(_icon);
             }
+            state = _performed ? NodeState.SUCCESS : NodeState.RUNNING;
             return _performed ? NodeState.SUCCESS : NodeState.RUNNING;
         }
     }

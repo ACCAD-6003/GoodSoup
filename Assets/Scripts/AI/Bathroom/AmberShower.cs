@@ -9,6 +9,7 @@ using UnityEngine;
 public class AmberShower : Node
 {
     bool startedShowering = false;
+    bool finishedShowering = false;
     Shower _shower;
     public AmberShower(Shower shower) { 
         _shower = shower;
@@ -19,8 +20,15 @@ public class AmberShower : Node
             startedShowering = true;
             _shower.StartAction();
         }
+        if (finishedShowering) {
+            state = NodeState.SUCCESS;
+            return NodeState.SUCCESS;
+        }
         if (StoryDatastore.Instance.DoneShowering.Value)
         {
+            finishedShowering = true;
+            _shower.TurnOffShower();
+            state = NodeState.SUCCESS;
             return NodeState.SUCCESS;
         }
         return NodeState.RUNNING;
