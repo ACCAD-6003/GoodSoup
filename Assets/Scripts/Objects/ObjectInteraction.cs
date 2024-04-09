@@ -16,10 +16,6 @@ public class ObjectInteraction : MonoBehaviour
     #nullable enable
 
     float searchDistance = 100f;
-    private Vector3 toXZ(Vector3 v)
-    {
-        return Vector3.Scale(Vector3.one - Vector3.up, v);
-    }
 
     public bool IsInAmberSightlines(InteractableObject o)
     {
@@ -56,10 +52,12 @@ public class ObjectInteraction : MonoBehaviour
             o.enabled = false;
         }
     }
+
     void Awake()
     {
         TurnOffOutlines();
     }
+    
     private void Start()
     {
         GhostInput interactions = new();
