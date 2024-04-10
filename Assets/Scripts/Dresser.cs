@@ -33,7 +33,7 @@ public class Dresser : Interaction
 
     protected override void DoAction()
     {
-        Texture clothesTexture = Resources.Load<Texture>("Textures/" + StoryDatastore.Instance.ChosenClothing);
+        Texture2D clothesTexture = Resources.Load<Texture2D>("Textures/" + ClothingOptions[StoryDatastore.Instance.ChosenClothing.Value]);
         clothes.SetTexture("_MainTex", clothesTexture);
         //StoryDatastore.Instance.AmberDressed.Value = true;
         EndAction();
