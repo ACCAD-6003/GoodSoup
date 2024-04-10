@@ -87,7 +87,7 @@ namespace Assets.Scripts.AI
                 new WrapperNode(new SkipIfStoryDatastoreState<bool>(StoryDatastore.Instance.AmberDressed, true), new List<Node>() {
                     new MoveToTile(interactions.Grid, interactions.Dresser.AssociatedTile),
                     new WaitFor(1f),
-                    //new PerformAmberInteraction(interactions.Dresser.AmberInteraction)
+                    new PerformAmberInteraction(interactions.Dresser.AmberInteraction)
                 }),
                 new WaitFor(2f),
                 new MoveToTile(interactions.Grid, doors.doors[MainSceneLoading.AmberRoom.KITCHEN]),
