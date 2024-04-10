@@ -41,7 +41,7 @@ namespace Assets.Scripts.AI
                         new WaitFor(0.5f),
                         new MoveToTile(interactions.Grid, interactions.LaundryBasketTile),
                         new EvaluateItemsPickedUp(new List<int>() { 0,1,2 }, UIElements.BubbleIcon.HAPPY_LAUNDRY, UIElements.BubbleIcon.SAD_LAUNDRY),
-                        new WaitFor(0.5f),
+                        new WaitFor(2f),
                         new MoveToTile(interactions.Grid, interactions.sinkTile),
                         new DebugNode(1),
                         new WrapperNode(
