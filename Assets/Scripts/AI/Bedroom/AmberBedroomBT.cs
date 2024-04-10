@@ -68,14 +68,6 @@ namespace Assets.Scripts.AI
                     new AmberMoveToRoom(MainSceneLoading.AmberRoom.BATHROOM)
                 }),
                 new StopFarCryEnding(interactions.switcher),
-                new WrapperNode(new SkipIfStoryDatastoreState<EmailState>(StoryDatastore.Instance.EmailState, EmailState.NOTHING_CHANGED, false), new List<Node>() {
-                    // glitch here, if player is interacting with email then amber could possibly get stuck
-                    new WaitFor(0.5f),
-                    new MoveToTile(interactions.Grid, interactions.Laptop.AssociatedTile),
-                    new SwitchAmberMount(interactions.SittingAtDesk),
-                    new WaitFor(1f),
-                    new PerformAmberInteraction(interactions.Laptop.AmberInteraction)
-                }),
                 // make amber open curtains if she needs to
                 new WrapperNode(new SkipIfStoryDatastoreState<bool>(StoryDatastore.Instance.CurtainsOpen, true), new List<Node> { 
                     new WaitFor(0.5f),
@@ -87,14 +79,47 @@ namespace Assets.Scripts.AI
                 new WrapperNode(new SkipIfStoryDatastoreState<bool>(StoryDatastore.Instance.AmberDressed, true), new List<Node>() {
                     new MoveToTile(interactions.Grid, interactions.Dresser.AssociatedTile),
                     new WaitFor(1f),
-                    new PerformAmberInteraction(interactions.Dresser.AmberInteraction)
+                    new PerformAmberInteraction(interactions.Dresser.AmberInteraction),
+                    new WaitFor(1f),
+                    new MoveToTile(interactions.Grid, interactions.MirrorTile),
+                    new AmberReactionToStoryData<ClothingOption>(new Dictionary<ClothingOption, IAmberReaction>() {
+                        { ClothingOption.Dirty, new DirtyClothingReaction() },
+                        { ClothingOption.Blue, new HappyClothingReaction() },
+                        { ClothingOption.Orange, new HappyClothingReaction() },
+                        { ClothingOption.Green, new HappyClothingReaction() },
+                    }, StoryDatastore.Instance.ChosenClothing),
                 }),
                 new WaitFor(2f),
-                new MoveToTile(interactions.Grid, doors.doors[MainSceneLoading.AmberRoom.KITCHEN]),
-                new AmberMoveToRoom(MainSceneLoading.AmberRoom.KITCHEN),
+                new WrapperNode(new SkipIfStoryDatastoreState<EmailState>(StoryDatastore.Instance.EmailState, EmailState.NOTHING_CHANGED, false), new List<Node>() {
+                    // glitch here, if player is interacting with email then amber could possibly get stuck
+                    new WaitFor(0.5f),
+                    new MoveToTile(interactions.Grid, interactions.Laptop.AssociatedTile),
+                    new SwitchAmberMount(interactions.SittingAtDesk),
+                    new WaitFor(1f),
+                    new PerformAmberInteraction(interactions.Laptop.AmberInteraction)
+                }),
+
+/*                new MoveToTile(interactions.Grid, doors.doors[MainSceneLoading.AmberRoom.KITCHEN]),
+                new AmberMoveToRoom(MainSceneLoading.AmberRoom.KITCHEN),*/
                 new SelectEnding(),
-            });
+            });;
             return routine;
+        }
+    }
+    class HappyClothingReaction : IAmberReaction
+    {
+        public override void PerformReaction()
+        {
+            UIManager.Instance.DisplaySimpleBubbleTilInterrupted(UI.UIElements.BubbleIcon.SICK_OUTFIT);
+            StoryDatastore.Instance.Happiness.Value += 2f;
+        }
+    }
+    class DirtyClothingReaction : IAmberReaction
+    {
+        public override void PerformReaction()
+        {
+            UIManager.Instance.DisplaySimpleBubbleTilInterrupted(UI.UIElements.BubbleIcon.DIRTY_OUTFIT);
+            StoryDatastore.Instance.Annoyance.Value += 1f;
         }
     }
 }

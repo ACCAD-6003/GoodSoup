@@ -12,6 +12,7 @@ namespace Assets.Scripts.UI
         public List<InteractableObject> Books;
         public AmberMount LayingInBed, SittingInBed, SittingAtDesk;
         public FarCrySwitcher switcher;
+        public tile MirrorTile;
         public grid_manager Grid;
     }
 }
