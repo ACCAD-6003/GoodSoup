@@ -43,6 +43,7 @@ namespace Assets.Scripts.AI
                         new EvaluateItemsPickedUp(new List<int>() { 0,1,2 }, UIElements.BubbleIcon.HAPPY_LAUNDRY, UIElements.BubbleIcon.SAD_LAUNDRY),
                         new WaitFor(2f),
                         new MoveToTile(interactions.Grid, interactions.sinkTile),
+                        new UpdateAmberLookRot(interactions.Grid, new Vector3(1,0,0)),
                         new DebugNode(1),
                         new WrapperNode(
                             new SkipIfStoryDatastoreState<MirrorState>(StoryDatastore.Instance.MirrorState, MirrorState.DRAWN_ON, true),
@@ -71,7 +72,7 @@ namespace Assets.Scripts.AI
                         new WaitFor(0.5f),
                         new MoveToTile(interactions.Grid, doors.doors[MainSceneLoading.AmberRoom.BEDROOM]),
                         new AmberMoveToRoom(MainSceneLoading.AmberRoom.BEDROOM)
-                    });
+                    });;
 
             return routine;
         }

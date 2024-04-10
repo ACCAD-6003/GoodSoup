@@ -1,18 +1,24 @@
 using BehaviorTree;
+using UnityEngine;
 
 public class UpdateAmberLookRot : Node {
     grid_manager _grid;
-    Interaction _intObj;
+    Vector3 _dir;
     bool set = false;
     public UpdateAmberLookRot(grid_manager grid, Interaction intObj) {
         _grid = grid;
-        _intObj = intObj;
+        _dir = intObj.AssociatedDirection;
+    }
+    public UpdateAmberLookRot(grid_manager grid, Vector3 dir)
+    {
+        _grid = grid;
+        _dir = dir;
     }
     public override NodeState Evaluate()
     {
         if (!set)
         {
-            _grid.SetLookRot(_intObj.AssociatedDirection);
+            _grid.SetLookRot(_dir);
             set = true;
         }
         state = NodeState.SUCCESS;
