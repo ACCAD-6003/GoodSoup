@@ -46,6 +46,7 @@ public class SwapShirt : Interaction
         }
         shirtOnBed.AllShirts[clothes].SetActive(true);
         StoryDatastore.Instance.ChosenClothing.Value = clothes;
+        EndAction();
     }
     private void Update()
     {
