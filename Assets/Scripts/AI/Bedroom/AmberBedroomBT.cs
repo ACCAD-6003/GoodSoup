@@ -77,12 +77,17 @@ namespace Assets.Scripts.AI
                     new PerformAmberInteraction(interactions.Laptop.AmberInteraction)
                 }),
                 // make amber open curtains if she needs to
-                //new WrapperNode(new SkipIfStoryDatastoreState<>)
+                new WrapperNode(new SkipIfStoryDatastoreState<bool>(StoryDatastore.Instance.CurtainsOpen, true), new List<Node> { 
+                    new WaitFor(0.5f),
+                    new MoveToTile(interactions.Grid, interactions.Curtains.AssociatedTile),
+                    new WaitFor(0.5f),
+                    new PerformAmberInteraction(interactions.Curtains.AmberInteraction),
+                }),
                 new WaitFor(2f),
                 new WrapperNode(new SkipIfStoryDatastoreState<bool>(StoryDatastore.Instance.AmberDressed, true), new List<Node>() {
                     new MoveToTile(interactions.Grid, interactions.Dresser.AssociatedTile),
                     new WaitFor(1f),
-                    //new PerformAmberInteraction(interactions.Dresser.AmberInteraction)
+                    new PerformAmberInteraction(interactions.Dresser.AmberInteraction)
                 }),
                 new WaitFor(2f),
                 new MoveToTile(interactions.Grid, doors.doors[MainSceneLoading.AmberRoom.KITCHEN]),

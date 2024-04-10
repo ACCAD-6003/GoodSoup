@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 1105389382110956211}
   m_Layer: 0
   m_Name: Torso
-  m_TagString: Untagged
+  m_TagString: AmberTorso
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -869,7 +869,7 @@ GameObject:
   - component: {fileID: 4909229584067225551}
   m_Layer: 0
   m_Name: Head
-  m_TagString: Untagged
+  m_TagString: AmberHead
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

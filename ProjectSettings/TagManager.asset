@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Basic Ground
   - DontDestroyOnLoad
+  - AmberHead
+  - AmberTorso
   layers:
   - Default
   - TransparentFX
