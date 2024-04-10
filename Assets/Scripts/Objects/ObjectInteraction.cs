@@ -13,6 +13,12 @@ public class ObjectInteraction : MonoBehaviour
 
     [SerializeField]
     float amberSightAngle = 40;
+
+    [SerializeField]
+    AudioSource playerInteractSoundSource;
+
+    [SerializeField]
+    AudioClip playerInteractBlip; 
     #nullable enable
 
     float searchDistance = 100f;
@@ -72,6 +78,7 @@ public class ObjectInteraction : MonoBehaviour
             )
             {
                 targettedObject.PlayerInteraction.StartAction();
+                playerInteractSoundSource.PlayOneShot(playerInteractBlip);
             }
         };
 
