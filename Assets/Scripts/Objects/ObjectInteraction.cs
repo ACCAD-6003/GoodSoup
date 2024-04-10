@@ -6,9 +6,6 @@ using static UnityEngine.InputSystem.InputAction;
 public class ObjectInteraction : MonoBehaviour
 {
     [SerializeField]
-    Camera PlayerCamera;
-
-    [SerializeField]
     public Transform Amber;
 
     [SerializeField]
@@ -40,9 +37,9 @@ public class ObjectInteraction : MonoBehaviour
 
     InteractableObject? GetTarget(CallbackContext c)
     {
-        Ray mouseTarget = PlayerCamera.ScreenPointToRay(Input.mousePosition);
+        Ray mouseTarget = Camera.main.ScreenPointToRay(Input.mousePosition);
 
-        bool didHit = Physics.Raycast(mouseTarget, out RaycastHit hitInfo, searchDistance);
+        bool didHit = Physics.Raycast(mouseTarget, out RaycastHit hitInfo, searchDistance, ~(1<<8));
 
         if (!didHit)
         {
