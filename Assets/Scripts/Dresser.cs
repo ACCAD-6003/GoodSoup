@@ -8,11 +8,12 @@ public class Dresser : Interaction
 {
     public static Dictionary<ClothingOption, string> ClothingOptions = new()
     {
-        { ClothingOption.Blue, "AmberDirtyClothes" },
+        { ClothingOption.Dirty, "AmberDirtyClothes" },
         { ClothingOption.Blue, "AmberDayClothes" },
         { ClothingOption.Green, "AmberDayClothes2" },
         { ClothingOption.Orange, "AmberDayClothes3"}
     };
+
     Material clothes;
 
     void Awake()
@@ -32,7 +33,7 @@ public class Dresser : Interaction
 
     protected override void DoAction()
     {
-        Texture clothesTexture = Resources.Load<Texture>("Textures/" + );
+        Texture clothesTexture = Resources.Load<Texture>("Textures/" + StoryDatastore.Instance.ChosenClothing);
 
         clothes.SetTexture("_MainTex", clothesTexture);
     }
