@@ -37,7 +37,9 @@ namespace Assets.Scripts.AI
             Node routine = new Sequence(new List<Node>() {
                         new WaitFor(0.25f),
                         new MoveToTile(interactions.Grid, interactions.showerTile),
+                        new SwitchAmberMount(interactions.shower),
                         new AmberShower(interactions.Shower),
+                        new SwitchAmberMount(navigation),
                         new WaitFor(0.5f),
                         new MoveToTile(interactions.Grid, interactions.LaundryBasketTile),
                         new EvaluateItemsPickedUp(new List<int>() { 0,1,2 }, UIElements.BubbleIcon.HAPPY_LAUNDRY, UIElements.BubbleIcon.SAD_LAUNDRY),
@@ -72,7 +74,7 @@ namespace Assets.Scripts.AI
                         new WaitFor(0.5f),
                         new MoveToTile(interactions.Grid, doors.doors[MainSceneLoading.AmberRoom.BEDROOM]),
                         new AmberMoveToRoom(MainSceneLoading.AmberRoom.BEDROOM)
-                    });;
+                    });
 
             return routine;
         }

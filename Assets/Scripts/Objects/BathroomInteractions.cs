@@ -1,4 +1,5 @@
-﻿using Assets.Scripts.Objects.Interactions;
+﻿using Assets.Scripts.AI;
+using Assets.Scripts.Objects.Interactions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,5 +15,6 @@ namespace Assets.Scripts.Objects
         public tile showerTile, LaundryBasketTile, sinkTile;
         public Shower Shower;
         public FlushToilet FlushToilet;
+        public AmberMount shower;
     }
 }
