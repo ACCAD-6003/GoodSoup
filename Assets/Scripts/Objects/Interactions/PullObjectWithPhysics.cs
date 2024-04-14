@@ -1,3 +1,4 @@
+using Sirenix.OdinInspector.Editor.GettingStarted;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -80,6 +81,10 @@ public class PullObjectWithPhysics : Interaction
         StoryDatastore.Instance.AnyBookDropped.Value = true;
         if (_blown) {
             StoryDatastore.Instance.BooksBlown.Value = true;
+            if (StoryDatastore.Instance.CurrentGamePhase.Value == GamePhase.TUTORIAL_BEDROOM)
+            {
+                StoryDatastore.Instance.Annoyance.Value += 0.5f;
+            }
         }
         SaveData(StoryDatastore.Instance);
         EndAction();
