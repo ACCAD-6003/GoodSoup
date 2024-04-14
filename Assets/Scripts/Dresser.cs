@@ -2,16 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 public enum ClothingOption { 
-    Blue, Green, Orange, Dirty
+    Blue, Green, Orange, Dirty, Pajamas
 }
 public class Dresser : Interaction
 {
+    [SerializeField] Shirts shirtsOnBed;
+
     public static Dictionary<ClothingOption, string> ClothingOptions = new()
     {
         { ClothingOption.Dirty, "AmberDirtyClothes" },
         { ClothingOption.Blue, "AmberDayClothes" },
         { ClothingOption.Green, "AmberDayClothes2" },
-        { ClothingOption.Orange, "AmberDayClothes3"}
+        { ClothingOption.Orange, "AmberDayClothes3"},
+        // Untested idk if this is the name of the pajamas or not
+        { ClothingOption.Pajamas, "Pajamas" }
     };
 
     Material clothes;
@@ -35,7 +39,10 @@ public class Dresser : Interaction
     {
         Texture2D clothesTexture = Resources.Load<Texture2D>("Textures/" + ClothingOptions[StoryDatastore.Instance.ChosenClothing.Value]);
         clothes.SetTexture("_MainTex", clothesTexture);
-        //StoryDatastore.Instance.AmberDressed.Value = true;
+        StoryDatastore.Instance.AmberDressed.Value = true;
+        foreach (var shirt in shirtsOnBed.AllShirts) {
+            shirt.Value.SetActive(false);
+        }
         EndAction();
     }
 }

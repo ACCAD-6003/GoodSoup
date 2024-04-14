@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using static AmberVisual;
 using static Assets.Scripts.UI.UIElements;
 using static ComputerEmail;
 using static ComputerHUD;
@@ -90,4 +91,10 @@ public class StoryDatastore : MonoBehaviour
     public StoryData<bool> ShirtPickedUp = new StoryData<bool>(false);
     [SerializeField]
     public StoryData<bool> BooksBlown = new StoryData<bool>(false);
+    [SerializeField]
+    public StoryData<bool> PickedUpBackpack = new StoryData<bool>(false);
+    [SerializeField]
+    public StoryData<ClothingOption> AmberWornClothing = new StoryData<ClothingOption>(ClothingOption.Pajamas);
+    [SerializeField]
+    public StoryData<HairOption> AmberHairOption = new StoryData<HairOption>(HairOption.BONNET);
 }

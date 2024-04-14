@@ -1,6 +1,7 @@
 using Sirenix.Serialization;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class RotateFan : Interaction
@@ -23,8 +24,8 @@ public class RotateFan : Interaction
     }
     public override void DoAction()
     {
+        PutInProgress();
         StartCoroutine(Bounce());
-
 
     }
     IEnumerator Bounce()
@@ -48,16 +49,21 @@ public class RotateFan : Interaction
         if (++orientationIndex >= numberOfOrientations) {
             orientationIndex = 0;
         }
+
         if (orientationIndex == orientationToDoFanAction)
         {
             fanAligned = true;
             action.FanAligned();
         }
-        else if (fanAligned) {
+        else if (fanAligned)
+        {
             fanAligned = false;
             action.FanUnaligned();
+            EndAction();
         }
-        EndAction();
+        else {
+            EndAction();
+        }
     }
 
     public override void LoadData(StoryDatastore data)

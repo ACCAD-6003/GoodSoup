@@ -55,12 +55,12 @@ namespace Assets.Scripts.AI
                     // Wait for book hit
                     new Selector(new List<Node>() {
                         new Sequence(new List<Node>() {
-                            new WaitForBookHit(storyData.AnyBookDropped),
-                            new DisplayUIIcon(UI.UIElements.BubbleIcon.ANNOYANCE),
-                        }),
-                        new Sequence(new List<Node>() {
                             new WaitForStoryDataChange(new SkipIfStoryDatastoreState<bool>(StoryDatastore.Instance.CurtainsOpen, true)),
                             new DisplayUIIcon(UI.UIElements.BubbleIcon.HAPPY_SUNSHINE),
+                        }),
+                        new Sequence(new List<Node>() {
+                            new WaitForBookHit(storyData.AnyBookDropped),
+                            new DisplayUIIcon(UI.UIElements.BubbleIcon.ANNOYANCE),
                         })
                     }),
 
@@ -78,6 +78,7 @@ namespace Assets.Scripts.AI
                     new PerformAmberInteraction(interactions.Curtains.AmberInteraction),
                 }),
                 new WaitFor(2f),
+                // ONLY skips if it is true when this tree starts to evalute that Amber has already dressed. Doesn't check again.
                 new WrapperNode(new SkipIfStoryDatastoreState<bool>(StoryDatastore.Instance.AmberDressed, true), new List<Node>() {
                     new MoveToTile(interactions.Grid, interactions.Dresser.AssociatedTile),
                     new WaitFor(1f),
@@ -90,7 +91,7 @@ namespace Assets.Scripts.AI
                         { ClothingOption.Orange, new HappyClothingReaction() },
                         { ClothingOption.Green, new HappyClothingReaction() },
                     }, StoryDatastore.Instance.ChosenClothing),
-                }),
+                }, true),
                 new WaitFor(2f),
                 new WrapperNode(new SkipIfStoryDatastoreState<EmailState>(StoryDatastore.Instance.EmailState, EmailState.NOTHING_CHANGED, false), new List<Node>() {
                     // glitch here, if player is interacting with email then amber could possibly get stuck

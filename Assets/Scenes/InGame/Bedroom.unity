@@ -19411,6 +19411,10 @@ PrefabInstance:
       propertyPath: storyData
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 6609598689810238921, guid: c441a5397cf732e42a15bcb84815491c, type: 3}
+      propertyPath: interactionToFinishOnceCollisionHits
+      value: 
+      objectReference: {fileID: 685371346}
     - target: {fileID: 6609598689810238924, guid: c441a5397cf732e42a15bcb84815491c, type: 3}
       propertyPath: outlineMode
       value: 1
@@ -57539,6 +57543,10 @@ PrefabInstance:
       propertyPath: interactionId
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6609598689810238921, guid: c441a5397cf732e42a15bcb84815491c, type: 3}
+      propertyPath: interactionToFinishOnceCollisionHits
+      value: 
+      objectReference: {fileID: 685371346}
     - target: {fileID: 6609598689810238924, guid: c441a5397cf732e42a15bcb84815491c, type: 3}
       propertyPath: outlineMode
       value: 1
@@ -88422,6 +88430,10 @@ PrefabInstance:
       propertyPath: interactionId
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 6609598689810238921, guid: c441a5397cf732e42a15bcb84815491c, type: 3}
+      propertyPath: interactionToFinishOnceCollisionHits
+      value: 
+      objectReference: {fileID: 685371346}
     - target: {fileID: 6609598689810238924, guid: c441a5397cf732e42a15bcb84815491c, type: 3}
       propertyPath: outlineMode
       value: 1

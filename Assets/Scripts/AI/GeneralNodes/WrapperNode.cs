@@ -51,13 +51,22 @@ public class WaitForStoryDataChange : Node
 public class WrapperNode : Node
 {
     private ISkipCondition _skipCondition;
+    bool _shouldEvaluteOnlyOnce = false;
+    bool _canSkip = true;
     public WrapperNode(ISkipCondition skipCondition, List<Node> nodes) : base(nodes) {
         _skipCondition = skipCondition;
-
+    }
+    public WrapperNode(ISkipCondition skipCondition, List<Node> nodes, bool shouldEvaluateOnlyOnce) : base(nodes)
+    {
+        _skipCondition = skipCondition;
+        _shouldEvaluteOnlyOnce = shouldEvaluateOnlyOnce;
     }
     public override NodeState Evaluate()
     {
-        if (_skipCondition.ShouldSkip()) {
+        if (_canSkip && _skipCondition.ShouldSkip()) {
+            if (_shouldEvaluteOnlyOnce) {
+                _canSkip = false;
+            }
             state = NodeState.SUCCESS;
             return NodeState.SUCCESS;
         }

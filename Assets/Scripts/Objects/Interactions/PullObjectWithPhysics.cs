@@ -9,6 +9,7 @@ public class PullObjectWithPhysics : Interaction
     bool _inPhysicsMode = false;
     Rigidbody _rb;
     bool _blown = false;
+    [SerializeField] Interaction interactionToFinishOnceCollisionHits;
     private void Awake()
     {
         _rb = gameObject.GetComponent<Rigidbody>();
@@ -58,7 +59,7 @@ public class PullObjectWithPhysics : Interaction
 
             yield return null;
         }
-
+        interactionToFinishOnceCollisionHits.EndAction();
         // Ensure the final force is applied
         //_rb.velocity = initialVelocity + new Vector3(-0.25f * modifier, 0, -1f * modifier);
     }
