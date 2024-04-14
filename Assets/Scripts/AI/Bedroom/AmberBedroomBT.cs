@@ -55,12 +55,12 @@ namespace Assets.Scripts.AI
                     // Wait for book hit
                     new Selector(new List<Node>() {
                         new Sequence(new List<Node>() {
-                            new WaitForStoryDataChange(new SkipIfStoryDatastoreState<bool>(StoryDatastore.Instance.CurtainsOpen, true)),
-                            new DisplayUIIcon(UI.UIElements.BubbleIcon.HAPPY_SUNSHINE),
-                        }),
-                        new Sequence(new List<Node>() {
                             new WaitForBookHit(storyData.AnyBookDropped),
                             new DisplayUIIcon(UI.UIElements.BubbleIcon.ANNOYANCE),
+                        }),
+                        new Sequence(new List<Node>() {
+                            new WaitForStoryDataChange(new SkipIfStoryDatastoreState<bool>(StoryDatastore.Instance.CurtainsOpen, true)),
+                            new DisplayUIIcon(UI.UIElements.BubbleIcon.HAPPY_SUNSHINE),
                         })
                     }),
 

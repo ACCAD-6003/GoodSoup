@@ -79,7 +79,7 @@ namespace Assets.Scripts.Objects.Interactions
             _showering = true;
             _particleSystem.SetActive(true);
             _showerState = ShowerState.RAISING_TEMP;
-            UIManager.Instance.DisplaySimpleBubbleTilInterrupted(UIElements.BubbleIcon.COLD);
+            UIManager.Instance.DisplaySimpleBubbleForSeconds(UIElements.BubbleIcon.COLD, 2f);
             _tempHierarchy.SetActive(true);
             temp.text = _showerTemp.Value.ToString();
             StoryDatastore.Instance.AmberHairOption.Value = AmberVisual.HairOption.MESSY;

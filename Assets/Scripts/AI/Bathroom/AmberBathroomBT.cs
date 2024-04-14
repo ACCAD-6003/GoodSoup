@@ -50,7 +50,6 @@ namespace Assets.Scripts.AI
                         new PerformAmberInteraction(interactions.ShowerCurtain.AmberInteraction),
                         //new MoveToTile(interactions.Grid, interactions.Towel.AssociatedTile),
                         new PerformAmberInteraction(interactions.Towel.AmberInteraction),
-                        // add reaction to towel temp
                         new WaitFor(0.5f),
                         new MoveToTile(interactions.Grid, interactions.LaundryBasketTile),
                         new EvaluateItemsPickedUp(new List<int>() { 0,1,2 }, UIElements.BubbleIcon.HAPPY_LAUNDRY, UIElements.BubbleIcon.SAD_LAUNDRY),

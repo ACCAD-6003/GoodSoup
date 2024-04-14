@@ -52,10 +52,14 @@ public class DrawOnMirror : Interaction
 
     public override void DoAction()
     {
-        if (StoryDatastore.Instance.MirrorState.Value == MirrorState.FOGGED) {
+        if (StoryDatastore.Instance.MirrorState.Value == MirrorState.FOGGED)
+        {
             StoryDatastore.Instance.MirrorState.Value = MirrorState.DRAWN_ON;
             RefreshMirror();
-            base.usedUp = true;
+        }
+        else {
+            StoryDatastore.Instance.MirrorState.Value = MirrorState.FOGGED;
+            RefreshMirror();
         }
         EndAction();
     }
