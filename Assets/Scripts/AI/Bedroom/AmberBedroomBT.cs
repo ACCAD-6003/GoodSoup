@@ -66,10 +66,17 @@ namespace Assets.Scripts.AI
 
                     new WaitFor(1f),
                     new SwitchAmberMount(navigation),
+
+                    // DEBUG
+
+                    //
+
                     new MoveToTile(interactions.Grid, doors.doors[MainSceneLoading.AmberRoom.BATHROOM]),
                     new AmberMoveToRoom(MainSceneLoading.AmberRoom.BATHROOM)
                 }),
                 new StopFarCryEnding(interactions.switcher),
+
+
                 // make amber open curtains if she needs to
                 new WrapperNode(new SkipIfStoryDatastoreState<bool>(StoryDatastore.Instance.CurtainsOpen, true), new List<Node> { 
                     new WaitFor(0.5f),
@@ -102,8 +109,15 @@ namespace Assets.Scripts.AI
                     new PerformAmberInteraction(interactions.Laptop.AmberInteraction)
                 }),
 
-/*                new MoveToTile(interactions.Grid, doors.doors[MainSceneLoading.AmberRoom.KITCHEN]),
-                new AmberMoveToRoom(MainSceneLoading.AmberRoom.KITCHEN),*/
+                // need a wrapper on this
+
+                new MoveToTile(interactions.Grid, interactions.Backpack.AssociatedTile),
+                new PerformAmberInteraction(interactions.Backpack.AmberInteraction),
+
+                //
+
+//                new MoveToTile(interactions.Grid, doors.doors[MainSceneLoading.AmberRoom.KITCHEN]),
+//                new AmberMoveToRoom(MainSceneLoading.AmberRoom.KITCHEN),*/
                 new SelectEnding(),
             });;
             return routine;

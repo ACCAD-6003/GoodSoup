@@ -26,7 +26,6 @@ public class RotateFan : Interaction
     {
         PutInProgress();
         StartCoroutine(Bounce());
-
     }
     IEnumerator Bounce()
     {

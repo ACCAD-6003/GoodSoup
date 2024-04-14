@@ -82,6 +82,7 @@ namespace Assets.Scripts.Objects.Interactions
             UIManager.Instance.DisplaySimpleBubbleTilInterrupted(UIElements.BubbleIcon.COLD);
             _tempHierarchy.SetActive(true);
             temp.text = _showerTemp.Value.ToString();
+            StoryDatastore.Instance.AmberHairOption.Value = AmberVisual.HairOption.MESSY;
             GameObject.FindObjectOfType<GridCharacter>().SetArbitraryRot(Vector3.back);
         }
     }
