@@ -6,7 +6,7 @@ public class AmberVisual : MonoBehaviour
 {
     public enum HairOption { BONNET, MESSY, CLEAN }
     [SerializeField] GameObject _backpack;
-    private void Awake()
+    private void OnEnable()
     {
         // Disable anything that doesn't need to be shown (i.e. backpack was enabled in editor to see how it looks)
         _backpack.SetActive(false);
