@@ -47,14 +47,14 @@ namespace Assets.Scripts.Objects.Interactions
                     }
                     if (_showerTemp.Value == Globals.AMBER_PREFERABLE_SHOWER_TEMP) {
                         _showerState = ShowerState.SHOWERING;
-                        UIManager.Instance.DisplaySimpleBubbleTilInterrupted(UIElements.BubbleIcon.SHOWERING);
+                        //UIManager.Instance.DisplaySimpleBubbleTilInterrupted(UIElements.BubbleIcon.SHOWERING);
                     }
                     break;
                 case ShowerState.SHOWERING:
                     if (_showerTemp.Value <= Globals.AMBER_GETS_COLD_TEMP)
                     {
                         _showerState = ShowerState.RAISING_TEMP;
-                        UIManager.Instance.DisplaySimpleBubbleTilInterrupted(UIElements.BubbleIcon.COLD);
+                        UIManager.Instance.DisplaySimpleBubbleForSeconds(UIElements.BubbleIcon.COLD, 2f);
                     }
                     else {
                         StoryDatastore.Instance.HotShowerDuration.Value += Time.deltaTime;

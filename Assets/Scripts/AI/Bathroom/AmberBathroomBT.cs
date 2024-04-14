@@ -36,14 +36,22 @@ namespace Assets.Scripts.AI
 
             Node routine = new Sequence(new List<Node>() {
                         new WaitFor(0.25f),
+                        new MoveToTile(interactions.Grid, interactions.ShowerCurtain.AssociatedTile),
+                        new WaitFor(0.25f),
+                        new PerformAmberInteraction(interactions.ShowerCurtain.AmberInteraction),
+                        new WaitFor(0.25f),
                         new MoveToTile(interactions.Grid, interactions.showerTile),
                         new SwitchAmberMount(interactions.shower),
+                        new PerformAmberInteraction(interactions.ShowerCurtain.AmberInteraction),
+                        new WaitFor(0.4f),
                         new AmberShower(interactions.Shower),
                         new SwitchAmberMount(navigation),
                         new WaitFor(0.5f),
-                        new MoveToTile(interactions.Grid, interactions.Towel.AssociatedTile),
+                        new PerformAmberInteraction(interactions.ShowerCurtain.AmberInteraction),
+                        //new MoveToTile(interactions.Grid, interactions.Towel.AssociatedTile),
                         new PerformAmberInteraction(interactions.Towel.AmberInteraction),
                         // add reaction to towel temp
+                        new WaitFor(0.5f),
                         new MoveToTile(interactions.Grid, interactions.LaundryBasketTile),
                         new EvaluateItemsPickedUp(new List<int>() { 0,1,2 }, UIElements.BubbleIcon.HAPPY_LAUNDRY, UIElements.BubbleIcon.SAD_LAUNDRY),
                         new WaitFor(2f),

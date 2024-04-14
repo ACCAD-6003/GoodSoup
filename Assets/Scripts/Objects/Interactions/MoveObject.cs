@@ -25,14 +25,17 @@ public class MoveObject : Interaction
         data.MoveObjects[interactionId] = _moved;
     }
     void RefreshObjects() {
+        Debug.Log("SETTING BEFORE MOVED ACTIVE : " + !_moved.Value + " AND AFTER MOVED ACTIVE : " + _moved.Value);
         beforeMoved.SetActive(!_moved.Value);
         afterMoved.SetActive(_moved.Value);
     }
     public override void DoAction()
     {
-        _moved.Value = true;
-        StoryDatastore.Instance.MoveObjects[interactionId].Value = true;
+        Debug.Log("OLD VALUE : " + _moved.Value + " NEW VALUE : " + !_moved.Value);
+        _moved.Value = !_moved.Value;
+        StoryDatastore.Instance.MoveObjects[interactionId].Value = _moved.Value;
         RefreshObjects();
         EndAction();
     }
+
 }

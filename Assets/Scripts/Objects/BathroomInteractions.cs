@@ -15,7 +15,7 @@ namespace Assets.Scripts.Objects
         public tile showerTile, LaundryBasketTile, sinkTile;
         public AmberUseShower Shower;
         public FlushToilet FlushToilet;
-        public InteractableObject Towel;
+        public InteractableObject Towel, ShowerCurtain;
         public AmberMount shower;
     }
 }
