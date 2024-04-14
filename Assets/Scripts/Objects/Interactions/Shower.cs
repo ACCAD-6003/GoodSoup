@@ -74,7 +74,7 @@ namespace Assets.Scripts.Objects.Interactions
         public void TurnOffShower() {
             _particleSystem.SetActive(false);        
         }
-        protected override void DoAction()
+        public override void DoAction()
         {
             _showering = true;
             _particleSystem.SetActive(true);

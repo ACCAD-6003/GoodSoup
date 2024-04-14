@@ -31,7 +31,7 @@ public class Dresser : Interaction
 
     }
 
-    protected override void DoAction()
+    public override void DoAction()
     {
         Texture2D clothesTexture = Resources.Load<Texture2D>("Textures/" + ClothingOptions[StoryDatastore.Instance.ChosenClothing.Value]);
         clothes.SetTexture("_MainTex", clothesTexture);

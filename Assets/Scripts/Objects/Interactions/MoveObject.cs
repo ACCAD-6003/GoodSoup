@@ -28,7 +28,7 @@ public class MoveObject : Interaction
         beforeMoved.SetActive(!_moved.Value);
         afterMoved.SetActive(_moved.Value);
     }
-    protected override void DoAction()
+    public override void DoAction()
     {
         _moved.Value = true;
         StoryDatastore.Instance.MoveObjects[interactionId].Value = true;

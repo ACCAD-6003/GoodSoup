@@ -3,7 +3,12 @@ guid: abfa7a15c337c6846969ffeb4a76db6b
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: FiddleleafFigPottedPlant_mat
+    second: {fileID: 2100000, guid: 608ad4a44f4135e40bfda9cf2aad1f99, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

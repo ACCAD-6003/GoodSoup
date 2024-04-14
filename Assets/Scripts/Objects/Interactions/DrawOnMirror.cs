@@ -50,7 +50,7 @@ public class DrawOnMirror : Interaction
         // reference so no body necessary
     }
 
-    protected override void DoAction()
+    public override void DoAction()
     {
         if (StoryDatastore.Instance.MirrorState.Value == MirrorState.FOGGED) {
             StoryDatastore.Instance.MirrorState.Value = MirrorState.DRAWN_ON;

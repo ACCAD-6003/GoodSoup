@@ -11,7 +11,7 @@ public class SwitchCurtains : Interaction
         stateTwo.SetState(!StoryDatastore.Instance.CurtainsOpen.Value);
     }
 
-    override protected void DoAction()
+    public override void DoAction()
     {
         StoryDatastore.Instance.CurtainsOpen.Value = !StoryDatastore.Instance.CurtainsOpen.Value;
         RefreshState();

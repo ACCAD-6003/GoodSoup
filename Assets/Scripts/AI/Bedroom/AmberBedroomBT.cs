@@ -39,26 +39,28 @@ namespace Assets.Scripts.AI
                     // change to evaluate if everything has been done one by one by wrapping these in classespho
                     new DisplayUIIcon(UI.UIElements.BubbleIcon.SLEEPING),
                         // Wait for alarm clock
-                    new Sequence(new List<Node>() {
-                        new WaitForPlayerInteractionCompleted(interactions.AlarmClock),
-                        new DisplayUIIcon(UI.UIElements.BubbleIcon.ANNOYANCE),
-                    }),
-                    new StopFarCryEnding(interactions.switcher),
+                    new WrapperNode(new SkipIfStoryDatastoreState<bool>(StoryDatastore.Instance.BooksBlown, true), new List<Node>() {
+                        new Sequence(new List<Node>() {
+                            new WaitForPlayerInteractionCompleted(interactions.AlarmClock),
+                            new DisplayUIIcon(UI.UIElements.BubbleIcon.ANNOYANCE),
+                        }),
+                        new StopFarCryEnding(interactions.switcher),
 
-                    new WaitFor(1f),
-                    new SwitchAmberMount(interactions.SittingInBed),
-                    new WaitFor(1f),
-                    new DisplayUIIcon(UI.UIElements.BubbleIcon.PHONE),
+                        new WaitFor(1f),
+                        new SwitchAmberMount(interactions.SittingInBed),
+                        new WaitFor(1f),
+                        new DisplayUIIcon(UI.UIElements.BubbleIcon.PHONE),
+                    }),
 
                     // Wait for book hit
                     new Selector(new List<Node>() {
                         new Sequence(new List<Node>() {
-                            new WaitForStoryDataChange(new SkipIfStoryDatastoreState<bool>(StoryDatastore.Instance.CurtainsOpen, true)),
-                            new DisplayUIIcon(UI.UIElements.BubbleIcon.HAPPY_SUNSHINE),
-                        }),
-                        new Sequence(new List<Node>() {
                             new WaitForBookHit(storyData.AnyBookDropped),
                             new DisplayUIIcon(UI.UIElements.BubbleIcon.ANNOYANCE),
+                        }),
+                        new Sequence(new List<Node>() {
+                            new WaitForStoryDataChange(new SkipIfStoryDatastoreState<bool>(StoryDatastore.Instance.CurtainsOpen, true)),
+                            new DisplayUIIcon(UI.UIElements.BubbleIcon.HAPPY_SUNSHINE),
                         })
                     }),
 

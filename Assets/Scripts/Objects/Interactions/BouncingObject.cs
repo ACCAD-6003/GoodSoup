@@ -14,7 +14,8 @@ public class BouncingObject : Interaction
     }
 
     // Update is called once per frame
-    override protected void DoAction() {
+    public override void DoAction()
+    {
         StartCoroutine(Bounce());
     }
 

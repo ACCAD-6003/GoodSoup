@@ -35,7 +35,7 @@ public class SwapShirt : Interaction
 
     }
 
-    protected override void DoAction()
+    public override void DoAction()
     {
         ClothingOption clothes = StoryDatastore.Instance.DisplayedShirts[ID].Value;
         StoryDatastore.Instance.DisplayedShirts[ID].Value = StoryDatastore.Instance.ChosenClothing.Value;

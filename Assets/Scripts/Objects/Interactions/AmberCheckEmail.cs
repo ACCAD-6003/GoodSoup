@@ -19,7 +19,7 @@ namespace Assets.Scripts.Objects.Interactions
 
         }
 
-        protected override void DoAction()
+        public override void DoAction()
         {
             switch (StoryDatastore.Instance.EmailState.Value) {
                 case ComputerHUD.EmailState.MEAN_EMAIL:

@@ -58,7 +58,7 @@ public class ComputerEmail : Interaction
         PCUI.SetActive(false);
         EndAction();
     }
-    override protected void DoAction()
+    public override void DoAction()
     {
         PCUI.SetActive(true);
         DisplayEmailScreen();

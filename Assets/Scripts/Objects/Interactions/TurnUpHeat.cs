@@ -21,7 +21,7 @@ public class TurnUpHeat : Interaction
     }
 
     // Update is called once per frame
-    override protected void DoAction() {
+    public override void DoAction() {
         data.BurnerHeat.Value += 10;
         EndAction();
     }

@@ -14,7 +14,7 @@ public class AmberGrabBackpack : Interaction
 
     }
 
-    protected override void DoAction()
+    public override void DoAction()
     {
 
     }

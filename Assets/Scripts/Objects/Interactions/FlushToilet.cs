@@ -21,7 +21,7 @@ namespace Assets.Scripts.Objects.Interactions
 
         }
 
-        protected override void DoAction()
+        public override void DoAction()
         {
             StoryDatastore.Instance.Annoyance.Value += 0.2f;
             _temperature.Value += Globals.FLUSH_SHOWER_TEMP_IMPACT;

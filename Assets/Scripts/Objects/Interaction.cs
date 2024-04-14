@@ -51,6 +51,14 @@ public abstract class Interaction : MonoBehaviour
             _isInProgress = value;
         }
     }
+    public void PutInProgress() {
+        if (IsInProgress)
+        {
+            return;
+        }
+
+        IsInProgress = true;
+    }
 
     public void StartAction()
     {
@@ -64,9 +72,9 @@ public abstract class Interaction : MonoBehaviour
         DoAction();
     }
 
-    protected abstract void DoAction();
+    public abstract void DoAction();
 
-    protected void EndAction()
+    public void EndAction()
     {
         IsInProgress = false;
         if (singleUse) {
