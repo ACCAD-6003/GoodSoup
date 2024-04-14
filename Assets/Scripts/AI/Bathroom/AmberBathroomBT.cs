@@ -41,6 +41,9 @@ namespace Assets.Scripts.AI
                         new AmberShower(interactions.Shower),
                         new SwitchAmberMount(navigation),
                         new WaitFor(0.5f),
+                        new MoveToTile(interactions.Grid, interactions.Towel.AssociatedTile),
+                        new PerformAmberInteraction(interactions.Towel.AmberInteraction),
+                        // add reaction to towel temp
                         new MoveToTile(interactions.Grid, interactions.LaundryBasketTile),
                         new EvaluateItemsPickedUp(new List<int>() { 0,1,2 }, UIElements.BubbleIcon.HAPPY_LAUNDRY, UIElements.BubbleIcon.SAD_LAUNDRY),
                         new WaitFor(2f),

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 // none is used for when there is no shirt on the hanger (after amber picks it up)
 public enum ClothingOption { 
-    Blue, Green, Orange, Dirty, Pajamas, None
+    Blue, Green, Orange, Dirty, Pajamas, Towel, None
 }
 public class Dresser : Interaction
 {

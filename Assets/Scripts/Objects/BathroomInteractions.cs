@@ -13,8 +13,9 @@ namespace Assets.Scripts.Objects
     {
         public grid_manager Grid;
         public tile showerTile, LaundryBasketTile, sinkTile;
-        public Shower Shower;
+        public AmberUseShower Shower;
         public FlushToilet FlushToilet;
+        public InteractableObject Towel;
         public AmberMount shower;
     }
 }

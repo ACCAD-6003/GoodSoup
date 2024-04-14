@@ -62,8 +62,6 @@ public class StoryDatastore : MonoBehaviour
     [SerializeField]
     public StoryData<float> ShowerTemperature = new StoryData<float>(40f);
     [SerializeField]
-    public StoryData<float> HotShowerDuration = new StoryData<float>(0f);
-    [SerializeField]
     public StoryData<bool> DoneShowering = new StoryData<bool>(false);
     [SerializeField]
     public StoryData<MirrorState> MirrorState = new StoryData<MirrorState>(global::MirrorState.NOT_FOGGED);
@@ -97,4 +95,10 @@ public class StoryDatastore : MonoBehaviour
     public StoryData<ClothingOption> AmberWornClothing = new StoryData<ClothingOption>(ClothingOption.Pajamas);
     [SerializeField]
     public StoryData<HairOption> AmberHairOption = new StoryData<HairOption>(HairOption.BONNET);
+    [SerializeField]
+    public StoryData<bool> PlayerTurnedShowerOff = new StoryData<bool>(false);
+    [SerializeField]
+    public StoryData<bool> RadiatorHot = new StoryData<bool>(false);
+    [SerializeField]
+    public StoryData<float> HotShowerDuration = new StoryData<float>(0f);
 }

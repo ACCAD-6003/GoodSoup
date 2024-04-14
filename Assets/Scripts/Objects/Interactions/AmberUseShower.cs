@@ -5,11 +5,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 
 namespace Assets.Scripts.Objects.Interactions
 {
-    public class Shower : Interaction
+    public class AmberUseShower : Interaction
     {
         [SerializeField] private GameObject _tempHierarchy, _particleSystem;
         [SerializeField] private TextMeshProUGUI temp;
@@ -60,14 +61,13 @@ namespace Assets.Scripts.Objects.Interactions
                     }
                     break;
             }
-            if (StoryDatastore.Instance.HotShowerDuration.Value >= Globals.SECONDS_AMBER_NEEDS_TO_SHOWER_IN_WARM_WATER) {
+            if (StoryDatastore.Instance.PlayerTurnedShowerOff.Value) {
                 _showerState = ShowerState.NOT_USING;
                 UIManager.Instance.ClearBubble();
                 _showered.Value = true;
                 StoryDatastore.Instance.DoneShowering.Value = true;
                 _tempHierarchy.SetActive(false);
                 _showering = false;
-                EndAction();
             }
             temp.text = MathF.Floor(_showerTemp.Value) + "F";
         }
@@ -84,6 +84,8 @@ namespace Assets.Scripts.Objects.Interactions
             temp.text = _showerTemp.Value.ToString();
             StoryDatastore.Instance.AmberHairOption.Value = AmberVisual.HairOption.MESSY;
             GameObject.FindObjectOfType<GridCharacter>().SetArbitraryRot(Vector3.back);
+            //transform.GetComponent<InteractableObject>().AmberInteraction = transform.AddComponent<StopShowering>();
+            EndAction();
         }
     }
 }
