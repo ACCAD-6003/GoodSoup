@@ -38,8 +38,9 @@ public class Dresser : Interaction
 
     public override void DoAction()
     {
-        Texture2D clothesTexture = Resources.Load<Texture2D>("Textures/" + ClothingOptions[StoryDatastore.Instance.ChosenClothing.Value]);
-        clothes.SetTexture("_MainTex", clothesTexture);
+        //Texture2D clothesTexture = Resources.Load<Texture2D>("Textures/" + ClothingOptions[StoryDatastore.Instance.ChosenClothing.Value]);
+        //clothes.SetTexture("_MainTex", clothesTexture);
+        StoryDatastore.Instance.AmberWornClothing = StoryDatastore.Instance.ChosenClothing.Value;
         StoryDatastore.Instance.AmberDressed.Value = true;
         foreach (var shirt in shirtsOnBed.AllShirts) {
             shirt.Value.SetActive(false);

@@ -97,7 +97,7 @@ namespace Assets.Scripts.AI
                         { ClothingOption.Blue, new HappyClothingReaction() },
                         { ClothingOption.Orange, new HappyClothingReaction() },
                         { ClothingOption.Green, new HappyClothingReaction() },
-                    }, StoryDatastore.Instance.ChosenClothing),
+                    }, StoryDatastore.Instance.AmberWornClothing),
                 }, true),
                 new WaitFor(2f),
                 new WrapperNode(new SkipIfStoryDatastoreState<EmailState>(StoryDatastore.Instance.EmailState, EmailState.NOTHING_CHANGED, false), new List<Node>() {

@@ -10,7 +10,9 @@ public class PullObjectWithPhysics : Interaction
     bool _inPhysicsMode = false;
     Rigidbody _rb;
     bool _blown = false;
+    bool _collided = false;
     [SerializeField] Interaction interactionToFinishOnceCollisionHits;
+    [SerializeField] AudioSource _playSoundOnImpact;
     private void Awake()
     {
         _rb = gameObject.GetComponent<Rigidbody>();
@@ -45,7 +47,7 @@ public class PullObjectWithPhysics : Interaction
         float elapsedTime = 0f;
         Vector3 initialVelocity = _rb.velocity;
         float modifier = 100f;
-        var blowDuration = 0.6f + (0.5f * interactionId);
+        var blowDuration = 0.6f + (0.7f * interactionId);
         while (elapsedTime < blowDuration)
         {
             // Calculate the current force based on elapsed time
@@ -60,7 +62,6 @@ public class PullObjectWithPhysics : Interaction
 
             yield return null;
         }
-        interactionToFinishOnceCollisionHits.EndAction();
         // Ensure the final force is applied
         //_rb.velocity = initialVelocity + new Vector3(-0.25f * modifier, 0, -1f * modifier);
     }
@@ -71,13 +72,15 @@ public class PullObjectWithPhysics : Interaction
     }
     void OnCollisionEnter(Collision collision)
     {
-        if (!_inPhysicsMode) {
+        if (!_inPhysicsMode || _collided) {
             return;
         }
         if (collision.collider.gameObject.layer == 8 || collision.collider.gameObject.name.Contains("Book"))
         {
             return;
         }
+        Debug.Log("BOOK COLLIDED!");
+        _collided = true;
         StoryDatastore.Instance.AnyBookDropped.Value = true;
         if (_blown) {
             StoryDatastore.Instance.BooksBlown.Value = true;
@@ -86,6 +89,8 @@ public class PullObjectWithPhysics : Interaction
                 StoryDatastore.Instance.Annoyance.Value += 0.5f;
             }
         }
+        interactionToFinishOnceCollisionHits.EndAction();
+        _playSoundOnImpact.Play();
         SaveData(StoryDatastore.Instance);
         EndAction();
     }
