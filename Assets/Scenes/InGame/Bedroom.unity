@@ -24944,7 +24944,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh286892
+  m_Name: pb_Mesh764612
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -45458,6 +45458,7 @@ MonoBehaviour:
   AssociatedDirection: {x: 0, y: 0, z: 1}
   isPlayer: 0
   _isInProgress: 0
+  shirtsOnBed: {fileID: 1860706361956912719}
 --- !u!114 &969151723
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -62822,7 +62823,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh293016
+  m_Name: pb_Mesh770736
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -90641,7 +90642,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh287260
+  m_Name: pb_Mesh764980
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2

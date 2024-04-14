@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+// none is used for when there is no shirt on the hanger (after amber picks it up)
 public enum ClothingOption { 
-    Blue, Green, Orange, Dirty, Pajamas
+    Blue, Green, Orange, Dirty, Pajamas, None
 }
 public class Dresser : Interaction
 {
@@ -43,6 +44,7 @@ public class Dresser : Interaction
         foreach (var shirt in shirtsOnBed.AllShirts) {
             shirt.Value.SetActive(false);
         }
+        StoryDatastore.Instance.ChosenClothing.Value = ClothingOption.None;
         EndAction();
     }
 }
