@@ -835,13 +835,13 @@ GameObject:
   - component: {fileID: 1203000924}
   - component: {fileID: 1203000923}
   - component: {fileID: 1203000925}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: GhostHand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1203000922
 RectTransform:
   m_ObjectHideFlags: 0
@@ -851,7 +851,7 @@ RectTransform:
   m_GameObject: {fileID: 1203000921}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.84091, y: 0.84091, z: 0.84091}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 0.84091}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1757966944}
@@ -876,13 +876,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 61aa107af2726664ab8b6d1f459e6c16, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8b97d928d561a0e44be29692049f68e3, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -912,7 +912,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77c0411df2e0aa14f94627b0ad739dcf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ghostImage: {fileID: 1203000923}
+  frames:
+  - {fileID: 21300000, guid: 8b97d928d561a0e44be29692049f68e3, type: 3}
+  - {fileID: 21300000, guid: 8af3b655614b57f4a8ae8d60f9b206a4, type: 3}
+  - {fileID: 21300000, guid: bf597d88444674e4ca02ec439fca1e26, type: 3}
+  - {fileID: 21300000, guid: 8b3c8b72f0888f340b33bd8762d16dee, type: 3}
+  image: {fileID: 1203000923}
+  FPS: 8
 --- !u!1 &1270958203
 GameObject:
   m_ObjectHideFlags: 0
@@ -958,8 +964,6 @@ MonoBehaviour:
     _value: 0
   ShowerTemperature:
     _value: 40
-  HotShowerDuration:
-    _value: 0
   DoneShowering:
     _value: 0
   MirrorState:
@@ -989,6 +993,16 @@ MonoBehaviour:
   AmberWornClothing:
     _value: 4
   AmberHairOption:
+    _value: 0
+  PlayerTurnedShowerOff:
+    _value: 0
+  RadiatorHot:
+    _value: 0
+  HotShowerDuration:
+    _value: 0
+  ShowerCurtainsOpen:
+    _value: 1
+  TowelHot:
     _value: 0
 --- !u!4 &1270958205
 Transform:
@@ -1491,7 +1505,7 @@ GameObject:
   - component: {fileID: 1757966943}
   - component: {fileID: 1757966942}
   - component: {fileID: 1757966941}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: TopOfPrimaryUi
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1557,7 +1571,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 50
   m_TargetDisplay: 0
 --- !u!224 &1757966944
 RectTransform:
