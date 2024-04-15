@@ -14,6 +14,7 @@ public class GhostHand : MonoBehaviour
     {
         StartCoroutine(PlayGhostHandAnimation());
         Cursor.visible = false;
+        DontDestroyOnLoad(transform.parent);
     }
     IEnumerator PlayGhostHandAnimation() {
         image.sprite = frames[currFrameIndex];

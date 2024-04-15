@@ -105,8 +105,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Email Sent!
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: f66bd58b7fbb9c646896b3710a07cb31, type: 2}
-  m_sharedMaterial: {fileID: 8245742415806652105, guid: f66bd58b7fbb9c646896b3710a07cb31, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 88606dfb0f4c3ee4794c84da12fd5b96, type: 2}
+  m_sharedMaterial: {fileID: -5978640235278180942, guid: 88606dfb0f4c3ee4794c84da12fd5b96, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
