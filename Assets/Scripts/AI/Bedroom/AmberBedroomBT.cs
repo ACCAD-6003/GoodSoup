@@ -118,6 +118,7 @@ namespace Assets.Scripts.AI
                     new PerformAmberInteraction(interactions.Backpack.AmberInteraction),
                     new WaitFor(0.5f),
                     new MoveToTile(interactions.Grid, doors.doors[MainSceneLoading.AmberRoom.GONE]),
+                    new WaitFor(0.25f),
                     new AmberMoveToRoom(MainSceneLoading.AmberRoom.GONE),
                     new WaitFor(5f),
                 }),
@@ -127,6 +128,7 @@ namespace Assets.Scripts.AI
                     new PerformAmberInteraction(interactions.Backpack.AmberInteraction),
                     new WaitFor(0.5f),
                     new MoveToTile(interactions.Grid, doors.doors[MainSceneLoading.AmberRoom.KITCHEN]),
+                    new WaitFor(0.25f),
                     new AmberMoveToRoom(MainSceneLoading.AmberRoom.KITCHEN)
                 })
                 //

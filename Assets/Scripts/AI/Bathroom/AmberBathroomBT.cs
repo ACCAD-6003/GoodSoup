@@ -41,8 +41,9 @@ namespace Assets.Scripts.AI
                         new PerformAmberInteraction(interactions.ShowerCurtain.AmberInteraction),
                         new WaitFor(0.25f),
                         new MoveToTile(interactions.Grid, interactions.showerTile),
-                        new SwitchAmberMount(interactions.shower),
                         new PerformAmberInteraction(interactions.ShowerCurtain.AmberInteraction),
+                        new SwitchAmberMount(interactions.shower),
+
                         new WaitFor(0.4f),
                         new AmberShower(interactions.Shower),
                         new SwitchAmberMount(navigation),
