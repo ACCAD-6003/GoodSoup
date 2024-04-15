@@ -52,12 +52,22 @@ public class RotateFan : Interaction
         if (orientationIndex == orientationToDoFanAction)
         {
             fanAligned = true;
-            action.FanAligned();
+            if (action != null)
+            {
+                action.FanAligned();
+            }
+            else {
+                EndAction();
+            }
+
         }
         else if (fanAligned)
         {
             fanAligned = false;
-            action.FanUnaligned();
+            if (action != null) {
+                action.FanUnaligned();
+            }
+
             EndAction();
         }
         else {
