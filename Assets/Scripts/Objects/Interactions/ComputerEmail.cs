@@ -56,12 +56,14 @@ public class ComputerEmail : Interaction
 
     public void CloseScreen() {
         PCUI.SetActive(false);
+        Time.timeScale = 1f;
         EndAction();
     }
     public override void DoAction()
     {
         PCUI.SetActive(true);
         DisplayEmailScreen();
+        Time.timeScale = 0f;
     }
 
     public override void SaveData(StoryDatastore data)

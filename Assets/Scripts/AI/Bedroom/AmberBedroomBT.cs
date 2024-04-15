@@ -83,7 +83,7 @@ namespace Assets.Scripts.AI
                     new MoveToTile(interactions.Grid, interactions.Curtains.AssociatedTile),
                     new WaitFor(0.5f),
                     new PerformAmberInteraction(interactions.Curtains.AmberInteraction),
-                }),
+                }, true),
                 new WaitFor(2f),
                 // ONLY skips if it is true when this tree starts to evalute that Amber has already dressed. Doesn't check again.
                 new WrapperNode(new SkipIfStoryDatastoreState<bool>(StoryDatastore.Instance.AmberDressed, true), new List<Node>() {
@@ -98,8 +98,9 @@ namespace Assets.Scripts.AI
                         { ClothingOption.Orange, new HappyClothingReaction() },
                         { ClothingOption.Green, new HappyClothingReaction() },
                     }, StoryDatastore.Instance.AmberWornClothing),
+                    new WaitFor(2f),
                 }, true),
-                new WaitFor(2f),
+
                 new WrapperNode(new SkipIfStoryDatastoreState<EmailState>(StoryDatastore.Instance.EmailState, EmailState.NOTHING_CHANGED, false), new List<Node>() {
                     // glitch here, if player is interacting with email then amber could possibly get stuck
                     new WaitFor(0.5f),
@@ -107,18 +108,29 @@ namespace Assets.Scripts.AI
                     new SwitchAmberMount(interactions.SittingAtDesk),
                     new WaitFor(1f),
                     new PerformAmberInteraction(interactions.Laptop.AmberInteraction)
+                }, true),
+                new WrapperNode(new SkipIfStoryDatastoreState<GamePhase>(StoryDatastore.Instance.CurrentGamePhase, GamePhase.BEFORE_AMBER_LEAVES, true), new List<Node>() {
+                    new MoveToTile(interactions.Grid, interactions.Backpack.AssociatedTile),
+                    new PerformAmberInteraction(interactions.Backpack.AmberInteraction),
+                    new WaitFor(0.5f),
+                    new MoveToTile(interactions.Grid, doors.doors[MainSceneLoading.AmberRoom.GONE]),
+                    new AmberMoveToRoom(MainSceneLoading.AmberRoom.GONE),
+                    new WaitFor(5f),
                 }),
-
-                // need a wrapper on this
-
-                new MoveToTile(interactions.Grid, interactions.Backpack.AssociatedTile),
-                new PerformAmberInteraction(interactions.Backpack.AmberInteraction),
-
+                new WrapperNode(new SkipIfStoryDatastoreState<GamePhase>(StoryDatastore.Instance.CurrentGamePhase, GamePhase.SLEEP_TIME), new List<Node>() {
+                    new WaitFor(0.5f),
+                    new MoveToTile(interactions.Grid, interactions.Backpack.AssociatedTile),
+                    new PerformAmberInteraction(interactions.Backpack.AmberInteraction),
+                    new WaitFor(0.5f),
+                    new MoveToTile(interactions.Grid, doors.doors[MainSceneLoading.AmberRoom.KITCHEN]),
+                    new AmberMoveToRoom(MainSceneLoading.AmberRoom.KITCHEN)
+                })
+                //
                 //
 
 //                new MoveToTile(interactions.Grid, doors.doors[MainSceneLoading.AmberRoom.KITCHEN]),
 //                new AmberMoveToRoom(MainSceneLoading.AmberRoom.KITCHEN),*/
-                new SelectEnding(),
+                //new SelectEnding(),
             });;
             return routine;
         }

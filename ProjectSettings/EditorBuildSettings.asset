@@ -23,4 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/InGame/Kitchen.unity
     guid: bda46539fbd954e709a33b104688459e
+  - enabled: 1
+    path: Assets/Scenes/InGame/AmberGone.unity
+    guid: 9507cde3b31a2b7468b1a599fed3a362
   m_configObjects: {}

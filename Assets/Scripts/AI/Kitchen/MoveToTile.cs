@@ -2,9 +2,10 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Numerics;
+
 using System.Text;
 using System.Threading.Tasks;
+using UnityEngine;
 
 namespace Assets.Scripts.AI.Kitchen
 {
@@ -16,9 +17,15 @@ namespace Assets.Scripts.AI.Kitchen
         private grid_manager _grid;
         bool _targetSet = false, _destReached = false;
         private tile _tile;
+        private Vector3 _dirAtEnd;
         public MoveToTile(grid_manager grid, tile tile) {
             _grid = grid;
             _tile = tile;
+        }
+        public MoveToTile(grid_manager grid, tile tile, Vector3 dirAtEnd) {
+            _grid = grid;
+            _tile = tile;
+            _grid.SetLookRot(_dirAtEnd);
         }
         private void ReachedDest() {
             _destReached = true;

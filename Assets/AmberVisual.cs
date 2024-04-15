@@ -23,6 +23,13 @@ public class AmberVisual : MonoBehaviour
         StoryDatastore.Instance.AmberWornClothing.Changed += UpdateClothesVisual;
         StoryDatastore.Instance.AmberHairOption.Changed += UpdateHairVisual;
     }
+    private void OnDisable()
+    {
+        // Subscribe to changes in storydata for each visual
+        StoryDatastore.Instance.PickedUpBackpack.Changed -= UpdateBackpackVisual;
+        StoryDatastore.Instance.AmberWornClothing.Changed -= UpdateClothesVisual;
+        StoryDatastore.Instance.AmberHairOption.Changed -= UpdateHairVisual;
+    }
 
     void UpdateBackpackVisual(bool oldValue, bool newValue) {
         _backpack.SetActive(newValue);

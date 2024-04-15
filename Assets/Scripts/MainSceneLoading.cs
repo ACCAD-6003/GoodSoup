@@ -11,7 +11,7 @@ public class MainSceneLoading : SerializedMonoBehaviour
         { AmberRoom.BATHROOM, "Bathroom" },
         { AmberRoom.KITCHEN, "Kitchen" },
         { AmberRoom.LIVING_ROOM, "LivingRoom" },
-        { AmberRoom.GONE, "Gone" }
+        { AmberRoom.GONE, "AmberGone" }
     };
     public enum AmberRoom { BEDROOM, BATHROOM, KITCHEN, LIVING_ROOM, GONE }
     private static MainSceneLoading instance;
@@ -43,6 +43,13 @@ public class MainSceneLoading : SerializedMonoBehaviour
     {
         foreach(Interaction interaction in FindObjectsOfType<Interaction>()) {
             interaction.SaveData(StoryDatastore.Instance);
+        }
+        if (room == AmberRoom.GONE)
+        {
+            StoryDatastore.Instance.CurrentGamePhase.Value = GamePhase.AMBER_GONE;
+        }
+        else if (StoryDatastore.Instance.CurrentGamePhase.Value == GamePhase.AMBER_GONE) {
+            StoryDatastore.Instance.CurrentGamePhase.Value = GamePhase.AMBER_BACK;
         }
         switch (StoryDatastore.Instance.CurrentGamePhase.Value)
         {

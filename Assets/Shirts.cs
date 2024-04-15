@@ -13,6 +13,9 @@ public class Shirts : SerializedMonoBehaviour
             {
                 shirt.Value.SetActive(false);
             }
+            if (StoryDatastore.Instance.ChosenClothing.Value == ClothingOption.None) {
+                return;
+            }
             AllShirts[StoryDatastore.Instance.ChosenClothing.Value].SetActive(true);
         }
     }

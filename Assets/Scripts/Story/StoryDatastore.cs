@@ -6,7 +6,7 @@ using static Assets.Scripts.UI.UIElements;
 using static ComputerEmail;
 using static ComputerHUD;
 using static MainSceneLoading;
-public enum GamePhase { TUTORIAL_BEDROOM, BEFORE_AMBER_LEAVES, AMBER_GONE, AMBER_BACK }
+public enum GamePhase { TUTORIAL_BEDROOM, BEFORE_AMBER_LEAVES, AMBER_GONE, AMBER_BACK, SLEEP_TIME }
 public class StoryDatastore : MonoBehaviour
 {
     private static StoryDatastore instance;
@@ -105,4 +105,5 @@ public class StoryDatastore : MonoBehaviour
     public StoryData<bool> ShowerCurtainsOpen = new StoryData<bool>(true);
     [SerializeField]
     public StoryData<bool> TowelHot = new StoryData<bool>(false);
+
 }

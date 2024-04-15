@@ -5,6 +5,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Unity.VisualScripting;
 public class SkipIfStoryDatastoreState<T> : ISkipCondition {
     StoryData<T> _storyData;
     T _necessaryValueToSkip;
@@ -53,6 +54,7 @@ public class WrapperNode : Node
     private ISkipCondition _skipCondition;
     bool _shouldEvaluteOnlyOnce = false;
     bool _canSkip = true;
+    bool _skipEverytime = false;
     public WrapperNode(ISkipCondition skipCondition, List<Node> nodes) : base(nodes) {
         _skipCondition = skipCondition;
     }
@@ -63,12 +65,22 @@ public class WrapperNode : Node
     }
     public override NodeState Evaluate()
     {
-        if (_canSkip && _skipCondition.ShouldSkip()) {
+        if (_skipEverytime) {
+            state = NodeState.SUCCESS;
+            return NodeState.SUCCESS;
+        }
+        if (_canSkip) {
             if (_shouldEvaluteOnlyOnce) {
                 _canSkip = false;
             }
-            state = NodeState.SUCCESS;
-            return NodeState.SUCCESS;
+            if (_skipCondition.ShouldSkip())
+            {
+                if (_shouldEvaluteOnlyOnce) {
+                    _skipEverytime = true;
+                }
+                state = NodeState.SUCCESS;
+                return NodeState.SUCCESS;
+            }
         }
         foreach (Node node in children)
         {

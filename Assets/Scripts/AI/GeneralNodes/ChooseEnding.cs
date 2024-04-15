@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using UnityEngine.SceneManagement;
-public enum Ending { FAR_CRY, PARANOID, GOOD_ENDING, BAD_ENDING }
+public enum Ending { FAR_CRY, PARANOID, GOOD_ENDING, BAD_ENDING, KICKED_OUT_OF_COLLEGE }
 namespace Assets.Scripts.AI.GeneralNodes
 {
     public class SelectEnding : BehaviorTree.Node

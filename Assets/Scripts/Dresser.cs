@@ -40,7 +40,7 @@ public class Dresser : Interaction
     {
         //Texture2D clothesTexture = Resources.Load<Texture2D>("Textures/" + ClothingOptions[StoryDatastore.Instance.ChosenClothing.Value]);
         //clothes.SetTexture("_MainTex", clothesTexture);
-        StoryDatastore.Instance.AmberWornClothing = StoryDatastore.Instance.ChosenClothing.Value;
+        StoryDatastore.Instance.AmberWornClothing.Value = StoryDatastore.Instance.ChosenClothing.Value;
         StoryDatastore.Instance.AmberDressed.Value = true;
         foreach (var shirt in shirtsOnBed.AllShirts) {
             shirt.Value.SetActive(false);
