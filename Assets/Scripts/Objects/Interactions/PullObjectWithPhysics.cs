@@ -1,6 +1,5 @@
-using Sirenix.OdinInspector.Editor.GettingStarted;
+
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PullObjectWithPhysics : Interaction

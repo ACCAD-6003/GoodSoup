@@ -44,19 +44,16 @@ public class grid_manager : MonoBehaviour
     private tile end_destination_tile;
     // controls where we are trying to go
     public tile dest_tile;
-    public void Target(tile t, Action destinationReachedEvent, Vector3 lookVectorWhenComplete) {
-        dest_tile = t;
-        char_s.PathfindingCompleted += destinationReachedEvent;
-        char_s.LookVectorWhenComplete = lookVectorWhenComplete;
-    }
     public void Target(tile t, Action destinationReachedEvent)
     {
         dest_tile = t;
         char_s.PathfindingCompleted += destinationReachedEvent;
-        char_s.LookVectorWhenComplete = Vector3.zero;
     }
     public void SetLookRot(Vector3 rot) {
-        char_s.SetLookRot(rot);
+        if (char_s == null) {
+            char_s = GameObject.FindGameObjectWithTag("Player").GetComponent<GridCharacter>();
+        }
+        char_s.SetLookRotWhenComplete(rot);
     }
     private void Update()
     {

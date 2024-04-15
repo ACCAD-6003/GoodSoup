@@ -22,7 +22,7 @@ public class GridCharacter : MonoBehaviour
     public int num_tile;
 
     public event Action PathfindingCompleted;
-    public Vector3 LookVectorWhenComplete = Vector3.forward;
+    private Vector3 LookVectorWhenComplete = Vector3.forward;
     void Awake() {
         SceneManager.sceneLoaded += ReassignGrid;
     }
@@ -85,12 +85,14 @@ public class GridCharacter : MonoBehaviour
             }
         }
     }
-    public void SetLookRot(Vector3 lookRot) {
-        if (LookVectorWhenComplete != Vector3.zero)
-        {
-            Quaternion new_rot = Quaternion.LookRotation(LookVectorWhenComplete);
-            tr_body.transform.rotation = new_rot;
-        }
+    public void SetLookRotWhenComplete(Vector3 lookRot) {
+        LookVectorWhenComplete = lookRot;
+    }
+    private void SetLookRot(Vector3 lookRot) {
+        Debug.Log("SET LOOK ROT to VECTOR" + lookRot);
+        Quaternion new_rot = Quaternion.LookRotation(lookRot);
+        tr_body.transform.rotation = new_rot;
+        LookVectorWhenComplete = Vector3.forward;
     }
     public void SetArbitraryRot(Vector3 rot) {
         Quaternion new_rot = Quaternion.LookRotation(rot);

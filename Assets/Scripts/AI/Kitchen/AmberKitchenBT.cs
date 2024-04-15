@@ -9,24 +9,13 @@ namespace Assets.Scripts.AI
     public class AmberKitchenBT : BehaviorTree.Tree
     {
         [SerializeField]
-        grid_manager grid;
-        [SerializeField]
-        InteractableObject interactableObject;
-        [SerializeField]
-        tile _fridgeTile;
-        [SerializeField]
-        StoryDatastore storyDatastore;
+        KitchenInteractions _interactions;
         protected override Node SetupTree()
         {
-            // initialize to real first node
-            Node turnDownHeat = new Sequence(new List<Node>(){
-                new CheckIfICareAboutBurner(storyDatastore), new MoveToTile(grid, interactableObject.AssociatedTile), new PerformInteraction(interactableObject, grid)
+            return new Sequence(new List<Node>() {
+                new WaitFor(1f),
+                new MoveToTile(_interactions.Grid, _interactions.DebugTile, Vector3.back)
             });
-            Node standByFridge = new Sequence(new List<Node>() {
-                new MoveToTile(grid, _fridgeTile)
-            });
-            Node selector = new Selector(new List<Node>() { standByFridge, turnDownHeat });
-            return selector;
         }
     }
 }

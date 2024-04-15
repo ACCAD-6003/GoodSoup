@@ -39,7 +39,7 @@ public class ObjectInteraction : MonoBehaviour
     {
         Ray mouseTarget = Camera.main.ScreenPointToRay(Input.mousePosition);
 
-        bool didHit = Physics.Raycast(mouseTarget, out RaycastHit hitInfo, searchDistance, ~(1<<5 & 1<<8));
+        bool didHit = Physics.Raycast(mouseTarget, out RaycastHit hitInfo, searchDistance, ~(1<<8));
 
         if (!didHit)
         {

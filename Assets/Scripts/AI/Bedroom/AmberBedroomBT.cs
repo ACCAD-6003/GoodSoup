@@ -68,8 +68,8 @@ namespace Assets.Scripts.AI
                     new SwitchAmberMount(navigation),
 
                     // DEBUG
-                    new MoveToTile(interactions.Grid, doors.doors[MainSceneLoading.AmberRoom.KITCHEN]),
-                    new AmberMoveToRoom(MainSceneLoading.AmberRoom.KITCHEN),
+/*                    new MoveToTile(interactions.Grid, doors.doors[MainSceneLoading.AmberRoom.KITCHEN]),
+                    new AmberMoveToRoom(MainSceneLoading.AmberRoom.KITCHEN),*/
                     //
 
                     new MoveToTile(interactions.Grid, doors.doors[MainSceneLoading.AmberRoom.BATHROOM]),
@@ -108,9 +108,12 @@ namespace Assets.Scripts.AI
                     new MoveToTile(interactions.Grid, interactions.Laptop.AssociatedTile),
                     new SwitchAmberMount(interactions.SittingAtDesk),
                     new WaitFor(1f),
-                    new PerformAmberInteraction(interactions.Laptop.AmberInteraction)
+                    new PerformAmberInteraction(interactions.Laptop.AmberInteraction),
+                    new WaitFor(2f),
+                    new SwitchAmberMount(navigation),
                 }, true),
                 new WrapperNode(new SkipIfStoryDatastoreState<GamePhase>(StoryDatastore.Instance.CurrentGamePhase, GamePhase.BEFORE_AMBER_LEAVES, true), new List<Node>() {
+                    new WaitFor(0.5f),
                     new MoveToTile(interactions.Grid, interactions.Backpack.AssociatedTile),
                     new PerformAmberInteraction(interactions.Backpack.AmberInteraction),
                     new WaitFor(0.5f),

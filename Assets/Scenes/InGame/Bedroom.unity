@@ -52813,7 +52813,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7782fb5cf0b21d44a95fce310e422e9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bubbleOffset: {x: 0, y: 0, z: 0}
+  bubbleOffset: {x: -75, y: 150, z: 0}
   _mount: {fileID: 1674677913}
   _enabledOnLoad: 0
 --- !u!1 &1024625004
