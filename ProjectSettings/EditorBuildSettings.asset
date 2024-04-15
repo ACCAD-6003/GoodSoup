@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/InGame/Title Screen.unity
     guid: 35b7da4888be84c05a1be9821667061f
   - enabled: 1
+    path: Assets/Scenes/InGame/Cutscene.unity
+    guid: 8f170335086c9754db630a905e953ae7
+  - enabled: 1
     path: Assets/Scenes/InGame/Start.unity
     guid: a7cb589cd56fd2842821b4e08f514db7
   - enabled: 1

@@ -19,7 +19,7 @@ TagManager:
   - Obstacles
   - InteractionIgnore
   - Walls
-  - 
+  - IgnoreLight
   - 
   - 
   - 
