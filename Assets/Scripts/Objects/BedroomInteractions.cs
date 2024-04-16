@@ -14,5 +14,6 @@ namespace Assets.Scripts.UI
         public FarCrySwitcher switcher;
         public tile MirrorTile;
         public grid_manager Grid;
+        public GameObject phoneOnTable;
     }
 }

@@ -38,7 +38,7 @@ namespace Assets.Scripts.AI
                 {
                     // change to evaluate if everything has been done one by one by wrapping these in classespho
                     new DisplayUIIcon(UI.UIElements.BubbleIcon.SLEEPING),
-                        // Wait for alarm clock
+                    // Wait for alarm clock
                     new WrapperNode(new SkipIfStoryDatastoreState<bool>(StoryDatastore.Instance.BooksBlown, true), new List<Node>() {
                         new Sequence(new List<Node>() {
                             new WaitForPlayerInteractionCompleted(interactions.AlarmClock),
@@ -51,7 +51,7 @@ namespace Assets.Scripts.AI
                         new WaitFor(1f),
                         new DisplayUIIcon(UI.UIElements.BubbleIcon.PHONE),
                     }),
-
+                    new SetGameObjectActive(interactions.phoneOnTable, false),
                     // Wait for book hit
                     new Selector(new List<Node>() {
                         new Sequence(new List<Node>() {
@@ -75,6 +75,7 @@ namespace Assets.Scripts.AI
                     new MoveToTile(interactions.Grid, doors.doors[MainSceneLoading.AmberRoom.BATHROOM]),
                     new AmberMoveToRoom(MainSceneLoading.AmberRoom.BATHROOM)
                 }),
+                new SetGameObjectActive(interactions.phoneOnTable, false),
                 new StopFarCryEnding(interactions.switcher),
 
 
