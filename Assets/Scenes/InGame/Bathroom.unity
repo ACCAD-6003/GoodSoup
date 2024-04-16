@@ -25161,7 +25161,7 @@ MonoBehaviour:
   AssociatedDirection: {x: 0, y: 0, z: 1}
   isPlayer: 1
   _isInProgress: 0
-  radiatorMaterial: {fileID: 2100000, guid: bffce7e8821cafd47bd0986bc60e1ed6, type: 2}
+  radiatorMaterial: {fileID: 2100000, guid: 5a71c4b0b61432642ae520758b49b65b, type: 2}
   towelMaterial: {fileID: 2100000, guid: d51bb777a80f8404d862c5bc6c394896, type: 2}
 --- !u!114 &1123086082
 MonoBehaviour:

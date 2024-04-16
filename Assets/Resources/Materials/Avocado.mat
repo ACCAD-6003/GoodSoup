@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Heater
+  m_Name: Avocado
   m_Shader: {fileID: 4800000, guid: 71d6765ad72e11541bc1448c891bbcf9, type: 3}
   m_ValidKeywords:
   - PROPIXELIZER_DITHERING_ON
@@ -24,11 +24,11 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _Albedo:
-        m_Texture: {fileID: 2800000, guid: beeed2228beea034289947692e4291d4, type: 3}
+        m_Texture: {fileID: 2800000, guid: b3cb2cdaa3ecba447b6f7a76c3e0c13e, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BaseMap:
-        m_Texture: {fileID: 2800000, guid: beeed2228beea034289947692e4291d4, type: 3}
+        m_Texture: {fileID: 2800000, guid: b3cb2cdaa3ecba447b6f7a76c3e0c13e, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
@@ -60,7 +60,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: beeed2228beea034289947692e4291d4, type: 3}
+        m_Texture: {fileID: 2800000, guid: b3cb2cdaa3ecba447b6f7a76c3e0c13e, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -138,7 +138,7 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - _AmbientLight: {r: 0.2, g: 0.2, b: 0.2, a: 1}
-    - _BaseColor: {r: 0.76, g: 0.76, b: 0.76, a: 1}
+    - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EdgeHighlightColor: {r: 0.5, g: 0.5, b: 0.5, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
@@ -146,7 +146,7 @@ Material:
     - _PixelGridOrigin: {r: 0, g: 0, b: 0, a: 0}
     - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
   m_BuildTextureStacks: []
---- !u!114 &3450575223893572296
+--- !u!114 &1314933129305861180
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}

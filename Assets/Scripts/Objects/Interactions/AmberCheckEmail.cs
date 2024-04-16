@@ -32,7 +32,7 @@ namespace Assets.Scripts.Objects.Interactions
                     UIManager.Instance.DisplaySimpleBubbleTilInterrupted(UIElements.BubbleIcon.ANNOYANCE);
                     StoryDatastore.Instance.Annoyance.Value += 5f;
                     StoryDatastore.Instance.ChosenEnding.Value = Ending.KICKED_OUT_OF_COLLEGE;
-                    SceneManager.LoadScene("Endings");
+                    SceneManager.LoadScene("");
                     break;
                 case ComputerHUD.EmailState.NICE_EMAIL_CONFIRMED:
                     // Change this to relief
