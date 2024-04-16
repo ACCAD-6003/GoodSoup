@@ -7,10 +7,11 @@ using UnityEngine;
 public class StartRecipeSequence : Interaction
 {
     [SerializeField] GameObject closedDoor, openDoor, recipeInDoor, floatingRecipe, recipeOnTable, splinesInScene;
-    [SerializeField] SplineFollower _follower;
+    [SerializeField] SplineFollower _follower, _bookOnTable;
     [SerializeField] GameObject _splinesPrefab;
     [SerializeField] List<RotateFan> rotateFans;
     StoryData<bool> _moved;
+    bool _recipeGone = false;
     public override void LoadData(StoryDatastore data)
     {
         if (data.MoveObjects.ContainsKey(interactionId))
@@ -41,13 +42,23 @@ public class StartRecipeSequence : Interaction
 
         if (node.node.gameObject.name == "Fan1Junction")
         {
-            index = GetIndexFromOrientation(rotateFans[0].orientationIndex);
+            index = GetIndexFromOrientationFan1(rotateFans[0].orientationIndex);
         }
         else if (node.node.gameObject.name == "Fan2Junction")
         {
-            index = GetIndexFromOrientation(rotateFans[1].orientationIndex);
+            index = GetIndexFromOrientationFan2(rotateFans[1].orientationIndex);
         }
-        else if (node.node.gameObject.name == "Reset") 
+        else if (node.node.gameObject.name == "WON")
+        {
+            recipeOnTable.SetActive(true);
+            Destroy(recipeInDoor);
+            Destroy(floatingRecipe);
+            _recipeGone = true;
+            _bookOnTable.enabled = (true);
+            EndAction();
+            return;
+        }
+        else if (node.node.gameObject.name == "Reset")
         {
             ResetPuzzleSequence();
         }
@@ -94,7 +105,7 @@ public class StartRecipeSequence : Interaction
         EndAction();
     }
     // bad bad bad not good terrible ugly i know how to do this better but i am tired and it works fuck off paige this is only ever going to be used once
-    int GetIndexFromOrientation(int orientation) {
+    int GetIndexFromOrientationFan1(int orientation) {
         int index = 0;
         switch (orientation)
         {
@@ -110,6 +121,27 @@ public class StartRecipeSequence : Interaction
         }
         return index;
     }
+    // bad bad bad not good terrible ugly i know how to do this better but i am tired and it works fuck off paige this is only ever going to be used once
+    int GetIndexFromOrientationFan2(int orientation)
+    {
+        int index = 0;
+        switch (orientation)
+        {
+            case 2:
+                index = 2;
+                break;
+            case 1:
+                index = 0;
+                break;
+            default:
+                index = 1;
+                break;
+        }
+        return index;
+    }
+    /// <summary>
+    ///  this library is fucking broken!!!!! this is how you have to do this?!?!??!
+    /// </summary>
     public override void DoAction()
     {
         Debug.Log("OLD VALUE : " + _moved.Value + " NEW VALUE : " + !_moved.Value);
@@ -117,13 +149,21 @@ public class StartRecipeSequence : Interaction
         StoryDatastore.Instance.MoveObjects[interactionId].Value = _moved.Value;
         RefreshObjects();
 
-        foreach (var fan in rotateFans) {
-            fan.PutInProgress();
+        if (!_recipeGone)
+        {
+            foreach (var fan in rotateFans)
+            {
+                fan.PutInProgress();
+            }
+            _follower.spline = GameObject.FindGameObjectWithTag("RecipeComputer").GetComponent<SplineComputer>();
+            _follower.SetPercent(0f);
+            _follower.followSpeed = 4f;
+            _follower.onNode += OnNodePassed;
         }
-        _follower.spline = GameObject.FindGameObjectWithTag("RecipeComputer").GetComponent<SplineComputer>();
-        _follower.SetPercent(0f);
-        _follower.onNode += OnNodePassed;
-        //EndAction();
+        else
+        {
+            EndAction();
+        }
     }
 
 }
