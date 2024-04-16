@@ -15,6 +15,7 @@ namespace Assets.Scripts.AI
     public class AmberBathroomBT : BehaviorTree.Tree
     {
         [SerializeField] BathroomInteractions interactions;
+        [SerializeField] GameObject phone;
         AmberMount navigation;
         StoryDatastore storyData;
         Doors doors;
@@ -36,6 +37,9 @@ namespace Assets.Scripts.AI
 
             Node routine = new Sequence(new List<Node>() {
                         new WaitFor(0.25f),
+                        new MoveToTile(interactions.Grid, interactions.LaundryBasketTile),
+                        new SetGameObjectActive(phone, true),
+                        new WaitFor(0.3f),
                         new MoveToTile(interactions.Grid, interactions.ShowerCurtain.AssociatedTile),
                         new WaitFor(0.25f),
                         new PerformAmberInteraction(interactions.ShowerCurtain.AmberInteraction),
@@ -82,6 +86,8 @@ namespace Assets.Scripts.AI
                                 new AmberHairBrush()
                             }
                         ),
+                        new WaitFor(0.3f),
+                        new SetGameObjectActive(phone, false),
                         new WaitFor(0.5f),
                         new MoveToTile(interactions.Grid, doors.doors[MainSceneLoading.AmberRoom.BEDROOM]),
                         new AmberMoveToRoom(MainSceneLoading.AmberRoom.BEDROOM)

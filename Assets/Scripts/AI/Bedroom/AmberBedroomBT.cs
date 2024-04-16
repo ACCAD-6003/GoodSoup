@@ -47,6 +47,9 @@ namespace Assets.Scripts.AI
                         new StopFarCryEnding(interactions.switcher),
 
                         new WaitFor(1f),
+
+                        new SetGameObjectActive(interactions.phoneOnTable, false),
+
                         new SwitchAmberMount(interactions.SittingInBed),
                         new WaitFor(1f),
                         new DisplayUIIcon(UI.UIElements.BubbleIcon.PHONE),
@@ -68,8 +71,8 @@ namespace Assets.Scripts.AI
                     new SwitchAmberMount(navigation),
 
                     // DEBUG
-                    new MoveToTile(interactions.Grid, doors.doors[MainSceneLoading.AmberRoom.KITCHEN]),
-                    new AmberMoveToRoom(MainSceneLoading.AmberRoom.KITCHEN),
+                    //new MoveToTile(interactions.Grid, doors.doors[MainSceneLoading.AmberRoom.KITCHEN]),
+                    //new AmberMoveToRoom(MainSceneLoading.AmberRoom.KITCHEN),
                     //
 
                     new MoveToTile(interactions.Grid, doors.doors[MainSceneLoading.AmberRoom.BATHROOM]),
