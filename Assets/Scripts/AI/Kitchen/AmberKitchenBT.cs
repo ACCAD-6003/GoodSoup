@@ -13,8 +13,9 @@ namespace Assets.Scripts.AI
         protected override Node SetupTree()
         {
             return new Sequence(new List<Node>() {
-                new WaitFor(1f),
-                new MoveToTile(_interactions.Grid, _interactions.DebugTile, Vector3.back)
+                new WaitFor(0.5f),
+                new MoveToTile(_interactions.Grid, _interactions.ChairTile, Vector3.back),
+                new SwitchAmberMount(_interactions.chairMount)
             });
         }
     }

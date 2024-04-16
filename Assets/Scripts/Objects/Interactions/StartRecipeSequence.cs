@@ -10,6 +10,8 @@ public class StartRecipeSequence : Interaction
     [SerializeField] SplineFollower _follower, _bookOnTable;
     [SerializeField] GameObject _splinesPrefab;
     [SerializeField] List<RotateFan> rotateFans;
+    [SerializeField] AudioSource src;
+    [SerializeField] AudioClip hit;
     StoryData<bool> _moved;
     bool _recipeGone = false;
     public override void LoadData(StoryDatastore data)
@@ -60,6 +62,7 @@ public class StartRecipeSequence : Interaction
         }
         else if (node.node.gameObject.name == "Reset")
         {
+            src.PlayOneShot(hit);
             ResetPuzzleSequence();
         }
         else
