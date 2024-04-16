@@ -1,10 +1,14 @@
+using Dreamteck.Splines;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class StartRecipeSequence : Interaction
 {
-    [SerializeField] GameObject closedDoor, openDoor, recipeInDoor, floatingRecipe, recipeOnTable;
+    [SerializeField] GameObject closedDoor, openDoor, recipeInDoor, floatingRecipe, recipeOnTable, splinesInScene;
+    [SerializeField] SplineFollower _follower;
+    [SerializeField] GameObject _splinesPrefab;
     [SerializeField] List<RotateFan> rotateFans;
     StoryData<bool> _moved;
     public override void LoadData(StoryDatastore data)
@@ -30,12 +34,95 @@ public class StartRecipeSequence : Interaction
         closedDoor.SetActive(!_moved.Value);
         openDoor.SetActive(_moved.Value);
     }
+    void OnNodePassed(List<SplineTracer.NodeConnection> passed)
+    {
+        var node = passed[0];
+        int index = 0;
+
+        if (node.node.gameObject.name == "Fan1Junction")
+        {
+            index = GetIndexFromOrientation(rotateFans[0].orientationIndex);
+        }
+        else if (node.node.gameObject.name == "Fan2Junction")
+        {
+            index = GetIndexFromOrientation(rotateFans[1].orientationIndex);
+        }
+        else if (node.node.gameObject.name == "Reset") 
+        {
+            ResetPuzzleSequence();
+        }
+        else
+        {
+            Debug.Log("No node name matches");
+            return;
+        }
+        if (index == 0) {
+            _follower.spline = node.node.GetConnections()[index].spline;
+        }
+
+        else if (index != 0) {
+            _follower.SetPercent(0f);
+            _follower.spline = node.node.GetConnections()[index].spline;
+            _follower.SetPercent(0.01f);
+        }
+    }
+    private void ResetPuzzleSequence()
+    {
+        _follower.onNode -= OnNodePassed;
+        Debug.Log("Resetting puzzle sequence...");
+
+        var gameObj = _follower.gameObject;
+        Destroy(_follower);
+        _follower = gameObj.AddComponent<SplineFollower>();
+
+        Destroy(splinesInScene);
+        splinesInScene = Instantiate(_splinesPrefab);
+
+        _follower.spline = GameObject.FindGameObjectWithTag("RecipeComputer").GetComponent<SplineComputer>();
+
+        _follower.SetPercent(0f);
+
+        _follower.follow = true;
+
+        _moved.Value = !_moved.Value;
+        StoryDatastore.Instance.MoveObjects[interactionId].Value = _moved.Value;
+        RefreshObjects();
+        foreach (var fan in rotateFans)
+        {
+            fan.EndAction();
+        }
+        EndAction();
+    }
+    // bad bad bad not good terrible ugly i know how to do this better but i am tired and it works fuck off paige this is only ever going to be used once
+    int GetIndexFromOrientation(int orientation) {
+        int index = 0;
+        switch (orientation)
+        {
+            case 2:
+                index = 2;
+                break;
+            case 3:
+                index = 0;
+                break;
+            default:
+                index = 1;
+                break;
+        }
+        return index;
+    }
     public override void DoAction()
     {
         Debug.Log("OLD VALUE : " + _moved.Value + " NEW VALUE : " + !_moved.Value);
         _moved.Value = !_moved.Value;
         StoryDatastore.Instance.MoveObjects[interactionId].Value = _moved.Value;
         RefreshObjects();
+
+        foreach (var fan in rotateFans) {
+            fan.PutInProgress();
+        }
+        _follower.spline = GameObject.FindGameObjectWithTag("RecipeComputer").GetComponent<SplineComputer>();
+        _follower.SetPercent(0f);
+        _follower.onNode += OnNodePassed;
         //EndAction();
     }
 

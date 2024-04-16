@@ -7,7 +7,7 @@ using UnityEngine;
 public class RotateFan : Interaction
 {
     [SerializeReference] IFanAction action;
-    [SerializeField] int orientationIndex;
+    [SerializeField] public int orientationIndex;
     [SerializeField] int numberOfOrientations;
     [SerializeField] int orientationToDoFanAction;
     [SerializeField] float offset;
