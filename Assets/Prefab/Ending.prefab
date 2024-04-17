@@ -1441,4 +1441,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   correspondingEnding: 0
+  reveal: {fileID: 7381789900619232726}
+  hint: {fileID: 1574185992827465548}
+  unlocked: {fileID: 105543608652394320}
   scoreNumber: {fileID: 56556619388322807}

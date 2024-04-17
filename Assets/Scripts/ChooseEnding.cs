@@ -11,6 +11,8 @@ public class ChooseEnding : SerializedMonoBehaviour
         endingGameObjs[StoryDatastore.Instance.ChosenEnding.Value].SetActive(true);
         GameObject[] dontDestroyObjects = GameObject.FindGameObjectsWithTag("DontDestroyOnLoad");
 
+        Globals.UnlockedEndings.Add(StoryDatastore.Instance.ChosenEnding.Value);
+
         foreach (GameObject obj in dontDestroyObjects)
         {
             Destroy(obj);

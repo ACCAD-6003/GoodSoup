@@ -1901,7 +1901,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &120569999
 Transform:
   m_ObjectHideFlags: 0
@@ -8628,7 +8628,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &327620039
 Transform:
   m_ObjectHideFlags: 0
@@ -9607,7 +9607,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &397841242
 Transform:
   m_ObjectHideFlags: 0
@@ -13308,7 +13308,7 @@ MonoBehaviour:
   - blocked: 0
     tile_s: {fileID: 1729526193}
     num: 0
-  - blocked: 0
+  - blocked: 1
     tile_s: {fileID: 1691413754}
     num: 0
   - blocked: 0
@@ -14258,7 +14258,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &555272083
 Transform:
   m_ObjectHideFlags: 0
@@ -14750,7 +14750,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &591562874
 Transform:
   m_ObjectHideFlags: 0
@@ -24327,7 +24327,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1049436160
 Transform:
   m_ObjectHideFlags: 0
@@ -26176,7 +26176,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh1087804
+  m_Name: pb_Mesh208202
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -26807,7 +26807,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1182553780
 Transform:
   m_ObjectHideFlags: 0
@@ -28055,7 +28055,7 @@ MonoBehaviour:
   mr: {fileID: 248252497}
   db_chars: []
   db_neighbors:
-  - blocked: 0
+  - blocked: 1
     tile_s: {fileID: 1691413754}
     num: 0
   - blocked: 0
@@ -29865,7 +29865,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1452914884
 Transform:
   m_ObjectHideFlags: 0
@@ -41663,16 +41663,16 @@ MonoBehaviour:
   mr: {fileID: 1447374290}
   db_chars: []
   db_neighbors:
-  - blocked: 0
+  - blocked: 1
     tile_s: {fileID: 1870920632}
     num: 0
   - blocked: 1
     tile_s: {fileID: 1420841263}
     num: 0
-  - blocked: 0
+  - blocked: 1
     tile_s: {fileID: 1293452038}
     num: 0
-  - blocked: 0
+  - blocked: 1
     tile_s: {fileID: 478051739}
     num: 0
   db_path_lowest: []
@@ -42129,7 +42129,7 @@ MonoBehaviour:
   - blocked: 0
     tile_s: {fileID: 0}
     num: 0
-  - blocked: 0
+  - blocked: 1
     tile_s: {fileID: 1870920632}
     num: 0
   - blocked: 0
@@ -42424,7 +42424,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1740977611
 Transform:
   m_ObjectHideFlags: 0
@@ -43937,16 +43937,16 @@ MonoBehaviour:
   mr: {fileID: 1615808136}
   db_chars: []
   db_neighbors:
-  - blocked: 0
+  - blocked: 1
     tile_s: {fileID: 0}
     num: 0
   - blocked: 1
     tile_s: {fileID: 450235138}
     num: 0
-  - blocked: 0
+  - blocked: 1
     tile_s: {fileID: 1691413754}
     num: 0
-  - blocked: 0
+  - blocked: 1
     tile_s: {fileID: 1729526193}
     num: 0
   db_path_lowest: []

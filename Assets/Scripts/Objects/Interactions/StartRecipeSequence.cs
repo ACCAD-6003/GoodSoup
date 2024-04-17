@@ -65,6 +65,7 @@ public class StartRecipeSequence : Interaction
             _recipeGone = true;
             _bookOnTable.enabled = (true);
             src.PlayOneShot(hit);
+            StoryDatastore.Instance.GoodSoup.Value = true;
             src.PlayOneShot(whoosh);
             EndAction();
             return;

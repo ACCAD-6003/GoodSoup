@@ -105,5 +105,6 @@ public class StoryDatastore : MonoBehaviour
     public StoryData<bool> ShowerCurtainsOpen = new StoryData<bool>(true);
     [SerializeField]
     public StoryData<bool> TowelHot = new StoryData<bool>(false);
-
+    [SerializeField]
+    public StoryData<bool> GoodSoup = new StoryData<bool>(false);
 }

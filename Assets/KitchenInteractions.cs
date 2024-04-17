@@ -8,7 +8,11 @@ public class KitchenInteractions : MonoBehaviour
     [SerializeField]
     public grid_manager Grid;
     [SerializeField] 
-    public tile DebugTile, ChairTile;
+    public tile DebugTile, ChairTile, Crockpot;
     [SerializeField]
-    public AmberMount chairMount;
+    public InteractableObject PantryDoor, AlarmShelf, AlarmTable, ChairPull, SinkClean, FridgeOpen, StoveOpen;
+    [SerializeField]
+    public GameObject chairInScene;
+    [SerializeField]
+    public AmberMount chairMount, amberFall;
 }

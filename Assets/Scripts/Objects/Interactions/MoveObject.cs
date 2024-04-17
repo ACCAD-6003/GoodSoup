@@ -5,7 +5,9 @@ using UnityEngine;
 public class MoveObject : Interaction
 {
     [SerializeField] GameObject beforeMoved, afterMoved;
-    StoryData<bool> _moved;
+    public StoryData<bool> _moved;
+    public AudioSource _optionalSrc;
+    public AudioClip _optionalSoundForBeforeMovedToAfter;
     public override void LoadData(StoryDatastore data)
     {
         if (data.MoveObjects.ContainsKey(interactionId))
@@ -33,6 +35,9 @@ public class MoveObject : Interaction
     {
         Debug.Log("OLD VALUE : " + _moved.Value + " NEW VALUE : " + !_moved.Value);
         _moved.Value = !_moved.Value;
+        if (_optionalSrc != null && _moved.Value) {
+            _optionalSrc.PlayOneShot(_optionalSoundForBeforeMovedToAfter);
+        }
         StoryDatastore.Instance.MoveObjects[interactionId].Value = _moved.Value;
         RefreshObjects();
         EndAction();

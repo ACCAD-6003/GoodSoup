@@ -264,9 +264,13 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7384517942318513592, guid: d5f0602a76595d841962d323e010f100, type: 3}
+      propertyPath: correspondingEnding
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 8220593446388454333, guid: d5f0602a76595d841962d323e010f100, type: 3}
       propertyPath: m_Name
-      value: FIRE ALARM
+      value: BURN DOWN
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d5f0602a76595d841962d323e010f100, type: 3}
@@ -1114,6 +1118,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7384517942318513592, guid: d5f0602a76595d841962d323e010f100, type: 3}
+      propertyPath: correspondingEnding
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 8220593446388454333, guid: d5f0602a76595d841962d323e010f100, type: 3}
       propertyPath: m_Name
       value: GOOD SOUP
@@ -1250,6 +1258,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 663053958630603566, guid: d5f0602a76595d841962d323e010f100, type: 3}
+      propertyPath: m_text
+      value: prevent a virtual catastrophe
+      objectReference: {fileID: 0}
+    - target: {fileID: 663053958630603566, guid: d5f0602a76595d841962d323e010f100, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4281086514
+      objectReference: {fileID: 0}
     - target: {fileID: 1574185992827465548, guid: d5f0602a76595d841962d323e010f100, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -1264,7 +1280,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2435443081258329145, guid: d5f0602a76595d841962d323e010f100, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 2435443081258329145, guid: d5f0602a76595d841962d323e010f100, type: 3}
       propertyPath: m_AnchorMax.x
@@ -1350,13 +1366,55 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2777543150785012797, guid: d5f0602a76595d841962d323e010f100, type: 3}
+      propertyPath: m_text
+      value: 'ENDING 6:'
+      objectReference: {fileID: 0}
+    - target: {fileID: 2777543150785012797, guid: d5f0602a76595d841962d323e010f100, type: 3}
+      propertyPath: m_margin.z
+      value: -44.313538
+      objectReference: {fileID: 0}
+    - target: {fileID: 2777543150785012797, guid: d5f0602a76595d841962d323e010f100, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4281086514
+      objectReference: {fileID: 0}
+    - target: {fileID: 5541672702839720853, guid: d5f0602a76595d841962d323e010f100, type: 3}
+      propertyPath: m_text
+      value: 'ENDING 6:'
+      objectReference: {fileID: 0}
+    - target: {fileID: 5729041704627542965, guid: d5f0602a76595d841962d323e010f100, type: 3}
+      propertyPath: m_text
+      value: 'HINT 6:'
+      objectReference: {fileID: 0}
+    - target: {fileID: 5729041704627542965, guid: d5f0602a76595d841962d323e010f100, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5729041704627542965, guid: d5f0602a76595d841962d323e010f100, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4281086514
+      objectReference: {fileID: 0}
+    - target: {fileID: 6078213587521148451, guid: d5f0602a76595d841962d323e010f100, type: 3}
+      propertyPath: m_text
+      value: 'ACADEMIC WEAPON
+
+        GET AMBER SCHEDULED FOR HER CLASSES'
+      objectReference: {fileID: 0}
+    - target: {fileID: 6078213587521148451, guid: d5f0602a76595d841962d323e010f100, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4281086514
+      objectReference: {fileID: 0}
     - target: {fileID: 7381789900619232726, guid: d5f0602a76595d841962d323e010f100, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7384517942318513592, guid: d5f0602a76595d841962d323e010f100, type: 3}
+      propertyPath: correspondingEnding
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 8220593446388454333, guid: d5f0602a76595d841962d323e010f100, type: 3}
       propertyPath: m_Name
-      value: MID SOUP (1)
+      value: Academic Weapon
       objectReference: {fileID: 0}
     - target: {fileID: 8220593446388454333, guid: d5f0602a76595d841962d323e010f100, type: 3}
       propertyPath: m_IsActive
@@ -1974,7 +2032,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 663053958630603566, guid: d5f0602a76595d841962d323e010f100, type: 3}
       propertyPath: m_text
-      value: HELP AMBER BE A BETTER STUDENT
+      value: YEAH.. RUIN HER LIFE I GUESS. DICK.
+      objectReference: {fileID: 0}
+    - target: {fileID: 663053958630603566, guid: d5f0602a76595d841962d323e010f100, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4281086514
       objectReference: {fileID: 0}
     - target: {fileID: 1574185992827465548, guid: d5f0602a76595d841962d323e010f100, type: 3}
       propertyPath: m_IsActive
@@ -2062,7 +2124,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2435443081258329145, guid: d5f0602a76595d841962d323e010f100, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -4.0000076
+      value: -4
       objectReference: {fileID: 0}
     - target: {fileID: 2435443081258329145, guid: d5f0602a76595d841962d323e010f100, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -2078,33 +2140,53 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2777543150785012797, guid: d5f0602a76595d841962d323e010f100, type: 3}
       propertyPath: m_text
-      value: 'ENDING 3:'
+      value: 'ENDING 8:'
       objectReference: {fileID: 0}
     - target: {fileID: 2777543150785012797, guid: d5f0602a76595d841962d323e010f100, type: 3}
       propertyPath: m_margin.x
       value: -1.3826904
       objectReference: {fileID: 0}
+    - target: {fileID: 2777543150785012797, guid: d5f0602a76595d841962d323e010f100, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4281086514
+      objectReference: {fileID: 0}
     - target: {fileID: 5541672702839720853, guid: d5f0602a76595d841962d323e010f100, type: 3}
       propertyPath: m_text
-      value: 'ENDING 3:'
+      value: 'ENDING 8:'
       objectReference: {fileID: 0}
     - target: {fileID: 5729041704627542965, guid: d5f0602a76595d841962d323e010f100, type: 3}
       propertyPath: m_text
-      value: 'HINT 3:'
+      value: 'HINT 8:'
+      objectReference: {fileID: 0}
+    - target: {fileID: 5729041704627542965, guid: d5f0602a76595d841962d323e010f100, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4281086514
       objectReference: {fileID: 0}
     - target: {fileID: 6078213587521148451, guid: d5f0602a76595d841962d323e010f100, type: 3}
       propertyPath: m_text
-      value: 'ACADEMIC WEAPON
+      value: 'KICKED OUT
 
-        HELP SCHEDULE CLASSES & HELP MAKE RECIPE'
+        You unenrolled amber from school. Congrats.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 6078213587521148451, guid: d5f0602a76595d841962d323e010f100, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4281086514
       objectReference: {fileID: 0}
     - target: {fileID: 7381789900619232726, guid: d5f0602a76595d841962d323e010f100, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7384517942318513592, guid: d5f0602a76595d841962d323e010f100, type: 3}
+      propertyPath: correspondingEnding
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 8220593446388454333, guid: d5f0602a76595d841962d323e010f100, type: 3}
       propertyPath: m_Name
-      value: ACADEMIC WEAPON (1)
+      value: KICKED OUT OF COLLEGE
+      objectReference: {fileID: 0}
+    - target: {fileID: 8220593446388454333, guid: d5f0602a76595d841962d323e010f100, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d5f0602a76595d841962d323e010f100, type: 3}
@@ -2126,7 +2208,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 663053958630603566, guid: d5f0602a76595d841962d323e010f100, type: 3}
       propertyPath: m_text
-      value: MAKE A DIFFERENT RECIPE WELL
+      value: BE MEAN BUT DON"T RUIN HER LIFE.. DICK
+      objectReference: {fileID: 0}
+    - target: {fileID: 663053958630603566, guid: d5f0602a76595d841962d323e010f100, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4281086514
       objectReference: {fileID: 0}
     - target: {fileID: 1574185992827465548, guid: d5f0602a76595d841962d323e010f100, type: 3}
       propertyPath: m_IsActive
@@ -2142,7 +2228,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2435443081258329145, guid: d5f0602a76595d841962d323e010f100, type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 2435443081258329145, guid: d5f0602a76595d841962d323e010f100, type: 3}
       propertyPath: m_AnchorMax.x
@@ -2230,19 +2316,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2777543150785012797, guid: d5f0602a76595d841962d323e010f100, type: 3}
       propertyPath: m_text
-      value: 'ENDING 2:'
+      value: 'ENDING 7:'
       objectReference: {fileID: 0}
     - target: {fileID: 2777543150785012797, guid: d5f0602a76595d841962d323e010f100, type: 3}
       propertyPath: m_margin.x
       value: -4.208622
       objectReference: {fileID: 0}
+    - target: {fileID: 2777543150785012797, guid: d5f0602a76595d841962d323e010f100, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4281086514
+      objectReference: {fileID: 0}
     - target: {fileID: 5541672702839720853, guid: d5f0602a76595d841962d323e010f100, type: 3}
       propertyPath: m_text
-      value: 'ENDING 2:'
+      value: 'ENDING 7:'
       objectReference: {fileID: 0}
     - target: {fileID: 5729041704627542965, guid: d5f0602a76595d841962d323e010f100, type: 3}
       propertyPath: m_text
-      value: 'HINT 2:'
+      value: 'HINT 7:'
       objectReference: {fileID: 0}
     - target: {fileID: 5729041704627542965, guid: d5f0602a76595d841962d323e010f100, type: 3}
       propertyPath: m_fontStyle
@@ -2250,33 +2340,45 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5729041704627542965, guid: d5f0602a76595d841962d323e010f100, type: 3}
       propertyPath: m_fontColor.b
-      value: 0
+      value: 0.21391062
       objectReference: {fileID: 0}
     - target: {fileID: 5729041704627542965, guid: d5f0602a76595d841962d323e010f100, type: 3}
       propertyPath: m_fontColor.g
-      value: 0
+      value: 0.21391062
       objectReference: {fileID: 0}
     - target: {fileID: 5729041704627542965, guid: d5f0602a76595d841962d323e010f100, type: 3}
       propertyPath: m_fontColor.r
-      value: 0
+      value: 0.21698111
       objectReference: {fileID: 0}
     - target: {fileID: 5729041704627542965, guid: d5f0602a76595d841962d323e010f100, type: 3}
       propertyPath: m_fontColor32.rgba
-      value: 4278190080
+      value: 4281808695
       objectReference: {fileID: 0}
     - target: {fileID: 6078213587521148451, guid: d5f0602a76595d841962d323e010f100, type: 3}
       propertyPath: m_text
-      value: 'GOOD SOUP:
+      value: 'GENERIC BAD:
 
-        Push amber to make the soUP, and correct her'
+        YOU WERE A DICK BUT YOU DIDN''t RUIN HER LIFE'
+      objectReference: {fileID: 0}
+    - target: {fileID: 6078213587521148451, guid: d5f0602a76595d841962d323e010f100, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4281086514
       objectReference: {fileID: 0}
     - target: {fileID: 7381789900619232726, guid: d5f0602a76595d841962d323e010f100, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7384517942318513592, guid: d5f0602a76595d841962d323e010f100, type: 3}
+      propertyPath: correspondingEnding
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 8220593446388454333, guid: d5f0602a76595d841962d323e010f100, type: 3}
       propertyPath: m_Name
-      value: GOOD SOUP (1)
+      value: GENERIC BAD
+      objectReference: {fileID: 0}
+    - target: {fileID: 8220593446388454333, guid: d5f0602a76595d841962d323e010f100, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d5f0602a76595d841962d323e010f100, type: 3}
@@ -3711,6 +3813,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FIRE ALARM (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 8220593446388454333, guid: d5f0602a76595d841962d323e010f100, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d5f0602a76595d841962d323e010f100, type: 3}
 --- !u!224 &1427406380 stripped
@@ -3731,7 +3837,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 663053958630603566, guid: d5f0602a76595d841962d323e010f100, type: 3}
       propertyPath: m_text
-      value: SOMETIMES It'S GOOD TO JUST SLEEP IN
+      value: FREAK AMBER OUT.. YOU'RE A GHOST...
+      objectReference: {fileID: 0}
+    - target: {fileID: 663053958630603566, guid: d5f0602a76595d841962d323e010f100, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4281086514
       objectReference: {fileID: 0}
     - target: {fileID: 1574185992827465548, guid: d5f0602a76595d841962d323e010f100, type: 3}
       propertyPath: m_IsActive
@@ -3747,7 +3857,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2435443081258329145, guid: d5f0602a76595d841962d323e010f100, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 2435443081258329145, guid: d5f0602a76595d841962d323e010f100, type: 3}
       propertyPath: m_AnchorMax.x
@@ -3835,31 +3945,51 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2777543150785012797, guid: d5f0602a76595d841962d323e010f100, type: 3}
       propertyPath: m_text
-      value: 'ENDING 4:'
+      value: 'ENDING 9:'
       objectReference: {fileID: 0}
     - target: {fileID: 2777543150785012797, guid: d5f0602a76595d841962d323e010f100, type: 3}
       propertyPath: m_margin.x
       value: -1.3826904
       objectReference: {fileID: 0}
+    - target: {fileID: 2777543150785012797, guid: d5f0602a76595d841962d323e010f100, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4281086514
+      objectReference: {fileID: 0}
     - target: {fileID: 5541672702839720853, guid: d5f0602a76595d841962d323e010f100, type: 3}
       propertyPath: m_text
-      value: 'ENDING 4:'
+      value: 'ENDING 9:'
       objectReference: {fileID: 0}
     - target: {fileID: 5729041704627542965, guid: d5f0602a76595d841962d323e010f100, type: 3}
       propertyPath: m_text
-      value: 'HINT 4:'
+      value: 'HINT 9:'
+      objectReference: {fileID: 0}
+    - target: {fileID: 5729041704627542965, guid: d5f0602a76595d841962d323e010f100, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4281086514
       objectReference: {fileID: 0}
     - target: {fileID: 6078213587521148451, guid: d5f0602a76595d841962d323e010f100, type: 3}
       propertyPath: m_text
-      value: FAR CRY             YOU DIDN'T DO ANYTHING! YOU LET AMBER SLEEP.
+      value: PARANOID             YOU SUCCESSFULLY FREAKED AMBER OUT.. NICE JOB?
+      objectReference: {fileID: 0}
+    - target: {fileID: 6078213587521148451, guid: d5f0602a76595d841962d323e010f100, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4281086514
       objectReference: {fileID: 0}
     - target: {fileID: 7381789900619232726, guid: d5f0602a76595d841962d323e010f100, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7384517942318513592, guid: d5f0602a76595d841962d323e010f100, type: 3}
+      propertyPath: correspondingEnding
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8220593446388454333, guid: d5f0602a76595d841962d323e010f100, type: 3}
       propertyPath: m_Name
-      value: FAR CRY (1)
+      value: PARANOID
+      objectReference: {fileID: 0}
+    - target: {fileID: 8220593446388454333, guid: d5f0602a76595d841962d323e010f100, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d5f0602a76595d841962d323e010f100, type: 3}
@@ -3881,7 +4011,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 663053958630603566, guid: d5f0602a76595d841962d323e010f100, type: 3}
       propertyPath: m_text
-      value: HELP AMBER BE A BETTER STUDENT
+      value: BE NICE BUT DON'T CHANGE AMBER'S LIFE..
       objectReference: {fileID: 0}
     - target: {fileID: 1574185992827465548, guid: d5f0602a76595d841962d323e010f100, type: 3}
       propertyPath: m_IsActive
@@ -4001,17 +4131,26 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6078213587521148451, guid: d5f0602a76595d841962d323e010f100, type: 3}
       propertyPath: m_text
-      value: 'ACADEMIC WEAPON
+      value: 'GENERIC GOOD
 
-        HELP SCHEDULE CLASSES & HELP MAKE RECIPE'
+        YOU WERE NICE TO AMBER, BUT YOU CAN STILL DO
+        MORE'
+      objectReference: {fileID: 0}
+    - target: {fileID: 6078213587521148451, guid: d5f0602a76595d841962d323e010f100, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4281086514
       objectReference: {fileID: 0}
     - target: {fileID: 7381789900619232726, guid: d5f0602a76595d841962d323e010f100, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7384517942318513592, guid: d5f0602a76595d841962d323e010f100, type: 3}
+      propertyPath: correspondingEnding
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8220593446388454333, guid: d5f0602a76595d841962d323e010f100, type: 3}
       propertyPath: m_Name
-      value: ACADEMIC WEAPON
+      value: GENERIC GOOD
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d5f0602a76595d841962d323e010f100, type: 3}
@@ -4054,10 +4193,10 @@ RectTransform:
   - {fileID: 1437925792}
   - {fileID: 1371441466}
   - {fileID: 16709769}
-  - {fileID: 1430807865}
   - {fileID: 593207903}
-  - {fileID: 877783948}
   - {fileID: 921018240}
+  - {fileID: 877783948}
+  - {fileID: 1430807865}
   - {fileID: 1427406380}
   - {fileID: 939397586}
   - {fileID: 150546932}
@@ -5694,6 +5833,10 @@ PrefabInstance:
     - target: {fileID: 7381789900619232726, guid: d5f0602a76595d841962d323e010f100, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7384517942318513592, guid: d5f0602a76595d841962d323e010f100, type: 3}
+      propertyPath: correspondingEnding
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 8220593446388454333, guid: d5f0602a76595d841962d323e010f100, type: 3}
       propertyPath: m_Name

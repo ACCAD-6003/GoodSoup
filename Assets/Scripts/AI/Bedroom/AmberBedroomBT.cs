@@ -71,13 +71,14 @@ namespace Assets.Scripts.AI
                     new SwitchAmberMount(navigation),
 
                     // DEBUG
-                    new MoveToTile(interactions.Grid, doors.doors[MainSceneLoading.AmberRoom.KITCHEN]),
-                    new AmberMoveToRoom(MainSceneLoading.AmberRoom.KITCHEN),
+/*                    new MoveToTile(interactions.Grid, doors.doors[MainSceneLoading.AmberRoom.KITCHEN]),
+                    new AmberMoveToRoom(MainSceneLoading.AmberRoom.KITCHEN),*/
                     //
 
                     new MoveToTile(interactions.Grid, doors.doors[MainSceneLoading.AmberRoom.BATHROOM]),
                     new AmberMoveToRoom(MainSceneLoading.AmberRoom.BATHROOM)
                 }),
+
                 new SetGameObjectActive(interactions.phoneOnTable, false),
                 new StopFarCryEnding(interactions.switcher),
 
@@ -89,7 +90,9 @@ namespace Assets.Scripts.AI
                     new WaitFor(0.5f),
                     new PerformAmberInteraction(interactions.Curtains.AmberInteraction),
                 }, true),
+
                 new WaitFor(2f),
+
                 // ONLY skips if it is true when this tree starts to evalute that Amber has already dressed. Doesn't check again.
                 new WrapperNode(new SkipIfStoryDatastoreState<bool>(StoryDatastore.Instance.AmberDressed, true), new List<Node>() {
                     new MoveToTile(interactions.Grid, interactions.Dresser.AssociatedTile),
@@ -106,6 +109,17 @@ namespace Assets.Scripts.AI
                     new WaitFor(2f),
                 }, true),
 
+                new WrapperNode(new SkipIfStoryDatastoreState<GamePhase>(StoryDatastore.Instance.CurrentGamePhase, GamePhase.BEFORE_AMBER_LEAVES, true), new List<Node>() {
+                    new WaitFor(0.5f),
+                    new MoveToTile(interactions.Grid, interactions.Backpack.AssociatedTile),
+                    new PerformAmberInteraction(interactions.Backpack.AmberInteraction),
+                    new WaitFor(0.5f),
+                    new MoveToTile(interactions.Grid, doors.doors[MainSceneLoading.AmberRoom.GONE], new Vector3(0,0,-1)),
+                    new WaitFor(0.25f),
+                    new AmberMoveToRoom(MainSceneLoading.AmberRoom.GONE),
+                    new WaitFor(5f),
+                }),
+
                 new WrapperNode(new SkipIfStoryDatastoreState<EmailState>(StoryDatastore.Instance.EmailState, EmailState.NOTHING_CHANGED, false), new List<Node>() {
                     // glitch here, if player is interacting with email then amber could possibly get stuck
                     new WaitFor(0.5f),
@@ -116,16 +130,7 @@ namespace Assets.Scripts.AI
                     new WaitFor(2f),
                     new SwitchAmberMount(navigation),
                 }, true),
-                new WrapperNode(new SkipIfStoryDatastoreState<GamePhase>(StoryDatastore.Instance.CurrentGamePhase, GamePhase.BEFORE_AMBER_LEAVES, true), new List<Node>() {
-                    new WaitFor(0.5f),
-                    new MoveToTile(interactions.Grid, interactions.Backpack.AssociatedTile),
-                    new PerformAmberInteraction(interactions.Backpack.AmberInteraction),
-                    new WaitFor(0.5f),
-                    new MoveToTile(interactions.Grid, doors.doors[MainSceneLoading.AmberRoom.GONE]),
-                    new WaitFor(0.25f),
-                    new AmberMoveToRoom(MainSceneLoading.AmberRoom.GONE),
-                    new WaitFor(5f),
-                }),
+
                 new WrapperNode(new SkipIfStoryDatastoreState<GamePhase>(StoryDatastore.Instance.CurrentGamePhase, GamePhase.SLEEP_TIME), new List<Node>() {
                     new WaitFor(0.5f),
                     new MoveToTile(interactions.Grid, interactions.Backpack.AssociatedTile),
@@ -133,15 +138,18 @@ namespace Assets.Scripts.AI
                     new WaitFor(0.5f),
                     new MoveToTile(interactions.Grid, doors.doors[MainSceneLoading.AmberRoom.KITCHEN]),
                     new WaitFor(0.25f),
-                    new AmberMoveToRoom(MainSceneLoading.AmberRoom.KITCHEN)
-                })
-                //
-                //
+                    new AmberMoveToRoom(MainSceneLoading.AmberRoom.KITCHEN),
+                    new WaitFor(1f),
+                }),
 
-//                new MoveToTile(interactions.Grid, doors.doors[MainSceneLoading.AmberRoom.KITCHEN]),
-//                new AmberMoveToRoom(MainSceneLoading.AmberRoom.KITCHEN),*/
-                //new SelectEnding(),
-            });;
+                new MoveToTile(interactions.Grid, interactions.BedTile),
+                new WaitFor(0.5f),
+                new SwitchAmberMount(interactions.LayingInBed),
+                new WaitFor(2f),
+
+                new SelectEnding(),
+            });
+
             return routine;
         }
     }
