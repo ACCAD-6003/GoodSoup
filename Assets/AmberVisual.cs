@@ -42,8 +42,10 @@ public class AmberVisual : MonoBehaviour
     void UpdateClothesVisual(ClothingOption oldValue, ClothingOption newValue) {
         _towel.SetActive(newValue == ClothingOption.Towel);
 
+        Debug.Log(newValue);
+
         Texture2D text = Resources.Load<Texture2D>("Textures/Clothing/" + Dresser.ClothingOptions[newValue]);
-        _amberBodyMaterial.SetTexture("_MainTex", text);
+        _amberBodyMaterial.SetTexture("_Albedo", text);
     }
 
     void UpdateHairVisual(HairOption oldValue, HairOption newValue) {
