@@ -14,9 +14,11 @@ public class Dresser : Interaction
         { ClothingOption.Dirty, "AmberDirtyClothes" },
         { ClothingOption.Blue, "AmberDayClothes" },
         { ClothingOption.Green, "AmberDayClothes2" },
-        { ClothingOption.Orange, "AmberDayClothes3"},
+        { ClothingOption.Orange, "AmberDayClothes3" },
         // Untested idk if this is the name of the pajamas or not
-        { ClothingOption.Pajamas, "Pajamas" }
+        { ClothingOption.Pajamas, "AmberPajamas" },
+        { ClothingOption.Towel, "AmberNaked" },
+        { ClothingOption.None, "AmberNaked" },
     };
 
     Material clothes;

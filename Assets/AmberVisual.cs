@@ -6,6 +6,9 @@ public class AmberVisual : MonoBehaviour
 {
     public enum HairOption { BONNET, MESSY, CLEAN }
     [SerializeField] GameObject _backpack;
+    [SerializeField] GameObject _towel;
+    [SerializeField] Material _amberBodyMaterial;
+
     private void OnEnable()
     {
         // Disable anything that doesn't need to be shown (i.e. backpack was enabled in editor to see how it looks)
@@ -23,6 +26,7 @@ public class AmberVisual : MonoBehaviour
         StoryDatastore.Instance.AmberWornClothing.Changed += UpdateClothesVisual;
         StoryDatastore.Instance.AmberHairOption.Changed += UpdateHairVisual;
     }
+    
     private void OnDisable()
     {
         // Subscribe to changes in storydata for each visual
@@ -34,9 +38,14 @@ public class AmberVisual : MonoBehaviour
     void UpdateBackpackVisual(bool oldValue, bool newValue) {
         _backpack.SetActive(newValue);
     }
-    void UpdateClothesVisual(ClothingOption oldValue, ClothingOption newValue) { 
-        // update texture to newValue
+    
+    void UpdateClothesVisual(ClothingOption oldValue, ClothingOption newValue) {
+        _towel.SetActive(newValue == ClothingOption.Towel);
+
+        Texture2D text = Resources.Load<Texture2D>("Textures/Clothing/" + Dresser.ClothingOptions[newValue]);
+        _amberBodyMaterial.SetTexture("_MainTex", text);
     }
+
     void UpdateHairVisual(HairOption oldValue, HairOption newValue) {
         // update hair to newValue
     }

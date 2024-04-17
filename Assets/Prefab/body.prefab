@@ -134,6 +134,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _backpack: {fileID: 8942410431732857026}
+  _towel: {fileID: 2116319660405198311}
+  _amberBodyMaterial: {fileID: 2100000, guid: bc4b28f2b8c76574496525ee5cb00e52, type: 2}
 --- !u!1 &7789704865394458189
 GameObject:
   m_ObjectHideFlags: 0
