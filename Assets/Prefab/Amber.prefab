@@ -319,7 +319,6 @@ MonoBehaviour:
   - {fileID: 5817474577365870232}
   max_tiles: 7
   num_tile: 0
-  LookVectorWhenComplete: {x: 0, y: 0, z: 1}
 --- !u!1 &5817474577365870235
 GameObject:
   m_ObjectHideFlags: 0
@@ -493,6 +492,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5817474576940391884}
     m_Modifications:
+    - target: {fileID: 4005532942579442941, guid: 20c19ff6004434442aae784fa8cb83f6, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a7308076a266c004b8b8786c12f1bd24, type: 2}
     - target: {fileID: 6510825319568144824, guid: 20c19ff6004434442aae784fa8cb83f6, type: 3}
       propertyPath: m_Name
       value: body

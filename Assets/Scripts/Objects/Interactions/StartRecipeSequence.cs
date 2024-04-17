@@ -11,7 +11,7 @@ public class StartRecipeSequence : Interaction
     [SerializeField] GameObject _splinesPrefab;
     [SerializeField] List<RotateFan> rotateFans;
     [SerializeField] AudioSource src;
-    [SerializeField] AudioClip hit;
+    [SerializeField] AudioClip hit, whoosh;
     StoryData<bool> _moved;
     bool _recipeGone = false;
     public override void LoadData(StoryDatastore data)
@@ -45,10 +45,17 @@ public class StartRecipeSequence : Interaction
         if (node.node.gameObject.name == "Fan1Junction")
         {
             index = GetIndexFromOrientationFan1(rotateFans[0].orientationIndex);
+            if (index == 2 || index == 0) {
+                src.PlayOneShot(whoosh);
+            }
         }
         else if (node.node.gameObject.name == "Fan2Junction")
         {
             index = GetIndexFromOrientationFan2(rotateFans[1].orientationIndex);
+            if (index == 2 || index == 0)
+            {
+                src.PlayOneShot(whoosh);
+            }
         }
         else if (node.node.gameObject.name == "WON")
         {
@@ -57,6 +64,8 @@ public class StartRecipeSequence : Interaction
             Destroy(floatingRecipe);
             _recipeGone = true;
             _bookOnTable.enabled = (true);
+            src.PlayOneShot(hit);
+            src.PlayOneShot(whoosh);
             EndAction();
             return;
         }
@@ -64,17 +73,19 @@ public class StartRecipeSequence : Interaction
         {
             src.PlayOneShot(hit);
             ResetPuzzleSequence();
+            return;
         }
         else
         {
             Debug.Log("No node name matches");
             return;
         }
-        if (index == 0) {
-            _follower.spline = node.node.GetConnections()[index].spline;
-        }
+/*        if (index == 0) {
 
-        else if (index != 0) {
+            _follower.spline = node.node.GetConnections()[index].spline;
+        }*/
+
+        if (index != 0) {
             _follower.SetPercent(0f);
             _follower.spline = node.node.GetConnections()[index].spline;
             _follower.SetPercent(0.01f);
