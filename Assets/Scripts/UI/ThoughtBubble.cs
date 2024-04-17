@@ -8,7 +8,7 @@ public class ThoughtBubble : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
 
 
     public static Vector3 offset;
-    public float hoverTransparency = 0.5f; 
+    public float hoverTransparency = 0.05f; 
     public float transitionDuration = 0.5f;
     public Image mainIcon, secondaryIcon, timerIcon;
 
