@@ -80,8 +80,11 @@ namespace Assets.Scripts.AI
                 new WaitFor(0.5f),
                 new MoveToTile(_interactions.Grid, doors.doors[MainSceneLoading.AmberRoom.BEDROOM], new Vector3(0,0,-1)),
                 new WaitFor(0.5f),
-                new ChangeStoryData<GamePhase>(StoryDatastore.Instance.CurrentGamePhase, GamePhase.SLEEP_TIME),
-                new AmberMoveToRoom(MainSceneLoading.AmberRoom.BEDROOM)
+                
+                //new ChangeStoryData<GamePhase>(StoryDatastore.Instance.CurrentGamePhase, GamePhase.SLEEP_TIME),
+                
+                new SelectEnding()
+                //new AmberMoveToRoom(MainSceneLoading.AmberRoom.BEDROOM)
             });
         }
 

@@ -4420,7 +4420,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2683783138088793716, guid: 5e37746bbfad47b4db51217248e504e3, type: 3}
       propertyPath: m_text
-      value: Level Designer and 3D Artist
+      value: Level Designer, 3D Artist, and Resident Foodie
       objectReference: {fileID: 0}
     - target: {fileID: 3238230306841333715, guid: 5e37746bbfad47b4db51217248e504e3, type: 3}
       propertyPath: m_text

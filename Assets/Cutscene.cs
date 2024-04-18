@@ -10,9 +10,19 @@ using UnityEngine.Video;
 public class Cutscene : MonoBehaviour
 {
     [SerializeField] VideoPlayer player;
-    private void Awake()
+    [SerializeField] string videoName;
+    private void Start()
     {
+        if (player) {
+            var path = System.IO.Path.Combine(Application.streamingAssetsPath, videoName);
+            player.url = path;
+            player.Play();
+        }
+
         player.loopPointReached += StartGame;
+    }
+    void OnDestroy() {
+        player.loopPointReached -= StartGame;
     }
     void Update() {
         if (Input.GetKey(KeyCode.Space)) {
