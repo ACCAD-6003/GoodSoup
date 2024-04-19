@@ -12,7 +12,7 @@ public class StarDisplayer : MonoBehaviour
     [SerializeField] float ShrinkDuration = 0.25f;
     void Start()
     {
-        ShowStars(5);
+        ShowStars(Globals.UnlockedEndings[StoryDatastore.Instance.ChosenEnding.Value]);
     }
 
     public void ShowStars(int numberOfStars)

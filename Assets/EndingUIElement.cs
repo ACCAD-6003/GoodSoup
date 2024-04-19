@@ -10,12 +10,12 @@ public class EndingUIElement : MonoBehaviour
     [SerializeField] TextMeshProUGUI scoreNumber;
     void OnEnable()
     {
-        if (Globals.UnlockedEndings.Contains(correspondingEnding)) { 
+        if (Globals.UnlockedEndings.ContainsKey(correspondingEnding)) { 
             reveal.SetActive(false);
             hint.SetActive(false);
             unlocked.SetActive(true);
         }
         // change this to actually give a score
-        scoreNumber.text = "0";
+        scoreNumber.text = $"{Globals.UnlockedEndings[correspondingEnding]}/5 stars";
     }
 }

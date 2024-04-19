@@ -10,5 +10,5 @@ public class Globals {
     public const float TEMP_INCREASE_MODIFIER = 8 * 3f;
     public const float TEMP_DECREASE_MODIFIER = 2f;
     public const float AMBER_PREFERABLE_SHOWER_TEMP = 100f;
-    public static List<Ending> UnlockedEndings = new List<Ending>();
+    public static Dictionary<Ending, int> UnlockedEndings = new();
 }
