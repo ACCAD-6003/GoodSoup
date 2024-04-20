@@ -5,22 +5,16 @@ using UnityEngine;
 public class StarDisplayer : MonoBehaviour
 {
     [SerializeField] Star[] Stars;
-
+    [SerializeField] Transform parentTransform;
     [SerializeField] float EnlargeScale = 1.5f;
     [SerializeField] float ShrinkScale = 1f;
     [SerializeField] float EnlargeDuration = 0.25f;
     [SerializeField] float ShrinkDuration = 0.25f;
-    void Start()
+    private void Awake()
     {
-        ShowStars(Globals.UnlockedEndings[StoryDatastore.Instance.ChosenEnding.Value]);
+        parentTransform.localScale = Vector3.zero;
     }
-
-    public void ShowStars(int numberOfStars)
-    {
-        StartCoroutine(ShowStarsRoutine(numberOfStars));
-    }
-
-    private IEnumerator ShowStarsRoutine(int numberOfStars)
+    public IEnumerator ShowStarsRoutine(int numberOfStars)
     {
         foreach (Star star in Stars)
         {

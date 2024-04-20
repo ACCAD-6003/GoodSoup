@@ -1,0 +1,266 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13d1641d7f63d0c4c8b78aefc3ce2806, type: 3}
+  m_Name: EndingsContent
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects:
+    - {fileID: 21300000, guid: 6ca58c36804a1ca4681b88dc3cc888e3, type: 3}
+    - {fileID: 21300000, guid: a4114d2c8c0b2e14898b7acdee3b8bef, type: 3}
+    - {fileID: 21300000, guid: ad73c79fa672b5c479cfbb4692e67b7c, type: 3}
+    - {fileID: 21300000, guid: f4f468c9aa4225f45a465a4df46ddbda, type: 3}
+    - {fileID: 21300000, guid: ad0dba187f1b55c4a9f57e74e42be2c5, type: 3}
+    - {fileID: 21300000, guid: d020223082a77964fbdd12fc66a92e7d, type: 3}
+    - {fileID: 21300000, guid: 49f96ed52d3599f44930e3d2f2974a90, type: 3}
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: EndingContent
+      Entry: 7
+      Data: 0|System.Collections.Generic.Dictionary`2[[Ending, Assembly-CSharp],[EndingContent,
+        Assembly-CSharp]], mscorlib
+    - Name: comparer
+      Entry: 7
+      Data: 1|System.Collections.Generic.EnumEqualityComparer`1[[Ending, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 12
+      Data: 7
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 0
+    - Name: $v
+      Entry: 7
+      Data: 2|EndingContent, Assembly-CSharp
+    - Name: DisplayName
+      Entry: 1
+      Data: AMBER'S DAY OFF
+    - Name: Description
+      Entry: 1
+      Data: YOU NEVER WOKE AMBER UP, SO SHE SLEPT IN!
+    - Name: DoBetterMessage
+      Entry: 6
+      Data: 
+    - Name: FiveStarMessage
+      Entry: 1
+      Data: RESPONSIBILITIES SCHMONSIBILITIES!
+    - Name: imageSprite
+      Entry: 10
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 1
+    - Name: $v
+      Entry: 7
+      Data: 3|EndingContent, Assembly-CSharp
+    - Name: DisplayName
+      Entry: 1
+      Data: AMBER IS PARANOID
+    - Name: Description
+      Entry: 1
+      Data: WEIRD THINGS KEEP HAPPENING IN AMBER'S LIFE...
+    - Name: DoBetterMessage
+      Entry: 1
+      Data: YOU COULD PROBABLY SCARE HER MORE.
+    - Name: FiveStarMessage
+      Entry: 1
+      Data: WOW. YOU REALLY KNOW HOW TO FREAK HER OUT.
+    - Name: imageSprite
+      Entry: 10
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 2
+    - Name: $v
+      Entry: 7
+      Data: 4|EndingContent, Assembly-CSharp
+    - Name: DisplayName
+      Entry: 1
+      Data: A SOLID DAY
+    - Name: Description
+      Entry: 1
+      Data: AMBER HAD A BETTER DAY THAN USUAL!
+    - Name: DoBetterMessage
+      Entry: 1
+      Data: YOU COULD PROBABLY STILL IMPROVE HER DAY.
+    - Name: FiveStarMessage
+      Entry: 1
+      Data: AMBER HAD A GREAT DAY -- NOT A LIFE-CHANGING DAY THOUGH.
+    - Name: imageSprite
+      Entry: 10
+      Data: 2
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 3
+    - Name: $v
+      Entry: 7
+      Data: 5|EndingContent, Assembly-CSharp
+    - Name: DisplayName
+      Entry: 1
+      Data: A ROUGH DAY
+    - Name: Description
+      Entry: 1
+      Data: AMBER HAD A SHITTIER DAY THAN USUAL.
+    - Name: DoBetterMessage
+      Entry: 1
+      Data: IF YOU'RE A SADIST, YOU COULD DEFINITELY MAKE HER DAY WORSE.
+    - Name: FiveStarMessage
+      Entry: 1
+      Data: YOU'RE A FULL BLOWN ASSHOLE. CONGRATS?
+    - Name: imageSprite
+      Entry: 10
+      Data: 3
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 4
+    - Name: $v
+      Entry: 7
+      Data: 6|EndingContent, Assembly-CSharp
+    - Name: DisplayName
+      Entry: 1
+      Data: THE COLLEGE DROPOUT
+    - Name: Description
+      Entry: 1
+      Data: YOU GOT AMBER KICKED OUT OF COLLEGE.
+    - Name: DoBetterMessage
+      Entry: 6
+      Data: 
+    - Name: FiveStarMessage
+      Entry: 1
+      Data: YOU ARE A SOCIOPATH.. SHE WAS SO CLOSE TO GRADUATING.
+    - Name: imageSprite
+      Entry: 10
+      Data: 4
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 5
+    - Name: $v
+      Entry: 7
+      Data: 7|EndingContent, Assembly-CSharp
+    - Name: DisplayName
+      Entry: 1
+      Data: GOOD SOUP
+    - Name: Description
+      Entry: 1
+      Data: THE TRUEST ENDING.
+    - Name: DoBetterMessage
+      Entry: 6
+      Data: 
+    - Name: FiveStarMessage
+      Entry: 1
+      Data: AMBER WILL REMEMBER THIS DAY.
+    - Name: imageSprite
+      Entry: 10
+      Data: 5
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 6
+    - Name: $v
+      Entry: 7
+      Data: 8|EndingContent, Assembly-CSharp
+    - Name: DisplayName
+      Entry: 1
+      Data: ACADEMIC WEAPON
+    - Name: Description
+      Entry: 1
+      Data: AMBER IS ON THE TRACK FOR SUCCESS IN CULINARY SCHOOL!
+    - Name: DoBetterMessage
+      Entry: 1
+      Data: YOU FEEL AS THOUGH YOU COULD DO SOMETHING MORE.
+    - Name: FiveStarMessage
+      Entry: 1
+      Data: YOU HAVE DONE EVERYTHING YOU CAN TO HELP!
+    - Name: imageSprite
+      Entry: 10
+      Data: 6
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
