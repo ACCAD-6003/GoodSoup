@@ -32,7 +32,7 @@ public class EndingSetup : SerializedMonoBehaviour
         endingTitle.text = endingContent.DisplayName;
         endingDescription.text = endingContent.Description;
         endingImage.sprite = endingContent.imageSprite;
-
+        Globals.LastEnding = ending;
         if (!Globals.UnlockedEndings.ContainsKey(ending))
         {
             Globals.UnlockedEndings.Add(ending, stars);
@@ -69,7 +69,6 @@ public class EndingSetup : SerializedMonoBehaviour
         }
 
         Camera.main.backgroundColor = GetAverageColor(endingImage.sprite.texture);
-        Globals.currentPageOpen = (int) ending;
     }
     private void Start()
     {

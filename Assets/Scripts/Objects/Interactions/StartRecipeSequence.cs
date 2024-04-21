@@ -65,6 +65,7 @@ public class StartRecipeSequence : Interaction
             _recipeGone = true;
             _bookOnTable.enabled = (true);
             src.PlayOneShot(hit);
+            FindObjectOfType<CameraShake>().ShakeCamera();
             StoryDatastore.Instance.GoodSoup.Value = true;
             src.PlayOneShot(whoosh);
             EndAction();
@@ -73,6 +74,7 @@ public class StartRecipeSequence : Interaction
         else if (node.node.gameObject.name == "Reset")
         {
             src.PlayOneShot(hit);
+            FindObjectOfType<CameraShake>().ShakeCamera();
             ResetPuzzleSequence();
             return;
         }

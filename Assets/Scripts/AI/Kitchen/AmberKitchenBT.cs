@@ -117,6 +117,7 @@ namespace Assets.Scripts.AI
                     new Sequence( new List<Node>() {
                         new WaitForStoryDataChange(new MovePerformed(_interactions.ChairPull.PlayerInteraction.interactionId)),
                         new SwitchAmberMount(_interactions.amberFall),
+                        new CameraShakeNode(),
                         new DebugNode(100),
                         new WaitFor(1.5f),
                         new PerformAmberInteraction(_interactions.ChairPull.AmberInteraction),
@@ -165,6 +166,22 @@ namespace Assets.Scripts.AI
                 return state;
             }
 
+        }
+        class CameraShakeNode : Node {
+            bool _performed;
+            CameraShake _shake;
+            public CameraShakeNode() {
+                FindObjectOfType<CameraShake>();
+                _performed = false;
+            }
+            public override NodeState Evaluate() {
+                if (!_performed) {
+                    _performed = true;
+                    _shake.ShakeCamera();
+                }
+                state = NodeState.SUCCESS;
+                return state;
+            }
         }
         class ImpactStoryData : Node {
             float impact;

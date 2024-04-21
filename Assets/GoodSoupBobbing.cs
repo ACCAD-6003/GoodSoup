@@ -58,8 +58,8 @@ public class GoodSoupBobbing : MonoBehaviour
 
         foreach (var button in buttons)
         {
-            yield return StartCoroutine(EndingSetup.EnlargeAndShrinkTransform(button.transform, buttonSize.x * 1.1f, 0.5f, buttonSize.x, 0.25f));
-            yield return new WaitForSeconds(0.25f);
+            StartCoroutine(EndingSetup.EnlargeAndShrinkTransform(button.transform, buttonSize.x * 1.1f, 0.5f, buttonSize.x, 0.25f));
+            yield return new WaitForSeconds(0.5f);
         }
     }
 

@@ -35,7 +35,7 @@ namespace BookCurlPro
         /// OnFlip invocation list, called when any page flipped
         /// </summary>
         public UnityEvent OnFlip;
-
+        public EndingUnlocked unlocked;
         /// <summary>
         /// The Current Shown paper (the paper its front shown in right part)
         /// </summary>
@@ -95,17 +95,21 @@ namespace BookCurlPro
 
         private void Awake()
         {
-            if (endingUnlocked.firstTime)
+            if (unlocked.firstTime)
             {
                 CurrentPaper = 0;
             }
             else {
-                CurrentPaper = Globals.currentPageOpen + 1;
+                var ending = (int) Globals.LastEnding;
+                if (ending == 0) {
+                    CurrentPaper = ending + 1;
+                }
+                else
+                {
+                    ending++;
+                    CurrentPaper = (ending + 1) / 2;
+                }
             }
-        }
-        private void OnDestroy()
-        {
-            Globals.currentPageOpen = CurrentPaper;
         }
 
         // Use this for initialization

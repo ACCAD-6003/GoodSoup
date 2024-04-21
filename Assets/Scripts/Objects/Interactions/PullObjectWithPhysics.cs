@@ -80,6 +80,7 @@ public class PullObjectWithPhysics : Interaction
         }
         Debug.Log("BOOK COLLIDED!");
         _collided = true;
+        FindObjectOfType<CameraShake>().ShakeCamera();
         StoryDatastore.Instance.AnyBookDropped.Value = true;
         if (_blown) {
             StoryDatastore.Instance.BooksBlown.Value = true;
