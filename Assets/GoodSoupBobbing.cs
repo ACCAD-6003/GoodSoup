@@ -9,13 +9,12 @@ public class GoodSoupBobbing : MonoBehaviour
     public GameObject soup;
     private Vector3 buttonSize;
     private static Vector3 initialPosition = Vector3.zero;
-    public EndingUnlocked unlocked;
     private void OnEnable()
     {
         if (initialPosition == Vector3.zero) {
             initialPosition = transform.localPosition;
         }
-        if (unlocked.firstTime)
+        if (Globals.FirstTitleScreen)
         {
             titleSize = transform.localScale;
 
@@ -30,7 +29,6 @@ public class GoodSoupBobbing : MonoBehaviour
         }
         else
         {
-            transform.localPosition -= new Vector3(0f, -50f, 0f);
             StartCoroutine(BobbingAnimation());
             StartCoroutine(RotationCoroutine());
         }
@@ -47,7 +45,7 @@ public class GoodSoupBobbing : MonoBehaviour
         while (elapsedTime < lerpTime)
         {
             // Lerp from the lowered position back to the initial position
-            transform.localPosition = Vector3.Lerp(startPosition, initialPosition, elapsedTime / lerpTime);
+            transform.localPosition = Vector3.Lerp(startPosition, initialPosition, Mathf.Sin((elapsedTime / lerpTime) * Mathf.PI * 0.5f)); // Using sine curve for easing
             elapsedTime += Time.deltaTime;
             yield return null;
         }
@@ -67,24 +65,59 @@ public class GoodSoupBobbing : MonoBehaviour
 
     IEnumerator BobbingAnimation()
     {
-        float bobRange = 20f;
-        float bobSpeed = 3f;
+        float bobRange = 10f;
+        float bobSpeed = 0.75f;
 
         while (true)
         {
+            // Calculate the vertical offset using a sine function
             float yOffset = Mathf.Sin(Time.time * bobSpeed) * bobRange;
+
+            // Apply the offset to the object's position
             transform.localPosition = initialPosition + new Vector3(0, yOffset, 0);
+
             yield return null;
         }
     }
 
     IEnumerator RotationCoroutine()
     {
+        float initialAngle = -55f; // Initial angle of the object
+        float tiltAngle = 60f; // Angle to tilt from the initial position
+        float rotationSpeed = 1f; // Speed of rotation during tilt state
+        float quickRotationSpeed = -360f; // Speed of rotation during the quick rotation state
+
         while (true)
         {
-            // Rotate the object around its X axis
-            soup.transform.Rotate(Vector3.right, Time.deltaTime * 10f, Space.Self);
-            yield return null;
+            // Tilt state: rotate back and forth twice between two angles
+            for (int i = 0; i < 2; i++)
+            {
+                float startAngle = initialAngle + (i % 2 == 0 ? tiltAngle : -tiltAngle);
+                float targetAngle = initialAngle + (i % 2 == 0 ? -tiltAngle : tiltAngle);
+                float elapsedTime = 0f;
+
+                while (elapsedTime < Mathf.PI) // Half of a sine wave for one direction
+                {
+                    float t = Mathf.Sin(elapsedTime) * 0.5f + 0.5f; // Convert sine wave to [0, 1]
+                    float angle = Mathf.Lerp(startAngle, targetAngle, t);
+                    soup.transform.localRotation = Quaternion.Euler(angle, 0f, 0f);
+                    elapsedTime += Time.deltaTime * rotationSpeed;
+                    yield return null;
+                }
+            }
+
+            // Quick rotation state: Rotate 360 degrees
+            float totalRotation = 0f;
+            while (totalRotation > -360f)
+            {
+                float rotationAmount = quickRotationSpeed * Time.deltaTime;
+                soup.transform.Rotate(Vector3.right, rotationAmount, Space.Self);
+                totalRotation += rotationAmount;
+                yield return null;
+            }
         }
     }
+
+
+
 }

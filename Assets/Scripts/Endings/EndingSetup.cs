@@ -164,11 +164,10 @@ public class EndingSetup : SerializedMonoBehaviour
     }
     public static IEnumerator EnlargeAndShrinkTransform(Transform transformObject, float enlargeScale, float enlargeDuration, float shrinkScale, float shrinkDuration)
     {
-        yield return EndingSetup.ChangeStarScale(transformObject, enlargeScale, enlargeDuration);
-        yield return EndingSetup.ChangeStarScale(transformObject, shrinkScale, shrinkDuration);
+        yield return EndingSetup.ChangeScale(transformObject, enlargeScale, enlargeDuration);
+        yield return EndingSetup.ChangeScale(transformObject, shrinkScale, shrinkDuration);
     }
-
-    public static IEnumerator ChangeStarScale(Transform transformObject, float targetScale, float duration)
+    public static IEnumerator ChangeScale(Transform transformObject, float targetScale, float duration)
     {
         Vector3 initialScale = transformObject.localScale;
         Vector3 finalScale = new Vector3(targetScale, targetScale, targetScale);
@@ -177,13 +176,19 @@ public class EndingSetup : SerializedMonoBehaviour
 
         while (elapsedTime < duration)
         {
-            transformObject.localScale = Vector3.Lerp(initialScale, finalScale, (elapsedTime / duration));
+            // Calculate the interpolation factor using a sine function
+            float t = Mathf.Sin((elapsedTime / duration) * Mathf.PI * 0.5f);
+
+            // Interpolate using the sine function
+            transformObject.localScale = Vector3.Lerp(initialScale, finalScale, t);
+
             elapsedTime += Time.deltaTime;
             yield return null;
         }
 
         transformObject.localScale = finalScale;
     }
+
     class InstantFiveStarEnding : EndingStars { 
         public int GetStars() {
             return 5;
