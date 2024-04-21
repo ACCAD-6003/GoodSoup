@@ -23,6 +23,7 @@ namespace BookCurlPro
         public RectTransform LeftPageTransform;
         public RectTransform RightPageTransform;
         public bool interactable = true;
+        public EndingUnlocked endingUnlocked;
         public bool enableShadowEffect = true;
         [Tooltip("Uncheck this if the book does not contain transparent pages to improve the overall performance")]
         public bool hasTransparentPages = true;
@@ -91,6 +92,21 @@ namespace BookCurlPro
         /// should be true when the page tween forward or backward after release
         /// </summary>
         bool tweening = false;
+
+        private void Awake()
+        {
+            if (endingUnlocked.firstTime)
+            {
+                CurrentPaper = 0;
+            }
+            else {
+                CurrentPaper = Globals.currentPageOpen + 1;
+            }
+        }
+        private void OnDestroy()
+        {
+            Globals.currentPageOpen = CurrentPaper;
+        }
 
         // Use this for initialization
         void Start()

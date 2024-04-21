@@ -69,6 +69,7 @@ public class EndingSetup : SerializedMonoBehaviour
         }
 
         Camera.main.backgroundColor = GetAverageColor(endingImage.sprite.texture);
+        Globals.currentPageOpen = (int) ending;
     }
     private void Start()
     {
@@ -138,9 +139,8 @@ public class EndingSetup : SerializedMonoBehaviour
         yield return new WaitForSeconds(0.25f);
         yield return StartCoroutine(EnlargeAndShrinkTransform(playAgain.transform, 1.1f, 0.25f, 1f, 0.25f));
         yield return new WaitForSeconds(0.25f);
-        StoryDatastore.Instance.ChosenEnding.Value = StoryDatastore.Instance.ChosenEnding.Value + 1;
-        SceneManager.LoadScene("Endings");
-
+/*        StoryDatastore.Instance.ChosenEnding.Value = StoryDatastore.Instance.ChosenEnding.Value + 1;
+        SceneManager.LoadScene("Endings");*/
     }
     private IEnumerator PullDownAndHighScore(float duration, float targetPosY1, float targetPosY2, float targetHeight2) {
         float elapsedTime = 0.0f;
@@ -162,13 +162,13 @@ public class EndingSetup : SerializedMonoBehaviour
         starBgImageTransform.anchoredPosition = new Vector2(startPos2.x, targetPosY2);
         starBgImageTransform.sizeDelta = new Vector2(starBgImageTransform.sizeDelta.x, targetHeight2);
     }
-    private IEnumerator EnlargeAndShrinkTransform(Transform transformObject, float enlargeScale, float enlargeDuration, float shrinkScale, float shrinkDuration)
+    public static IEnumerator EnlargeAndShrinkTransform(Transform transformObject, float enlargeScale, float enlargeDuration, float shrinkScale, float shrinkDuration)
     {
-        yield return StartCoroutine(ChangeStarScale(transformObject, enlargeScale, enlargeDuration));
-        yield return StartCoroutine(ChangeStarScale(transformObject, shrinkScale, shrinkDuration));
+        yield return EndingSetup.ChangeStarScale(transformObject, enlargeScale, enlargeDuration);
+        yield return EndingSetup.ChangeStarScale(transformObject, shrinkScale, shrinkDuration);
     }
 
-    private IEnumerator ChangeStarScale(Transform transformObject, float targetScale, float duration)
+    public static IEnumerator ChangeStarScale(Transform transformObject, float targetScale, float duration)
     {
         Vector3 initialScale = transformObject.localScale;
         Vector3 finalScale = new Vector3(targetScale, targetScale, targetScale);

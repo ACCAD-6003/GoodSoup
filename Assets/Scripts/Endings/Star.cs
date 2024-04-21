@@ -4,13 +4,18 @@ using UnityEngine.UI;
 public class Star : MonoBehaviour
 {
     public Image YellowStar;
-    Vector3 _savedScale;
+    bool enabled = false;
     private void Awake()
     {
-        _savedScale = transform.localScale;
+        if (enabled) {
+            return;
+        }
         YellowStar.transform.localScale = Vector3.zero;
     }
     public void EnableStar() {
-        YellowStar.transform.localScale = _savedScale;
+        enabled = true;
+        YellowStar.enabled = true;
+        YellowStar.gameObject.SetActive(true);
+        YellowStar.transform.localScale = new Vector3(1f, 1f, 1f);
     }
 }

@@ -12,4 +12,6 @@ public class Globals {
     public const float AMBER_PREFERABLE_SHOWER_TEMP = 100f;
     public static Dictionary<Ending, int> UnlockedEndings = new();
     public static List<Ending> EndingHintChecked = new();
+    public static int currentPageOpen = 0;
+    public static bool FirstTitleScreen = true;
 }

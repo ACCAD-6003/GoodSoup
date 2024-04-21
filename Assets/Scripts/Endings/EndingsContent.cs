@@ -8,6 +8,6 @@ public class EndingsContent : SerializedScriptableObject
     public Dictionary<Ending, EndingContent> EndingContent;
 }
 public class EndingContent {
-    public string DisplayName, Description, DoBetterMessage, FiveStarMessage;
+    public string DisplayName, Description, DoBetterMessage, FiveStarMessage, Hint;
     public Sprite imageSprite;
 }

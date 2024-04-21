@@ -69,6 +69,9 @@ MonoBehaviour:
     - Name: FiveStarMessage
       Entry: 1
       Data: RESPONSIBILITIES SCHMONSIBILITIES!
+    - Name: Hint
+      Entry: 6
+      Data: 
     - Name: imageSprite
       Entry: 10
       Data: 0
@@ -99,6 +102,9 @@ MonoBehaviour:
     - Name: FiveStarMessage
       Entry: 1
       Data: WOW. YOU REALLY KNOW HOW TO FREAK HER OUT.
+    - Name: Hint
+      Entry: 6
+      Data: 
     - Name: imageSprite
       Entry: 10
       Data: 1
@@ -129,6 +135,9 @@ MonoBehaviour:
     - Name: FiveStarMessage
       Entry: 1
       Data: AMBER HAD A GREAT DAY -- NOT A LIFE-CHANGING DAY THOUGH.
+    - Name: Hint
+      Entry: 6
+      Data: 
     - Name: imageSprite
       Entry: 10
       Data: 2
@@ -159,6 +168,9 @@ MonoBehaviour:
     - Name: FiveStarMessage
       Entry: 1
       Data: YOU'RE A FULL BLOWN ASSHOLE. CONGRATS?
+    - Name: Hint
+      Entry: 6
+      Data: 
     - Name: imageSprite
       Entry: 10
       Data: 3
@@ -189,6 +201,9 @@ MonoBehaviour:
     - Name: FiveStarMessage
       Entry: 1
       Data: YOU ARE A SOCIOPATH.. SHE WAS SO CLOSE TO GRADUATING.
+    - Name: Hint
+      Entry: 1
+      Data: YEAH.. YOU HAVE TO RUIN HER LIFE FOR THIS ONE.
     - Name: imageSprite
       Entry: 10
       Data: 4
@@ -219,6 +234,9 @@ MonoBehaviour:
     - Name: FiveStarMessage
       Entry: 1
       Data: AMBER WILL REMEMBER THIS DAY.
+    - Name: Hint
+      Entry: 6
+      Data: 
     - Name: imageSprite
       Entry: 10
       Data: 5
@@ -249,6 +267,9 @@ MonoBehaviour:
     - Name: FiveStarMessage
       Entry: 1
       Data: YOU HAVE DONE EVERYTHING YOU CAN TO HELP!
+    - Name: Hint
+      Entry: 6
+      Data: 
     - Name: imageSprite
       Entry: 10
       Data: 6

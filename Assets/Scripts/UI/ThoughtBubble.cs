@@ -34,23 +34,6 @@ public class ThoughtBubble : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
         }
     }
 
-    void LateUpdate()
-    {
-        // Convert world position of character to viewport space
-        Vector3 viewportPos = Camera.main.WorldToViewportPoint(FindObjectOfType<ObjectInteraction>().Amber.position);
-
-        // Convert viewport position to canvas space
-        Vector2 canvasPos = new Vector2(
-            ((viewportPos.x * canvasRectTransform.sizeDelta.x) - (canvasRectTransform.sizeDelta.x * 0.5f)),
-            ((viewportPos.y * canvasRectTransform.sizeDelta.y) - (canvasRectTransform.sizeDelta.y * 0.5f)));
-
-        // Apply the offset
-        canvasPos += new Vector2(offset.x, offset.y);
-
-        // Apply the position to the image's RectTransform
-        imageRectTransform.anchoredPosition = canvasPos;
-    }
-
     public void OnPointerEnter(PointerEventData eventData)
     {
         // Change transparency of all images to hoverTransparency value
