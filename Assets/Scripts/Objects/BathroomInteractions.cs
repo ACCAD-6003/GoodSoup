@@ -16,6 +16,7 @@ namespace Assets.Scripts.Objects
         public AmberUseShower Shower;
         public FlushToilet FlushToilet;
         public InteractableObject Towel, ShowerCurtain;
-        public AmberMount shower;
+        public GameObject brushHierarchy;
+        public AmberMount shower, brushMount;
     }
 }

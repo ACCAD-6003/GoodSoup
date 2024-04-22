@@ -71,8 +71,8 @@ namespace Assets.Scripts.AI
                     new SwitchAmberMount(navigation),
 
                     // DEBUG
-                    //new MoveToTile(interactions.Grid, doors.doors[MainSceneLoading.AmberRoom.KITCHEN]),
-                    //new AmberMoveToRoom(MainSceneLoading.AmberRoom.KITCHEN),
+                    new MoveToTile(interactions.Grid, doors.doors[MainSceneLoading.AmberRoom.HALLWAY]),
+                    new AmberMoveToRoom(MainSceneLoading.AmberRoom.HALLWAY),
                     
 
                     new MoveToTile(interactions.Grid, doors.doors[MainSceneLoading.AmberRoom.BATHROOM]),
@@ -114,10 +114,9 @@ namespace Assets.Scripts.AI
                     new MoveToTile(interactions.Grid, interactions.Backpack.AssociatedTile),
                     new PerformAmberInteraction(interactions.Backpack.AmberInteraction),
                     new WaitFor(0.5f),
-                    new MoveToTile(interactions.Grid, doors.doors[MainSceneLoading.AmberRoom.GONE], new Vector3(0,0,-1)),
+                    new MoveToTile(interactions.Grid, doors.doors[MainSceneLoading.AmberRoom.HALLWAY], new Vector3(0,0,-1)),
+                    new AmberMoveToRoom(MainSceneLoading.AmberRoom.HALLWAY),
                     new WaitFor(0.25f),
-                    new AmberMoveToRoom(MainSceneLoading.AmberRoom.GONE),
-                    new WaitFor(5f),
                 }),
 
                 new WrapperNode(new SkipIfStoryDatastoreState<EmailState>(StoryDatastore.Instance.EmailState, EmailState.NOTHING_CHANGED, false), new List<Node>() {
@@ -136,9 +135,9 @@ namespace Assets.Scripts.AI
                     new MoveToTile(interactions.Grid, interactions.Backpack.AssociatedTile),
                     new PerformAmberInteraction(interactions.Backpack.AmberInteraction),
                     new WaitFor(0.5f),
-                    new MoveToTile(interactions.Grid, doors.doors[MainSceneLoading.AmberRoom.KITCHEN]),
+                    new MoveToTile(interactions.Grid, doors.doors[MainSceneLoading.AmberRoom.HALLWAY]),
                     new WaitFor(0.25f),
-                    new AmberMoveToRoom(MainSceneLoading.AmberRoom.KITCHEN),
+                    new AmberMoveToRoom(MainSceneLoading.AmberRoom.HALLWAY),
                     new WaitFor(1f),
                 }),
 
