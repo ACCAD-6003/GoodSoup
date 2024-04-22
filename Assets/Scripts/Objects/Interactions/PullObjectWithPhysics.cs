@@ -20,6 +20,10 @@ public class PullObjectWithPhysics : Interaction
     {
         StartCoroutine(nameof(PullOut));
     }
+/*    private void FixedUpdate()
+    {
+        
+    }*/
     IEnumerator PullOut()
     {
         _rb.isKinematic = true;

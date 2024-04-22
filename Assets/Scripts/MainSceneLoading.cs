@@ -54,6 +54,12 @@ public class MainSceneLoading : SerializedMonoBehaviour
         else if (StoryDatastore.Instance.CurrentGamePhase.Value == GamePhase.AMBER_GONE) {
             StoryDatastore.Instance.CurrentGamePhase.Value = GamePhase.AMBER_BACK;
         }
+        if (room == AmberRoom.KITCHEN && StoryDatastore.Instance.CurrentGamePhase.Value == GamePhase.AMBER_BACK) {
+            StoryDatastore.Instance.EntryDoor.Value = AmberRoom.HALLWAY;
+        }
+        if (room == AmberRoom.HALLWAY) {
+            StoryDatastore.Instance.HallwayVisits.Value++;
+        }
         switch (StoryDatastore.Instance.CurrentGamePhase.Value)
         {
             case GamePhase.TUTORIAL_BEDROOM:

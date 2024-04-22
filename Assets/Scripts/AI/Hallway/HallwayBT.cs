@@ -33,6 +33,7 @@ namespace Assets.Scripts.AI
             navigation = GameObject.FindGameObjectWithTag("Player").GetComponent<AmberMount>();
 
             Node routine = new Sequence(new List<Node>() {
+                new DebugNode(StoryDatastore.Instance.HallwayVisits.Value),
                 new WrapperNode(new SkipIfStoryDatastoreState<GamePhase>(StoryDatastore.Instance.CurrentGamePhase, GamePhase.AMBER_BACK), new List<Node>() {
                     new WaitFor(0.5f),
                     new MoveToTile(interactions.Grid, interactions.Door.AssociatedTile, Vector3.left),
@@ -46,14 +47,31 @@ namespace Assets.Scripts.AI
                     new AmberMoveToRoom(MainSceneLoading.AmberRoom.GONE),
                     new WaitFor(0.5f),
                 }),
-                new WaitFor(0.5f),
-                new PerformAmberInteraction(interactions.Door.AmberInteraction),
-                new WaitFor(0.5f),
-                new MoveToTile(interactions.Grid, interactions.Door.AssociatedTile, Vector3.left),
-                new WaitFor(0.5f),
-                new PerformAmberInteraction(interactions.Door.AmberInteraction),
-                new WaitFor(0.5f),
-                new MoveToTile(interactions.Grid, doors.doors[MainSceneLoading.AmberRoom.BEDROOM])
+                new WrapperNode(new SkipIfStoryDatastoreState<int>(StoryDatastore.Instance.HallwayVisits, 2, true), new List<Node>() {
+                    new WaitFor(0.5f),
+                    new PerformAmberInteraction(interactions.Door.AmberInteraction),
+                    new WaitFor(0.5f),
+                    new MoveToTile(interactions.Grid, interactions.Door.AssociatedTile, Vector3.left),
+                    new WaitFor(0.5f),
+                    new PerformAmberInteraction(interactions.Door.AmberInteraction),
+                    new WaitFor(0.5f),
+                    new MoveToTile(interactions.Grid, doors.doors[MainSceneLoading.AmberRoom.BEDROOM]),
+                    new WaitFor(0.5f),
+                    new AmberMoveToRoom(MainSceneLoading.AmberRoom.BEDROOM)
+                }),
+                new WrapperNode(new SkipIfStoryDatastoreState<int>(StoryDatastore.Instance.HallwayVisits, 3, true), new List<Node>() {
+                    new WaitFor(0.5f),
+                    new MoveToTile(interactions.Grid, doors.doors[MainSceneLoading.AmberRoom.KITCHEN]),
+                    new WaitFor(0.5f),
+                    new AmberMoveToRoom(MainSceneLoading.AmberRoom.KITCHEN)
+                }),
+                new WrapperNode(new SkipIfStoryDatastoreState<int>(StoryDatastore.Instance.HallwayVisits, 4, true), new List<Node>() {
+                    new WaitFor(0.5f),
+                    new MoveToTile(interactions.Grid, doors.doors[MainSceneLoading.AmberRoom.BEDROOM]),
+                    new WaitFor(0.5f),
+                    new AmberMoveToRoom(MainSceneLoading.AmberRoom.BEDROOM)
+                })
+
             });
 
             return routine;

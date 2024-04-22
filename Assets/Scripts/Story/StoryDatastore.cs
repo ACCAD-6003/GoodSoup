@@ -109,4 +109,6 @@ public class StoryDatastore : MonoBehaviour
     public StoryData<bool> GoodSoup = new StoryData<bool>(false);
     [SerializeField]
     public StoryData<AmberRoom> EntryDoor = new StoryData<AmberRoom>(AmberRoom.BEDROOM);
+    [SerializeField]
+    public StoryData<int> HallwayVisits = new(0);
 }

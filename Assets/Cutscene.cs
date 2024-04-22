@@ -11,6 +11,7 @@ public class Cutscene : MonoBehaviour
 {
     [SerializeField] VideoPlayer player;
     [SerializeField] string videoName;
+    [SerializeField] string sceneNameToTransitionTo;
     private void Start()
     {
         if (player) {
@@ -31,6 +32,6 @@ public class Cutscene : MonoBehaviour
     }
     void StartGame(VideoPlayer source) {
         player.loopPointReached -= StartGame;
-        SceneManager.LoadScene("Start");
+        SceneManager.LoadScene(sceneNameToTransitionTo);
     }
 }

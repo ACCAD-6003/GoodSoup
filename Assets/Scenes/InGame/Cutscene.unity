@@ -867,3 +867,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1329361730}
   videoName: Good_Soup_Animatic_V1.mp4
+  sceneNameToTransitionTo: Start

@@ -71,8 +71,8 @@ namespace Assets.Scripts.AI
                     new SwitchAmberMount(navigation),
 
                     // DEBUG
-                    new MoveToTile(interactions.Grid, doors.doors[MainSceneLoading.AmberRoom.HALLWAY]),
-                    new AmberMoveToRoom(MainSceneLoading.AmberRoom.HALLWAY),
+                    //new MoveToTile(interactions.Grid, doors.doors[MainSceneLoading.AmberRoom.HALLWAY]),
+                    //new AmberMoveToRoom(MainSceneLoading.AmberRoom.HALLWAY),
                     
 
                     new MoveToTile(interactions.Grid, doors.doors[MainSceneLoading.AmberRoom.BATHROOM]),
