@@ -81,9 +81,13 @@ namespace Assets.Scripts.AI
                         new EvaluateItemsPickedUp(new List<int>() { 1000 }, UIElements.BubbleIcon.OH_WHERE_IS_MY_HAIRBRUSH, UIElements.BubbleIcon.BRUSH),
                         new WrapperNode(
                             new SkipIfStoryDatastoreState<bool>(StoryDatastore.Instance.ResultOfEvaluation, true),
-                            new List<Node>() { 
+                            new List<Node>() {
+                                new SwitchAmberMount(interactions.brushMount),
+                                new SetGameObjectActive(interactions.brushHierarchy, false),
                                 new WaitFor(3f),
-                                new AmberHairBrush()
+                                new AmberHairBrush(),
+                                new SetGameObjectActive(interactions.brushHierarchy, true),
+                                new SwitchAmberMount(navigation)
                             }
                         ),
                         new WaitFor(0.3f),

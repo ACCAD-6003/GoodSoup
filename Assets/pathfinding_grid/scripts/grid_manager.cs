@@ -289,7 +289,7 @@ public class grid_manager : MonoBehaviour
 
             if (!char_s.big)
             {
-                char_s.tile_s.im.color = char_s.col;
+                //char_s.tile_s.im.color = char_s.col;
 
                 if (find_path != efind_path.on_click)
                 {
@@ -445,7 +445,9 @@ public class grid_manager : MonoBehaviour
         if (find_path == efind_path.once_per_turn || find_path == efind_path.max_tiles)
             find_paths_static(char_s);
     }
-
+    public void FixCharacterBetweenScenes() {
+        Start();
+    }
 
     void Start()
     {

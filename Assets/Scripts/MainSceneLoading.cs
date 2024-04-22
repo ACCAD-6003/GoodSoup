@@ -2,6 +2,7 @@ using Sirenix.OdinInspector;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.ProBuilder.Shapes;
 using UnityEngine.SceneManagement;
 
 public class MainSceneLoading : SerializedMonoBehaviour
@@ -11,9 +12,10 @@ public class MainSceneLoading : SerializedMonoBehaviour
         { AmberRoom.BATHROOM, "Bathroom" },
         { AmberRoom.KITCHEN, "Kitchen" },
         { AmberRoom.LIVING_ROOM, "LivingRoom" },
-        { AmberRoom.GONE, "AmberGone" }
+        { AmberRoom.GONE, "AmberGone" },
+        { AmberRoom.HALLWAY, "Hallway" }
     };
-    public enum AmberRoom { BEDROOM, BATHROOM, KITCHEN, LIVING_ROOM, GONE }
+    public enum AmberRoom { BEDROOM, BATHROOM, KITCHEN, HALLWAY, LIVING_ROOM, GONE }
     private static MainSceneLoading instance;
     public AmberRoom CurrAdditiveScene;
 
@@ -47,6 +49,7 @@ public class MainSceneLoading : SerializedMonoBehaviour
         if (room == AmberRoom.GONE)
         {
             StoryDatastore.Instance.CurrentGamePhase.Value = GamePhase.AMBER_GONE;
+            StoryDatastore.Instance.EntryDoor.Value = AmberRoom.GONE;
         }
         else if (StoryDatastore.Instance.CurrentGamePhase.Value == GamePhase.AMBER_GONE) {
             StoryDatastore.Instance.CurrentGamePhase.Value = GamePhase.AMBER_BACK;

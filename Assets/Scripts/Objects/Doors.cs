@@ -17,11 +17,21 @@ namespace Assets.Scripts.Objects
             if (doors.ContainsKey(StoryDatastore.Instance.CurrentAmberRoom.Value))
             {
                 Debug.Log("ENTRANCE SET TO: " + StoryDatastore.Instance.CurrentAmberRoom.Value);
-                Entrance = doors[StoryDatastore.Instance.CurrentAmberRoom.Value];
+                StoryDatastore.Instance.EntryDoor.Value = StoryDatastore.Instance.CurrentAmberRoom.Value;
                 StoryDatastore.Instance.CurrentAmberRoom.Value = MainSceneLoading.Instance.CurrAdditiveScene;
             }
         }
+        public void Start()
+        {
+            FindObjectOfType<grid_manager>().FixCharacterBetweenScenes();
+        }
         public Dictionary<AmberRoom, tile> doors;
-        public tile Entrance;
+        public tile Entrance { get {
+                if (StoryDatastore.Instance.CurrentGamePhase.Value == GamePhase.TUTORIAL_BEDROOM) {
+                    return GameObject.Find("tile_5_1").GetComponent<tile>();
+                } 
+                return doors[StoryDatastore.Instance.EntryDoor.Value]; 
+            } 
+        }
     }
 }
