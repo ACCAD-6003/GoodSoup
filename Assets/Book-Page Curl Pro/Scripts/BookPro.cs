@@ -31,6 +31,9 @@ namespace BookCurlPro
         public int currentPaper = 0;
         [HideInInspector]
         public Paper[] papers;
+
+        public AudioSource src;
+        public AudioClip pageTurn, select;
         /// <summary>
         /// OnFlip invocation list, called when any page flipped
         /// </summary>
@@ -311,6 +314,7 @@ namespace BookCurlPro
         public void DragRightPageToPoint(Vector3 point)
         {
             if (currentPaper > EndFlippingPaper) return;
+            src.PlayOneShot(select);
             pageDragging = true;
             mode = FlipMode.RightToLeft;
             f = point;
@@ -349,6 +353,7 @@ namespace BookCurlPro
         {
             if (currentPaper <= StartFlippingPaper) return;
             pageDragging = true;
+            src.PlayOneShot(select);
             mode = FlipMode.LeftToRight;
             f = point;
 
@@ -392,6 +397,7 @@ namespace BookCurlPro
                     TweenBack();
                 else
                     TweenForward();
+                    src.PlayOneShot(pageTurn);
             }
         }
 

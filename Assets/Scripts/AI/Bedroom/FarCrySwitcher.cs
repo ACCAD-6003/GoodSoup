@@ -13,7 +13,7 @@ namespace Assets.Scripts.AI.Bedroom
         private float time = 0f;
         private void Update()
         {
-            if (time > 2f)
+            if (time > 60 * 2f)
             {
                 SceneManager.LoadScene("Endings");
             }

@@ -9,6 +9,8 @@ public class GoodSoupBobbing : MonoBehaviour
     public GameObject soup;
     private Vector3 buttonSize;
     private static Vector3 initialPosition = Vector3.zero;
+    public AudioSource src;
+    public AudioClip whoosh;
     private void OnEnable()
     {
         if (initialPosition == Vector3.zero) {
@@ -36,7 +38,10 @@ public class GoodSoupBobbing : MonoBehaviour
 
     private IEnumerator TitleScreenAnimation()
     {
-        yield return StartCoroutine(EndingSetup.EnlargeAndShrinkTransform(transform, titleSize.x * 1.35f, 1f, titleSize.x, 0.5f));
+        StartCoroutine(EndingSetup.EnlargeAndShrinkTransform(transform, titleSize.x * 1.35f, 1f, titleSize.x, 0.5f));
+        yield return new WaitForSeconds(0.5f);
+        src.PlayOneShot(whoosh);
+        yield return new WaitForSeconds(1f);
 
         float lerpTime = 1.0f;
         float elapsedTime = 0.0f;
@@ -59,6 +64,7 @@ public class GoodSoupBobbing : MonoBehaviour
         foreach (var button in buttons)
         {
             StartCoroutine(EndingSetup.EnlargeAndShrinkTransform(button.transform, buttonSize.x * 1.1f, 0.5f, buttonSize.x, 0.25f));
+            src.PlayOneShot(whoosh);
             yield return new WaitForSeconds(0.5f);
         }
     }

@@ -24687,6 +24687,10 @@ MonoBehaviour:
   _isInProgress: 0
   beforeMoved: {fileID: 682852862}
   afterMoved: {fileID: 6448203712121363093}
+  _moved:
+    _value: 0
+  _optionalSrc: {fileID: 0}
+  _optionalSoundForBeforeMovedToAfter: {fileID: 0}
 --- !u!1 &1096206245
 GameObject:
   m_ObjectHideFlags: 0
@@ -27407,6 +27411,10 @@ MonoBehaviour:
   _isInProgress: 0
   beforeMoved: {fileID: 5887857136597538062}
   afterMoved: {fileID: 6448203713312506123}
+  _moved:
+    _value: 0
+  _optionalSrc: {fileID: 0}
+  _optionalSoundForBeforeMovedToAfter: {fileID: 0}
 --- !u!1001 &1221452724
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -43664,6 +43672,10 @@ MonoBehaviour:
   _isInProgress: 0
   beforeMoved: {fileID: 1244374736}
   afterMoved: {fileID: 1726935442}
+  _moved:
+    _value: 0
+  _optionalSrc: {fileID: 0}
+  _optionalSoundForBeforeMovedToAfter: {fileID: 0}
 --- !u!114 &1829702954
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44946,6 +44958,10 @@ MonoBehaviour:
   _isInProgress: 0
   beforeMoved: {fileID: 1221452726}
   afterMoved: {fileID: 6448203713157652125}
+  _moved:
+    _value: 0
+  _optionalSrc: {fileID: 0}
+  _optionalSoundForBeforeMovedToAfter: {fileID: 0}
 --- !u!1 &1989036882
 GameObject:
   m_ObjectHideFlags: 0
@@ -54981,6 +54997,7 @@ GameObject:
   - component: {fileID: 4226766549108317392}
   - component: {fileID: 4425087517216106195}
   - component: {fileID: 7843904028372621886}
+  - component: {fileID: 7843904028372621887}
   m_Layer: 0
   m_Name: Closed
   m_TagString: Untagged
@@ -55258,6 +55275,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &7843904028372621887
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6969271507469952414}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.0000002, y: 2, z: 0.12000017}
+  m_Center: {x: -9.862876e-10, y: -0.0000000017881393, z: 0.06}
 --- !u!33 &7851347932223126790
 MeshFilter:
   m_ObjectHideFlags: 0

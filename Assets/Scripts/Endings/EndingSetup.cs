@@ -129,7 +129,7 @@ public class EndingSetup : SerializedMonoBehaviour
         yield return StartCoroutine(starDisplayer.ShowStarsRoutine(stars));
         yield return new WaitForSeconds(0.25f);
         if (doingHighScoreAnimation) {
-            yield return StartCoroutine(PullDownAndHighScore(1f, -276f, 23.4754f, 161.2058f));
+            yield return StartCoroutine(PullDownAndHighScore(0.5f, -276f, 23.4754f, 161.2058f));
             yield return StartCoroutine(EnlargeAndShrinkTransform(highScoreText.transform, 1.1f, 0.25f, 1f, 0.25f));
             yield return new WaitForSeconds(0.25f);
         }
@@ -141,7 +141,8 @@ public class EndingSetup : SerializedMonoBehaviour
 /*        StoryDatastore.Instance.ChosenEnding.Value = StoryDatastore.Instance.ChosenEnding.Value + 1;
         SceneManager.LoadScene("Endings");*/
     }
-    private IEnumerator PullDownAndHighScore(float duration, float targetPosY1, float targetPosY2, float targetHeight2) {
+    private IEnumerator PullDownAndHighScore(float duration, float targetPosY1, float targetPosY2, float targetHeight2)
+    {
         float elapsedTime = 0.0f;
         Vector2 startPos1 = starTransform.anchoredPosition;
         Vector2 startPos2 = starBgImageTransform.anchoredPosition;
@@ -150,17 +151,23 @@ public class EndingSetup : SerializedMonoBehaviour
         while (elapsedTime < duration)
         {
             float t = elapsedTime / duration;
-            starTransform.anchoredPosition = Vector2.Lerp(startPos1, new Vector2(startPos1.x, targetPosY1), t);
-            starBgImageTransform.anchoredPosition = Vector2.Lerp(startPos2, new Vector2(startPos2.x, targetPosY2), t);
-            starBgImageTransform.sizeDelta = new Vector2(starBgImageTransform.sizeDelta.x, Mathf.Lerp(startHeight2, targetHeight2, t));
+            float sineT = Mathf.Sin(t * Mathf.PI * 0.5f); // Using sine function for easing out
+
+            starTransform.anchoredPosition = Vector2.Lerp(startPos1, new Vector2(startPos1.x, targetPosY1), sineT);
+            starBgImageTransform.anchoredPosition = Vector2.Lerp(startPos2, new Vector2(startPos2.x, targetPosY2), sineT);
+            starBgImageTransform.sizeDelta = new Vector2(starBgImageTransform.sizeDelta.x, Mathf.Lerp(startHeight2, targetHeight2, sineT));
+
             elapsedTime += Time.deltaTime;
             yield return null;
         }
 
+        // Ensure final position is reached
         starTransform.anchoredPosition = new Vector2(startPos1.x, targetPosY1);
         starBgImageTransform.anchoredPosition = new Vector2(startPos2.x, targetPosY2);
         starBgImageTransform.sizeDelta = new Vector2(starBgImageTransform.sizeDelta.x, targetHeight2);
     }
+
+
     public static IEnumerator EnlargeAndShrinkTransform(Transform transformObject, float enlargeScale, float enlargeDuration, float shrinkScale, float shrinkDuration)
     {
         yield return EndingSetup.ChangeScale(transformObject, enlargeScale, enlargeDuration);
