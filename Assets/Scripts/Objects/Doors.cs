@@ -26,6 +26,12 @@ namespace Assets.Scripts.Objects
             FindObjectOfType<grid_manager>().FixCharacterBetweenScenes();
         }
         public Dictionary<AmberRoom, tile> doors;
-        public tile Entrance { get { return doors[StoryDatastore.Instance.EntryDoor.Value]; } }
+        public tile Entrance { get {
+                if (StoryDatastore.Instance.CurrentGamePhase.Value == GamePhase.TUTORIAL_BEDROOM) {
+                    return GameObject.Find("tile_5_1").GetComponent<tile>();
+                } 
+                return doors[StoryDatastore.Instance.EntryDoor.Value]; 
+            } 
+        }
     }
 }
