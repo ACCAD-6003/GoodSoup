@@ -304,7 +304,7 @@ MonoBehaviour:
   body_looking: 0
   moving: 0
   moving_tiles: 0
-  move_speed: 1
+  move_speed: 1.5
   rotate_speed: 6
   col: {r: 0.9607843, g: 1, b: 0, a: 0.47058824}
   tr_body: {fileID: 5817474577247795047}
