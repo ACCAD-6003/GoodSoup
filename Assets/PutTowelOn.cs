@@ -9,7 +9,6 @@ public class PutTowelOn : Interaction
 {
     public override void DoAction()
     {
-        StoryDatastore.Instance.AmberWornClothing.Value = ClothingOption.Towel;
         if (StoryDatastore.Instance.TowelHot.Value) {
             UIManager.Instance.DisplaySimpleBubbleForSeconds(UIElements.BubbleIcon.HAPPY_TOWEL, 2f);
             StoryDatastore.Instance.Happiness.Value += 2f;

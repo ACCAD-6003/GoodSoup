@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.XR;
+using static Assets.Scripts.AI.AmberKitchenBT;
 
 
 namespace Assets.Scripts.AI
@@ -46,6 +47,7 @@ namespace Assets.Scripts.AI
                         new WaitFor(0.25f),
                         new MoveToTile(interactions.Grid, interactions.showerTile),
                         new PerformAmberInteraction(interactions.ShowerCurtain.AmberInteraction),
+                        new ChangeStoryData<ClothingOption>(StoryDatastore.Instance.AmberWornClothing, ClothingOption.Towel),
                         new SwitchAmberMount(interactions.shower),
 
                         new WaitFor(0.4f),
