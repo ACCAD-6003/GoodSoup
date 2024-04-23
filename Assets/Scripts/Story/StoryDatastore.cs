@@ -41,6 +41,11 @@ public class StoryDatastore : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
+    public void DestroyStoryData() {
+        instance = null;
+        Destroy(gameObject);
+    }
+
     [SerializeField]
     public Dictionary<int, (Vector3 location, Quaternion rotation)> BooksDropped = new Dictionary<int, (Vector3 location, Quaternion rotation)>();
     [SerializeField]
@@ -54,7 +59,7 @@ public class StoryDatastore : MonoBehaviour
     [SerializeField]
     public StoryData<bool> AwaitingEmailReply = new StoryData<bool>(false);
     [SerializeField]
-    public StoryData<DateTime> EmailSentTime;
+    public StoryData<DateTime> EmailSentTime = new StoryData<DateTime>(DateTime.MaxValue);
     [SerializeField]
     public StoryData<AmberRoom> CurrentAmberRoom = new StoryData<AmberRoom>(AmberRoom.BEDROOM);
     [SerializeField]

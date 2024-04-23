@@ -233,7 +233,6 @@ GameObject:
   - component: {fileID: 383619373}
   - component: {fileID: 383619372}
   - component: {fileID: 383619375}
-  - component: {fileID: 383619374}
   m_Layer: 5
   m_Name: Play Again
   m_TagString: Untagged
@@ -358,18 +357,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 383619370}
   m_CullTransparentMesh: 1
---- !u!114 &383619374
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 383619370}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b47b67d1a071e42edaf71f49d94c69bb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &383619375
 MonoBehaviour:
   m_ObjectHideFlags: 0

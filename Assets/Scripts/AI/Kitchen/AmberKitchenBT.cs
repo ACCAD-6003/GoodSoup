@@ -174,7 +174,7 @@ namespace Assets.Scripts.AI
             bool _performed;
             CameraShake _shake;
             public CameraShakeNode() {
-                FindObjectOfType<CameraShake>();
+                _shake = FindObjectOfType<CameraShake>();
                 _performed = false;
             }
             public override NodeState Evaluate() {

@@ -5,12 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class GameReset : MonoBehaviour
 {
-    // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.R)) 
+        if (Input.GetKeyDown(KeyCode.R))
         {
             GameObject[] dontDestroyObjects = GameObject.FindGameObjectsWithTag("DontDestroyOnLoad");
+            StoryDatastore.Instance.DestroyStoryData();
             foreach (GameObject obj in dontDestroyObjects)
             {
                 Destroy(obj);
