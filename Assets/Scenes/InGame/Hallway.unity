@@ -2314,7 +2314,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh508540
+  m_Name: pb_Mesh502712
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -33078,6 +33078,10 @@ PrefabInstance:
       value: RoomCamera
       objectReference: {fileID: 0}
     - target: {fileID: 2751554096873882583, guid: 3b14105264604dc4aa1320068900c039, type: 3}
+      propertyPath: m_ClearFlags
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2751554096873882583, guid: 3b14105264604dc4aa1320068900c039, type: 3}
       propertyPath: orthographic size
       value: 7
       objectReference: {fileID: 0}
@@ -33087,15 +33091,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2751554096873882583, guid: 3b14105264604dc4aa1320068900c039, type: 3}
       propertyPath: m_BackGroundColor.b
-      value: 0.34247062
+      value: 0.41568628
       objectReference: {fileID: 0}
     - target: {fileID: 2751554096873882583, guid: 3b14105264604dc4aa1320068900c039, type: 3}
       propertyPath: m_BackGroundColor.g
-      value: 0.31523672
+      value: 0.41568628
       objectReference: {fileID: 0}
     - target: {fileID: 2751554096873882583, guid: 3b14105264604dc4aa1320068900c039, type: 3}
       propertyPath: m_BackGroundColor.r
-      value: 0.41509432
+      value: 0.32941177
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3b14105264604dc4aa1320068900c039, type: 3}

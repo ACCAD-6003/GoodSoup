@@ -21,11 +21,9 @@ public class Dresser : Interaction
         { ClothingOption.None, "AmberNaked" },
     };
 
-    Material clothes;
-
     void Awake()
     {
-        clothes = GameObject.FindGameObjectWithTag("AmberTorso").GetComponent<MeshRenderer>().material;
+
     }
 
     public override void LoadData(StoryDatastore data)
