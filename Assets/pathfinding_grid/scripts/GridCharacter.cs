@@ -10,7 +10,7 @@ public class GridCharacter : MonoBehaviour
     public bool body_looking;
     public bool moving;
     public bool moving_tiles;
-    public float move_speed = 2f;
+    public float move_speed = 2 / (2f);
     public float rotate_speed = 6f;
     public Color col;
     public Transform tr_body;
@@ -119,7 +119,7 @@ public class GridCharacter : MonoBehaviour
         db_moves[1].parent = null;
         db_moves[4].parent = null;
 
-        move_speed = 2;
+        //move_speed = 2;
 
         var tpos = new Vector3(0, 0, 0);
         if (!big)
