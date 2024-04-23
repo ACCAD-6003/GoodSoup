@@ -9,20 +9,17 @@ public class ComputerEmail : Interaction
 {
     [SerializeField] GameObject PCUI, EmailHUDElement;
     [SerializeField] ComputerHUD hud;
-    private StoryData<EmailState> _state;
-    private StoryData<DateTime> _emailSentTime;
-    private StoryData<bool> _awaitingResponse;
     private void Update()
     {
-        if (_awaitingResponse.Value)
+        if (StoryDatastore.Instance.AwaitingEmailReply.Value)
         {
             if (EmailHUDElement.activeInHierarchy)
             {
                 EmailHUDElement.SetActive(false);
             }
-            if ((DateTime.Now - _emailSentTime.Value).TotalSeconds >= Globals.SECONDS_BETWEEN_EMAIL_REPLIES)
+            if ((DateTime.Now - StoryDatastore.Instance.EmailSentTime.Value).TotalSeconds >= Globals.SECONDS_BETWEEN_EMAIL_REPLIES)
             {
-                _awaitingResponse.Value = false;
+                StoryDatastore.Instance.AwaitingEmailReply.Value = false;
             }
         }
         else if (!EmailHUDElement.activeInHierarchy)
@@ -32,25 +29,26 @@ public class ComputerEmail : Interaction
     }
     public override void LoadData(StoryDatastore data)
     {
-        _emailSentTime = data.EmailSentTime;
-        _state = data.EmailState;
-        _awaitingResponse = data.AwaitingEmailReply;
     }
     private void DisplayEmailScreen() {
         foreach (var element in hud.EmailScreens) {
             element.Value.SetActive(false);
         }
-        if (_awaitingResponse.Value)
+        if (StoryDatastore.Instance.AwaitingEmailReply.Value)
         {
             hud.EmailScreens[EmailState.EMAIL_SENT].SetActive(true);
             return;
         }
-        hud.EmailScreens[_state.Value].SetActive(true);
+        hud.EmailScreens[StoryDatastore.Instance.EmailState.Value].SetActive(true);
     }
     public void SendEmail(int email) {
-        _state.Value = (EmailState) email;
-        _awaitingResponse.Value = true;
-        _emailSentTime.Value = DateTime.Now;
+        Debug.Log((StoryDatastore.Instance == null) + " Story data is null?");
+        Debug.Log((StoryDatastore.Instance.EmailState == null) + " Email state is null?");
+        Debug.Log((StoryDatastore.Instance.AwaitingEmailReply == null) + " Email AwaitingEmailReply is null?");
+        Debug.Log((StoryDatastore.Instance.EmailSentTime == null) + " Email EmailSentTime is null?");
+        StoryDatastore.Instance.EmailState.Value = (EmailState) email;
+        StoryDatastore.Instance.AwaitingEmailReply.Value = true;
+        StoryDatastore.Instance.EmailSentTime.Value = DateTime.Now;
         DisplayEmailScreen();
     }
 
