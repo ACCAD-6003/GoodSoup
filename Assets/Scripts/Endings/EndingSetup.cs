@@ -19,9 +19,11 @@ public class EndingSetup : SerializedMonoBehaviour
     public Transform starDisplayerParentTransform;
     private int stars;
     public bool doingHighScoreAnimation = false;
+    public static int timesBeaten = 9;
     [SerializeField] Image background;
     private void Awake()
     {
+        timesBeaten++;
         ConstructStarAssigner();
         GameObject[] dontDestroyObjects = GameObject.FindGameObjectsWithTag("DontDestroyOnLoad");
 
@@ -105,6 +107,7 @@ public class EndingSetup : SerializedMonoBehaviour
         // change to be condition based or something
         starAssigner.Add(Ending.ACADEMIC_WEAPON, new InstantFiveStarEnding());
         starAssigner.Add(Ending.LOCKED_OUT, new InstantFiveStarEnding());
+        starAssigner.Add(Ending.TOUCH_GRASS, new InstantFiveStarEnding());
         //starAssigner.Add(Ending.PARANOID, new StatBasedEnding(StoryDatastore.Instance.Paranoia, 3f));
         //starAssigner.Add(Ending.PARANOID, new StatBasedEnding(StoryDatastore.Instance.Paranoia, 3f));
         //starAssigner.Add(Ending.PARANOID, new StatBasedEnding(StoryDatastore.Instance.Paranoia, 3f));

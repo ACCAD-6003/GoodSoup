@@ -363,7 +363,7 @@ MonoBehaviour:
       Data: TOUCH GRASS
     - Name: Description
       Entry: 1
-      Data: YOU PLAYED THE GAME 10 TIMES. THAT'S A LOT OF AMBER.
+      Data: YOU PLAYED THE GAME 10x. THAT'S A LOT OF AMBER.
     - Name: DoBetterMessage
       Entry: 6
       Data: 
