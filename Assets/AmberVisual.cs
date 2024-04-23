@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class AmberVisual : MonoBehaviour
@@ -8,6 +9,11 @@ public class AmberVisual : MonoBehaviour
     [SerializeField] GameObject _backpack;
     [SerializeField] GameObject _towel;
     [SerializeField] Material _amberBodyMaterial;
+    [SerializeField] Material _amberDoomGuyMaterial;
+
+    [SerializeField] GameObject _bonnet;
+    [SerializeField] GameObject _hairMessy;
+    [SerializeField] GameObject _hairBraided;
 
     private void OnEnable()
     {
@@ -49,6 +55,8 @@ public class AmberVisual : MonoBehaviour
     }
 
     void UpdateHairVisual(HairOption oldValue, HairOption newValue) {
-        // update hair to newValue
+        _bonnet.SetActive(newValue == HairOption.BONNET);
+        _hairMessy.SetActive(newValue == HairOption.MESSY);
+        _hairBraided.SetActive(newValue == HairOption.CLEAN);
     }
 }

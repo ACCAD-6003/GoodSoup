@@ -137,6 +137,10 @@ MonoBehaviour:
   _backpack: {fileID: 8942410431732857026}
   _towel: {fileID: 7516731268927679691}
   _amberBodyMaterial: {fileID: 2100000, guid: bc4b28f2b8c76574496525ee5cb00e52, type: 2}
+  _amberDoomGuyMaterial: {fileID: 0}
+  _bonnet: {fileID: 7771808899408042504}
+  _hairMessy: {fileID: 6630126580660875163}
+  _hairBraided: {fileID: 3501485383262113161}
 --- !u!1 &7789704865394458189
 GameObject:
   m_ObjectHideFlags: 0
@@ -667,6 +671,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 11
       objectReference: {fileID: 0}
+    - target: {fileID: 2635320454493953437, guid: 54c7cc8c4ecfd4d41998efb00fe740c7, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3122930140314151826, guid: 54c7cc8c4ecfd4d41998efb00fe740c7, type: 3}
       propertyPath: m_Layer
       value: 11
@@ -769,3 +777,18 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
+--- !u!1 &3501485383262113161 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5190327537838587791, guid: 54c7cc8c4ecfd4d41998efb00fe740c7, type: 3}
+  m_PrefabInstance: {fileID: 8687576734708822534}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &6630126580660875163 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2635320454493953437, guid: 54c7cc8c4ecfd4d41998efb00fe740c7, type: 3}
+  m_PrefabInstance: {fileID: 8687576734708822534}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &7771808899408042504 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1390339078446901262, guid: 54c7cc8c4ecfd4d41998efb00fe740c7, type: 3}
+  m_PrefabInstance: {fileID: 8687576734708822534}
+  m_PrefabAsset: {fileID: 0}
