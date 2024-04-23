@@ -151,11 +151,11 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
-    - _AmbientLight: {r: 0.2, g: 0.2, b: 0.2, a: 1}
-    - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
+    - _AmbientLight: {r: 0.8679245, g: 0.81003255, b: 0.118725546, a: 1}
+    - _BaseColor: {r: 1, g: 0.8186218, b: 0.3820755, a: 1}
     - _Color: {r: 1, g: 0.7176471, b: 0, a: 1}
-    - _EdgeHighlightColor: {r: 0.5, g: 0.5, b: 0.5, a: 0}
-    - _EmissionColor: {r: 0.21026169, g: 0.6435589, b: 0.990566, a: 1}
+    - _EdgeHighlightColor: {r: 0.990566, g: 0.5033589, b: 0.07008721, a: 0}
+    - _EmissionColor: {r: 0.15508187, g: 0.6683382, b: 0.8018868, a: 1}
     - _OutlineColor: {r: 0, g: 0, b: 0, a: 0.5}
     - _PixelGridOrigin: {r: 0, g: 0, b: 0, a: 0}
     - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
