@@ -19,7 +19,7 @@ public class EndingSetup : SerializedMonoBehaviour
     public Transform starDisplayerParentTransform;
     private int stars;
     public bool doingHighScoreAnimation = false;
-    public static int timesBeaten = 9;
+    public static int timesBeaten = 0;
     [SerializeField] Image background;
     private void Awake()
     {
