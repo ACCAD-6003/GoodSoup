@@ -10,6 +10,11 @@ public class GameReset : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.R)) 
         {
+            GameObject[] dontDestroyObjects = GameObject.FindGameObjectsWithTag("DontDestroyOnLoad");
+            foreach (GameObject obj in dontDestroyObjects)
+            {
+                Destroy(obj);
+            }
             SceneManager.LoadScene("Title Screen");
         }
     }
