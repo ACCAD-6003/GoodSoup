@@ -18,6 +18,7 @@ public class MainSceneLoading : SerializedMonoBehaviour
     public enum AmberRoom { BEDROOM, BATHROOM, KITCHEN, HALLWAY, LIVING_ROOM, GONE }
     private static MainSceneLoading instance;
     public AmberRoom CurrAdditiveScene;
+    public AmberRoom DefaultStartingScene = AmberRoom.BEDROOM;
 
     public static MainSceneLoading Instance
     {
@@ -38,8 +39,8 @@ public class MainSceneLoading : SerializedMonoBehaviour
     }
     private void Start()
     {
-        SceneManager.LoadScene(rooms[AmberRoom.BEDROOM], LoadSceneMode.Additive);
-        CurrAdditiveScene = AmberRoom.BEDROOM;
+        SceneManager.LoadScene(rooms[DefaultStartingScene], LoadSceneMode.Additive);
+        CurrAdditiveScene = DefaultStartingScene;
     }
     public void SwitchAmberRooms(AmberRoom room)
     {

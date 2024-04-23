@@ -44,6 +44,7 @@ public class StartRecipeSequence : Interaction
 
         if (node.node.gameObject.name == "Fan1Junction")
         {
+            Debug.Log("Reached Fan Junction");
             index = GetIndexFromOrientationFan1(rotateFans[0].orientationIndex);
             if (index == 2 || index == 0) {
                 src.PlayOneShot(whoosh);
@@ -83,15 +84,19 @@ public class StartRecipeSequence : Interaction
             Debug.Log("No node name matches");
             return;
         }
-/*        if (index == 0) {
+        /*        if (index == 0) {
 
-            _follower.spline = node.node.GetConnections()[index].spline;
-        }*/
+                    _follower.spline = node.node.GetConnections()[index].spline;
+                }*/
 
-        if (index != 0) {
+        if (index != 0)
+        {
             _follower.SetPercent(0f);
             _follower.spline = node.node.GetConnections()[index].spline;
             _follower.SetPercent(0.01f);
+        }
+        else {
+            _follower.followSpeed = 4f;
         }
     }
     private void ResetPuzzleSequence()
@@ -124,6 +129,7 @@ public class StartRecipeSequence : Interaction
     // bad bad bad not good terrible ugly i know how to do this better but i am tired and it works fuck off paige this is only ever going to be used once
     int GetIndexFromOrientationFan1(int orientation) {
         int index = 0;
+        Debug.Log(orientation + "orientation of fan");
         switch (orientation)
         {
             case 2:
@@ -136,6 +142,7 @@ public class StartRecipeSequence : Interaction
                 index = 1;
                 break;
         }
+        Debug.Log(index + "index of spline");
         return index;
     }
     // bad bad bad not good terrible ugly i know how to do this better but i am tired and it works fuck off paige this is only ever going to be used once
@@ -174,7 +181,7 @@ public class StartRecipeSequence : Interaction
             }
             _follower.spline = GameObject.FindGameObjectWithTag("RecipeComputer").GetComponent<SplineComputer>();
             _follower.SetPercent(0f);
-            _follower.followSpeed = 4f;
+            _follower.followSpeed = 3f;
             _follower.onNode += OnNodePassed;
         }
         else

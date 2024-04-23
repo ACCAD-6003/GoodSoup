@@ -27,6 +27,11 @@ namespace Assets.Scripts.AI
             navigation = GameObject.FindGameObjectWithTag("Player").GetComponent<AmberMount>();
             return new Sequence(new List<Node>() {
                 new WaitFor(0.5f),
+                // DEBUG
+                new SwitchAmberMount(_interactions.chairMount),
+                new WaitFor(0.5f),
+                new SwitchAmberMount(navigation),
+                // END DEBUG
                 new MoveToTile(_interactions.Grid, _interactions.PantryDoor.AssociatedTile),
                 new WaitFor(0.5f),
                 new PerformAmberInteraction(_interactions.PantryDoor.AmberInteraction),
