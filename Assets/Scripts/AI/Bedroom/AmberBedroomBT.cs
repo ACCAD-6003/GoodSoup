@@ -8,6 +8,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using static Assets.Scripts.AI.AmberKitchenBT;
 using static ComputerHUD;
 
 
@@ -113,6 +114,13 @@ namespace Assets.Scripts.AI
                     new WaitFor(0.5f),
                     new MoveToTile(interactions.Grid, interactions.Backpack.AssociatedTile),
                     new PerformAmberInteraction(interactions.Backpack.AmberInteraction),
+                    new WrapperNode(new SkipIfStoryDatastoreState<bool>(StoryDatastore.Instance.MoveObjects[214879], true), new List<Node>() {
+                        new WaitFor(0.5f),
+                        new MoveToTile(interactions.Grid, interactions.Key.AssociatedTile),
+                        new WaitFor(0.5f),
+                        new PerformAmberInteraction(interactions.Key.AmberInteraction),
+                        new ChangeStoryData<bool>(StoryDatastore.Instance.AmberPickedUpKey, true)
+                    }),
                     new WaitFor(0.5f),
                     new MoveToTile(interactions.Grid, doors.doors[MainSceneLoading.AmberRoom.HALLWAY], new Vector3(0,0,-1)),
                     new AmberMoveToRoom(MainSceneLoading.AmberRoom.HALLWAY),

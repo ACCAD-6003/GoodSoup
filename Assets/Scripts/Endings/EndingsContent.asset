@@ -23,6 +23,10 @@ MonoBehaviour:
     - {fileID: 21300000, guid: ad0dba187f1b55c4a9f57e74e42be2c5, type: 3}
     - {fileID: 21300000, guid: d020223082a77964fbdd12fc66a92e7d, type: 3}
     - {fileID: 21300000, guid: 49f96ed52d3599f44930e3d2f2974a90, type: 3}
+    - {fileID: 21300000, guid: ca2c1aefa553fc84292b9af7ec22ea53, type: 3}
+    - {fileID: 21300000, guid: d19099766bdf8a642ab588554b283d3b, type: 3}
+    - {fileID: 21300000, guid: ab173f182fe05f448b789b1c73ef4f4a, type: 3}
+    - {fileID: 21300000, guid: 8ba1cb90a0dd9444fa0fc0b17cc96320, type: 3}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -47,7 +51,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 12
-      Data: 7
+      Data: 11
     - Name: 
       Entry: 7
       Data: 
@@ -273,6 +277,138 @@ MonoBehaviour:
     - Name: imageSprite
       Entry: 10
       Data: 6
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 7
+    - Name: $v
+      Entry: 7
+      Data: 9|EndingContent, Assembly-CSharp
+    - Name: DisplayName
+      Entry: 1
+      Data: SOME LIKE IT HOT
+    - Name: Description
+      Entry: 1
+      Data: YOU FILLED AMBER'S APARTMENT WITH SMOKE!
+    - Name: DoBetterMessage
+      Entry: 6
+      Data: 
+    - Name: FiveStarMessage
+      Entry: 1
+      Data: AMBERS WAS NOT HARMED... FIRE FIGHTERS ARRIVED JUST IN TIME.
+    - Name: Hint
+      Entry: 1
+      Data: BRING THE HEAT!
+    - Name: imageSprite
+      Entry: 10
+      Data: 7
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 8
+    - Name: $v
+      Entry: 7
+      Data: 10|EndingContent, Assembly-CSharp
+    - Name: DisplayName
+      Entry: 1
+      Data: MID SOUP
+    - Name: Description
+      Entry: 1
+      Data: YOU PUSHED AMBER TO MAKE SOUP BUT MESSED IT UP
+    - Name: DoBetterMessage
+      Entry: 6
+      Data: 
+    - Name: FiveStarMessage
+      Entry: 1
+      Data: SHE WAS SO CLOSE TO A SPECIAL DAY.
+    - Name: Hint
+      Entry: 6
+      Data: 
+    - Name: imageSprite
+      Entry: 10
+      Data: 8
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 10
+    - Name: $v
+      Entry: 7
+      Data: 11|EndingContent, Assembly-CSharp
+    - Name: DisplayName
+      Entry: 1
+      Data: TOUCH GRASS
+    - Name: Description
+      Entry: 1
+      Data: YOU PLAYED THE GAME 10 TIMES. THAT'S A LOT OF AMBER.
+    - Name: DoBetterMessage
+      Entry: 6
+      Data: 
+    - Name: FiveStarMessage
+      Entry: 1
+      Data: GO OUTSIDE! BREATHE SOME FRESH AIR!
+    - Name: Hint
+      Entry: 6
+      Data: 
+    - Name: imageSprite
+      Entry: 10
+      Data: 9
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 9
+    - Name: $v
+      Entry: 7
+      Data: 12|EndingContent, Assembly-CSharp
+    - Name: DisplayName
+      Entry: 1
+      Data: THE KEYMASTER
+    - Name: Description
+      Entry: 1
+      Data: YOU HID AMBER'S KEY AND LOCKED HER OUT!
+    - Name: DoBetterMessage
+      Entry: 6
+      Data: 
+    - Name: FiveStarMessage
+      Entry: 1
+      Data: I GUESS SHE'S GOING TO HAVE TO CALL A LOCKSMITH...
+    - Name: Hint
+      Entry: 6
+      Data: 
+    - Name: imageSprite
+      Entry: 10
+      Data: 10
     - Name: 
       Entry: 8
       Data: 

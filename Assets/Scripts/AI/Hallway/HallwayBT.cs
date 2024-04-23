@@ -34,7 +34,7 @@ namespace Assets.Scripts.AI
 
             Node routine = new Sequence(new List<Node>() {
                 new DebugNode(StoryDatastore.Instance.HallwayVisits.Value),
-                new WrapperNode(new SkipIfStoryDatastoreState<GamePhase>(StoryDatastore.Instance.CurrentGamePhase, GamePhase.AMBER_BACK), new List<Node>() {
+                new WrapperNode(new SkipIfStoryDatastoreState<int>(StoryDatastore.Instance.HallwayVisits, 1, true), new List<Node>() {
                     new WaitFor(0.5f),
                     new MoveToTile(interactions.Grid, interactions.Door.AssociatedTile, Vector3.left),
                     new WaitFor(0.5f),
@@ -48,6 +48,13 @@ namespace Assets.Scripts.AI
                     new WaitFor(0.5f),
                 }),
                 new WrapperNode(new SkipIfStoryDatastoreState<int>(StoryDatastore.Instance.HallwayVisits, 2, true), new List<Node>() {
+                    new WrapperNode(new SkipIfStoryDatastoreState<bool>(StoryDatastore.Instance.AmberPickedUpKey, true), new List<Node>() { 
+                        new PlaySound(interactions.src, interactions.knock),
+                        new WaitFor(1f),
+                        new PlaySound(interactions.src, interactions.knock),
+                        new WaitFor(1f),
+                        new GoStraightToEnding(Ending.LOCKED_OUT)
+                    }),
                     new WaitFor(0.5f),
                     new PerformAmberInteraction(interactions.Door.AmberInteraction),
                     new WaitFor(0.5f),

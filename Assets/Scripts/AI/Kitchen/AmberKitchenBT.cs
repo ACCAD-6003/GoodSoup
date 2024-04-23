@@ -146,7 +146,7 @@ namespace Assets.Scripts.AI
 
                 });
         }
-        class ChangeStoryData<T> : Node {
+        public class ChangeStoryData<T> : Node {
             T newValue;
             bool _changed = false;
             StoryData<T> _storyData;

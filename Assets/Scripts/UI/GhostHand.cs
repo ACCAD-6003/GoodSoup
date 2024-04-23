@@ -11,6 +11,9 @@ public class GhostHand : MonoBehaviour
     
     private void Awake()
     {
+        if (FindObjectsOfType<GhostHand>().Length > 1) {
+            Destroy(gameObject);
+        }
         StartCoroutine(PlayGhostHandAnimation());
         DontDestroyOnLoad(transform);
     }

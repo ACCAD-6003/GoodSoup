@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using UnityEngine.SceneManagement;
-public enum Ending { FAR_CRY, PARANOID, GOOD_ENDING, BAD_ENDING, KICKED_OUT_OF_COLLEGE, GOOD_SOUP , ACADEMIC_WEAPON, NULL }
+public enum Ending { FAR_CRY, PARANOID, GOOD_ENDING, BAD_ENDING, KICKED_OUT_OF_COLLEGE, GOOD_SOUP , ACADEMIC_WEAPON, BURNT_DOWN, MID_SOUP, LOCKED_OUT, TOUCH_GRASS, NULL }
 namespace Assets.Scripts.AI.GeneralNodes
 {
     public class SelectEnding : BehaviorTree.Node
@@ -33,6 +33,7 @@ namespace Assets.Scripts.AI.GeneralNodes
                 if (StoryDatastore.Instance.GoodSoup.Value)
                 {
                     StoryDatastore.Instance.ChosenEnding.Value = Ending.GOOD_SOUP;
+                    SceneManager.LoadScene("GoodSoupCutscene");
                 }
                 else if (StoryDatastore.Instance.EmailState.Value == ComputerHUD.EmailState.NICE_EMAIL_CONFIRMED) {
                     StoryDatastore.Instance.ChosenEnding.Value = Ending.ACADEMIC_WEAPON;

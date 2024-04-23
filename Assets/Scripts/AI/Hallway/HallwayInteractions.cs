@@ -7,5 +7,7 @@ namespace Assets.Scripts.AI
     {
         public grid_manager Grid;
         public InteractableObject Door;
+        public AudioSource src;
+        public AudioClip knock;
     }
 }

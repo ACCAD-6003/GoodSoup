@@ -19,6 +19,7 @@ public class EndingSetup : SerializedMonoBehaviour
     public Transform starDisplayerParentTransform;
     private int stars;
     public bool doingHighScoreAnimation = false;
+    [SerializeField] Image background;
     private void Awake()
     {
         ConstructStarAssigner();
@@ -68,7 +69,7 @@ public class EndingSetup : SerializedMonoBehaviour
             Destroy(obj);
         }
 
-        Camera.main.backgroundColor = GetAverageColor(endingImage.sprite.texture);
+        background.color = GetAverageColor(endingImage.sprite.texture);
     }
     private void Start()
     {
@@ -100,9 +101,10 @@ public class EndingSetup : SerializedMonoBehaviour
         starAssigner.Add(Ending.GOOD_SOUP, new InstantFiveStarEnding());
         starAssigner.Add(Ending.KICKED_OUT_OF_COLLEGE, new InstantFiveStarEnding());
         starAssigner.Add(Ending.FAR_CRY, new InstantFiveStarEnding());
+
         // change to be condition based or something
         starAssigner.Add(Ending.ACADEMIC_WEAPON, new InstantFiveStarEnding());
-        //starAssigner.Add(Ending.ACADEMIC_WEAPON, new StatBasedEnding(StoryDatastore.Instance.Paranoia, 3f));
+        starAssigner.Add(Ending.LOCKED_OUT, new InstantFiveStarEnding());
         //starAssigner.Add(Ending.PARANOID, new StatBasedEnding(StoryDatastore.Instance.Paranoia, 3f));
         //starAssigner.Add(Ending.PARANOID, new StatBasedEnding(StoryDatastore.Instance.Paranoia, 3f));
         //starAssigner.Add(Ending.PARANOID, new StatBasedEnding(StoryDatastore.Instance.Paranoia, 3f));
