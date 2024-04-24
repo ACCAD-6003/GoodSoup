@@ -7,6 +7,7 @@ public class AmberVisual : MonoBehaviour
 {
     public enum HairOption { BONNET, MESSY, CLEAN }
     [SerializeField] GameObject _backpack;
+    [SerializeField] GameObject _chefHat;
     [SerializeField] GameObject _towel;
     [SerializeField] Material _amberBodyMaterial;
     [SerializeField] Material _amberDoomGuyMaterial;

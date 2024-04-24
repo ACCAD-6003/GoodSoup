@@ -135,6 +135,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _backpack: {fileID: 8942410431732857026}
+  _chefHat: {fileID: 1523950994075141883}
   _towel: {fileID: 7516731268927679691}
   _amberBodyMaterial: {fileID: 2100000, guid: bc4b28f2b8c76574496525ee5cb00e52, type: 2}
   _amberDoomGuyMaterial: {fileID: 0}
@@ -753,6 +754,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 54c7cc8c4ecfd4d41998efb00fe740c7, type: 3}
+--- !u!1 &1523950994075141883 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7905594535717614845, guid: 54c7cc8c4ecfd4d41998efb00fe740c7, type: 3}
+  m_PrefabInstance: {fileID: 8687576734708822534}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2491043038601727221 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6485622653403315955, guid: 54c7cc8c4ecfd4d41998efb00fe740c7, type: 3}
