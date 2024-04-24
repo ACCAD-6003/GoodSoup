@@ -1,3 +1,4 @@
+using Assets.Scripts.UI;
 using Dreamteck.Splines;
 using System;
 using System.Collections;
@@ -14,6 +15,7 @@ public class StartRecipeSequence : Interaction
     [SerializeField] AudioClip hit, whoosh;
     StoryData<bool> _moved;
     bool _recipeGone = false;
+    bool _alreadyAnnoyedAmber = false;
     public override void LoadData(StoryDatastore data)
     {
         if (data.MoveObjects.ContainsKey(interactionId))
@@ -35,6 +37,17 @@ public class StartRecipeSequence : Interaction
     void RefreshObjects() {
         closedDoor.SetActive(!_moved.Value);
         openDoor.SetActive(_moved.Value);
+    }
+    public void CollideWithAmber()
+    {
+        src.PlayOneShot(hit);
+        FindObjectOfType<CameraShake>().ShakeCamera();
+        ResetPuzzleSequence();
+        UIManager.Instance.DisplaySimpleBubbleForSeconds(UIElements.BubbleIcon.ANNOYANCE, 3f);
+        if (!_alreadyAnnoyedAmber) {
+            _alreadyAnnoyedAmber = true;
+            StoryDatastore.Instance.Annoyance.Value += 2f;
+        }
     }
     void OnNodePassed(List<SplineTracer.NodeConnection> passed)
     {
