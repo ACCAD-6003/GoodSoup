@@ -46,7 +46,8 @@ public class MoveObject : Interaction
         StartCoroutine(PutBack());
     }
     IEnumerator PutBack() {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.5f);
+        _moved.Value = !_moved.Value;
         StoryDatastore.Instance.MoveObjects[interactionId].Value = _moved.Value;
         RefreshObjects();
         EndAction();
