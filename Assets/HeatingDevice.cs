@@ -1,6 +1,8 @@
+using Assets.Scripts.UI;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class HeatingDevice : MonoBehaviour
 {
@@ -14,6 +16,12 @@ public class HeatingDevice : MonoBehaviour
         { HeatSetting.HIGH_TEMP, 0f }
     };
     public TempParticleDictionary TempParticleDictionary;
+    public CycleTemp ct;
+    public AudioSource src;
+    public AudioClip fireAlarm;
+    public bool isOven = false;
+    public GameObject SmokeFillRoom;
+    bool notAlreadyTransitioningAway = true;
     private void Start()
     {
         particles.Stop();
@@ -29,6 +37,7 @@ public class HeatingDevice : MonoBehaviour
             TempCanvas.SetActive(true);
             particles.emissionRate = TempParticleDictionary.particleCountPerTemp[setting];
             particles.Play();
+            ct.EndAction();
         }
         else if (cooking && !StoryDatastore.Instance.ActivelyCooking.Value)
         {
@@ -36,17 +45,30 @@ public class HeatingDevice : MonoBehaviour
             cooking = false;
             TempCanvas.SetActive(false);
             particles.Stop();
+            ct.PutInProgress();
         }
         else {
             if (StoryDatastore.Instance.HeatSetting.Value != setting) {
-                particles.emissionRate = TempParticleDictionary.particleCountPerTemp[setting];
+                particles.emissionRate = TempParticleDictionary.particleCountPerTemp[StoryDatastore.Instance.HeatSetting.Value];
                 if (setting == HeatSetting.HIGH_TEMP) { 
                     // kill particles
                 }
                 setting = StoryDatastore.Instance.HeatSetting.Value;
             }
             timeUnderHeat[setting] += Time.deltaTime;
+            if (timeUnderHeat[HeatSetting.HIGH_TEMP] > 10f && isOven && notAlreadyTransitioningAway) {
+                SmokeFillRoom.SetActive(true);
+                src.PlayOneShot(fireAlarm);
+                notAlreadyTransitioningAway = false;
+                UIManager.Instance.DisplaySimpleBubbleForSeconds(UIElements.BubbleIcon.ANNOYANCE, 4f);
+                StartCoroutine(TransitionAway());
+            }
         }
         
+    }
+    IEnumerator TransitionAway() {
+        StoryDatastore.Instance.ChosenEnding.Value = Ending.BURNT_DOWN;
+        yield return new WaitForSeconds(5f);
+        SceneManager.LoadScene("Endings");
     }
 }

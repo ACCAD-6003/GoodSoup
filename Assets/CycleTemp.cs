@@ -10,6 +10,7 @@ public class CycleTemp : Interaction
     [SerializeField] Image tempImage;
     public override void DoAction()
     {
+        Debug.Log("Old Value: " + StoryDatastore.Instance.HeatSetting.Value + " New Value: " + (HeatSetting)((((int)StoryDatastore.Instance.HeatSetting.Value) + 1) % 3));
         StoryDatastore.Instance.HeatSetting.Value = (HeatSetting) ((((int) StoryDatastore.Instance.HeatSetting.Value) + 1) % 3);
         tempImage.sprite = sprites.sprites[StoryDatastore.Instance.HeatSetting.Value];
         EndAction();
