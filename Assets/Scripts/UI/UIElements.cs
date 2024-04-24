@@ -8,7 +8,7 @@ namespace Assets.Scripts.UI
     public class UIElements : SerializedScriptableObject
     {
         public enum BubbleIcon { HAPPY, HAPPY_SUNSHINE, SAD, PARANOID, ANNOYANCE, SLEEPING, PHONE, COLD, BRUSH, SHOWERING, TOOTHBRUSH, OH_WHERE_IS_MY_HAIRBRUSH, HAPPY_LAUNDRY, SAD_LAUNDRY,
-        DIRTY_OUTFIT, SICK_OUTFIT, HAPPY_TOWEL }
+        DIRTY_OUTFIT, SICK_OUTFIT, HAPPY_TOWEL, DAMN_THIS_FOOD_BLOWS, POG_CHEF, MID_SOUP, OK_IM_COMING}
         public Dictionary<BubbleIcon, Sprite> IconImages;
     }
 }
