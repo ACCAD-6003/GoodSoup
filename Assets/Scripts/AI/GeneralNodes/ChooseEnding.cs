@@ -27,7 +27,7 @@ namespace Assets.Scripts.AI.GeneralNodes
                     }
                 }
                 StoryDatastore.Instance.ChosenEnding.Value = chosenEnding;
-                if (StoryDatastore.Instance.GoodSoup.Value)
+                if (StoryDatastore.Instance.GoodSoupPuzzleSolved.Value)
                 {
                     StoryDatastore.Instance.ChosenEnding.Value = Ending.GOOD_SOUP;
                     SceneManager.LoadScene("GoodSoupCutscene");
