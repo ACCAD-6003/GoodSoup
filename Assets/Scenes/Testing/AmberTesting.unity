@@ -133,6 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 270813024}
   - component: {fileID: 270813023}
+  - component: {fileID: 270813025}
   m_Layer: 0
   m_Name: Directional Light
   m_TagString: Untagged
@@ -217,6 +218,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 12.729, y: 195.941, z: 132.792}
+--- !u!114 &270813025
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 270813022}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 1
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
 --- !u!1 &384664699
 GameObject:
   m_ObjectHideFlags: 0
@@ -308,9 +329,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1390339078446901262, guid: 54c7cc8c4ecfd4d41998efb00fe740c7, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2635320454493953437, guid: 54c7cc8c4ecfd4d41998efb00fe740c7, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4162814854582717440, guid: 54c7cc8c4ecfd4d41998efb00fe740c7, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5857599665891238985, guid: 54c7cc8c4ecfd4d41998efb00fe740c7, type: 3}
       propertyPath: m_Name
-      value: AmberReal
+      value: AmberVisual
       objectReference: {fileID: 0}
     - target: {fileID: 6485622653403315955, guid: 54c7cc8c4ecfd4d41998efb00fe740c7, type: 3}
       propertyPath: m_RootOrder
@@ -354,6 +387,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6485622653403315955, guid: 54c7cc8c4ecfd4d41998efb00fe740c7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7905594535717614845, guid: 54c7cc8c4ecfd4d41998efb00fe740c7, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
