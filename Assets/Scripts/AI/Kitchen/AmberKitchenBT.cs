@@ -189,7 +189,7 @@ namespace Assets.Scripts.AI
             public override NodeState Evaluate()
             {
                 if (!StoryDatastore.Instance.GoodSoup.Value) {
-                    if (!_coolingDown && _amberKitchenBT.GetObjectInteraction().IsInAmberSightlines(_floatingRecipe))
+                    if (!_coolingDown && _amberKitchenBT.GetObjectInteraction().IsInAmberSightlines(_floatingRecipe) && _floatingRecipe.gameObject.activeInHierarchy)
                     {
                         if (!_increased)
                         {
