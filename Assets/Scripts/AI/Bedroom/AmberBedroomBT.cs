@@ -8,6 +8,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using static AmberVisual;
 using static Assets.Scripts.AI.AmberKitchenBT;
 using static ComputerHUD;
 
@@ -37,6 +38,7 @@ namespace Assets.Scripts.AI
             {
                 new WrapperNode(new SkipIfStoryDatastoreState<GamePhase>(StoryDatastore.Instance.CurrentGamePhase, GamePhase.TUTORIAL_BEDROOM, true), new List<Node>()
                 {
+                    new ChangeStoryData<HairOption>(StoryDatastore.Instance.AmberHairOption, HairOption.BONNET),
                     // change to evaluate if everything has been done one by one by wrapping these in classespho
                     new DisplayUIIcon(UI.UIElements.BubbleIcon.SLEEPING),
                     // Wait for alarm clock

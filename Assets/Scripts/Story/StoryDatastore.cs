@@ -100,7 +100,7 @@ public class StoryDatastore : MonoBehaviour
     [SerializeField]
     public StoryData<ClothingOption> AmberWornClothing = new StoryData<ClothingOption>(ClothingOption.Pajamas);
     [SerializeField]
-    public StoryData<HairOption> AmberHairOption = new StoryData<HairOption>(HairOption.BONNET);
+    public StoryData<HairOption> AmberHairOption = new StoryData<HairOption>(HairOption.CLEAN);
     [SerializeField]
     public StoryData<bool> PlayerTurnedShowerOff = new StoryData<bool>(false);
     [SerializeField]

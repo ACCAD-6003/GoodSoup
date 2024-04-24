@@ -1133,6 +1133,8 @@ MonoBehaviour:
     _value: 0
   AmberPickedUpKey:
     _value: 0
+  OvenState:
+    _value: 0
 --- !u!4 &1270958205
 Transform:
   m_ObjectHideFlags: 0
@@ -1901,6 +1903,10 @@ PrefabInstance:
     - target: {fileID: 5817474576940391886, guid: f9af67b3d9e422f4e9b927f67dafdc5d, type: 3}
       propertyPath: m_Name
       value: Amber
+      objectReference: {fileID: 0}
+    - target: {fileID: 5817474577247795046, guid: f9af67b3d9e422f4e9b927f67dafdc5d, type: 3}
+      propertyPath: m_TagString
+      value: Body
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f9af67b3d9e422f4e9b927f67dafdc5d, type: 3}

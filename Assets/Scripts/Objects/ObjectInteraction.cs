@@ -58,6 +58,10 @@ public class ObjectInteraction : MonoBehaviour
 
     void Awake()
     {
+        if (Amber == null)
+        {
+            Amber = GameObject.FindGameObjectWithTag("Body").transform;
+        }
         TurnOffOutlines();
     }
     

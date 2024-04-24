@@ -10,6 +10,7 @@ TagManager:
   - AmberTorso
   - FanHit
   - RecipeComputer
+  - Body
   layers:
   - Default
   - TransparentFX

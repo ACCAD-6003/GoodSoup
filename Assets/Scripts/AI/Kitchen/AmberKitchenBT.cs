@@ -16,18 +16,20 @@ namespace Assets.Scripts.AI
         KitchenInteractions _interactions;
         AmberMount navigation;
         Doors doors;
+        ObjectInteraction objInteraction;
         private void AdaptToSceneChanges()
         {
             doors = FindObjectOfType<Doors>();
-            FindObjectOfType<BedroomInteractions>();
         }
-
+        protected ObjectInteraction GetObjectInteraction() {
+            return FindObjectOfType<ObjectInteraction>();
+        }
         protected override Node SetupTree()
         {
             AdaptToSceneChanges();
             navigation = GameObject.FindGameObjectWithTag("Player").GetComponent<AmberMount>();
             return new Sequence(new List<Node>() {
-                new AmberNoticeRecipe(FindObjectOfType<ObjectInteraction>(), _interactions.FloatingRecipe),
+                new AmberNoticeRecipe(this, _interactions.FloatingRecipe),
                 new WaitFor(0.5f),
                 // DEBUG
                 new SwitchAmberMount(_interactions.chairMount),
@@ -176,31 +178,33 @@ namespace Assets.Scripts.AI
             bool _increased = false;
             bool _coolingDown = false;
             float timePassed = 0f;
-            ObjectInteraction _objInteraction;
+            AmberKitchenBT _amberKitchenBT;
             InteractableObject _floatingRecipe;
-            public AmberNoticeRecipe(ObjectInteraction objInteraction, InteractableObject floatingRecipe) { 
-                _objInteraction = objInteraction;
+            public AmberNoticeRecipe(AmberKitchenBT kitchenBT, InteractableObject floatingRecipe) { 
+                _amberKitchenBT = kitchenBT;
                 _floatingRecipe = floatingRecipe;
             }
             public override NodeState Evaluate()
             {
-                if (!_coolingDown && _objInteraction.IsInAmberSightlines(_floatingRecipe))
-                {
-                    if (!_increased)
+                if (!StoryDatastore.Instance.GoodSoup.Value) {
+                    if (!_coolingDown && _amberKitchenBT.GetObjectInteraction().IsInAmberSightlines(_floatingRecipe))
                     {
-                        _increased = true;
-                        StoryDatastore.Instance.Paranoia.Value += 3f;
+                        if (!_increased)
+                        {
+                            _increased = true;
+                            StoryDatastore.Instance.Paranoia.Value += 3f;
+                        }
+                        UIManager.Instance.DisplaySimpleBubbleForSeconds(UIElements.BubbleIcon.PARANOID, 2f);
+                        _coolingDown = true;
                     }
-                    UIManager.Instance.DisplaySimpleBubbleForSeconds(UIElements.BubbleIcon.PARANOID, 2f);
-                    _coolingDown = true;
-                }
-                else
-                {
-                    timePassed += Time.deltaTime;
-                    if (timePassed > 3f)
+                    else
                     {
-                        timePassed = 0f;
-                        _coolingDown = false;
+                        timePassed += Time.deltaTime;
+                        if (timePassed > 3f)
+                        {
+                            timePassed = 0f;
+                            _coolingDown = false;
+                        }
                     }
                 }
                 state = NodeState.SUCCESS;
