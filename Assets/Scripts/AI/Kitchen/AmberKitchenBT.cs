@@ -200,7 +200,7 @@ namespace Assets.Scripts.AI
                     else
                     {
                         timePassed += Time.deltaTime;
-                        if (timePassed > 3f)
+                        if (timePassed > 7f)
                         {
                             timePassed = 0f;
                             _coolingDown = false;
