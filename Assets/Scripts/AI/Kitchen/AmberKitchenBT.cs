@@ -87,6 +87,7 @@ namespace Assets.Scripts.AI
 
                 GoToOvenOpenAndClose(),
 
+                new ChangeStoryData<bool>(StoryDatastore.Instance.WearingChefHat, false),
                 new WaitFor(0.5f),
                 new MoveToTile(_interactions.Grid, doors.doors[MainSceneLoading.AmberRoom.HALLWAY], new Vector3(0,0,-1)),
                 new WaitFor(0.5f),

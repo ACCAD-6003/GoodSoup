@@ -123,4 +123,6 @@ public class StoryDatastore : MonoBehaviour
     public StoryData<OvenState> OvenState = new(global::OvenState.OFF);
     [SerializeField]
     public StoryData<bool> WearingChefHat = new(false);
+    [SerializeField]
+    public StoryData<FaceOption> FaceOption = new(AmberVisual.FaceOption.GROGGY);
 }

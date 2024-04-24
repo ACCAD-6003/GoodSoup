@@ -1,15 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Collections.LowLevel.Unsafe;
 using Unity.VisualScripting;
 using UnityEngine;
 
 public class AmberVisual : MonoBehaviour
 {
     public enum HairOption { BONNET, MESSY, CLEAN }
+    public enum FaceOption { HAPPY, PARANOID, SAD, GROGGY, NEUTRAL }
+    Dictionary<FaceOption, string> faceToTexture = new() {
+        { FaceOption.HAPPY, "Happy" },
+        { FaceOption.PARANOID, "Paranoid"},
+        { FaceOption.SAD, "Sad"},
+        { FaceOption.GROGGY, "Groggy"},
+        { FaceOption.NEUTRAL, "Neutral"}
+    };
     [SerializeField] GameObject _backpack;
     [SerializeField] GameObject _chefHat;
     [SerializeField] GameObject _towel;
     [SerializeField] Material _amberBodyMaterial;
+    [SerializeField] Material _amberFaceMaterial;
     [SerializeField] Material _amberDoomGuyMaterial;
 
     [SerializeField] GameObject _bonnet;
@@ -35,6 +45,11 @@ public class AmberVisual : MonoBehaviour
         StoryDatastore.Instance.AmberWornClothing.Changed += UpdateClothesVisual;
         StoryDatastore.Instance.AmberHairOption.Changed += UpdateHairVisual;
         StoryDatastore.Instance.WearingChefHat.Changed += UpdateChefHatVisual;
+
+        StoryDatastore.Instance.Paranoia.Changed += SetAmberMood;
+        StoryDatastore.Instance.Annoyance.Changed += SetAmberMood;
+        StoryDatastore.Instance.Happiness.Changed += SetAmberMood;
+        StoryDatastore.Instance.FaceOption.Changed += UpdateFaceVisual;
     }
     
     private void OnDisable()
@@ -44,7 +59,27 @@ public class AmberVisual : MonoBehaviour
         StoryDatastore.Instance.AmberWornClothing.Changed -= UpdateClothesVisual;
         StoryDatastore.Instance.AmberHairOption.Changed -= UpdateHairVisual;
     }
-
+    void SetAmberMood(float oldValue, float newValue) {
+        Dictionary<StoryData<float>, FaceOption> moods = new()
+        {
+            { StoryDatastore.Instance.Happiness, FaceOption.HAPPY },
+            { StoryDatastore.Instance.Annoyance, FaceOption.SAD },
+            { StoryDatastore.Instance.Paranoia, FaceOption.PARANOID }
+        };
+        float maxValue = 0f;
+        FaceOption faceOption = FaceOption.NEUTRAL;
+        foreach (var moodIntensity in moods) {
+            if (moodIntensity.Key.Value > maxValue) { 
+                maxValue = moodIntensity.Key.Value;
+                faceOption = moodIntensity.Value;
+            }
+        }
+        StoryDatastore.Instance.FaceOption.Value = faceOption;
+    }
+    void UpdateFaceVisual(FaceOption _, FaceOption newFace) {
+        Texture2D text = Resources.Load<Texture2D>("Textures/FacialExpressions/" + StoryDatastore.Instance.);
+        _amberBodyMaterial.SetTexture("_Albedo", text);
+    }
     void UpdateBackpackVisual(bool oldValue, bool newValue) {
         _backpack.SetActive(newValue);
     }
