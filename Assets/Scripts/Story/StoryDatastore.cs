@@ -7,7 +7,7 @@ using static ComputerEmail;
 using static ComputerHUD;
 using static MainSceneLoading;
 public enum GamePhase { TUTORIAL_BEDROOM, BEFORE_AMBER_LEAVES, AMBER_GONE, AMBER_BACK, SLEEP_TIME }
-public enum OvenState { OFF, LOW_TEMP, MEDIUM_TEMP, HIGH_TEMP }
+public enum HeatSetting { LOW_TEMP, MEDIUM_TEMP, HIGH_TEMP }
 public class StoryDatastore : MonoBehaviour
 {
     private static StoryDatastore instance;
@@ -120,9 +120,11 @@ public class StoryDatastore : MonoBehaviour
     [SerializeField]
     public StoryData<bool> AmberPickedUpKey = new StoryData<bool>(false);
     [SerializeField]
-    public StoryData<OvenState> OvenState = new(global::OvenState.OFF);
-    [SerializeField]
     public StoryData<bool> WearingChefHat = new(false);
     [SerializeField]
     public StoryData<FaceOption> FaceOption = new(AmberVisual.FaceOption.GROGGY);
+    [SerializeField]
+    public StoryData<HeatSetting> HeatSetting = new(global::HeatSetting.LOW_TEMP);
+    [SerializeField]
+    public StoryData<float> FoodQuality = new(0f);
 }

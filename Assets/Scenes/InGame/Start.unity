@@ -1133,7 +1133,13 @@ MonoBehaviour:
     _value: 0
   AmberPickedUpKey:
     _value: 0
-  OvenState:
+  WearingChefHat:
+    _value: 0
+  FaceOption:
+    _value: 3
+  HeatSetting:
+    _value: 0
+  FoodQuality:
     _value: 0
 --- !u!4 &1270958205
 Transform:
@@ -1485,7 +1491,7 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   CurrAdditiveScene: 0
-  DefaultStartingScene: 0
+  DefaultStartingScene: 2
 --- !u!4 &1474325874
 Transform:
   m_ObjectHideFlags: 0

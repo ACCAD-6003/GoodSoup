@@ -8,6 +8,7 @@ public class MoveObject : Interaction
     public StoryData<bool> _moved;
     public AudioSource _optionalSrc;
     public AudioClip _optionalSoundForBeforeMovedToAfter;
+    public bool putBackAfterTime = false;
     public override void LoadData(StoryDatastore data)
     {
         if (data.MoveObjects.ContainsKey(interactionId))
@@ -36,6 +37,16 @@ public class MoveObject : Interaction
         if (_optionalSrc != null && _moved.Value) {
             _optionalSrc.PlayOneShot(_optionalSoundForBeforeMovedToAfter);
         }
+        StoryDatastore.Instance.MoveObjects[interactionId].Value = _moved.Value;
+        RefreshObjects();
+        if (!putBackAfterTime) {
+            EndAction();
+            return;
+        }
+        StartCoroutine(PutBack());
+    }
+    IEnumerator PutBack() {
+        yield return new WaitForSeconds(1f);
         StoryDatastore.Instance.MoveObjects[interactionId].Value = _moved.Value;
         RefreshObjects();
         EndAction();

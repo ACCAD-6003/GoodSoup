@@ -77,7 +77,7 @@ public class AmberVisual : MonoBehaviour
         StoryDatastore.Instance.FaceOption.Value = faceOption;
     }
     void UpdateFaceVisual(FaceOption _, FaceOption newFace) {
-        Texture2D text = Resources.Load<Texture2D>("Textures/FacialExpressions/" + StoryDatastore.Instance.);
+        Texture2D text = Resources.Load<Texture2D>("Textures/FacialExpressions/" + faceToTexture[StoryDatastore.Instance.FaceOption.Value]);
         _amberBodyMaterial.SetTexture("_Albedo", text);
     }
     void UpdateBackpackVisual(bool oldValue, bool newValue) {
