@@ -78911,6 +78911,10 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1754192275}
+    - target: {fileID: 8464033552920168965, guid: 6f012677811df3046a73b52ca0693a2c, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: c5af3e55d1831a64d897ccd88120a73c, type: 2}
     - target: {fileID: 8588355958258494509, guid: 6f012677811df3046a73b52ca0693a2c, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -103105,6 +103109,10 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1068116359}
+    - target: {fileID: 8464033552920168965, guid: 6f012677811df3046a73b52ca0693a2c, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 229360a82b0d91949b0adc7ae25eb728, type: 2}
     - target: {fileID: 8588355958258494509, guid: 6f012677811df3046a73b52ca0693a2c, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -114223,19 +114231,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -6722085885383957590, guid: 7dbc5587d0838f44d86c5a16134a82a9, type: 3}
       propertyPath: m_Color.b
-      value: 0.10588235
+      value: 0.49574804
       objectReference: {fileID: 0}
     - target: {fileID: -6722085885383957590, guid: 7dbc5587d0838f44d86c5a16134a82a9, type: 3}
       propertyPath: m_Color.g
-      value: 0.4392889
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -6722085885383957590, guid: 7dbc5587d0838f44d86c5a16134a82a9, type: 3}
       propertyPath: m_Color.r
-      value: 0.6509804
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -6722085885383957590, guid: 7dbc5587d0838f44d86c5a16134a82a9, type: 3}
       propertyPath: m_Intensity
-      value: 10.01
+      value: 4.51
       objectReference: {fileID: 0}
     - target: {fileID: -6722085885383957590, guid: 7dbc5587d0838f44d86c5a16134a82a9, type: 3}
       propertyPath: m_BounceIntensity
