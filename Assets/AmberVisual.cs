@@ -28,10 +28,13 @@ public class AmberVisual : MonoBehaviour
         // Update hair
         UpdateHairVisual(HairOption.BONNET, StoryDatastore.Instance.AmberHairOption.Value);
 
+        UpdateChefHatVisual(false, StoryDatastore.Instance.WearingChefHat.Value);
+
         // Subscribe to changes in storydata for each visual
         StoryDatastore.Instance.PickedUpBackpack.Changed += UpdateBackpackVisual;
         StoryDatastore.Instance.AmberWornClothing.Changed += UpdateClothesVisual;
         StoryDatastore.Instance.AmberHairOption.Changed += UpdateHairVisual;
+        StoryDatastore.Instance.WearingChefHat.Changed += UpdateChefHatVisual;
     }
     
     private void OnDisable()
@@ -46,6 +49,10 @@ public class AmberVisual : MonoBehaviour
         _backpack.SetActive(newValue);
     }
     
+    void UpdateChefHatVisual(bool oldValue, bool newValue)
+    {
+        _chefHat.SetActive(newValue);
+    }
     void UpdateClothesVisual(ClothingOption oldValue, ClothingOption newValue) {
         _towel.SetActive(newValue == ClothingOption.Towel);
         Texture2D text = Resources.Load<Texture2D>("Textures/Clothing/" + Dresser.ClothingOptions[newValue]);

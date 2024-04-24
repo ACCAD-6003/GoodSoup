@@ -121,4 +121,6 @@ public class StoryDatastore : MonoBehaviour
     public StoryData<bool> AmberPickedUpKey = new StoryData<bool>(false);
     [SerializeField]
     public StoryData<OvenState> OvenState = new(global::OvenState.OFF);
+    [SerializeField]
+    public StoryData<bool> WearingChefHat = new(false);
 }
