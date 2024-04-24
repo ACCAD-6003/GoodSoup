@@ -1022,7 +1022,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Amber: {fileID: 0}
-  amberSightAngle: 40
+  amberSightAngle: 30
   playerInteractSoundSource: {fileID: 206001029}
   playerInteractBlip: {fileID: 8300000, guid: e2e4681c7edb2c34d95f901c4acd6054, type: 3}
 --- !u!4 &1126258449
@@ -1125,7 +1125,7 @@ MonoBehaviour:
     _value: 1
   TowelHot:
     _value: 0
-  GoodSoup:
+  GoodSoupPuzzleSolved:
     _value: 0
   EntryDoor:
     _value: 0
@@ -1140,6 +1140,12 @@ MonoBehaviour:
   HeatSetting:
     _value: 0
   FoodQuality:
+    _value: 0
+  ActivelyCooking:
+    _value: 0
+  Salt:
+    _value: 0
+  Pepper:
     _value: 0
 --- !u!4 &1270958205
 Transform:
