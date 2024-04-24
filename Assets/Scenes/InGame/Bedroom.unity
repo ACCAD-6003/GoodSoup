@@ -45711,7 +45711,7 @@ PrefabInstance:
     - target: {fileID: 474034436341015968, guid: 69650211ef2dfcc489c18921e4ab4d4a, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 787f4a57e2e6a42c38605ae9e2e1f48b, type: 2}
+      objectReference: {fileID: 2100000, guid: 0ca61ce44b91ecf469e8671a9311786c, type: 2}
     - target: {fileID: 612331269048922898, guid: 69650211ef2dfcc489c18921e4ab4d4a, type: 3}
       propertyPath: m_Name
       value: Fan
@@ -51720,7 +51720,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-4060
+  m_Name: pb_Mesh-905226
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2

@@ -13,15 +13,28 @@ namespace Assets.Scripts.AI
     {
         private readonly BubbleIcon _icon;
         private bool _performed = false;
+        private float time = 0f;
         public DisplayUIIcon(BubbleIcon icon)
         {
             _icon = icon;
+        }
+        public DisplayUIIcon(BubbleIcon icon, float time)
+        {
+            _icon = icon;
+            this.time = time;
         }
         public override NodeState Evaluate()
         {
             if (!_performed) { 
                 _performed = true;
-                UIManager.Instance.DisplaySimpleBubbleTilInterrupted(_icon);
+                if (time != 0f)
+                {
+                    UIManager.Instance.DisplaySimpleBubbleForSeconds(_icon, time);
+                }
+                else {
+                    UIManager.Instance.DisplaySimpleBubbleTilInterrupted(_icon);
+                }
+
             }
             state = _performed ? NodeState.SUCCESS : NodeState.RUNNING;
             return _performed ? NodeState.SUCCESS : NodeState.RUNNING;
