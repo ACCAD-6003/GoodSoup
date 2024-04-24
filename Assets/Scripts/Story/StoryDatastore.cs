@@ -129,4 +129,8 @@ public class StoryDatastore : MonoBehaviour
     public StoryData<float> FoodQuality = new(0f);
     [SerializeField]
     public StoryData<bool> ActivelyCooking = new(false);
+    [SerializeField]
+    public StoryData<float> Salt = new(0f);
+    [SerializeField]
+    public StoryData<float> Pepper = new(0f);
 }
