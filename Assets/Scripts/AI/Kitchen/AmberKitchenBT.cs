@@ -44,7 +44,7 @@ namespace Assets.Scripts.AI
                 new WaitFor(1f),
                 new PerformAmberInteraction(_interactions.PantryDoor.AmberInteraction),
                 new WaitFor(0.5f),
-                new PerformAmberInteraction(_interactions.MovePotToTable.AmberInteraction),
+                new PerformAmberInteraction(_interactions.MoveTrayToTable.AmberInteraction),
                 new WaitFor(0.5f),
                 new PerformAmberInteraction(_interactions.PantryDoor.AmberInteraction),
                 new WaitFor(0.5f),
@@ -62,6 +62,9 @@ namespace Assets.Scripts.AI
                 new PutInProgress(false, _interactions.AlarmTable.PlayerInteraction),
 
                 SitDownSequence(),
+
+                new PerformAmberInteraction(_interactions.MoveTrayToBurner.AmberInteraction),
+                new ChangeStoryData<bool>(StoryDatastore.Instance.ActivelyCooking, true),
 
                 new WrapperNode(new SkipIfStoryDatastoreState<bool>(StoryDatastore.Instance.MoveObjects[_interactions.SinkClean.PlayerInteraction.interactionId], true), new List<Node>() {
                     new PutInProgress(true, _interactions.SinkClean.AmberInteraction),
