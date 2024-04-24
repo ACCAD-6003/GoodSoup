@@ -64,7 +64,6 @@ public class MainSceneLoading : SerializedMonoBehaviour
         switch (StoryDatastore.Instance.CurrentGamePhase.Value)
         {
             case GamePhase.TUTORIAL_BEDROOM:
-                Debug.Log("Switched to BEFORE AMBER LEAVES state");
                 StoryDatastore.Instance.CurrentGamePhase.Value = GamePhase.BEFORE_AMBER_LEAVES;
                 break;
             case GamePhase.AMBER_GONE:

@@ -10,13 +10,8 @@ namespace Assets.Scripts.Objects
     {
         public void Awake()
         {
-            Debug.Log("This is the door i am looking for : " + StoryDatastore.Instance.CurrentAmberRoom.Value);
-            foreach (KeyValuePair<AmberRoom, tile> pair in doors) {
-                Debug.Log(pair.Key + " key  value" + pair.Value);
-            }
             if (doors.ContainsKey(StoryDatastore.Instance.CurrentAmberRoom.Value))
             {
-                Debug.Log("ENTRANCE SET TO: " + StoryDatastore.Instance.CurrentAmberRoom.Value);
                 StoryDatastore.Instance.EntryDoor.Value = StoryDatastore.Instance.CurrentAmberRoom.Value;
                 StoryDatastore.Instance.CurrentAmberRoom.Value = MainSceneLoading.Instance.CurrAdditiveScene;
             }

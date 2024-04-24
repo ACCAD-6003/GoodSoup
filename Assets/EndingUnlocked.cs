@@ -15,7 +15,6 @@ public class EndingUnlocked : MonoBehaviour
             endings.SetActive(true);
         }
         else {
-            Debug.Log("No longer first screen");
             Globals.FirstTitleScreen = false;
         }
     }

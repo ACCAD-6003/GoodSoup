@@ -82,7 +82,6 @@ public class PullObjectWithPhysics : Interaction
         {
             return;
         }
-        Debug.Log("BOOK COLLIDED!");
         _collided = true;
         FindObjectOfType<CameraShake>().ShakeCamera();
         StoryDatastore.Instance.AnyBookDropped.Value = true;
@@ -101,9 +100,7 @@ public class PullObjectWithPhysics : Interaction
 
     public override void LoadData(StoryDatastore data)
     {
-        Debug.Log("TRYING TO LOAD");
         if (data.BooksDropped.ContainsKey(interactionId)) {
-            Debug.Log("SETTING BOOK FROM SAVE");
             _rb = gameObject.GetComponent<Rigidbody>();
             transform.position = data.BooksDropped[interactionId].location;
             transform.rotation = data.BooksDropped[interactionId].rotation;
@@ -114,8 +111,6 @@ public class PullObjectWithPhysics : Interaction
     public override void SaveData(StoryDatastore data)
     {
         if (_inPhysicsMode) {
-
-            Debug.Log("SAVING BOOK!");
             data.BooksDropped[interactionId] = (transform.position, transform.rotation);
         }
     }

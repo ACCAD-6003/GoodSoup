@@ -11,6 +11,7 @@ namespace Assets.Scripts.Objects.Interactions
     public class FlushToilet : Interaction
     {
         private StoryData<float> _temperature;
+        bool _flushed = false;
         public override void LoadData(StoryDatastore data)
         {
             _temperature = data.ShowerTemperature;
@@ -23,7 +24,10 @@ namespace Assets.Scripts.Objects.Interactions
 
         public override void DoAction()
         {
-            StoryDatastore.Instance.Annoyance.Value += 0.2f;
+            if (!_flushed) {
+                StoryDatastore.Instance.Annoyance.Value += 0.2f;
+                _flushed = true;
+            }
             _temperature.Value += Globals.FLUSH_SHOWER_TEMP_IMPACT;
             _temperature.Value = MathF.Max(0f, _temperature.Value);
             EndAction();

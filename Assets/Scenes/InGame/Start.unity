@@ -1483,7 +1483,7 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   CurrAdditiveScene: 0
-  DefaultStartingScene: 0
+  DefaultStartingScene: 2
 --- !u!4 &1474325874
 Transform:
   m_ObjectHideFlags: 0

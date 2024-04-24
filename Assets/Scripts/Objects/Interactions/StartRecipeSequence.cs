@@ -33,7 +33,6 @@ public class StartRecipeSequence : Interaction
         data.MoveObjects[interactionId] = _moved;
     }
     void RefreshObjects() {
-        Debug.Log("SETTING BEFORE MOVED ACTIVE : " + !_moved.Value + " AND AFTER MOVED ACTIVE : " + _moved.Value);
         closedDoor.SetActive(!_moved.Value);
         openDoor.SetActive(_moved.Value);
     }
@@ -44,7 +43,6 @@ public class StartRecipeSequence : Interaction
 
         if (node.node.gameObject.name == "Fan1Junction")
         {
-            Debug.Log("Reached Fan Junction");
             index = GetIndexFromOrientationFan1(rotateFans[0].orientationIndex);
             if (index == 2 || index == 0) {
                 src.PlayOneShot(whoosh);
@@ -81,7 +79,6 @@ public class StartRecipeSequence : Interaction
         }
         else
         {
-            Debug.Log("No node name matches");
             return;
         }
         /*        if (index == 0) {
@@ -102,7 +99,6 @@ public class StartRecipeSequence : Interaction
     private void ResetPuzzleSequence()
     {
         _follower.onNode -= OnNodePassed;
-        Debug.Log("Resetting puzzle sequence...");
 
         var gameObj = _follower.gameObject;
         Destroy(_follower);
@@ -129,7 +125,6 @@ public class StartRecipeSequence : Interaction
     // bad bad bad not good terrible ugly i know how to do this better but i am tired and it works fuck off paige this is only ever going to be used once
     int GetIndexFromOrientationFan1(int orientation) {
         int index = 0;
-        Debug.Log(orientation + "orientation of fan");
         switch (orientation)
         {
             case 2:
@@ -142,7 +137,6 @@ public class StartRecipeSequence : Interaction
                 index = 1;
                 break;
         }
-        Debug.Log(index + "index of spline");
         return index;
     }
     // bad bad bad not good terrible ugly i know how to do this better but i am tired and it works fuck off paige this is only ever going to be used once
@@ -168,7 +162,6 @@ public class StartRecipeSequence : Interaction
     /// </summary>
     public override void DoAction()
     {
-        Debug.Log("OLD VALUE : " + _moved.Value + " NEW VALUE : " + !_moved.Value);
         _moved.Value = !_moved.Value;
         StoryDatastore.Instance.MoveObjects[interactionId].Value = _moved.Value;
         RefreshObjects();

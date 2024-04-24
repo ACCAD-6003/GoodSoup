@@ -30,8 +30,6 @@ public class GridCharacter : MonoBehaviour
     private void ReassignGrid(Scene arg0, LoadSceneMode arg1)
     {
         gm_s = FindObjectOfType<grid_manager>();
-        Debug.Log("Reassiging grid...");
-        Debug.Log(gm_s == null);
     }
     void Update()
     {
@@ -89,7 +87,6 @@ public class GridCharacter : MonoBehaviour
         LookVectorWhenComplete = lookRot;
     }
     private void SetLookRot(Vector3 lookRot) {
-        Debug.Log("SET LOOK ROT to VECTOR" + lookRot);
         Quaternion new_rot = Quaternion.LookRotation(lookRot);
         tr_body.transform.rotation = new_rot;
         LookVectorWhenComplete = Vector3.forward;

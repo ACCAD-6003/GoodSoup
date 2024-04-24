@@ -426,10 +426,6 @@ public class grid_manager : MonoBehaviour
 
         var ttile = start_tile;
         char_s.tile_s = ttile;
-        Debug.Log("ttile is null");
-        Debug.Log(ttile == null);
-        Debug.Log("ttiledbchars is null");
-        Debug.Log(ttile.db_chars == null);
         ttile.db_chars.Add(char_s);
         var tpos = ttile.transform.position;
         tpos.y += 1.3f;
@@ -455,9 +451,6 @@ public class grid_manager : MonoBehaviour
         if (doors.Entrance != null) {
             start_tile = doors.Entrance;
         }
-        Debug.Log("START TILE");
-        Debug.Log(start_tile == null);
-        Debug.Log("CHAR  IS NULL: " + char_s == null);
         if (start_tile != null)
         {
             dest_tile = start_tile;

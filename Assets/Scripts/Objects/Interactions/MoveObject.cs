@@ -27,13 +27,11 @@ public class MoveObject : Interaction
         data.MoveObjects[interactionId] = _moved;
     }
     void RefreshObjects() {
-        Debug.Log("SETTING BEFORE MOVED ACTIVE : " + !_moved.Value + " AND AFTER MOVED ACTIVE : " + _moved.Value);
         beforeMoved.SetActive(!_moved.Value);
         afterMoved.SetActive(_moved.Value);
     }
     public override void DoAction()
     {
-        Debug.Log("OLD VALUE : " + _moved.Value + " NEW VALUE : " + !_moved.Value);
         _moved.Value = !_moved.Value;
         if (_optionalSrc != null && _moved.Value) {
             _optionalSrc.PlayOneShot(_optionalSoundForBeforeMovedToAfter);

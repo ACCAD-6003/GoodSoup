@@ -32,19 +32,15 @@ namespace Assets.Scripts.AI.GeneralNodes
             if (!_evaluated) {
                 _evaluated = true;
                 foreach (var identifier in _identifiers) {
-                    Debug.Log("Checking" + identifier);
                     if (!StoryDatastore.Instance.MoveObjects.ContainsKey(identifier)) {
-                        Debug.Log("Not all pickedup1");
                         AllItemsNotPickedUp();
                         return NodeState.SUCCESS;
                     }
                     if (!StoryDatastore.Instance.MoveObjects[identifier].Value)
                     {
-                        Debug.Log("Not all picked up");
                         AllItemsNotPickedUp();
                         return NodeState.SUCCESS;
                     }
-                    Debug.Log("Is in basket");
                 }
                 AllItemsPickedUp();
             }

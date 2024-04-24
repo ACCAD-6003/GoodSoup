@@ -37,8 +37,5 @@ public class AgentMovement : MonoBehaviour
                 agent.Move(new Vector3(0, 0, direction.z) * Time.deltaTime * agent.speed);
             }
         }
-        else {
-            Debug.Log("Arrived");
-        }
     }
 }

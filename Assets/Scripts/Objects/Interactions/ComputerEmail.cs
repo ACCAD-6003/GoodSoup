@@ -42,10 +42,6 @@ public class ComputerEmail : Interaction
         hud.EmailScreens[StoryDatastore.Instance.EmailState.Value].SetActive(true);
     }
     public void SendEmail(int email) {
-        Debug.Log((StoryDatastore.Instance == null) + " Story data is null?");
-        Debug.Log((StoryDatastore.Instance.EmailState == null) + " Email state is null?");
-        Debug.Log((StoryDatastore.Instance.AwaitingEmailReply == null) + " Email AwaitingEmailReply is null?");
-        Debug.Log((StoryDatastore.Instance.EmailSentTime == null) + " Email EmailSentTime is null?");
         StoryDatastore.Instance.EmailState.Value = (EmailState) email;
         StoryDatastore.Instance.AwaitingEmailReply.Value = true;
         StoryDatastore.Instance.EmailSentTime.Value = DateTime.Now;
