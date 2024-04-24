@@ -65,7 +65,7 @@ public class StartRecipeSequence : Interaction
             _bookOnTable.enabled = (true);
             src.PlayOneShot(hit);
             FindObjectOfType<CameraShake>().ShakeCamera();
-            StoryDatastore.Instance.GoodSoup.Value = true;
+            StoryDatastore.Instance.GoodSoupPuzzleSolved.Value = true;
             src.PlayOneShot(whoosh);
             EndAction();
             return;

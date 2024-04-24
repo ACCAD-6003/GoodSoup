@@ -112,7 +112,7 @@ public class StoryDatastore : MonoBehaviour
     [SerializeField]
     public StoryData<bool> TowelHot = new StoryData<bool>(false);
     [SerializeField]
-    public StoryData<bool> GoodSoup = new StoryData<bool>(false);
+    public StoryData<bool> GoodSoupPuzzleSolved = new StoryData<bool>(false);
     [SerializeField]
     public StoryData<AmberRoom> EntryDoor = new StoryData<AmberRoom>(AmberRoom.BEDROOM);
     [SerializeField]
@@ -127,4 +127,6 @@ public class StoryDatastore : MonoBehaviour
     public StoryData<HeatSetting> HeatSetting = new(global::HeatSetting.LOW_TEMP);
     [SerializeField]
     public StoryData<float> FoodQuality = new(0f);
+    [SerializeField]
+    public StoryData<bool> ActivelyCooking = new(false);
 }

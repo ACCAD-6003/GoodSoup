@@ -12,6 +12,7 @@ namespace Assets.Scripts.AI
 {
     public class AmberKitchenBT : BehaviorTree.Tree
     {
+        bool noticedLetters;
         [SerializeField]
         KitchenInteractions _interactions;
         AmberMount navigation;
@@ -32,15 +33,19 @@ namespace Assets.Scripts.AI
                 new ChangeStoryData<bool>(StoryDatastore.Instance.WearingChefHat, true),
                 new AmberNoticeRecipe(this, _interactions.FloatingRecipe),
                 new WaitFor(0.5f),
+
                 // DEBUG
                 new SwitchAmberMount(_interactions.chairMount),
                 new WaitFor(0.5f),
                 new SwitchAmberMount(navigation),
                 // END DEBUG
+
                 new MoveToTile(_interactions.Grid, _interactions.PantryDoor.AssociatedTile),
-                new WaitFor(0.5f),
-                new PerformAmberInteraction(_interactions.PantryDoor.AmberInteraction),
                 new WaitFor(1f),
+                new PerformAmberInteraction(_interactions.PantryDoor.AmberInteraction),
+                new WaitFor(0.5f),
+                new PerformAmberInteraction(_interactions.MovePotToTable.AmberInteraction),
+                new WaitFor(0.5f),
                 new PerformAmberInteraction(_interactions.PantryDoor.AmberInteraction),
                 new WaitFor(0.5f),
 
@@ -108,10 +113,21 @@ namespace Assets.Scripts.AI
         }
 
         private Node GoToFridgeOpenAndClose() {
+
             return new Sequence(new List<Node>() {
                 new WaitFor(0.5f),
                 new MoveToTile(_interactions.Grid, _interactions.FridgeOpen.AssociatedTile),
-                new WaitFor(0.5f),
+                NoticeParanoiaAndCloseDoor()
+            });
+        }
+        private Node NoticeParanoiaAndCloseDoor() {
+            if (StoryDatastore.Instance.MoveObjects[77].Value && !noticedLetters) {
+                noticedLetters = true;
+                UIManager.Instance.DisplaySimpleBubbleForSeconds(UIElements.BubbleIcon.PARANOID, 3f);
+                StoryDatastore.Instance.Paranoia.Value += 3f;
+            }
+            return new Sequence(new List<Node>() {
+                new WaitFor(1f),
                 new PerformAmberInteraction(_interactions.FridgeOpen.AmberInteraction),
                 new WaitFor(1f),
                 new PerformAmberInteraction(_interactions.FridgeOpen.AmberInteraction),
@@ -119,6 +135,10 @@ namespace Assets.Scripts.AI
             });
         }
 
+        // if good soup then restart the kitchen sequence
+        // set salt, pepper stats to zero
+        // set food quality back to zero
+        // delete pot hierarchy of objects (might not be that simple)
         private Node SitDownSequence() {
             return new Selector(new List<Node>()
                 {
@@ -188,7 +208,7 @@ namespace Assets.Scripts.AI
             }
             public override NodeState Evaluate()
             {
-                if (!StoryDatastore.Instance.GoodSoup.Value) {
+                if (!StoryDatastore.Instance.GoodSoupPuzzleSolved.Value) {
                     if (!_coolingDown && _amberKitchenBT.GetObjectInteraction().IsInAmberSightlines(_floatingRecipe) && _floatingRecipe.gameObject.activeInHierarchy)
                     {
                         if (!_increased)
@@ -286,7 +306,7 @@ namespace Assets.Scripts.AI
         {
             public bool ShouldSkip()
             {
-                return StoryDatastore.Instance.GoodSoup.Value;
+                return StoryDatastore.Instance.GoodSoupPuzzleSolved.Value;
             }
         }
     }

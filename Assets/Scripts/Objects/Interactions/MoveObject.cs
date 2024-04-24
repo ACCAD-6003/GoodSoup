@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class MoveObject : Interaction
 {
+    enum SpecialObject { NONE, SALT, PEPPER }
     [SerializeField] GameObject beforeMoved, afterMoved;
+    [SerializeField] SpecialObject specialObject = SpecialObject.NONE;
     public StoryData<bool> _moved;
     public AudioSource _optionalSrc;
     public AudioClip _optionalSoundForBeforeMovedToAfter;
@@ -39,6 +41,12 @@ public class MoveObject : Interaction
         }
         StoryDatastore.Instance.MoveObjects[interactionId].Value = _moved.Value;
         RefreshObjects();
+        if (specialObject == SpecialObject.SALT) {
+            StoryDatastore.Instance.Salt.Value += 1f;
+        }
+        if (specialObject == SpecialObject.PEPPER) {
+            StoryDatastore.Instance.Pepper.Value += 1f;
+        }
         if (!putBackAfterTime) {
             EndAction();
             return;
