@@ -45,7 +45,7 @@ namespace Assets.Scripts.AI
                     new WrapperNode(new SkipIfStoryDatastoreState<bool>(StoryDatastore.Instance.BooksBlown, true), new List<Node>() {
                         new Sequence(new List<Node>() {
                             new WaitForPlayerInteractionCompleted(interactions.AlarmClock),
-                            new DisplayUIIcon(UI.UIElements.BubbleIcon.ANNOYANCE),
+                            new DisplayUIIcon(UI.UIElements.BubbleIcon.ANNOYANCE, 3f),
                         }),
                         new StopFarCryEnding(interactions.switcher),
 
@@ -55,18 +55,17 @@ namespace Assets.Scripts.AI
 
                         new SwitchAmberMount(interactions.SittingInBed),
                         new WaitFor(1f),
-                        new DisplayUIIcon(UI.UIElements.BubbleIcon.PHONE),
                     }),
                     new SetGameObjectActive(interactions.phoneOnTable, false),
                     // Wait for book hit
                     new Selector(new List<Node>() {
                         new Sequence(new List<Node>() {
                             new WaitForBookHit(storyData.AnyBookDropped),
-                            new DisplayUIIcon(UI.UIElements.BubbleIcon.ANNOYANCE),
+                            new DisplayUIIcon(UI.UIElements.BubbleIcon.ANNOYANCE, 3f),
                         }),
                         new Sequence(new List<Node>() {
                             new WaitForStoryDataChange(new SkipIfStoryDatastoreState<bool>(StoryDatastore.Instance.CurtainsOpen, true)),
-                            new DisplayUIIcon(UI.UIElements.BubbleIcon.HAPPY_SUNSHINE),
+                            new DisplayUIIcon(UI.UIElements.BubbleIcon.HAPPY_SUNSHINE, 3f),
                         })
                     }),
 

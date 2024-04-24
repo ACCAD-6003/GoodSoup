@@ -156,7 +156,7 @@ namespace Assets.Scripts.AI
                         new PerformAmberInteraction(_interactions.ChairPull.AmberInteraction),
                         new PutInProgress(true, _interactions.ChairPull.PlayerInteraction),
                         new DebugNode(666),
-                        new DisplayUIIcon(UI.UIElements.BubbleIcon.ANNOYANCE),
+                        new DisplayUIIcon(UI.UIElements.BubbleIcon.ANNOYANCE, 3f),
                         new ImpactStoryData(StoryDatastore.Instance.Annoyance, 1f),
                         new SwitchAmberMount(navigation),
                     }),
@@ -174,7 +174,7 @@ namespace Assets.Scripts.AI
                     new Sequence( new List<Node>() {
                         new WaitForStoryDataChange(new GoodSouped()),
                         new DebugNode(102),
-                        new DisplayUIIcon(UI.UIElements.BubbleIcon.HAPPY),
+                        new DisplayUIIcon(UI.UIElements.BubbleIcon.HAPPY, 5f),
                         new ImpactStoryData(StoryDatastore.Instance.Happiness, 10f),
                         new SwitchAmberMount(navigation)
                     }),
