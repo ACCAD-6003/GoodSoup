@@ -142,6 +142,7 @@ namespace Assets.Scripts.AI
         // set salt, pepper stats to zero
         // set food quality back to zero
         // delete pot hierarchy of objects (might not be that simple)
+        // also factor into account smoke alarm going off
         private Node SitDownSequence() {
             return new Selector(new List<Node>()
                 {

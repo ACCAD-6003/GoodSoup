@@ -100,15 +100,14 @@ public class EndingSetup : SerializedMonoBehaviour
         starAssigner.Add(Ending.PARANOID, new StatBasedEnding(StoryDatastore.Instance.Paranoia, 3f));
         starAssigner.Add(Ending.GOOD_ENDING, new StatBasedEnding(StoryDatastore.Instance.Happiness, 7f));
         starAssigner.Add(Ending.BAD_ENDING, new StatBasedEnding(StoryDatastore.Instance.Annoyance, 7f));
+
         starAssigner.Add(Ending.GOOD_SOUP, new InstantFiveStarEnding());
         starAssigner.Add(Ending.KICKED_OUT_OF_COLLEGE, new InstantFiveStarEnding());
         starAssigner.Add(Ending.FAR_CRY, new InstantFiveStarEnding());
-
-        // change to be condition based or something
         starAssigner.Add(Ending.ACADEMIC_WEAPON, new InstantFiveStarEnding());
         starAssigner.Add(Ending.LOCKED_OUT, new InstantFiveStarEnding());
         starAssigner.Add(Ending.TOUCH_GRASS, new InstantFiveStarEnding());
-        //starAssigner.Add(Ending.PARANOID, new StatBasedEnding(StoryDatastore.Instance.Paranoia, 3f));
+        starAssigner.Add(Ending.BURNT_DOWN, new InstantFiveStarEnding());
         //starAssigner.Add(Ending.PARANOID, new StatBasedEnding(StoryDatastore.Instance.Paranoia, 3f));
         //starAssigner.Add(Ending.PARANOID, new StatBasedEnding(StoryDatastore.Instance.Paranoia, 3f));
     }
