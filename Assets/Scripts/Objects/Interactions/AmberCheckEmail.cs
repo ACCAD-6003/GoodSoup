@@ -26,7 +26,7 @@ namespace Assets.Scripts.Objects.Interactions
                 case ComputerHUD.EmailState.MEAN_EMAIL:
                 case ComputerHUD.EmailState.NICE_EMAIL:
                     UIManager.Instance.DisplaySimpleBubbleTilInterrupted(UIElements.BubbleIcon.PARANOID);
-                    StoryDatastore.Instance.Paranoia.Value += 1f;
+                    StoryDatastore.Instance.Paranoia.Value += 3f;
                     break;
                 case ComputerHUD.EmailState.MEAN_EMAIL_CONFIRMED:
                     UIManager.Instance.DisplaySimpleBubbleTilInterrupted(UIElements.BubbleIcon.ANNOYANCE);

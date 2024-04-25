@@ -70,7 +70,7 @@ namespace Assets.Scripts.AI
                                 new DebugNode(2),
                                 new WaitFor(0.25f),
                                 new DebugNode(3),
-                                new ModifyStat(StoryDatastore.Instance.Paranoia, 0.1f),
+                                new ModifyStat(StoryDatastore.Instance.Paranoia, 3f),
                                 new DebugNode(4),
                                 new ShowBubble(UIElements.BubbleIcon.PARANOID),
                                 new DebugNode(5),

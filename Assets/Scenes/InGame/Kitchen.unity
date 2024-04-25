@@ -53632,6 +53632,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TempCanvas: {fileID: 1689672126}
   particles: {fileID: 428194759}
+  setting: 0
   TempParticleDictionary: {fileID: 1300461880}
   ct: {fileID: 919132147861321166}
   src: {fileID: 1300461881}
@@ -63906,6 +63907,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TempCanvas: {fileID: 1689672126}
   particles: {fileID: 4340907998976327682}
+  setting: 0
   TempParticleDictionary: {fileID: 1508312671}
   ct: {fileID: 0}
   src: {fileID: 0}

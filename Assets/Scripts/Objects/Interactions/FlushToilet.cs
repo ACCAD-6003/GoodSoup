@@ -25,7 +25,7 @@ namespace Assets.Scripts.Objects.Interactions
         public override void DoAction()
         {
             if (!_flushed) {
-                StoryDatastore.Instance.Annoyance.Value += 1f;
+                StoryDatastore.Instance.Annoyance.Value += 1.5f;
                 _flushed = true;
             }
             _temperature.Value += Globals.FLUSH_SHOWER_TEMP_IMPACT;

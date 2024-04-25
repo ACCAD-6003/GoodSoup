@@ -9,7 +9,7 @@ public class HeatingDevice : MonoBehaviour
     public GameObject TempCanvas;
     bool cooking = false;
     public ParticleSystem particles;
-    HeatSetting setting = HeatSetting.LOW_TEMP;
+    public HeatSetting setting = HeatSetting.LOW_TEMP;
     Dictionary<HeatSetting, float> timeUnderHeat = new() {
         { HeatSetting.LOW_TEMP, 0f },
         { HeatSetting.MEDIUM_TEMP, 0f },
