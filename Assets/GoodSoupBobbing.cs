@@ -11,13 +11,18 @@ public class GoodSoupBobbing : MonoBehaviour
     private static Vector3 initialPosition = Vector3.zero;
     public AudioSource src;
     public AudioClip whoosh;
+    [SerializeField] Material _amberFaceMaterial;
     private void OnEnable()
     {
+        Texture2D text = Resources.Load<Texture2D>("Textures/FacialExpressions/" + AmberVisual.faceToTexture[StoryDatastore.Instance.FaceOption.Value]);
+        _amberFaceMaterial.SetTexture("_Albedo", text);
+
         if (initialPosition == Vector3.zero) {
             initialPosition = transform.localPosition;
         }
         if (Globals.FirstTitleScreen)
         {
+
             titleSize = transform.localScale;
 
             transform.localPosition -= new Vector3(0, 150, 0);
