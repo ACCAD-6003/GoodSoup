@@ -11,7 +11,7 @@ public class AmberVisual : MonoBehaviour
 {
     public enum HairOption { BONNET, MESSY, CLEAN }
     public enum FaceOption { HAPPY, PARANOID, SAD, GROGGY, NEUTRAL }
-    Dictionary<FaceOption, string> faceToTexture = new() {
+    public static Dictionary<FaceOption, string> faceToTexture = new() {
         { FaceOption.HAPPY, "Happy" },
         { FaceOption.PARANOID, "Paranoid"},
         { FaceOption.SAD, "Sad"},

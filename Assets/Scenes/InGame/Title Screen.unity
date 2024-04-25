@@ -7449,6 +7449,7 @@ MonoBehaviour:
   soup: {fileID: 8518768821570917223}
   src: {fileID: 848761961312633964}
   whoosh: {fileID: 8300000, guid: 6f346aa62d94b8545a6abd3834a5dfd8, type: 3}
+  _amberFaceMaterial: {fileID: 2100000, guid: 27e2480ba53faa146861b856166fad0c, type: 2}
 --- !u!82 &848761961312633964
 AudioSource:
   m_ObjectHideFlags: 0
