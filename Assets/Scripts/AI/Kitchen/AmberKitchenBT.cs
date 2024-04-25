@@ -31,13 +31,6 @@ namespace Assets.Scripts.AI
             AdaptToSceneChanges();
             navigation = GameObject.FindGameObjectWithTag("Player").GetComponent<AmberMount>();
             return new Sequence(new List<Node>() {
-                // debug
-                new WaitFor(0.5f),
-                new SwitchAmberMount(_interactions.chairMount),
-                new WaitFor(0.5f),
-                new SwitchAmberMount(navigation),
-                //
-
                 new ChangeStoryData<bool>(StoryDatastore.Instance.WearingChefHat, true),
                 new AmberNoticeRecipe(this, _interactions.FloatingRecipe),
                 new WaitFor(0.5f),

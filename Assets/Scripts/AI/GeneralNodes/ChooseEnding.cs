@@ -29,12 +29,19 @@ namespace Assets.Scripts.AI.GeneralNodes
                 StoryDatastore.Instance.ChosenEnding.Value = chosenEnding;
                 if (StoryDatastore.Instance.GoodSoupPuzzleSolved.Value && chosenEnding != Ending.BURNT_DOWN)
                 {
-                    StoryDatastore.Instance.ChosenEnding.Value = Ending.GOOD_SOUP;
-                    SceneManager.LoadScene("GoodSoupCutscene");
+                    if (StoryDatastore.Instance.FoodQuality.Value < 0f)
+                    {
+                        StoryDatastore.Instance.ChosenEnding.Value = Ending.MID_SOUP;
+                    }
+                    else {
+                        StoryDatastore.Instance.ChosenEnding.Value = Ending.GOOD_SOUP;
+                        SceneManager.LoadScene("GoodSoupCutscene");
+                    }
+
                     state = NodeState.SUCCESS;
                     return NodeState.SUCCESS;
                 }
-                else if (StoryDatastore.Instance.EmailState.Value == ComputerHUD.EmailState.NICE_EMAIL_CONFIRMED)
+                else if (StoryDatastore.Instance.EmailState.Value == ComputerHUD.EmailState.NICE_EMAIL_CONFIRMED && StoryDatastore.Instance.FoodQuality.Value > 5f)
                 {
                     StoryDatastore.Instance.ChosenEnding.Value = Ending.ACADEMIC_WEAPON;
                 }
