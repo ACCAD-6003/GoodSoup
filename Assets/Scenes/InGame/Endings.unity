@@ -1458,8 +1458,8 @@ MonoBehaviour:
   ShrinkScale: 1
   EnlargeDuration: 0.25
   ShrinkDuration: 0.25
-  audioSource: {fileID: 0}
-  starSound: {fileID: 0}
+  audioSource: {fileID: 8408854040720703209}
+  starSound: {fileID: 8300000, guid: 09d4dd9576fbc5646af7989d197fc655, type: 3}
 --- !u!1 &1422947613
 GameObject:
   m_ObjectHideFlags: 0
