@@ -293,7 +293,7 @@ MonoBehaviour:
       Data: ACADEMIC WEAPON
     - Name: Description
       Entry: 1
-      Data: AMBER IS ON THE TRACK FOR SUCCESS IN CULINARY SCHOOL!
+      Data: AMBER IS ON THE TRACK FOR SUCCESS IN SCHOOL!
     - Name: DoBetterMessage
       Entry: 1
       Data: YOU FEEL AS THOUGH YOU COULD DO SOMETHING MORE.
@@ -365,7 +365,7 @@ MonoBehaviour:
       Data: MID SOUP
     - Name: Description
       Entry: 1
-      Data: YOU PUSHED AMBER TO MAKE SOUP BUT MESSED IT UP
+      Data: AMBER MADE SOUP BUT YOU MESSED IT UP
     - Name: DoBetterMessage
       Entry: 6
       Data: 

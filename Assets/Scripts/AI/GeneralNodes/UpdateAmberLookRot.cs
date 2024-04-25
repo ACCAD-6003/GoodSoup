@@ -18,7 +18,7 @@ public class UpdateAmberLookRot : Node {
     {
         if (!set)
         {
-            _grid.SetLookRot(_dir);
+            _grid.char_s.SetArbitraryRot(_dir);
             set = true;
         }
         state = NodeState.SUCCESS;

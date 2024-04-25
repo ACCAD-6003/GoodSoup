@@ -35,6 +35,10 @@ namespace Assets.Scripts.AI
                 new AmberNoticeRecipe(this, _interactions.FloatingRecipe),
                 new WaitFor(0.5f),
 
+/*                new SwitchAmberMount(_interactions.chairMount),
+                new WaitFor(0.5f),
+                new SwitchAmberMount(navigation),*/
+
                 new WrapperNode(new SkipIfStoryDatastoreState<bool>(StoryDatastore.Instance.GoodSoupPuzzleSolved, true), new List<Node>() {
                     CreateKitchenSeq(false)
                 }),
@@ -64,6 +68,8 @@ namespace Assets.Scripts.AI
 
                     SitDownSequence(),
 
+                    new WaitFor(0.5f),
+                    new MoveToTile(_interactions.Grid, _interactions.StoveOpen.AssociatedTile),
                     new PerformAmberInteraction(_interactions.MovePotFromTableToBurner.AmberInteraction),
                     new ChangeStoryData<bool>(StoryDatastore.Instance.ActivelyCooking, true),
 
@@ -84,7 +90,9 @@ namespace Assets.Scripts.AI
 
                     new PerformAmberInteraction(_interactions.MovePotFromBurnerToDinnerTable.AmberInteraction),
 
-                    EndingSequence()
+                    EndingSequence(),
+
+                    new WaitFor(5f)
                 });
             }
             return new Sequence(new List<Node>() {

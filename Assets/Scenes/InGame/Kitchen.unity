@@ -15437,7 +15437,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-4942348
+  m_Name: pb_Mesh-434938
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -15830,7 +15830,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh1253826
+  m_Name: pb_Mesh267058
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -25123,6 +25123,143 @@ Transform:
   m_Father: {fileID: 261825033}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &535476675
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 535476678}
+  - component: {fileID: 535476677}
+  - component: {fileID: 535476676}
+  m_Layer: 0
+  m_Name: PotHeating
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &535476676
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 535476675}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 288a56ce4c1ca8c4b83311d655249b00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: particleCountPerTemp
+      Entry: 7
+      Data: 0|System.Collections.Generic.Dictionary`2[[HeatSetting, Assembly-CSharp],[System.Int32,
+        mscorlib]], mscorlib
+    - Name: comparer
+      Entry: 7
+      Data: 1|System.Collections.Generic.EnumEqualityComparer`1[[HeatSetting, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 12
+      Data: 3
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 0
+    - Name: $v
+      Entry: 3
+      Data: 5
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 1
+    - Name: $v
+      Entry: 3
+      Data: 15
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 2
+    - Name: $v
+      Entry: 3
+      Data: 50
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+--- !u!114 &535476677
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 535476675}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6239c46bbc044824ea7c404540452d13, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TempCanvas: {fileID: 1689672126}
+  particles: {fileID: 4340907998976327682}
+  setting: 0
+  TempParticleDictionary: {fileID: 535476676}
+  ct: {fileID: 1508312666}
+  src: {fileID: 0}
+  fireAlarm: {fileID: 0}
+  isOven: 0
+  SmokeFillRoom: {fileID: 0}
+--- !u!4 &535476678
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 535476675}
+  m_LocalRotation: {x: 0.0005135315, y: -0.0000044744047, z: -0.00871268, w: 0.9999619}
+  m_LocalPosition: {x: -2.938, y: 3.6012, z: 5.616}
+  m_LocalScale: {x: 0.3755488, y: 0.37554872, z: 0.37554872}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &540738256
 GameObject:
   m_ObjectHideFlags: 0
@@ -26465,7 +26602,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-4941918
+  m_Name: pb_Mesh-434508
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -26715,7 +26852,7 @@ Transform:
   - {fileID: 518363341}
   - {fileID: 361292914}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &604347282
 GameObject:
@@ -59371,7 +59508,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh1251336
+  m_Name: pb_Mesh264554
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -63893,110 +64030,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.9792924, y: 0.6144302, z: 1.0613955}
   m_Center: {x: -0.4896462, y: -0.1927849, z: -0.055169478}
---- !u!114 &1508312670
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1508312659}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6239c46bbc044824ea7c404540452d13, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  TempCanvas: {fileID: 1689672126}
-  particles: {fileID: 4340907998976327682}
-  setting: 0
-  TempParticleDictionary: {fileID: 1508312671}
-  ct: {fileID: 0}
-  src: {fileID: 0}
-  fireAlarm: {fileID: 0}
-  isOven: 0
-  SmokeFillRoom: {fileID: 0}
---- !u!114 &1508312671
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1508312659}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 288a56ce4c1ca8c4b83311d655249b00, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  serializationData:
-    SerializedFormat: 2
-    SerializedBytes: 
-    ReferencedUnityObjects: []
-    SerializedBytesString: 
-    Prefab: {fileID: 0}
-    PrefabModificationsReferencedUnityObjects: []
-    PrefabModifications: []
-    SerializationNodes:
-    - Name: particleCountPerTemp
-      Entry: 7
-      Data: 0|System.Collections.Generic.Dictionary`2[[HeatSetting, Assembly-CSharp],[System.Int32,
-        mscorlib]], mscorlib
-    - Name: comparer
-      Entry: 7
-      Data: 1|System.Collections.Generic.EnumEqualityComparer`1[[HeatSetting, Assembly-CSharp]],
-        mscorlib
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 12
-      Data: 3
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 3
-      Data: 0
-    - Name: $v
-      Entry: 3
-      Data: 5
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 3
-      Data: 1
-    - Name: $v
-      Entry: 3
-      Data: 15
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 3
-      Data: 2
-    - Name: $v
-      Entry: 3
-      Data: 50
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
 --- !u!1 &1508714182
 GameObject:
   m_ObjectHideFlags: 0
@@ -77988,7 +78021,7 @@ Transform:
   - {fileID: 1386354592}
   - {fileID: 1501850436}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1630549061
 MonoBehaviour:
@@ -85895,6 +85928,10 @@ PrefabInstance:
       propertyPath: m_VersionIndex
       value: 561
       objectReference: {fileID: 0}
+    - target: {fileID: 4340907998508011334, guid: 648bb324154feac42a5dff35f28d1fc0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4340907998702629700, guid: 648bb324154feac42a5dff35f28d1fc0, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -93067,7 +93104,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh1253148
+  m_Name: pb_Mesh266376
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -99621,7 +99658,7 @@ Transform:
   - {fileID: 514797335}
   - {fileID: 1488337116}
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2135651233
 GameObject:
@@ -100464,7 +100501,7 @@ Transform:
   m_Children:
   - {fileID: 3574035859249924121}
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 180}
 --- !u!23 &461072747422679462
 MeshRenderer:

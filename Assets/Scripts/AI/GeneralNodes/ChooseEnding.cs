@@ -45,6 +45,8 @@ namespace Assets.Scripts.AI.GeneralNodes
                     state = NodeState.SUCCESS;
                     return NodeState.SUCCESS;
                 }
+                Debug.Log(StoryDatastore.Instance.EmailState.Value + " EMAIL STATE");
+                Debug.Log(StoryDatastore.Instance.FoodQuality.Value + " FOOD QUALITY");
                 if (StoryDatastore.Instance.EmailState.Value == ComputerHUD.EmailState.NICE_EMAIL_CONFIRMED && StoryDatastore.Instance.FoodQuality.Value > 2.5f)
                 {
                     StoryDatastore.Instance.ChosenEnding.Value = Ending.ACADEMIC_WEAPON;

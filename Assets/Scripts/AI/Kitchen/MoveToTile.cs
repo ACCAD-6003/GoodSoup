@@ -18,6 +18,7 @@ namespace Assets.Scripts.AI.Kitchen
         bool _targetSet = false, _destReached = false;
         private tile _tile;
         private Vector3 _dirAtEnd;
+        bool rotateAtTheEnd = false;
         public MoveToTile(grid_manager grid, tile tile) {
             _grid = grid;
             _tile = tile;
@@ -25,10 +26,14 @@ namespace Assets.Scripts.AI.Kitchen
         public MoveToTile(grid_manager grid, tile tile, Vector3 dirAtEnd) {
             _grid = grid;
             _tile = tile;
-            _grid.SetLookRot(_dirAtEnd);
+            _dirAtEnd = dirAtEnd;
+            rotateAtTheEnd = true;
         }
         private void ReachedDest() {
             _destReached = true;
+            if (rotateAtTheEnd) {
+                _grid.char_s.SetArbitraryRot(_dirAtEnd);
+            }
         }
         public override NodeState Evaluate()
         {

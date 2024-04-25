@@ -30,14 +30,19 @@ public class HeatingDevice : MonoBehaviour
     [System.Obsolete]
     void Update()
     {
-        if (!cooking && StoryDatastore.Instance.ActivelyCooking.Value && !StoryDatastore.Instance.GoodSoupPuzzleSolved.Value)
+        if (!cooking && StoryDatastore.Instance.ActivelyCooking.Value)
         {
-            // start cooking
-            cooking = true;
-            TempCanvas.SetActive(true);
-            particles.emissionRate = TempParticleDictionary.particleCountPerTemp[setting];
-            particles.Play();
-            ct.EndAction();
+            if ((isOven && !StoryDatastore.Instance.GoodSoupPuzzleSolved.Value) || (!isOven && StoryDatastore.Instance.GoodSoupPuzzleSolved.Value)) {
+                // start cooking
+                cooking = true;
+                TempCanvas.SetActive(true);
+                particles.emissionRate = TempParticleDictionary.particleCountPerTemp[setting];
+                particles.Play();
+                ct.EndAction();
+                timeUnderHeat[HeatSetting.LOW_TEMP] = 0f;
+                timeUnderHeat[HeatSetting.MEDIUM_TEMP] = 0f;
+                timeUnderHeat[HeatSetting.HIGH_TEMP] = 0f;
+            }
         }
         else if (cooking && !StoryDatastore.Instance.ActivelyCooking.Value)
         {
@@ -54,35 +59,40 @@ public class HeatingDevice : MonoBehaviour
                     mostTimeSpent = heatSetting.Value;
                 } 
             }
+            Debug.Log("I am an oven: " + isOven);
             switch (settingWithMostTimeSpentOnIt)
             {
                 case HeatSetting.HIGH_TEMP:
+                    Debug.Log("Most time spent on high tep");
                     StoryDatastore.Instance.FoodQuality.Value -= mostTimeSpent;
                     break;
                 case HeatSetting.MEDIUM_TEMP:
+                    Debug.Log("Most time spent on med tep");
                     StoryDatastore.Instance.FoodQuality.Value -= mostTimeSpent;
                     break;
                 case HeatSetting.LOW_TEMP:
+                    Debug.Log("Most time spent on low tep");
                     StoryDatastore.Instance.FoodQuality.Value += 5f;
                     break;
             }
+            Debug.Log("LOW TIME: " + timeUnderHeat[HeatSetting.LOW_TEMP]);
+            Debug.Log("MED TIME: " + timeUnderHeat[HeatSetting.MEDIUM_TEMP]);
+            Debug.Log("HIGH TIME: " + timeUnderHeat[HeatSetting.HIGH_TEMP]);
         }
-        else {
-            if (StoryDatastore.Instance.HeatSetting.Value != setting) {
-                particles.emissionRate = TempParticleDictionary.particleCountPerTemp[StoryDatastore.Instance.HeatSetting.Value];
-                if (setting == HeatSetting.HIGH_TEMP) { 
-                    // kill particles
-                }
-                setting = StoryDatastore.Instance.HeatSetting.Value;
+        if (cooking && StoryDatastore.Instance.HeatSetting.Value != setting) {
+            particles.emissionRate = TempParticleDictionary.particleCountPerTemp[StoryDatastore.Instance.HeatSetting.Value];
+            if (setting == HeatSetting.HIGH_TEMP) { 
+                // kill particles
             }
-            timeUnderHeat[setting] += Time.deltaTime;
-            if (timeUnderHeat[HeatSetting.HIGH_TEMP] > 10f && isOven && notAlreadyTransitioningAway) {
-                SmokeFillRoom.SetActive(true);
-                src.PlayOneShot(fireAlarm);
-                notAlreadyTransitioningAway = false;
-                UIManager.Instance.DisplaySimpleBubbleForSeconds(UIElements.BubbleIcon.OK_IM_COMING, 4f);
-                StartCoroutine(TransitionAway());
-            }
+            setting = StoryDatastore.Instance.HeatSetting.Value;
+        }
+        timeUnderHeat[setting] += Time.deltaTime;
+        if (timeUnderHeat[HeatSetting.HIGH_TEMP] > 10f && isOven && notAlreadyTransitioningAway) {
+            SmokeFillRoom.SetActive(true);
+            src.PlayOneShot(fireAlarm);
+            notAlreadyTransitioningAway = false;
+            UIManager.Instance.DisplaySimpleBubbleForSeconds(UIElements.BubbleIcon.OK_IM_COMING, 4f);
+            StartCoroutine(TransitionAway());
         }
         
     }
