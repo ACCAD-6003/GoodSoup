@@ -85,8 +85,8 @@ MonoBehaviour:
       Entry: 1
       Data: RESPONSIBILITIES SCHMONSIBILITIES!
     - Name: Hint
-      Entry: 6
-      Data: 
+      Entry: 1
+      Data: AMBER WAS UP TOO LATE LAST NIGHT...
     - Name: imageSprite
       Entry: 10
       Data: 0
@@ -121,8 +121,8 @@ MonoBehaviour:
       Entry: 1
       Data: WOW. YOU REALLY KNOW HOW TO FREAK HER OUT.
     - Name: Hint
-      Entry: 6
-      Data: 
+      Entry: 1
+      Data: MIRRORS, MAGNETS, AND RECIPES, OH MY!
     - Name: imageSprite
       Entry: 10
       Data: 2
@@ -157,8 +157,8 @@ MonoBehaviour:
       Entry: 1
       Data: AMBER HAD A GREAT DAY -- NOT A LIFE-CHANGING DAY THOUGH.
     - Name: Hint
-      Entry: 6
-      Data: 
+      Entry: 1
+      Data: DO CHORES BEFORE AMBER DOES
     - Name: imageSprite
       Entry: 10
       Data: 4
@@ -193,8 +193,8 @@ MonoBehaviour:
       Entry: 1
       Data: YOU'RE A FULL BLOWN ASSHOLE. CONGRATS?
     - Name: Hint
-      Entry: 6
-      Data: 
+      Entry: 1
+      Data: GIRL TORTURE SIMULATOR TIME!
     - Name: imageSprite
       Entry: 10
       Data: 6
@@ -230,7 +230,7 @@ MonoBehaviour:
       Data: YOU ARE A SOCIOPATH.. SHE WAS SO CLOSE TO GRADUATING.
     - Name: Hint
       Entry: 1
-      Data: YEAH.. YOU HAVE TO RUIN HER LIFE FOR THIS ONE.
+      Data: RUIN HER LIFE VIA EMAIL.
     - Name: imageSprite
       Entry: 10
       Data: 8
@@ -265,8 +265,8 @@ MonoBehaviour:
       Entry: 1
       Data: AMBER WILL REMEMBER THIS DAY.
     - Name: Hint
-      Entry: 6
-      Data: 
+      Entry: 1
+      Data: GRANDMA ALWAYS HAS THE BEST RECIPE.
     - Name: imageSprite
       Entry: 10
       Data: 10
@@ -301,8 +301,8 @@ MonoBehaviour:
       Entry: 1
       Data: YOU HAVE DONE EVERYTHING YOU CAN TO HELP!
     - Name: Hint
-      Entry: 6
-      Data: 
+      Entry: 1
+      Data: A GOOD STUDENT SCHEDULES CLASSES AND COOKS A MEAN SOUFFLE.
     - Name: imageSprite
       Entry: 10
       Data: 12
@@ -335,7 +335,7 @@ MonoBehaviour:
       Data: 
     - Name: FiveStarMessage
       Entry: 1
-      Data: AMBERS WAS NOT HARMED... FIRE FIGHTERS ARRIVED JUST IN TIME.
+      Data: AMBER WAS NOT HARMED... FIRE FIGHTERS ARRIVED JUST IN TIME.
     - Name: Hint
       Entry: 1
       Data: BRING THE HEAT!
@@ -373,8 +373,8 @@ MonoBehaviour:
       Entry: 1
       Data: SHE WAS SO CLOSE TO A SPECIAL DAY.
     - Name: Hint
-      Entry: 6
-      Data: 
+      Entry: 1
+      Data: MAKE IT LIKE GRANDMA DOES, BUT NOT QUITE AS GOOD.
     - Name: imageSprite
       Entry: 10
       Data: 16
@@ -409,8 +409,8 @@ MonoBehaviour:
       Entry: 1
       Data: GO OUTSIDE! BREATHE SOME FRESH AIR!
     - Name: Hint
-      Entry: 6
-      Data: 
+      Entry: 1
+      Data: YOU'RE GONNA TRY OVER AND OVER TO GET THIS ONE.
     - Name: imageSprite
       Entry: 10
       Data: 18
@@ -445,8 +445,8 @@ MonoBehaviour:
       Entry: 1
       Data: I GUESS SHE'S GOING TO HAVE TO CALL A LOCKSMITH...
     - Name: Hint
-      Entry: 6
-      Data: 
+      Entry: 1
+      Data: THE RUG IS KEY.
     - Name: imageSprite
       Entry: 10
       Data: 20

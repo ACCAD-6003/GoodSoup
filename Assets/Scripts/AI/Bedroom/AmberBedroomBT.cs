@@ -45,7 +45,7 @@ namespace Assets.Scripts.AI
                     new WrapperNode(new SkipIfStoryDatastoreState<bool>(StoryDatastore.Instance.BooksBlown, true), new List<Node>() {
                         new Sequence(new List<Node>() {
                             new WaitForPlayerInteractionCompleted(interactions.AlarmClock),
-                            new DisplayUIIcon(UI.UIElements.BubbleIcon.ANNOYANCE, 3f),
+                            new DisplayUIIcon(UI.UIElements.BubbleIcon.OK_IM_COMING, 3f),
                         }),
                         new StopFarCryEnding(interactions.switcher),
 
@@ -115,7 +115,7 @@ namespace Assets.Scripts.AI
                     new WaitFor(0.5f),
                     new MoveToTile(interactions.Grid, interactions.Backpack.AssociatedTile),
                     new PerformAmberInteraction(interactions.Backpack.AmberInteraction),
-                    new WrapperNode(new SkipIfStoryDatastoreState<bool>(StoryDatastore.Instance.MoveObjects[214879], true), new List<Node>() {
+                    new WrapperNode(new SkipIfStoryDatastoreState<bool>(StoryDatastore.Instance.MoveObjects[1283493], true), new List<Node>() {
                         new WaitFor(0.5f),
                         new MoveToTile(interactions.Grid, interactions.Key.AssociatedTile),
                         new WaitFor(0.5f),

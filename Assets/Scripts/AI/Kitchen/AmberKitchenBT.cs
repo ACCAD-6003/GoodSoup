@@ -211,8 +211,8 @@ namespace Assets.Scripts.AI
             });
         }
         private Node SitDownSequence() {
-            _interactions.ChairPull.PlayerInteraction.PutInProgress();
-            _interactions.AlarmTable.PlayerInteraction.PutInProgress();
+            _interactions.ChairPull.PlayerInteraction.EndAction();
+            _interactions.AlarmTable.PlayerInteraction.EndAction();
             return new Sequence(new List<Node>() {
                 GoToChair(),
                 new Selector(new List<Node>()
@@ -231,9 +231,11 @@ namespace Assets.Scripts.AI
                         new DisplayUIIcon(UI.UIElements.BubbleIcon.ANNOYANCE, 3f),
                         new ImpactStoryData(StoryDatastore.Instance.Annoyance, 1f),
                         new SwitchAmberMount(navigation),
+                        new WaitFor(0.25f),
                     }),
                     // Wait and respond to alarm
                     new Sequence( new List<Node>() {
+                        new DisplayUIIcon(UIElements.BubbleIcon.OK_IM_COMING, 3f),
                         new WaitForStoryDataChange(new MovePerformed(_interactions.AlarmTable.PlayerInteraction.interactionId)),
                         new DebugNode(101),
                         new PutInProgress(true, _interactions.ChairPull.PlayerInteraction),
@@ -251,7 +253,8 @@ namespace Assets.Scripts.AI
                         new ImpactStoryData(StoryDatastore.Instance.Happiness, 10f),
                         new PutInProgress(true, _interactions.ChairPull.PlayerInteraction),
                         new PutInProgress(true, _interactions.AlarmTable.PlayerInteraction),
-                        new SwitchAmberMount(navigation)
+                        new SwitchAmberMount(navigation),
+                        new WaitFor(0.25f),
                     }),
                 })
             });

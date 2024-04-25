@@ -3492,13 +3492,13 @@ MonoBehaviour:
   - blocked: 1
     tile_s: {fileID: 430273494}
     num: 0
-  - blocked: 0
+  - blocked: 1
     tile_s: {fileID: 1996490541}
     num: 0
-  - blocked: 0
+  - blocked: 1
     tile_s: {fileID: 1592673717}
     num: 0
-  - blocked: 0
+  - blocked: 1
     tile_s: {fileID: 0}
     num: 0
   db_path_lowest: []
@@ -3593,7 +3593,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &274892943
 Transform:
   m_ObjectHideFlags: 0
@@ -4318,6 +4318,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AssociatedTile: {fileID: 0}
+  CanInteractWhileAmberLooking: 0
 --- !u!114 &292165038
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9349,7 +9350,7 @@ MonoBehaviour:
   - blocked: 0
     tile_s: {fileID: 665349516}
     num: 0
-  - blocked: 0
+  - blocked: 1
     tile_s: {fileID: 1996490541}
     num: 0
   db_path_lowest: []
@@ -11178,7 +11179,7 @@ MonoBehaviour:
   mr: {fileID: 938870264}
   db_chars: []
   db_neighbors:
-  - blocked: 0
+  - blocked: 1
     tile_s: {fileID: 1996490541}
     num: 0
   - blocked: 0
@@ -13552,7 +13553,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &834007621
 Transform:
   m_ObjectHideFlags: 0
@@ -14139,7 +14140,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &918625084
 Transform:
   m_ObjectHideFlags: 0
@@ -15062,7 +15063,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-1685868
+  m_Name: pb_Mesh715276
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -16007,7 +16008,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1072555372
 Transform:
   m_ObjectHideFlags: 0
@@ -16201,7 +16202,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1104121876
 Transform:
   m_ObjectHideFlags: 0
@@ -18422,6 +18423,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AssociatedTile: {fileID: 0}
+  CanInteractWhileAmberLooking: 0
 --- !u!114 &1339915997
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29774,7 +29776,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1590217542
 Transform:
   m_ObjectHideFlags: 0
@@ -29998,7 +30000,7 @@ MonoBehaviour:
   mr: {fileID: 2028945095}
   db_chars: []
   db_neighbors:
-  - blocked: 0
+  - blocked: 1
     tile_s: {fileID: 270113936}
     num: 0
   - blocked: 0
@@ -30855,7 +30857,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1730988577
 Transform:
   m_ObjectHideFlags: 0
@@ -31203,6 +31205,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AssociatedTile: {fileID: 478051739}
+  CanInteractWhileAmberLooking: 0
 --- !u!114 &1747579989
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -31292,7 +31295,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1774740034
 Transform:
   m_ObjectHideFlags: 0
@@ -31683,6 +31686,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AssociatedTile: {fileID: 0}
+  CanInteractWhileAmberLooking: 0
 --- !u!114 &1779859823
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33353,13 +33357,13 @@ MonoBehaviour:
   - blocked: 1
     tile_s: {fileID: 1880347942}
     num: 0
-  - blocked: 0
+  - blocked: 1
     tile_s: {fileID: 478051739}
     num: 0
-  - blocked: 0
+  - blocked: 1
     tile_s: {fileID: 645476740}
     num: 0
-  - blocked: 0
+  - blocked: 1
     tile_s: {fileID: 270113936}
     num: 0
   db_path_lowest: []
@@ -34440,7 +34444,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2114002201
 Transform:
   m_ObjectHideFlags: 0
