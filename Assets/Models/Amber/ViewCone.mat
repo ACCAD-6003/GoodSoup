@@ -10,6 +10,7 @@ Material:
   m_Name: ViewCone
   m_Shader: {fileID: 4800000, guid: 71d6765ad72e11541bc1448c891bbcf9, type: 3}
   m_ValidKeywords:
+  - COLOR_GRADING_ON
   - PROPIXELIZER_DITHERING_ON
   - USE_OBJECT_POSITION_ON
   m_InvalidKeywords: []
@@ -75,7 +76,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _PaletteLUT:
-        m_Texture: {fileID: 2800000, guid: cb20b3bfa4de9cd4084d3626193b6898, type: 3}
+        m_Texture: {fileID: 2800000, guid: 7c79fc1e27826b44d86a69d57834b602, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _ParallaxMap:
@@ -100,12 +101,12 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - COLOR_GRADING: 0
+    - COLOR_GRADING: 1
     - PROPIXELIZER_DITHERING: 1
     - RECEIVE_SHADOWS: 0
     - USE_OBJECT_POSITION: 1
     - _AlphaClip: 0
-    - _AlphaClipThreshold: 0.116
+    - _AlphaClipThreshold: 0.481
     - _Blend: 0
     - _BumpScale: 1
     - _ClearCoatMask: 0
@@ -116,7 +117,7 @@ Material:
     - _DetailNormalMapScale: 1
     - _DiffuseVertexColorWeight: 1
     - _DstBlend: 0
-    - _EmissiveVertexColorWeight: 0
+    - _EmissiveVertexColorWeight: 0.474
     - _EnvironmentReflections: 1
     - _GlossMapScale: 0
     - _Glossiness: 0
@@ -137,10 +138,10 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - _AmbientLight: {r: 0.9245283, g: 0.8688251, b: 0.2747419, a: 1}
-    - _BaseColor: {r: 1, g: 0.65787435, b: 0, a: 0.15686275}
+    - _BaseColor: {r: 1, g: 0.98396844, b: 0.5911949, a: 0.5176471}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EdgeHighlightColor: {r: 0.7735849, g: 0.7735849, b: 0.34901962, a: 0}
-    - _EmissionColor: {r: 0.990566, g: 0.91546154, b: 0.38781592, a: 1}
+    - _EmissionColor: {r: 1, g: 0.87012994, b: 0, a: 1}
     - _OutlineColor: {r: 1, g: 0.9013416, b: 0.48584908, a: 1}
     - _PixelGridOrigin: {r: 0, g: 0, b: 0, a: 0}
     - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
