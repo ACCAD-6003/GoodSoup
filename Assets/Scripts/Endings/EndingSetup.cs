@@ -149,9 +149,10 @@ public class EndingSetup : SerializedMonoBehaviour
             yield return StartCoroutine(EnlargeAndShrinkTransform(highScoreText.transform, 1.1f, 0.25f, 1f, 0.25f));
             yield return new WaitForSeconds(0.25f);
         }
-
+        src.PlayOneShot(whoosh);
         yield return StartCoroutine(EnlargeAndShrinkTransform(starPerformance.transform, 1.1f, 0.25f, 1f, 0.25f));
         yield return new WaitForSeconds(0.25f);
+        src.PlayOneShot(whoosh);
         yield return StartCoroutine(EnlargeAndShrinkTransform(playAgain.transform, 1.1f, 0.25f, 1f, 0.25f));
         yield return new WaitForSeconds(0.25f);
 /*        StoryDatastore.Instance.ChosenEnding.Value = StoryDatastore.Instance.ChosenEnding.Value + 1;
