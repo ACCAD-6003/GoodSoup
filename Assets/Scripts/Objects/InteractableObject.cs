@@ -13,6 +13,9 @@ public class InteractableObject : MonoBehaviour
     [NonSerialized]
     public Interaction AmberInteraction;
 
+    [SerializeField]
+    public bool CanInteractWhileAmberLooking = false;
+
 
     private void Awake()
     {

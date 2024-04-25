@@ -1,3 +1,4 @@
+using Assets.Scripts.Objects.Interactions;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -32,7 +33,12 @@ public class ObjectInteraction : MonoBehaviour
 
     bool CanInteractWith(InteractableObject o)
     {
-        return o.PlayerInteraction != null && !o.PlayerInteraction.IsInProgress && !IsInAmberSightlines(o);
+        if (o.PlayerInteraction == null)
+        {
+            return false;
+        }
+
+        return (!o.PlayerInteraction.IsInProgress && !IsInAmberSightlines(o)) || o.CanInteractWhileAmberLooking || o.TryGetComponent(out PopUp _);
     }
 
     InteractableObject? GetTarget(CallbackContext c)
