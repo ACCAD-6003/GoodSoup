@@ -17,16 +17,27 @@ MonoBehaviour:
     SerializedBytes: 
     ReferencedUnityObjects:
     - {fileID: 21300000, guid: 6ca58c36804a1ca4681b88dc3cc888e3, type: 3}
+    - {fileID: 8300000, guid: ce0628928da3f4a4c96a66874876fc8c, type: 3}
     - {fileID: 21300000, guid: a4114d2c8c0b2e14898b7acdee3b8bef, type: 3}
+    - {fileID: 8300000, guid: e07a32048ff057f468fad7dc1c2f0833, type: 3}
     - {fileID: 21300000, guid: ad73c79fa672b5c479cfbb4692e67b7c, type: 3}
+    - {fileID: 8300000, guid: 94dfb1582f808fa43b476317bf206215, type: 3}
     - {fileID: 21300000, guid: f4f468c9aa4225f45a465a4df46ddbda, type: 3}
+    - {fileID: 8300000, guid: e5b7e8589dbfe6b49954397a614affe9, type: 3}
     - {fileID: 21300000, guid: ad0dba187f1b55c4a9f57e74e42be2c5, type: 3}
+    - {fileID: 8300000, guid: a9195168440a3384896bc71aae98a8d3, type: 3}
     - {fileID: 21300000, guid: d020223082a77964fbdd12fc66a92e7d, type: 3}
+    - {fileID: 8300000, guid: 5b32cffe5e1fc104d8f5e56bf3206cff, type: 3}
     - {fileID: 21300000, guid: 49f96ed52d3599f44930e3d2f2974a90, type: 3}
+    - {fileID: 8300000, guid: 7d9a988392de97e4ba1a18502f23b0b2, type: 3}
     - {fileID: 21300000, guid: ca2c1aefa553fc84292b9af7ec22ea53, type: 3}
+    - {fileID: 8300000, guid: 5173c636f32405b428f0396aec6411f2, type: 3}
     - {fileID: 21300000, guid: d19099766bdf8a642ab588554b283d3b, type: 3}
+    - {fileID: 8300000, guid: b436f9e3e96f5fa4da18792c4435017d, type: 3}
     - {fileID: 21300000, guid: ab173f182fe05f448b789b1c73ef4f4a, type: 3}
+    - {fileID: 8300000, guid: fd32f4c97cca9064bbbb0a33595c2efa, type: 3}
     - {fileID: 21300000, guid: 8ba1cb90a0dd9444fa0fc0b17cc96320, type: 3}
+    - {fileID: 8300000, guid: 765521735762b4f438ebf0ae6188ae52, type: 3}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -79,6 +90,9 @@ MonoBehaviour:
     - Name: imageSprite
       Entry: 10
       Data: 0
+    - Name: endingAudio
+      Entry: 10
+      Data: 1
     - Name: 
       Entry: 8
       Data: 
@@ -111,7 +125,10 @@ MonoBehaviour:
       Data: 
     - Name: imageSprite
       Entry: 10
-      Data: 1
+      Data: 2
+    - Name: endingAudio
+      Entry: 10
+      Data: 3
     - Name: 
       Entry: 8
       Data: 
@@ -144,7 +161,10 @@ MonoBehaviour:
       Data: 
     - Name: imageSprite
       Entry: 10
-      Data: 2
+      Data: 4
+    - Name: endingAudio
+      Entry: 10
+      Data: 5
     - Name: 
       Entry: 8
       Data: 
@@ -177,7 +197,10 @@ MonoBehaviour:
       Data: 
     - Name: imageSprite
       Entry: 10
-      Data: 3
+      Data: 6
+    - Name: endingAudio
+      Entry: 10
+      Data: 7
     - Name: 
       Entry: 8
       Data: 
@@ -210,7 +233,10 @@ MonoBehaviour:
       Data: YEAH.. YOU HAVE TO RUIN HER LIFE FOR THIS ONE.
     - Name: imageSprite
       Entry: 10
-      Data: 4
+      Data: 8
+    - Name: endingAudio
+      Entry: 10
+      Data: 9
     - Name: 
       Entry: 8
       Data: 
@@ -243,7 +269,10 @@ MonoBehaviour:
       Data: 
     - Name: imageSprite
       Entry: 10
-      Data: 5
+      Data: 10
+    - Name: endingAudio
+      Entry: 10
+      Data: 11
     - Name: 
       Entry: 8
       Data: 
@@ -276,7 +305,10 @@ MonoBehaviour:
       Data: 
     - Name: imageSprite
       Entry: 10
-      Data: 6
+      Data: 12
+    - Name: endingAudio
+      Entry: 10
+      Data: 13
     - Name: 
       Entry: 8
       Data: 
@@ -309,7 +341,10 @@ MonoBehaviour:
       Data: BRING THE HEAT!
     - Name: imageSprite
       Entry: 10
-      Data: 7
+      Data: 14
+    - Name: endingAudio
+      Entry: 10
+      Data: 15
     - Name: 
       Entry: 8
       Data: 
@@ -342,7 +377,10 @@ MonoBehaviour:
       Data: 
     - Name: imageSprite
       Entry: 10
-      Data: 8
+      Data: 16
+    - Name: endingAudio
+      Entry: 10
+      Data: 17
     - Name: 
       Entry: 8
       Data: 
@@ -375,7 +413,10 @@ MonoBehaviour:
       Data: 
     - Name: imageSprite
       Entry: 10
-      Data: 9
+      Data: 18
+    - Name: endingAudio
+      Entry: 10
+      Data: 19
     - Name: 
       Entry: 8
       Data: 
@@ -408,7 +449,10 @@ MonoBehaviour:
       Data: 
     - Name: imageSprite
       Entry: 10
-      Data: 10
+      Data: 20
+    - Name: endingAudio
+      Entry: 10
+      Data: 21
     - Name: 
       Entry: 8
       Data: 
