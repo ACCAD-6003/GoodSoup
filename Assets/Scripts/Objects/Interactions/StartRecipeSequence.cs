@@ -71,6 +71,7 @@ public class StartRecipeSequence : Interaction
         }
         else if (node.node.gameObject.name == "WON")
         {
+            StoryDatastore.Instance.GoodSoupPuzzleSolved.Value = true;
             recipeOnTable.SetActive(true);
             Destroy(recipeInDoor);
             Destroy(floatingRecipe);
@@ -78,7 +79,6 @@ public class StartRecipeSequence : Interaction
             _bookOnTable.enabled = (true);
             src.PlayOneShot(hit);
             FindObjectOfType<CameraShake>().ShakeCamera();
-            StoryDatastore.Instance.GoodSoupPuzzleSolved.Value = true;
             src.PlayOneShot(whoosh);
             EndAction();
             return;

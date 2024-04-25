@@ -27,9 +27,17 @@ namespace Assets.Scripts.AI
         }
         protected override Node SetupTree()
         {
+
             AdaptToSceneChanges();
             navigation = GameObject.FindGameObjectWithTag("Player").GetComponent<AmberMount>();
             return new Sequence(new List<Node>() {
+                // debug
+                new WaitFor(0.5f),
+                new SwitchAmberMount(_interactions.chairMount),
+                new WaitFor(0.5f),
+                new SwitchAmberMount(navigation),
+                //
+
                 new ChangeStoryData<bool>(StoryDatastore.Instance.WearingChefHat, true),
                 new AmberNoticeRecipe(this, _interactions.FloatingRecipe),
                 new WaitFor(0.5f),
@@ -41,16 +49,12 @@ namespace Assets.Scripts.AI
             });
         }
         private Node CreateKitchenSeq(bool isGoodSoup) {
+            _interactions.ChairPull.PlayerInteraction.PutInProgress();
+            _interactions.AlarmTable.PlayerInteraction.PutInProgress();
             if (isGoodSoup) {
-                // reset things
-                StoryDatastore.Instance.ActivelyCooking.Value = false;
-                StoryDatastore.Instance.FoodQuality.Value = 0f;
-                StoryDatastore.Instance.HeatSetting.Value = HeatSetting.LOW_TEMP;
-                _interactions.MoveTrayToBurner.gameObject.SetActive(false);
-                _interactions.MoveTrayToDinnerTable.gameObject.SetActive(false);
-                _interactions.MoveTrayToTable.gameObject.SetActive(false);
-
                 return new Sequence(new List<Node>() {
+                    new ResetKitchen(_interactions),
+
                     OpenPantry(),
 
                     new PerformAmberInteraction(_interactions.MovePotFromCabinetToTable.AmberInteraction),
@@ -100,12 +104,12 @@ namespace Assets.Scripts.AI
 
                 SitDownSequence(),
 
+                GoToOvenOpenAndClose(),
+
                 new PerformAmberInteraction(_interactions.MoveTrayToBurner.AmberInteraction),
                 new ChangeStoryData<bool>(StoryDatastore.Instance.ActivelyCooking, true),
 
                 TendToSink(),
-
-                GoToFridgeOpenAndClose(),
 
                 SitDownSequence(),
 
@@ -211,53 +215,117 @@ namespace Assets.Scripts.AI
             });
         }
         private Node SitDownSequence() {
-            _interactions.ChairPull.PlayerInteraction.EndAction();
-            _interactions.AlarmTable.PlayerInteraction.EndAction();
             return new Sequence(new List<Node>() {
                 GoToChair(),
-                new Selector(new List<Node>()
-                {
-                    // Wait and respond to chair falling
-                    new Sequence( new List<Node>() {
-                        new WaitForStoryDataChange(new MovePerformed(_interactions.ChairPull.PlayerInteraction.interactionId)),
-                        new SwitchAmberMount(_interactions.amberFall),
-                        new CameraShakeNode(),
-                        new DebugNode(100),
-                        new WaitFor(1.5f),
-                        new PerformAmberInteraction(_interactions.ChairPull.AmberInteraction),
-                        new PutInProgress(true, _interactions.ChairPull.PlayerInteraction),
-                        new PutInProgress(true, _interactions.AlarmTable.PlayerInteraction),
-                        new DebugNode(666),
-                        new DisplayUIIcon(UI.UIElements.BubbleIcon.ANNOYANCE, 3f),
-                        new ImpactStoryData(StoryDatastore.Instance.Annoyance, 1f),
-                        new SwitchAmberMount(navigation),
-                        new WaitFor(0.25f),
-                    }),
+                new PutAlarmClockAndChairNotInProgress(_interactions),
+                new RunFirstSequenceWhereSkipConditionIsTrue(new Dictionary<ISkipCondition, Sequence>()
+                    {
+                        // Wait and respond to chair falling
+                        {   new MovePerformed(_interactions.ChairPull.PlayerInteraction.interactionId), 
+                            new Sequence(new List<Node>() {
+                                new SwitchAmberMount(_interactions.amberFall),
+                                new CameraShakeNode(),
+                                new DebugNode(100),
+                                new DisplayUIIcon(UI.UIElements.BubbleIcon.ANNOYANCE, 3f),
+                                new ImpactStoryData(StoryDatastore.Instance.Annoyance, 1f),
+                                new WaitFor(1.5f),
+                                new SwitchAmberMount(navigation),
+                                new PerformAmberInteraction(_interactions.ChairPull.AmberInteraction),
+                                new PutInProgress(true, _interactions.ChairPull.PlayerInteraction),
+                                new PutInProgress(true, _interactions.AlarmTable.PlayerInteraction),
+                                new WaitFor(0.25f),
+                        }) 
+                    },
                     // Wait and respond to alarm
-                    new Sequence( new List<Node>() {
-                        new DisplayUIIcon(UIElements.BubbleIcon.OK_IM_COMING, 3f),
-                        new WaitForStoryDataChange(new MovePerformed(_interactions.AlarmTable.PlayerInteraction.interactionId)),
-                        new DebugNode(101),
-                        new PutInProgress(true, _interactions.ChairPull.PlayerInteraction),
-                        new SwitchAmberMount(navigation),
-                        new MoveToTile(_interactions.Grid, _interactions.AlarmTable.AssociatedTile),
-                        new WaitFor(0.5f),
-                        new PerformAmberInteraction(_interactions.AlarmTable.AmberInteraction),
-                        new PutInProgress(true, _interactions.AlarmTable.PlayerInteraction)
-                    }),
+                        {  new MovePerformed(_interactions.AlarmTable.PlayerInteraction.interactionId), 
+                            new Sequence(new List<Node>() {
+                                new DisplayUIIcon(UIElements.BubbleIcon.OK_IM_COMING, 3f),
+                                new DebugNode(101),
+                                new PutInProgress(true, _interactions.ChairPull.PlayerInteraction),
+                                new SwitchAmberMount(navigation),
+                                new MoveToTile(_interactions.Grid, _interactions.AlarmTable.AssociatedTile),
+                                new WaitFor(0.5f),
+                                new PerformAmberInteraction(_interactions.AlarmTable.AmberInteraction),
+                                new PutInProgress(true, _interactions.AlarmTable.PlayerInteraction)
+                            })
+                        },
                     // Wait and respond to GOOD SOUP!
-                    new Sequence( new List<Node>() {
-                        new WaitForStoryDataChange(new GoodSouped()),
-                        new DebugNode(102),
-                        new DisplayUIIcon(UI.UIElements.BubbleIcon.HAPPY, 5f),
-                        new ImpactStoryData(StoryDatastore.Instance.Happiness, 10f),
-                        new PutInProgress(true, _interactions.ChairPull.PlayerInteraction),
-                        new PutInProgress(true, _interactions.AlarmTable.PlayerInteraction),
-                        new SwitchAmberMount(navigation),
-                        new WaitFor(0.25f),
-                    }),
+                    { new GoodSouped(), new Sequence( new List<Node>() {
+                            new DisplayUIIcon(UI.UIElements.BubbleIcon.HAPPY, 5f),
+                            new ImpactStoryData(StoryDatastore.Instance.Happiness, 10f),
+                            new PutInProgress(true, _interactions.ChairPull.PlayerInteraction),
+                            new PutInProgress(true, _interactions.AlarmTable.PlayerInteraction),
+                            new SwitchAmberMount(navigation),
+                            new WaitFor(0.25f),
+                    })    
+                    },
                 })
             });
+        }
+        public class ResetKitchen : Node {
+            bool _evaluated = false;
+            KitchenInteractions _interactions;
+            public ResetKitchen(KitchenInteractions interactions) {
+                _interactions = interactions;
+            }
+            public override NodeState Evaluate()
+            {
+                if (!_evaluated) {
+                    _evaluated = true;
+                    StoryDatastore.Instance.ActivelyCooking.Value = false;
+                    StoryDatastore.Instance.FoodQuality.Value = 0f;
+                    StoryDatastore.Instance.HeatSetting.Value = HeatSetting.LOW_TEMP;
+                    _interactions.MoveTrayToBurner.gameObject.SetActive(false);
+                    _interactions.MoveTrayToDinnerTable.gameObject.SetActive(false);
+                    _interactions.MoveTrayToTable.gameObject.SetActive(false);
+                }
+                state = NodeState.SUCCESS;
+                return NodeState.SUCCESS;
+            }
+        }
+        public class PutAlarmClockAndChairNotInProgress : Node
+        {
+            bool _evaluated = false;
+            KitchenInteractions _interactions;
+            public PutAlarmClockAndChairNotInProgress(KitchenInteractions _interactions) {
+                this._interactions = _interactions;
+            }
+            public override NodeState Evaluate()
+            {
+                if (!_evaluated) {
+                    _evaluated = true;
+                    _interactions.ChairPull.PlayerInteraction.EndAction();
+                    _interactions.AlarmTable.PlayerInteraction.EndAction();
+                }
+                state = NodeState.SUCCESS;
+                return NodeState.SUCCESS;
+            }
+        }
+        public class RunFirstSequenceWhereSkipConditionIsTrue : Node {
+            private Dictionary<ISkipCondition, Sequence> dictionary;
+            Sequence sequenceWeAreRunning = null;
+            public RunFirstSequenceWhereSkipConditionIsTrue(Dictionary<ISkipCondition, Sequence> dictionary) {
+                this.dictionary = dictionary;
+            }
+            public override NodeState Evaluate()
+            {
+                if (sequenceWeAreRunning == null)
+                {
+                    foreach (var sequence in dictionary) {
+                        if (sequence.Key.ShouldSkip()) {
+                            sequenceWeAreRunning = sequence.Value;
+                            break;
+                        }
+                    }
+                    state = NodeState.RUNNING;
+                    return NodeState.RUNNING;
+                }
+                else {
+                    state = sequenceWeAreRunning.Evaluate();
+                    return state;
+                }
+            }
+
         }
         public class EvaluateFood : Node
         {
