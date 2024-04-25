@@ -12,7 +12,7 @@ namespace Assets.Scripts.AI
 {
     public class AmberKitchenBT : BehaviorTree.Tree
     {
-        bool noticedLetters;
+        bool noticedLetters = false;
         [SerializeField]
         KitchenInteractions _interactions;
         AmberMount navigation;
@@ -124,7 +124,9 @@ namespace Assets.Scripts.AI
 
                 new PerformAmberInteraction(_interactions.MoveTrayToDinnerTable.AmberInteraction),
 
-                EndingSequence()
+                EndingSequence(),
+
+                new WaitFor(5f)
             });
         }
         private Node TendToSink() {
@@ -338,6 +340,7 @@ namespace Assets.Scripts.AI
                     if (StoryDatastore.Instance.FoodQuality.Value < 0f)
                     {
                         UIManager.Instance.DisplaySimpleBubbleForSeconds(UIElements.BubbleIcon.DAMN_THIS_FOOD_BLOWS, 3f);
+                        StoryDatastore.Instance.Annoyance.Value += 3f;
                     }
                     else if (StoryDatastore.Instance.FoodQuality.Value > 0f) 
                     {
@@ -421,25 +424,6 @@ namespace Assets.Scripts.AI
                 return state;
             }
         }
-        class ImpactStoryData : Node {
-            float impact;
-            StoryData<float> storyData;
-            bool _performed = false;
-            public ImpactStoryData(StoryData<float> data, float impact) {
-                this.impact = impact;
-                storyData = data;
-            }
-            public override NodeState Evaluate()
-            {
-                if(!_performed)
-                {
-                    storyData.Value += impact;
-                    _performed = true;
-                }
-                state = NodeState.SUCCESS;
-                return state;
-            }
-        } 
         class PutInProgress : Node {
             bool _inProgress, _performed = false;
             Interaction _interaction;
@@ -481,5 +465,26 @@ namespace Assets.Scripts.AI
                 return StoryDatastore.Instance.GoodSoupPuzzleSolved.Value;
             }
         }
+    }
+}
+public class ImpactStoryData : Node
+{
+    float impact;
+    StoryData<float> storyData;
+    bool _performed = false;
+    public ImpactStoryData(StoryData<float> data, float impact)
+    {
+        this.impact = impact;
+        storyData = data;
+    }
+    public override NodeState Evaluate()
+    {
+        if (!_performed)
+        {
+            storyData.Value += impact;
+            _performed = true;
+        }
+        state = NodeState.SUCCESS;
+        return state;
     }
 }

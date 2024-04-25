@@ -19,6 +19,7 @@ public class MainSceneLoading : SerializedMonoBehaviour
     private static MainSceneLoading instance;
     public AmberRoom CurrAdditiveScene;
     public AmberRoom DefaultStartingScene = AmberRoom.BEDROOM;
+    public GameObject LoadingScreen;
 
     public static MainSceneLoading Instance
     {

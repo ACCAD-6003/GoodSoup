@@ -14,6 +14,7 @@ namespace Assets.Scripts.AI.GeneralNodes
             if (!hairBrushed) {
                 hairBrushed = true;
                 // Plug Amber Hair Changing logic into here
+                StoryDatastore.Instance.Happiness.Value += 1f;
                 StoryDatastore.Instance.AmberHairOption.Value = AmberVisual.HairOption.CLEAN;
             }
             return NodeState.SUCCESS;

@@ -92,6 +92,12 @@ namespace Assets.Scripts.AI
                                 new SwitchAmberMount(navigation)
                             }
                         ),
+                        new WrapperNode(
+                            new SkipIfStoryDatastoreState<bool>(StoryDatastore.Instance.ResultOfEvaluation, false),
+                            new List<Node>() {
+                                new ImpactStoryData(StoryDatastore.Instance.Annoyance, 3f)
+                            }
+                        ),
                         new WaitFor(0.3f),
                         new SetGameObjectActive(phone, false),
                         new WaitFor(0.5f),

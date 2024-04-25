@@ -1,6 +1,6 @@
 ﻿using BehaviorTree;
 using System.Collections.Generic;
-using Unity.VisualScripting;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 public enum Ending { FAR_CRY, PARANOID, GOOD_ENDING, BAD_ENDING, KICKED_OUT_OF_COLLEGE, GOOD_SOUP , ACADEMIC_WEAPON, BURNT_DOWN, MID_SOUP, LOCKED_OUT, TOUCH_GRASS, NULL }
 
@@ -16,6 +16,10 @@ namespace Assets.Scripts.AI.GeneralNodes
         };
         public override NodeState Evaluate()
         {
+            Debug.Log("FINAL ANNOYANCE: " + StoryDatastore.Instance.Annoyance.Value);
+            Debug.Log("FINAL HAPPINESS: " + StoryDatastore.Instance.Happiness.Value);
+            Debug.Log("FINAL PARANOIA: " + StoryDatastore.Instance.Paranoia.Value);
+
             if (!_chosen) {
                 _chosen = true;
                 float maxStat = -1f;
