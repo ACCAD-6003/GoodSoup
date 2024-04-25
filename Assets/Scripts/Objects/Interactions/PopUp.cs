@@ -16,6 +16,8 @@ namespace Assets.Scripts.Objects.Interactions
             poppedUp = !poppedUp;
             popUp.SetActive(poppedUp);
             Time.timeScale = poppedUp ? 0 : 1;
+            var objectInteraction = FindObjectOfType<ObjectInteraction>();
+            objectInteraction.PopUpOpened = poppedUp;
             EndAction();
         }
 

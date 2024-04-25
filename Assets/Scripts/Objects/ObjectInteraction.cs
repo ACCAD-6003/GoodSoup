@@ -16,7 +16,9 @@ public class ObjectInteraction : MonoBehaviour
     AudioSource playerInteractSoundSource;
 
     [SerializeField]
-    AudioClip playerInteractBlip; 
+    AudioClip playerInteractBlip;
+
+    public bool PopUpOpened = false;
     #nullable enable
 
     float searchDistance = 100f;
@@ -33,7 +35,7 @@ public class ObjectInteraction : MonoBehaviour
 
     bool CanInteractWith(InteractableObject o)
     {
-        if (o.PlayerInteraction == null)
+        if (o.PlayerInteraction == null || PopUpOpened)
         {
             return false;
         }

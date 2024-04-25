@@ -128,17 +128,6 @@ namespace Assets.Scripts.AI
                     new WaitFor(0.25f),
                 }),
 
-                new WrapperNode(new SkipIfStoryDatastoreState<EmailState>(StoryDatastore.Instance.EmailState, EmailState.NOTHING_CHANGED, false), new List<Node>() {
-                    // glitch here, if player is interacting with email then amber could possibly get stuck
-                    new WaitFor(0.5f),
-                    new MoveToTile(interactions.Grid, interactions.Laptop.AssociatedTile),
-                    new SwitchAmberMount(interactions.SittingAtDesk),
-                    new WaitFor(1f),
-                    new PerformAmberInteraction(interactions.Laptop.AmberInteraction),
-                    new WaitFor(2f),
-                    new SwitchAmberMount(navigation),
-                }, true),
-
                 new WrapperNode(new SkipIfStoryDatastoreState<GamePhase>(StoryDatastore.Instance.CurrentGamePhase, GamePhase.SLEEP_TIME), new List<Node>() {
                     new WaitFor(0.5f),
                     new MoveToTile(interactions.Grid, interactions.Backpack.AssociatedTile),
