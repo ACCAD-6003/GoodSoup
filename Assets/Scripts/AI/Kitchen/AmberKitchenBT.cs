@@ -231,6 +231,7 @@ namespace Assets.Scripts.AI
                         new DisplayUIIcon(UI.UIElements.BubbleIcon.ANNOYANCE, 3f),
                         new ImpactStoryData(StoryDatastore.Instance.Annoyance, 1f),
                         new SwitchAmberMount(navigation),
+                        new WaitFor(0.25f),
                     }),
                     // Wait and respond to alarm
                     new Sequence( new List<Node>() {
@@ -251,7 +252,8 @@ namespace Assets.Scripts.AI
                         new ImpactStoryData(StoryDatastore.Instance.Happiness, 10f),
                         new PutInProgress(true, _interactions.ChairPull.PlayerInteraction),
                         new PutInProgress(true, _interactions.AlarmTable.PlayerInteraction),
-                        new SwitchAmberMount(navigation)
+                        new SwitchAmberMount(navigation),
+                        new WaitFor(0.25f),
                     }),
                 })
             });
