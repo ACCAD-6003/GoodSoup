@@ -762,6 +762,11 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!95 &1009317094 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 2019956560238302193, guid: f9af67b3d9e422f4e9b927f67dafdc5d, type: 3}
+  m_PrefabInstance: {fileID: 1884661580}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1047874156
 GameObject:
   m_ObjectHideFlags: 0
@@ -1919,6 +1924,14 @@ PrefabInstance:
     - target: {fileID: 5817474577247795046, guid: f9af67b3d9e422f4e9b927f67dafdc5d, type: 3}
       propertyPath: m_TagString
       value: Body
+      objectReference: {fileID: 0}
+    - target: {fileID: 7183775618425542784, guid: f9af67b3d9e422f4e9b927f67dafdc5d, type: 3}
+      propertyPath: _animator
+      value: 
+      objectReference: {fileID: 1009317094}
+    - target: {fileID: 7183775618425542784, guid: f9af67b3d9e422f4e9b927f67dafdc5d, type: 3}
+      propertyPath: animations
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f9af67b3d9e422f4e9b927f67dafdc5d, type: 3}

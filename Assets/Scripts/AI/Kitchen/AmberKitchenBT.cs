@@ -39,7 +39,17 @@ namespace Assets.Scripts.AI
                 new WaitFor(0.5f),
                 new SwitchAmberMount(navigation),
                 // END DEBUG
-
+                new WrapperNode(new SkipIfStoryDatastoreState<bool>(StoryDatastore.Instance.GoodSoupPuzzleSolved, true), new List<Node>() {
+                    CreateKitchenSeq(false)
+                }),
+                CreateKitchenSeq(true)
+            });
+        }
+        private Node CreateKitchenSeq(bool isGoodSoup) {
+            if (isGoodSoup) { 
+                // reset things
+            }
+            return new Sequence(new List<Node>() {
                 new MoveToTile(_interactions.Grid, _interactions.PantryDoor.AssociatedTile),
                 new WaitFor(1f),
                 new PerformAmberInteraction(_interactions.PantryDoor.AmberInteraction),
@@ -94,17 +104,27 @@ namespace Assets.Scripts.AI
                 GoToFridgeOpenAndClose(),
 
                 GoToOvenOpenAndClose(),
+                new ChangeStoryData<bool>(StoryDatastore.Instance.ActivelyCooking, false),
+
+                new WaitFor(0.5f),
+                new MoveToTile(_interactions.Grid, _interactions.ChairTile, Vector3.back),
+                new WaitFor(0.3f),
+                new SwitchAmberMount(_interactions.chairMount),
+                new PerformAmberInteraction(_interactions.MoveTrayToDinnerTable.AmberInteraction),
+                new EvaluateFood(),
+
+                new WaitFor(4f),
+                new SwitchAmberMount(navigation),
 
                 new ChangeStoryData<bool>(StoryDatastore.Instance.WearingChefHat, false),
                 new WaitFor(0.5f),
                 new MoveToTile(_interactions.Grid, doors.doors[MainSceneLoading.AmberRoom.HALLWAY], new Vector3(0,0,-1)),
                 new WaitFor(0.5f),
-                
+
                 new ChangeStoryData<GamePhase>(StoryDatastore.Instance.CurrentGamePhase, GamePhase.SLEEP_TIME),
                 new AmberMoveToRoom(MainSceneLoading.AmberRoom.HALLWAY)
             });
         }
-
         private Node GoToOvenOpenAndClose() {
             return new Sequence(new List<Node>() {
                 new MoveToTile(_interactions.Grid, _interactions.StoveOpen.AssociatedTile),
@@ -155,6 +175,7 @@ namespace Assets.Scripts.AI
                         new WaitFor(1.5f),
                         new PerformAmberInteraction(_interactions.ChairPull.AmberInteraction),
                         new PutInProgress(true, _interactions.ChairPull.PlayerInteraction),
+                        new PutInProgress(true, _interactions.AlarmTable.PlayerInteraction),
                         new DebugNode(666),
                         new DisplayUIIcon(UI.UIElements.BubbleIcon.ANNOYANCE, 3f),
                         new ImpactStoryData(StoryDatastore.Instance.Annoyance, 1f),
@@ -164,6 +185,7 @@ namespace Assets.Scripts.AI
                     new Sequence( new List<Node>() {
                         new WaitForStoryDataChange(new MovePerformed(_interactions.AlarmTable.PlayerInteraction.interactionId)),
                         new DebugNode(101),
+                        new PutInProgress(true, _interactions.ChairPull.PlayerInteraction),
                         new SwitchAmberMount(navigation),
                         new MoveToTile(_interactions.Grid, _interactions.AlarmTable.AssociatedTile),
                         new WaitFor(0.5f),
@@ -176,10 +198,32 @@ namespace Assets.Scripts.AI
                         new DebugNode(102),
                         new DisplayUIIcon(UI.UIElements.BubbleIcon.HAPPY, 5f),
                         new ImpactStoryData(StoryDatastore.Instance.Happiness, 10f),
+                        new PutInProgress(true, _interactions.ChairPull.PlayerInteraction),
+                        new PutInProgress(true, _interactions.AlarmTable.PlayerInteraction),
                         new SwitchAmberMount(navigation)
                     }),
 
                 });
+        }
+        public class EvaluateFood : Node
+        {
+            bool _evaluated = false;
+            public override NodeState Evaluate()
+            {
+                if (!_evaluated) {
+                    _evaluated = true;
+                    if (StoryDatastore.Instance.FoodQuality.Value < 0f)
+                    {
+                        UIManager.Instance.DisplaySimpleBubbleForSeconds(UIElements.BubbleIcon.DAMN_THIS_FOOD_BLOWS, 3f);
+                    }
+                    else if (StoryDatastore.Instance.FoodQuality.Value > 0f) 
+                    {
+                        UIManager.Instance.DisplaySimpleBubbleForSeconds(UIElements.BubbleIcon.POG_CHEF, 3f);
+                    }
+                }
+                state = NodeState.SUCCESS;
+                return NodeState.SUCCESS;
+            }
         }
         public class ChangeStoryData<T> : Node {
             T newValue;
@@ -206,7 +250,8 @@ namespace Assets.Scripts.AI
             float timePassed = 0f;
             AmberKitchenBT _amberKitchenBT;
             InteractableObject _floatingRecipe;
-            public AmberNoticeRecipe(AmberKitchenBT kitchenBT, InteractableObject floatingRecipe) { 
+            public AmberNoticeRecipe(AmberKitchenBT kitchenBT, InteractableObject floatingRecipe)
+            { 
                 _amberKitchenBT = kitchenBT;
                 _floatingRecipe = floatingRecipe;
             }

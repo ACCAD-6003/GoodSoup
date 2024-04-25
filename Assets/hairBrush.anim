@@ -873,7 +873,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: body/AmberReal/Torso/UpperRightArm
+    path: body/AmberReal/Torso/UpperRightArm/LowerRightArm
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -883,17 +883,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: body/AmberReal/Torso/UpperRightArm
-    classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalEulerAngles.x
-    path: body/AmberReal/Torso/UpperRightArm
+    path: body/AmberReal/Torso/UpperRightArm/LowerRightArm
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -912,8 +902,18 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.x
+    path: body/AmberReal/Torso/UpperRightArm
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: body/AmberReal/Torso/UpperRightArm/LowerRightArm
+    path: body/AmberReal/Torso/UpperRightArm
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -923,7 +923,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: body/AmberReal/Torso/UpperRightArm/LowerRightArm
+    path: body/AmberReal/Torso/UpperRightArm
     classID: 4
     script: {fileID: 0}
   m_HasGenericRootTransform: 0

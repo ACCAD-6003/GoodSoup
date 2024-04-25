@@ -46,6 +46,26 @@ public class HeatingDevice : MonoBehaviour
             TempCanvas.SetActive(false);
             particles.Stop();
             ct.PutInProgress();
+            HeatSetting settingWithMostTimeSpentOnIt = HeatSetting.LOW_TEMP;
+            float mostTimeSpent = -1f;
+            foreach (var heatSetting in timeUnderHeat) {
+                if (heatSetting.Value > mostTimeSpent) {
+                    settingWithMostTimeSpentOnIt = heatSetting.Key;
+                    mostTimeSpent = heatSetting.Value;
+                } 
+            }
+
+            switch (settingWithMostTimeSpentOnIt) {
+                case HeatSetting.HIGH_TEMP:
+                    StoryDatastore.Instance.FoodQuality.Value -= mostTimeSpent;
+                    break;
+                case HeatSetting.MEDIUM_TEMP:
+                    StoryDatastore.Instance.FoodQuality.Value -= mostTimeSpent;
+                    break;
+                case HeatSetting.LOW_TEMP:
+                    StoryDatastore.Instance.FoodQuality.Value += 5f;
+                    break;
+            }
         }
         else {
             if (StoryDatastore.Instance.HeatSetting.Value != setting) {
@@ -60,7 +80,7 @@ public class HeatingDevice : MonoBehaviour
                 SmokeFillRoom.SetActive(true);
                 src.PlayOneShot(fireAlarm);
                 notAlreadyTransitioningAway = false;
-                UIManager.Instance.DisplaySimpleBubbleForSeconds(UIElements.BubbleIcon.ANNOYANCE, 4f);
+                UIManager.Instance.DisplaySimpleBubbleForSeconds(UIElements.BubbleIcon.OK_IM_COMING, 4f);
                 StartCoroutine(TransitionAway());
             }
         }

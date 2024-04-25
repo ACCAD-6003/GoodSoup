@@ -1,8 +1,11 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.Collections.LowLevel.Unsafe;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 public class AmberVisual : MonoBehaviour
 {
@@ -25,7 +28,16 @@ public class AmberVisual : MonoBehaviour
     [SerializeField] GameObject _bonnet;
     [SerializeField] GameObject _hairMessy;
     [SerializeField] GameObject _hairBraided;
-
+    [SerializeField] Animator _animator;
+    public enum AnimationsICareAbout { STANDING, NOT_STANDING }
+    [SerializeField] AnimationsICareAbout animations = AnimationsICareAbout.NOT_STANDING;
+    private GridCharacter _character;
+    private void StartWalking() {
+        _animator.SetTrigger("Walk");
+    }
+    private void StartIdling() {
+        _animator.SetTrigger("Idle");
+    }
     private void OnEnable()
     {
         // Disable anything that doesn't need to be shown (i.e. backpack was enabled in editor to see how it looks)
@@ -50,8 +62,14 @@ public class AmberVisual : MonoBehaviour
         StoryDatastore.Instance.Annoyance.Changed += SetAmberMood;
         StoryDatastore.Instance.Happiness.Changed += SetAmberMood;
         StoryDatastore.Instance.FaceOption.Changed += UpdateFaceVisual;
+
+        if (animations == AnimationsICareAbout.STANDING) {
+            _character = FindObjectOfType<GridCharacter>();
+            _character.PathfindingCompleted += StartIdling;
+            _character.PathfindingStarted += StartWalking;
+        }
     }
-    
+
     private void OnDisable()
     {
         // Subscribe to changes in storydata for each visual

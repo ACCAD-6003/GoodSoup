@@ -22,6 +22,7 @@ public class GridCharacter : MonoBehaviour
     public int num_tile;
 
     public event Action PathfindingCompleted;
+    public event Action PathfindingStarted;
     private Vector3 LookVectorWhenComplete = Vector3.forward;
     void Awake() {
         SceneManager.sceneLoaded += ReassignGrid;
@@ -98,6 +99,7 @@ public class GridCharacter : MonoBehaviour
 
     public void move_tile(tile ttile)
     {
+        PathfindingStarted?.Invoke();
         if (moving) // Cancel the current movement if character is already moving
         {
             moving = false;
