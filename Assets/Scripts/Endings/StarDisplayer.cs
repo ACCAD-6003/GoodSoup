@@ -10,6 +10,8 @@ public class StarDisplayer : MonoBehaviour
     [SerializeField] float ShrinkScale = 1f;
     [SerializeField] float EnlargeDuration = 0.25f;
     [SerializeField] float ShrinkDuration = 0.25f;
+    [SerializeField] AudioSource audioSource;
+    [SerializeField] AudioClip starSound;
     private void Awake()
     {
         parentTransform.localScale = Vector3.zero;
@@ -23,6 +25,7 @@ public class StarDisplayer : MonoBehaviour
 
         for (int i = 0; i < numberOfStars; i++)
         {
+            audioSource.PlayOneShot(starSound);
             yield return StartCoroutine(EnlargeAndShrinkStar(Stars[i]));
         }
     }
