@@ -53,7 +53,14 @@ namespace Assets.Scripts.AI
             _interactions.AlarmTable.PlayerInteraction.PutInProgress();
             if (isGoodSoup) {
                 return new Sequence(new List<Node>() {
+                    new DisplayUIIcon(UI.UIElements.BubbleIcon.HAPPY, 5f),
+                    new ImpactStoryData(StoryDatastore.Instance.Happiness, 10f),
+                    new PutInProgress(true, _interactions.ChairPull.PlayerInteraction),
+                    new PutInProgress(true, _interactions.AlarmTable.PlayerInteraction),
+
                     new ResetKitchen(_interactions),
+                    new WaitFor(2f),
+                    new SwitchAmberMount(navigation),
 
                     OpenPantry(),
 
@@ -251,6 +258,7 @@ namespace Assets.Scripts.AI
                         },
                     // Wait and respond to GOOD SOUP!
                     { new GoodSouped(), new Sequence( new List<Node>() {
+                            new WaitFor(1f),
                             new DisplayUIIcon(UI.UIElements.BubbleIcon.HAPPY, 5f),
                             new ImpactStoryData(StoryDatastore.Instance.Happiness, 10f),
                             new PutInProgress(true, _interactions.ChairPull.PlayerInteraction),
