@@ -7,7 +7,7 @@ using UnityEngine;
 
 namespace Assets.Scripts.Objects.Interactions
 {
-    internal class PopUp : Interaction
+    public class PopUp : Interaction
     {
         [SerializeField] GameObject popUp;
         bool poppedUp = false;
