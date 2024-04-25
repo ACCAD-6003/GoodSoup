@@ -9483,6 +9483,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -90
       objectReference: {fileID: 0}
+    - target: {fileID: 3015765637929670223, guid: 20c19ff6004434442aae784fa8cb83f6, type: 3}
+      propertyPath: m_Name
+      value: AmberReal
+      objectReference: {fileID: 0}
     - target: {fileID: 6510825319568144824, guid: 20c19ff6004434442aae784fa8cb83f6, type: 3}
       propertyPath: m_Name
       value: body
