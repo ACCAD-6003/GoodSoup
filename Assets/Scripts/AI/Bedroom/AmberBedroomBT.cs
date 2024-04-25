@@ -45,7 +45,7 @@ namespace Assets.Scripts.AI
                     new WrapperNode(new SkipIfStoryDatastoreState<bool>(StoryDatastore.Instance.BooksBlown, true), new List<Node>() {
                         new Sequence(new List<Node>() {
                             new WaitForPlayerInteractionCompleted(interactions.AlarmClock),
-                            new DisplayUIIcon(UI.UIElements.BubbleIcon.ANNOYANCE, 3f),
+                            new DisplayUIIcon(UI.UIElements.BubbleIcon.OK_IM_COMING, 3f),
                         }),
                         new StopFarCryEnding(interactions.switcher),
 
@@ -115,7 +115,7 @@ namespace Assets.Scripts.AI
                     new WaitFor(0.5f),
                     new MoveToTile(interactions.Grid, interactions.Backpack.AssociatedTile),
                     new PerformAmberInteraction(interactions.Backpack.AmberInteraction),
-                    new WrapperNode(new SkipIfStoryDatastoreState<bool>(StoryDatastore.Instance.MoveObjects[214879], true), new List<Node>() {
+                    new WrapperNode(new SkipIfStoryDatastoreState<bool>(StoryDatastore.Instance.MoveObjects[1283493], true), new List<Node>() {
                         new WaitFor(0.5f),
                         new MoveToTile(interactions.Grid, interactions.Key.AssociatedTile),
                         new WaitFor(0.5f),
@@ -127,6 +127,17 @@ namespace Assets.Scripts.AI
                     new AmberMoveToRoom(MainSceneLoading.AmberRoom.HALLWAY),
                     new WaitFor(0.25f),
                 }),
+
+                new WrapperNode(new SkipIfStoryDatastoreState<EmailState>(StoryDatastore.Instance.EmailState, EmailState.NOTHING_CHANGED, false), new List<Node>() {
+                    // glitch here, if player is interacting with email then amber could possibly get stuck
+                    new WaitFor(0.5f),
+                    new MoveToTile(interactions.Grid, interactions.Laptop.AssociatedTile),
+                    new SwitchAmberMount(interactions.SittingAtDesk),
+                    new WaitFor(1f),
+                    new PerformAmberInteraction(interactions.Laptop.AmberInteraction),
+                    new WaitFor(2f),
+                    new SwitchAmberMount(navigation),
+                }, true),
 
                 new WrapperNode(new SkipIfStoryDatastoreState<GamePhase>(StoryDatastore.Instance.CurrentGamePhase, GamePhase.SLEEP_TIME), new List<Node>() {
                     new WaitFor(0.5f),

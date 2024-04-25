@@ -211,8 +211,8 @@ namespace Assets.Scripts.AI
             });
         }
         private Node SitDownSequence() {
-            _interactions.ChairPull.PlayerInteraction.PutInProgress();
-            _interactions.AlarmTable.PlayerInteraction.PutInProgress();
+            _interactions.ChairPull.PlayerInteraction.EndAction();
+            _interactions.AlarmTable.PlayerInteraction.EndAction();
             return new Sequence(new List<Node>() {
                 GoToChair(),
                 new Selector(new List<Node>()
@@ -235,6 +235,7 @@ namespace Assets.Scripts.AI
                     }),
                     // Wait and respond to alarm
                     new Sequence( new List<Node>() {
+                        new DisplayUIIcon(UIElements.BubbleIcon.OK_IM_COMING, 3f),
                         new WaitForStoryDataChange(new MovePerformed(_interactions.AlarmTable.PlayerInteraction.interactionId)),
                         new DebugNode(101),
                         new PutInProgress(true, _interactions.ChairPull.PlayerInteraction),
