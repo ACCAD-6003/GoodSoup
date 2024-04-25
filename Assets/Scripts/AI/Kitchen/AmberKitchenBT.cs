@@ -39,6 +39,7 @@ namespace Assets.Scripts.AI
                 new WaitFor(0.5f),
                 new SwitchAmberMount(navigation),
                 // END DEBUG
+
                 new WrapperNode(new SkipIfStoryDatastoreState<bool>(StoryDatastore.Instance.GoodSoupPuzzleSolved, true), new List<Node>() {
                     CreateKitchenSeq(false)
                 }),
@@ -46,71 +47,100 @@ namespace Assets.Scripts.AI
             });
         }
         private Node CreateKitchenSeq(bool isGoodSoup) {
-            if (isGoodSoup) { 
+            if (isGoodSoup) {
                 // reset things
+                StoryDatastore.Instance.ActivelyCooking.Value = false;
+                StoryDatastore.Instance.FoodQuality.Value = 0f;
+                StoryDatastore.Instance.HeatSetting.Value = HeatSetting.LOW_TEMP;
+                _interactions.MoveTrayToBurner.gameObject.SetActive(false);
+                _interactions.MoveTrayToDinnerTable.gameObject.SetActive(false);
+                _interactions.MoveTrayToTable.gameObject.SetActive(false);
+
+                return new Sequence(new List<Node>() {
+                    OpenPantry(),
+
+                    new PerformAmberInteraction(_interactions.MovePotFromCabinetToTable.AmberInteraction),
+                    new WaitFor(0.5f),
+
+                    ClosePantry(),
+
+                    SitDownSequence(),
+
+                    new PerformAmberInteraction(_interactions.MovePotFromTableToBurner.AmberInteraction),
+                    new ChangeStoryData<bool>(StoryDatastore.Instance.ActivelyCooking, true),
+
+                    TendToSink(),
+
+                    GoToFridgeOpenAndClose(),
+
+                    SitDownSequence(),
+
+                    GoToFridgeOpenAndClose(),
+
+                    GoToOvenOpenAndClose(),
+
+                    new ChangeStoryData<bool>(StoryDatastore.Instance.ActivelyCooking, false),
+
+
+                    GoToChair(),
+
+                    new PerformAmberInteraction(_interactions.MovePotFromBurnerToDinnerTable.AmberInteraction),
+
+                    EndingSequence()
+                });
             }
             return new Sequence(new List<Node>() {
-                new MoveToTile(_interactions.Grid, _interactions.PantryDoor.AssociatedTile),
-                new WaitFor(1f),
-                new PerformAmberInteraction(_interactions.PantryDoor.AmberInteraction),
-                new WaitFor(0.5f),
+                OpenPantry(),
+
                 new PerformAmberInteraction(_interactions.MoveTrayToTable.AmberInteraction),
                 new WaitFor(0.5f),
-                new PerformAmberInteraction(_interactions.PantryDoor.AmberInteraction),
-                new WaitFor(0.5f),
 
+                ClosePantry(),
+
+                // ONLY A PART OF KITCHEN SEQ
                 new MoveToTile(_interactions.Grid, _interactions.AlarmShelf.AssociatedTile),
                 new WaitFor(0.5f),
                 new PerformAmberInteraction(_interactions.AlarmShelf.AmberInteraction),
                 new WaitFor(0.5f),
-
-                new MoveToTile(_interactions.Grid, _interactions.ChairTile, Vector3.back),
-                new WaitFor(0.3f),
-                new SwitchAmberMount(_interactions.chairMount),
-
-                new PutInProgress(false, _interactions.ChairPull.PlayerInteraction),
-                new PutInProgress(false, _interactions.AlarmTable.PlayerInteraction),
+                // ONLY A PART OF KITCHEN SEQ
 
                 SitDownSequence(),
 
                 new PerformAmberInteraction(_interactions.MoveTrayToBurner.AmberInteraction),
                 new ChangeStoryData<bool>(StoryDatastore.Instance.ActivelyCooking, true),
 
-                new WrapperNode(new SkipIfStoryDatastoreState<bool>(StoryDatastore.Instance.MoveObjects[_interactions.SinkClean.PlayerInteraction.interactionId], true), new List<Node>() {
-                    new PutInProgress(true, _interactions.SinkClean.AmberInteraction),
-                    new WaitFor(0.5f),
-                    new MoveToTile(_interactions.Grid, _interactions.SinkClean.AssociatedTile, new Vector3(-1,0,0)),
-                    new WaitFor(0.5f),
-                    new PutInProgress(false, _interactions.SinkClean.AmberInteraction),
-                    new PerformAmberInteraction(_interactions.SinkClean.AmberInteraction)
-                }),
+                TendToSink(),
 
                 GoToFridgeOpenAndClose(),
-
-                new MoveToTile(_interactions.Grid, _interactions.Crockpot, new Vector3(0,0,1)),
-                new WaitFor(3f),
-
-                GoToFridgeOpenAndClose(),
-
-                new MoveToTile(_interactions.Grid, _interactions.ChairTile, Vector3.back),
-                new WaitFor(0.3f),
-                new SwitchAmberMount(_interactions.chairMount),
-
-                new PutInProgress(false, _interactions.ChairPull.PlayerInteraction),
-                new PutInProgress(false, _interactions.AlarmTable.PlayerInteraction),
 
                 SitDownSequence(),
 
                 GoToFridgeOpenAndClose(),
 
                 GoToOvenOpenAndClose(),
+
                 new ChangeStoryData<bool>(StoryDatastore.Instance.ActivelyCooking, false),
 
-                new WaitFor(0.5f),
-                new MoveToTile(_interactions.Grid, _interactions.ChairTile, Vector3.back),
-                new WaitFor(0.3f),
-                new SwitchAmberMount(_interactions.chairMount),
+
+                GoToChair(),
+
                 new PerformAmberInteraction(_interactions.MoveTrayToDinnerTable.AmberInteraction),
+
+                EndingSequence()
+            });
+        }
+        private Node TendToSink() {
+            return new WrapperNode(new SkipIfStoryDatastoreState<bool>(StoryDatastore.Instance.MoveObjects[_interactions.SinkClean.PlayerInteraction.interactionId], true), new List<Node>() {
+                    new PutInProgress(true, _interactions.SinkClean.AmberInteraction),
+                    new WaitFor(0.5f),
+                    new MoveToTile(_interactions.Grid, _interactions.SinkClean.AssociatedTile, new Vector3(-1,0,0)),
+                    new WaitFor(0.5f),
+                    new PutInProgress(false, _interactions.SinkClean.AmberInteraction),
+                    new PerformAmberInteraction(_interactions.SinkClean.AmberInteraction)
+            });
+        }
+        private Node EndingSequence() {
+            return new Sequence(new List<Node>() {
                 new EvaluateFood(),
 
                 new WaitFor(4f),
@@ -123,6 +153,21 @@ namespace Assets.Scripts.AI
 
                 new ChangeStoryData<GamePhase>(StoryDatastore.Instance.CurrentGamePhase, GamePhase.SLEEP_TIME),
                 new AmberMoveToRoom(MainSceneLoading.AmberRoom.HALLWAY)
+            });
+        }
+        private Node OpenPantry() {
+            return new Sequence(new List<Node>() {
+                new MoveToTile(_interactions.Grid, _interactions.PantryDoor.AssociatedTile),
+                new WaitFor(1f),
+                new PerformAmberInteraction(_interactions.PantryDoor.AmberInteraction),
+                new WaitFor(0.5f),
+            });
+        }
+        private Node ClosePantry()
+        {
+            return new Sequence(new List<Node>() {
+                new PerformAmberInteraction(_interactions.PantryDoor.AmberInteraction),
+                new WaitFor(0.5f),
             });
         }
         private Node GoToOvenOpenAndClose() {
@@ -163,8 +208,20 @@ namespace Assets.Scripts.AI
         // set food quality back to zero
         // delete pot hierarchy of objects (might not be that simple)
         // also factor into account smoke alarm going off
+        private Node GoToChair() {
+            return new Sequence(new List<Node>() {
+                new WaitFor(0.5f),
+                new MoveToTile(_interactions.Grid, _interactions.ChairTile, Vector3.back),
+                new WaitFor(0.3f),
+                new SwitchAmberMount(_interactions.chairMount),
+            });
+        }
         private Node SitDownSequence() {
-            return new Selector(new List<Node>()
+            _interactions.ChairPull.PlayerInteraction.PutInProgress();
+            _interactions.AlarmTable.PlayerInteraction.PutInProgress();
+            return new Sequence(new List<Node>() {
+                GoToChair(),
+                new Selector(new List<Node>()
                 {
                     // Wait and respond to chair falling
                     new Sequence( new List<Node>() {
@@ -202,8 +259,8 @@ namespace Assets.Scripts.AI
                         new PutInProgress(true, _interactions.AlarmTable.PlayerInteraction),
                         new SwitchAmberMount(navigation)
                     }),
-
-                });
+                })
+            });
         }
         public class EvaluateFood : Node
         {

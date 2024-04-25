@@ -10,7 +10,7 @@ public class KitchenInteractions : MonoBehaviour
     [SerializeField] 
     public tile DebugTile, ChairTile, Crockpot;
     [SerializeField]
-    public InteractableObject PantryDoor, AlarmShelf, AlarmTable, ChairPull, SinkClean, FridgeOpen, StoveOpen, FloatingRecipe, MoveTrayToTable, MoveTrayToBurner, MoveTrayToDinnerTable;
+    public InteractableObject PantryDoor, AlarmShelf, AlarmTable, ChairPull, SinkClean, FridgeOpen, StoveOpen, FloatingRecipe, MoveTrayToTable, MoveTrayToBurner, MoveTrayToDinnerTable, MovePotFromCabinetToTable, MovePotFromTableToBurner, MovePotFromBurnerToDinnerTable;
     [SerializeField]
     public GameObject chairInScene;
     [SerializeField]
