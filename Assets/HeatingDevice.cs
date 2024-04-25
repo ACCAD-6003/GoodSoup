@@ -54,8 +54,8 @@ public class HeatingDevice : MonoBehaviour
                     mostTimeSpent = heatSetting.Value;
                 } 
             }
-
-            switch (settingWithMostTimeSpentOnIt) {
+            switch (settingWithMostTimeSpentOnIt)
+            {
                 case HeatSetting.HIGH_TEMP:
                     StoryDatastore.Instance.FoodQuality.Value -= mostTimeSpent;
                     break;
