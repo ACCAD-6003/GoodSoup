@@ -1030,6 +1030,7 @@ MonoBehaviour:
   amberSightAngle: 30
   playerInteractSoundSource: {fileID: 206001029}
   playerInteractBlip: {fileID: 8300000, guid: e2e4681c7edb2c34d95f901c4acd6054, type: 3}
+  PopUpOpened: 0
 --- !u!4 &1126258449
 Transform:
   m_ObjectHideFlags: 0
@@ -1502,7 +1503,7 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   CurrAdditiveScene: 0
-  DefaultStartingScene: 0
+  DefaultStartingScene: 2
 --- !u!4 &1474325874
 Transform:
   m_ObjectHideFlags: 0
