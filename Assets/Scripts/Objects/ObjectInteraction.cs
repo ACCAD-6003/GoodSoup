@@ -25,8 +25,10 @@ public class ObjectInteraction : MonoBehaviour
 
     public bool IsInAmberSightlines(InteractableObject o)
     {
-        Vector3 amberFacing = Amber.forward;
-        Vector3 fromAmberToObject = o.transform.position - Amber.position;
+        Transform viewCone = Amber.gameObject.GetComponentInChildren<FuckedUpLightCone>().transform;
+
+        Vector3 amberFacing = -viewCone.forward;
+        Vector3 fromAmberToObject = o.transform.position - viewCone.position;
 
         float angle = Vector3.Angle(amberFacing, fromAmberToObject);
 
