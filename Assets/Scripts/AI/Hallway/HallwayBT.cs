@@ -48,7 +48,9 @@ namespace Assets.Scripts.AI
                     new WaitFor(0.5f),
                 }),
                 new WrapperNode(new SkipIfStoryDatastoreState<int>(StoryDatastore.Instance.HallwayVisits, 2, true), new List<Node>() {
+                    new WaitFor(0.5f),
                     new WrapperNode(new SkipIfStoryDatastoreState<bool>(StoryDatastore.Instance.AmberPickedUpKey, true), new List<Node>() { 
+                        new WaitFor(0.5f),
                         new PlaySound(interactions.src, interactions.knock),
                         new WaitFor(2f),
                         new PlaySound(interactions.src, interactions.knock),
