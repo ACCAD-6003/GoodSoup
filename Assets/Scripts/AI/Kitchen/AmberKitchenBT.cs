@@ -34,12 +34,6 @@ namespace Assets.Scripts.AI
                 new AmberNoticeRecipe(this, _interactions.FloatingRecipe),
                 new WaitFor(0.5f),
 
-                // DEBUG
-                new SwitchAmberMount(_interactions.chairMount),
-                new WaitFor(0.5f),
-                new SwitchAmberMount(navigation),
-                // END DEBUG
-
                 new WrapperNode(new SkipIfStoryDatastoreState<bool>(StoryDatastore.Instance.GoodSoupPuzzleSolved, true), new List<Node>() {
                     CreateKitchenSeq(false)
                 }),
