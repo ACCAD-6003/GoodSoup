@@ -10716,6 +10716,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AssociatedTile: {fileID: 0}
+  CanInteractWhileAmberLooking: 0
 --- !u!114 &81852292
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11366,6 +11367,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AssociatedTile: {fileID: 0}
+  CanInteractWhileAmberLooking: 0
 --- !u!114 &106693096
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17263,6 +17265,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AssociatedTile: {fileID: 0}
+  CanInteractWhileAmberLooking: 0
 --- !u!114 &177269633
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18612,6 +18615,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AssociatedTile: {fileID: 0}
+  CanInteractWhileAmberLooking: 0
 --- !u!65 &201406658
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -18953,6 +18957,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AssociatedTile: {fileID: 0}
+  CanInteractWhileAmberLooking: 0
 --- !u!114 &204035372
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28680,6 +28685,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AssociatedTile: {fileID: 0}
+  CanInteractWhileAmberLooking: 0
 --- !u!114 &319263179
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -39353,6 +39359,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AssociatedTile: {fileID: 319615953}
+  CanInteractWhileAmberLooking: 0
 --- !u!114 &562083399
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45234,6 +45241,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AssociatedTile: {fileID: 0}
+  CanInteractWhileAmberLooking: 0
 --- !u!114 &659377397
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -50637,6 +50645,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AssociatedTile: {fileID: 814802129}
+  CanInteractWhileAmberLooking: 0
 --- !u!114 &709543148
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -54856,7 +54865,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &827979558
 RectTransform:
   m_ObjectHideFlags: 0
@@ -60774,6 +60783,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AssociatedTile: {fileID: 1358819549}
+  CanInteractWhileAmberLooking: 0
 --- !u!114 &969151724
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -64101,6 +64111,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AssociatedTile: {fileID: 0}
+  CanInteractWhileAmberLooking: 0
 --- !u!114 &1039872762
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -91283,6 +91294,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AssociatedTile: {fileID: 1830729190}
+  CanInteractWhileAmberLooking: 0
 --- !u!114 &1550693232
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -97364,6 +97376,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AssociatedTile: {fileID: 624757671}
+  CanInteractWhileAmberLooking: 0
 --- !u!114 &1710775931
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -105530,6 +105543,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AssociatedTile: {fileID: 0}
+  CanInteractWhileAmberLooking: 0
 --- !u!114 &1924174960
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -117161,6 +117175,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AssociatedTile: {fileID: 0}
+  CanInteractWhileAmberLooking: 0
 --- !u!114 &3196241256022445413
 MonoBehaviour:
   m_ObjectHideFlags: 0
