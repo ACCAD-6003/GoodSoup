@@ -10,4 +10,5 @@ public class EndingsContent : SerializedScriptableObject
 public class EndingContent {
     public string DisplayName, Description, DoBetterMessage, FiveStarMessage, Hint;
     public Sprite imageSprite;
+    public AudioClip endingAudio;
 }

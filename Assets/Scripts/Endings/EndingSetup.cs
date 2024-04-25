@@ -20,14 +20,20 @@ public class EndingSetup : SerializedMonoBehaviour
     private int stars;
     public bool doingHighScoreAnimation = false;
     public static int timesBeaten = 0;
+    public AudioSource src;
+    public AudioClip whoosh;
     [SerializeField] Image background;
     private void Awake()
     {
+
         timesBeaten++;
         ConstructStarAssigner();
         GameObject[] dontDestroyObjects = GameObject.FindGameObjectsWithTag("DontDestroyOnLoad");
 
         var ending = StoryDatastore.Instance.ChosenEnding.Value;
+
+        src.clip = content.EndingContent[ending].endingAudio;
+        src.Play();
 
         stars = starAssigner[ending].GetStars();
 
@@ -121,19 +127,25 @@ public class EndingSetup : SerializedMonoBehaviour
         endingImage.transform.localScale = Vector3.zero;
         playAgain.transform.localScale = Vector3.zero;
 
-
+        src.PlayOneShot(whoosh);
         yield return StartCoroutine(EnlargeAndShrinkTransform(endingImage.transform, 10f, 0.25f, 9f, 0.25f));
         yield return new WaitForSeconds(0.25f);
+        src.PlayOneShot(whoosh);
         yield return StartCoroutine(EnlargeAndShrinkTransform(endingTitle.transform, 1.25f, 0.25f, 1f, 0.25f));
         yield return new WaitForSeconds(0.25f);
+        src.PlayOneShot(whoosh);
         yield return StartCoroutine(EnlargeAndShrinkTransform(endingDescription.transform, 1.1f, 0.25f, 1f, 0.25f));
         yield return new WaitForSeconds(0.25f);
+        src.PlayOneShot(whoosh);
         yield return StartCoroutine(EnlargeAndShrinkTransform(starDisplayerParentTransform, 1.1f, 0.25f, 1f, 0.25f));
         yield return new WaitForSeconds(0.25f);
+        src.PlayOneShot(whoosh);
         yield return StartCoroutine(starDisplayer.ShowStarsRoutine(stars));
         yield return new WaitForSeconds(0.25f);
         if (doingHighScoreAnimation) {
+            src.PlayOneShot(whoosh);
             yield return StartCoroutine(PullDownAndHighScore(0.5f, -276f, 23.4754f, 161.2058f));
+            src.PlayOneShot(whoosh);
             yield return StartCoroutine(EnlargeAndShrinkTransform(highScoreText.transform, 1.1f, 0.25f, 1f, 0.25f));
             yield return new WaitForSeconds(0.25f);
         }
