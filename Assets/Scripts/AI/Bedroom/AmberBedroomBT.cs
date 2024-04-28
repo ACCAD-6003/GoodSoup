@@ -15,6 +15,7 @@ using static ComputerHUD;
 
 namespace Assets.Scripts.AI
 {
+    /**
     public class AmberBedroomBT : BehaviorTree.Tree
     {
         [SerializeField] BedroomInteractions interactions;
@@ -161,6 +162,7 @@ namespace Assets.Scripts.AI
             return routine;
         }
     }
+    **/
     class HappyClothingReaction : IAmberReaction
     {
         public override void PerformReaction()

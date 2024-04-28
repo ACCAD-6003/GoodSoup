@@ -13,8 +13,10 @@ using static Assets.Scripts.AI.AmberKitchenBT;
 
 namespace Assets.Scripts.AI
 {
+
     public class AmberBathroomBT : BehaviorTree.Tree
     {
+        /**
         [SerializeField] BathroomInteractions interactions;
         [SerializeField] GameObject phone;
         AmberMount navigation;
@@ -106,6 +108,6 @@ namespace Assets.Scripts.AI
                     });
 
             return routine;
-        }
+        }**/
     }
 }

@@ -199,10 +199,7 @@ public class EndingSetup : SerializedMonoBehaviour
 
         while (elapsedTime < duration)
         {
-            // Calculate the interpolation factor using a sine function
             float t = Mathf.Sin((elapsedTime / duration) * Mathf.PI * 0.5f);
-
-            // Interpolate using the sine function
             transformObject.localScale = Vector3.Lerp(initialScale, finalScale, t);
 
             elapsedTime += Time.deltaTime;

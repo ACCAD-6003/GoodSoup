@@ -12,7 +12,7 @@ namespace Assets.Scripts.AI
 {
     public class AmberKitchenBT : BehaviorTree.Tree
     {
-        bool noticedLetters = false;
+        /**bool noticedLetters = false;
         [SerializeField]
         KitchenInteractions _interactions;
         AmberMount navigation;
@@ -25,7 +25,7 @@ namespace Assets.Scripts.AI
         protected ObjectInteraction GetObjectInteraction() {
             return FindObjectOfType<ObjectInteraction>();
         }
-        protected override Node SetupTree()
+        /**protected override Node SetupTree()
         {
 
             AdaptToSceneChanges();
@@ -35,15 +35,16 @@ namespace Assets.Scripts.AI
                 new AmberNoticeRecipe(this, _interactions.FloatingRecipe),
                 new WaitFor(0.5f),
 
-/*                new SwitchAmberMount(_interactions.chairMount),
+                new SwitchAmberMount(_interactions.chairMount),
                 new WaitFor(0.5f),
-                new SwitchAmberMount(navigation),*/
+                new SwitchAmberMount(navigation),
 
                 new WrapperNode(new SkipIfStoryDatastoreState<bool>(StoryDatastore.Instance.GoodSoupPuzzleSolved, true), new List<Node>() {
                     CreateKitchenSeq(false)
                 }),
                 CreateKitchenSeq(true)
             });
+
         }
         private Node CreateKitchenSeq(bool isGoodSoup) {
             _interactions.ChairPull.PlayerInteraction.PutInProgress();
@@ -473,26 +474,29 @@ namespace Assets.Scripts.AI
                 return StoryDatastore.Instance.GoodSoupPuzzleSolved.Value;
             }
         }
+    }**/
+
     }
-}
-public class ImpactStoryData : Node
-{
-    float impact;
-    StoryData<float> storyData;
-    bool _performed = false;
-    public ImpactStoryData(StoryData<float> data, float impact)
+    public class ImpactStoryData : Node
     {
-        this.impact = impact;
-        storyData = data;
-    }
-    public override NodeState Evaluate()
-    {
-        if (!_performed)
+        float impact;
+        StoryData<float> storyData;
+        bool _performed = false;
+        public ImpactStoryData(StoryData<float> data, float impact)
         {
-            storyData.Value += impact;
-            _performed = true;
+            this.impact = impact;
+            storyData = data;
         }
-        state = NodeState.SUCCESS;
-        return state;
+        public override NodeState Evaluate()
+        {
+            if (!_performed)
+            {
+                storyData.Value += impact;
+                _performed = true;
+            }
+            state = NodeState.SUCCESS;
+            return state;
+        }
+
     }
 }

@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using UnityEngine;
 
 namespace BehaviorTree
 {
@@ -8,7 +9,7 @@ namespace BehaviorTree
         SUCCESS,
         FAILURE
     }
-    public class Node
+    public class Node : MonoBehaviour
     {
         protected NodeState state;
         public Node parent;

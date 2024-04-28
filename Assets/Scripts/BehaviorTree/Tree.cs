@@ -7,17 +7,12 @@ using UnityEngine;
 
 namespace BehaviorTree
 {
-    public abstract class Tree : MonoBehaviour
+    public class Tree : MonoBehaviour
     {
-        private Node _root = null;
-        protected void Start()
-        {
-            _root = SetupTree();
-        }
+        [SerializeField] Node _root = null;
         private void Update()
         {
             _root?.Evaluate();
         }
-        protected abstract Node SetupTree();
     }
 }

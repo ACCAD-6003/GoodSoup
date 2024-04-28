@@ -14,6 +14,7 @@ namespace Assets.Scripts.AI
 {
     public class HallwayBT : BehaviorTree.Tree
     {
+        /**
         [SerializeField] HallwayInteractions interactions;
         AmberMount navigation;
         Doors doors;
@@ -88,6 +89,6 @@ namespace Assets.Scripts.AI
             });
 
             return routine;
-        }
+        }**/
     }
 }

@@ -100,24 +100,21 @@ public class GoodSoupBobbing : MonoBehaviour
 
         while (true)
         {
-            // Tilt state: rotate back and forth twice between two angles
             for (int i = 0; i < 2; i++)
             {
                 float startAngle = initialAngle + (i % 2 == 0 ? tiltAngle : -tiltAngle);
                 float targetAngle = initialAngle + (i % 2 == 0 ? -tiltAngle : tiltAngle);
                 float elapsedTime = 0f;
 
-                while (elapsedTime < Mathf.PI) // Half of a sine wave for one direction
+                while (elapsedTime < Mathf.PI)
                 {
-                    float t = Mathf.Sin(elapsedTime) * 0.5f + 0.5f; // Convert sine wave to [0, 1]
+                    float t = Mathf.Sin(elapsedTime) * 0.5f + 0.5f;
                     float angle = Mathf.Lerp(startAngle, targetAngle, t);
                     soup.transform.localRotation = Quaternion.Euler(angle, 0f, 0f);
                     elapsedTime += Time.deltaTime * rotationSpeed;
                     yield return null;
                 }
             }
-
-            // Quick rotation state: Rotate 360 degrees
             float totalRotation = 0f;
             while (totalRotation > -360f)
             {
