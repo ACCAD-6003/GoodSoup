@@ -6,6 +6,7 @@ using UnityEngine;
 using static AmberVisual;
 using static ComputerHUD;
 using static MainSceneLoading;
+using static UnityEditor.LightingExplorerTableColumn;
 public enum GamePhase { TUTORIAL_BEDROOM, BEFORE_AMBER_LEAVES, AMBER_GONE, AMBER_BACK, SLEEP_TIME }
 public enum HeatSetting { LOW_TEMP, MEDIUM_TEMP, HIGH_TEMP }
 public class StoryDatastore : MonoBehaviour
@@ -223,10 +224,8 @@ public class StoryDatastore : MonoBehaviour
         if (!Instance.StoryDataContainer.ContainsKey(type)) {
             Debug.LogError($"No story data exists in the StoryDataDictionary with the specified key {type}");
         }
-
         // Get the type of the value stored in the dictionary
         Type dataType = Instance.StoryDataContainer[type].GetDataType();
-
         // Use reflection to invoke the Value property of StoryData<> dynamically
         var valueProperty = typeof(StoryData<>).MakeGenericType(dataType).GetProperty("Value");
 
@@ -246,7 +245,12 @@ public class StoryDatastore : MonoBehaviour
         }
         return Deserializer[storyDataType](value);
     }
-
+    public void SetStoryDataValue(StoryDataType type, string value) {
+        var storyDataValue = DeserializeStoryDataValue(type, value);
+        Type dataType = Instance.StoryDataContainer[type].GetDataType();
+        var valueProperty = typeof(StoryData<>).MakeGenericType(dataType).GetProperty("Value");
+        valueProperty.SetValue(StoryDataContainer[type], storyDataValue);
+    }
     private static bool DeserializeToBool(string value) {
         if (!value.ContainsInsensitive("true") && !value.ContainsInsensitive("false")) {
             Debug.LogError($"Attempted to deserialize a bool value of value {value} that wasn't true or false. You probably forgot to fill out a field.");

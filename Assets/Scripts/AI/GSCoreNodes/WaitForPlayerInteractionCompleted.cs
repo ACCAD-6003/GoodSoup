@@ -4,7 +4,7 @@ namespace Assets.Scripts.AI
 {
     internal class WaitForPlayerInteractionCompleted : Node
     {
-        private readonly InteractableObject _interaction;
+        public readonly InteractableObject _interaction;
         private bool _performed = false;
         public WaitForPlayerInteractionCompleted(InteractableObject interaction)
         {

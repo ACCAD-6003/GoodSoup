@@ -12,9 +12,6 @@ public class SkipIfStoryDatastoreState : ISkipCondition
         }
         dynamic storyDataValue = Instance.GetStoryDataValue(_storyData);
         dynamic necessaryDataValue = Instance.DeserializeStoryDataValue(_storyData, _necessaryValueToSkip);
-        Debug.Log("Does " + storyDataValue + " Equal "  + necessaryDataValue + "??");
-
         return _skipIfDNE ? !storyDataValue.Equals(necessaryDataValue) : storyDataValue.Equals(necessaryDataValue);
-            
     }
 }

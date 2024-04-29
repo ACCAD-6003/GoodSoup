@@ -5,7 +5,7 @@ namespace Assets.Scripts.AI
 {
     internal class WaitFor : Node
     {
-        private readonly float _seconds;
+        public float _seconds;
         private float _startTime;
 
         public WaitFor(float seconds)

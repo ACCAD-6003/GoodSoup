@@ -1,22 +1,12 @@
 using BehaviorTree;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-public class GoStraightToEnding : Node
+public class GoStraightToEnding : IEvaluateOnce
 {
-    bool done = false;
-    Ending ending;
-    public GoStraightToEnding(Ending ending)
+    public Ending ending;
+    public override void Run()
     {
-        this.ending = ending;
-    }
-    public override NodeState Evaluate()
-    {
-        if (!done)
-        {
-            done = true;
-            StoryDatastore.Instance.ChosenEnding.Value = ending;
-            SceneManager.LoadScene("Endings");
-        }
-        return NodeState.SUCCESS;
+        StoryDatastore.Instance.ChosenEnding.Value = ending;
+        SceneManager.LoadScene("Endings");
     }
 }

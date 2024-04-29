@@ -6,12 +6,8 @@ namespace Assets.Scripts.AI
 {
     internal class SwitchAmberMount : Node
     {
-        private readonly AmberMount _mount;
+        public AmberMount _mount;
         private bool _mounted = false, _mounting = false;
-        public SwitchAmberMount(AmberMount sitInBed)
-        {
-            this._mount = sitInBed;
-        }
         public override NodeState Evaluate()
         {
             if (!_mounted && !_mounting) {

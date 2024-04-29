@@ -360,25 +360,6 @@ namespace Assets.Scripts.AI
                 return NodeState.SUCCESS;
             }
         }
-        public class ChangeStoryData<T> : Node {
-            T newValue;
-            bool _changed = false;
-            StoryData<T> _storyData;
-            public ChangeStoryData (StoryData<T> data, T newValue) {
-                _storyData = data;
-                this.newValue = newValue;
-            }
-            public override NodeState Evaluate()
-            {
-                if (!_changed) {
-                    _changed = true;
-                    _storyData.Value = newValue;
-                }
-                state = NodeState.SUCCESS;
-                return state;
-            }
-
-        }
         class AmberNoticeRecipe : Node {
             bool _increased = false;
             bool _coolingDown = false;
@@ -475,28 +456,6 @@ namespace Assets.Scripts.AI
             }
         }
     }**/
-
-    }
-    public class ImpactStoryData : Node
-    {
-        float impact;
-        StoryData<float> storyData;
-        bool _performed = false;
-        public ImpactStoryData(StoryData<float> data, float impact)
-        {
-            this.impact = impact;
-            storyData = data;
-        }
-        public override NodeState Evaluate()
-        {
-            if (!_performed)
-            {
-                storyData.Value += impact;
-                _performed = true;
-            }
-            state = NodeState.SUCCESS;
-            return state;
-        }
 
     }
 }
