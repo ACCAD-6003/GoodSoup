@@ -1,9 +1,12 @@
 ﻿using System;
 using System.Collections;
 using UnityEngine;
+public interface IStoryData {
+    public Type GetDataType();
+}
 
 [Serializable]
-public class StoryData<T>
+public class StoryData<T> : IStoryData
 {
     [SerializeField]
     T _value;
@@ -31,6 +34,10 @@ public class StoryData<T>
     public StoryData(T initialValue)
     {
         _value = initialValue;
+    }
+
+    public Type GetDataType() {
+        return typeof(T);
     }
 
     override

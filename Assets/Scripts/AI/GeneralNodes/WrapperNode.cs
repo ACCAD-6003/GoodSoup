@@ -1,68 +1,15 @@
 ﻿using BehaviorTree;
-using System;
+using Sirenix.Serialization;
 using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Unity.VisualScripting;
-public class SkipIfStoryDatastoreState<T> : ISkipCondition {
-    StoryData<T> _storyData;
-    T _necessaryValueToSkip;
-    bool _skipIfDNE = false;
-    public SkipIfStoryDatastoreState(StoryData<T> storyData, T necessaryValueToSkip) {
-        _storyData = storyData;
-        _necessaryValueToSkip = necessaryValueToSkip;
-    }
-    public SkipIfStoryDatastoreState(StoryData<T> storyData, T necessaryValueToSkip, bool skipIfDNE)
-    {
-        _storyData = storyData;
-        _necessaryValueToSkip = necessaryValueToSkip;
-        _skipIfDNE = skipIfDNE;
-    }
-    public bool ShouldSkip()  => _skipIfDNE ? !_storyData.Value.Equals(_necessaryValueToSkip) : _storyData.Value.Equals(_necessaryValueToSkip);
-}
-public interface ISkipCondition
-{
-    public bool ShouldSkip();
-}
-public class WaitForStoryDataChange : Node
-{
-    private ISkipCondition _condition;
-    private bool skipped = false;
-    public WaitForStoryDataChange(ISkipCondition condition) {
-        _condition = condition;
-    }
-    public override NodeState Evaluate()
-    {
-        if (skipped) {
-            state = NodeState.SUCCESS;
-            return NodeState.SUCCESS;
-        }
-        if (!skipped && _condition.ShouldSkip()) {
-            skipped = true;
-            state = NodeState.SUCCESS;
-            return NodeState.SUCCESS;
-        }
-        state = NodeState.FAILURE;
-        return NodeState.FAILURE;
-    }
-
-}
+using UnityEngine;
 public class WrapperNode : Node
 {
-    private ISkipCondition _skipCondition;
-    bool _shouldEvaluteOnlyOnce = false;
+    public ISkipCondition _skipCondition;
+    public bool _shouldEvaluteOnlyOnce = false;
+    public List<Node> nodes;
     bool _canSkip = true;
     bool _skipEverytime = false;
-    public WrapperNode(ISkipCondition skipCondition, List<Node> nodes) : base(nodes) {
-        _skipCondition = skipCondition;
-    }
-    public WrapperNode(ISkipCondition skipCondition, List<Node> nodes, bool shouldEvaluateOnlyOnce) : base(nodes)
-    {
-        _skipCondition = skipCondition;
-        _shouldEvaluteOnlyOnce = shouldEvaluateOnlyOnce;
-    }
+
     public override NodeState Evaluate()
     {
         if (_skipEverytime) {
@@ -82,7 +29,7 @@ public class WrapperNode : Node
                 return NodeState.SUCCESS;
             }
         }
-        foreach (Node node in children)
+        foreach (Node node in nodes)
         {
             switch (node.Evaluate())
             {

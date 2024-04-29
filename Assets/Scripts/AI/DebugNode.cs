@@ -8,22 +8,12 @@ using UnityEngine;
 
 namespace Assets.Scripts.AI
 {
-    internal class DebugNode : Node
+    internal class DebugNode : IEvaluateOnce
     {
-        private int index;
-        private bool evaluated = false;
-        public DebugNode(int index) {
-            this.index = index;
-        }
-        public override NodeState Evaluate()
+        public int index;
+        public override void Run()
         {
-            if (!evaluated)
-            {
-                evaluated = true;
-                Debug.Log(index);
-            }
-            state = NodeState.SUCCESS;
-            return NodeState.SUCCESS;
+            Debug.Log(index);
         }
     }
 }

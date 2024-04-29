@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using UnityEngine;
 
 namespace BehaviorTree
 {
     public class Sequence : Node
     {
-        public Sequence() : base() { }
-        public Sequence(List<Node> children) : base(children) { }
+        public List<Node> children;
         public override NodeState Evaluate()
         {
             foreach (Node node in children)

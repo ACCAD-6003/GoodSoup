@@ -8,8 +8,7 @@ namespace BehaviorTree
 {
     public class Selector : Node
     {
-        public Selector() : base() { }
-        public Selector(List<Node> children) : base(children) { }
+        public List<Node> children;
         public override NodeState Evaluate()
         {
             foreach (Node node in children)
