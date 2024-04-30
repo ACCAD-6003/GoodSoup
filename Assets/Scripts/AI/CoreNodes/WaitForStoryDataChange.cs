@@ -2,12 +2,8 @@
 using BehaviorTree;
 public class WaitForStoryDataChange : Node
 {
-    private ISkipCondition _condition;
+    public ISkipCondition _condition;
     private bool skipped = false;
-    public WaitForStoryDataChange(ISkipCondition condition)
-    {
-        _condition = condition;
-    }
     public override NodeState Evaluate()
     {
         if (skipped)

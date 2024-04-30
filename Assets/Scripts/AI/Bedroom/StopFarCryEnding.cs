@@ -8,21 +8,12 @@ using UnityEditor;
 
 namespace Assets.Scripts.AI.Bedroom
 {
-    public class StopFarCryEnding : Node
+    public class StopFarCryEnding : IEvaluateOnce
     {
-        bool done = false;
-        FarCrySwitcher switcher;
-        public StopFarCryEnding(FarCrySwitcher switcher) {
-            this.switcher = switcher;
-        }
-        public override NodeState Evaluate()
+        public FarCrySwitcher switcher;
+        public override void Run()
         {
-            if (!done)
-            {
-                done = true;
-                switcher.Stop();
-            }
-            return NodeState.SUCCESS;
+            switcher.Stop();
         }
     }
 }

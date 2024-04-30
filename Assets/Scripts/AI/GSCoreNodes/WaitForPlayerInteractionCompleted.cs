@@ -1,4 +1,5 @@
 ﻿using BehaviorTree;
+using UnityEngine;
 
 namespace Assets.Scripts.AI
 {
@@ -6,9 +7,8 @@ namespace Assets.Scripts.AI
     {
         public readonly InteractableObject _interaction;
         private bool _performed = false;
-        public WaitForPlayerInteractionCompleted(InteractableObject interaction)
+        public void Awake()
         {
-            _interaction = interaction;
             _interaction.PlayerInteraction.OnActionEnding += InteractionCompleted;
         }
         private void InteractionCompleted() {

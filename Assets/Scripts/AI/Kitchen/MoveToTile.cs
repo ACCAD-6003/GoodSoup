@@ -9,26 +9,13 @@ using UnityEngine;
 
 namespace Assets.Scripts.AI.Kitchen
 {
-    /// <summary>
-    /// This Task guides Amber to an interactable object.
-    /// </summary>
     public class MoveToTile : Node
     {
-        private grid_manager _grid;
+        public grid_manager _grid;
         bool _targetSet = false, _destReached = false;
-        private tile _tile;
-        private Vector3 _dirAtEnd;
-        bool rotateAtTheEnd = false;
-        public MoveToTile(grid_manager grid, tile tile) {
-            _grid = grid;
-            _tile = tile;
-        }
-        public MoveToTile(grid_manager grid, tile tile, Vector3 dirAtEnd) {
-            _grid = grid;
-            _tile = tile;
-            _dirAtEnd = dirAtEnd;
-            rotateAtTheEnd = true;
-        }
+        public tile _tile;
+        public Vector3 _dirAtEnd;
+        public bool rotateAtTheEnd = false;
         private void ReachedDest() {
             _destReached = true;
             if (rotateAtTheEnd) {

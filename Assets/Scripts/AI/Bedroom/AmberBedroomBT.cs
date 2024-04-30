@@ -44,10 +44,9 @@ namespace Assets.Scripts.AI
                     new DisplayUIIcon(UI.UIElements.BubbleIcon.SLEEPING),
                     // Wait for alarm clock
                     new WrapperNode(new SkipIfStoryDatastoreState<bool>(StoryDatastore.Instance.BooksBlown, true), new List<Node>() {
-                        new Sequence(new List<Node>() {
-                            new WaitForPlayerInteractionCompleted(interactions.AlarmClock),
-                            new DisplayUIIcon(UI.UIElements.BubbleIcon.OK_IM_COMING, 3f),
-                        }),
+                        new WaitForPlayerInteractionCompleted(interactions.AlarmClock),
+                        new DisplayUIIcon(UI.UIElements.BubbleIcon.OK_IM_COMING, 3f),
+
                         new StopFarCryEnding(interactions.switcher),
 
                         new WaitFor(1f),

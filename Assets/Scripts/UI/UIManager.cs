@@ -10,7 +10,8 @@ namespace Assets.Scripts.UI
         [SerializeField] UIElements icons;
         private Coroutine bubbleCoroutine;
 
-        public static UIManager Instance { get; private set; }
+        private static UIManager instance;
+        public static UIManager Instance { get => instance; private set { instance = value; } }
 
         private void Awake()
         {
