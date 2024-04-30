@@ -7,21 +7,13 @@ using System.Threading.Tasks;
 
 namespace Assets.Scripts.AI.GeneralNodes
 {
-    public class PerformAmberInteraction : Node
+    public class PerformAmberInteraction : IEvaluateOnce
     {
         private bool _performed = false;
-        private Interaction interaction;
-        public PerformAmberInteraction(Interaction interaction) { 
-            this.interaction = interaction;
-        }
-        public override NodeState Evaluate()
+        public InteractableObject interaction;
+        public override void Run()
         {
-            if (!_performed) { 
-                _performed = true;
-                interaction.StartAction();
-            }
-            state = NodeState.SUCCESS;
-            return NodeState.SUCCESS;
+            interaction.AmberInteraction.StartAction();
         }
     }
 }
