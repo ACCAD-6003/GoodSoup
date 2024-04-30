@@ -8,7 +8,6 @@ namespace Assets.Scripts.AI
     public class AmberMount : MonoBehaviour
     {
         public Action CompletedMounting;
-        public Vector3 bubbleOffset;
         [SerializeField] private GameObject _mount;
         [SerializeField] private bool _enabledOnLoad = false;
         void Awake() {
@@ -22,7 +21,6 @@ namespace Assets.Scripts.AI
             StartCoroutine(nameof(MountWithDelay));
         }
         private void PerformMount() {
-            ThoughtBubble.offset = bubbleOffset;
             _mount.SetActive(true);
             FindObjectOfType<ObjectInteraction>().Amber = _mount.transform;
         }
