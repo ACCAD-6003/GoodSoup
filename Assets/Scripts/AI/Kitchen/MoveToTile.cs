@@ -5,21 +5,30 @@ using System.Linq;
 
 using System.Text;
 using System.Threading.Tasks;
+using UnityEditor;
 using UnityEngine;
 
 namespace Assets.Scripts.AI.Kitchen
 {
+    public enum MoveDir { UP, DOWN, LEFT, RIGHT }
     public class MoveToTile : Node
     {
+        protected Dictionary<MoveDir, Vector3> MoveDirections = new()
+        {
+            { MoveDir.UP, new Vector3(0,0,1) },
+            { MoveDir.DOWN, new Vector3(0,0,-1) },
+            { MoveDir.LEFT, new Vector3(-1,0,0) },
+            { MoveDir.RIGHT, new Vector3(1, 0, 0) }
+        };
         public grid_manager _grid;
         bool _targetSet = false, _destReached = false;
         public tile _tile;
-        public Vector3 _dirAtEnd;
+        public MoveDir _dirAtEnd;
         public bool rotateAtTheEnd = false;
         private void ReachedDest() {
             _destReached = true;
             if (rotateAtTheEnd) {
-                _grid.char_s.SetArbitraryRot(_dirAtEnd);
+                _grid.char_s.SetArbitraryRot(MoveDirections[_dirAtEnd]);
             }
         }
         public override NodeState Evaluate()
