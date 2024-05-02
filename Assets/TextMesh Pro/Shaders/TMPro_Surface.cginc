@@ -8,8 +8,7 @@ void VertShader(inout appdata_full v, out Input data)
 	float bold = step(v.texcoord1.y, 0);
 
 	// Generate normal for backface
-	float3 
-	= ObjSpaceViewDir(v.vertex);
+	float3 view = ObjSpaceViewDir(v.vertex);
 	v.normal *= sign(dot(v.normal, view));
 
 #if USE_DERIVATIVE
