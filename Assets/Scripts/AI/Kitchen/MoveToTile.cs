@@ -13,7 +13,7 @@ namespace Assets.Scripts.AI.Kitchen
     public enum MoveDir { UP, DOWN, LEFT, RIGHT }
     public class MoveToTile : Node
     {
-        protected Dictionary<MoveDir, Vector3> MoveDirections = new()
+        public static Dictionary<MoveDir, Vector3> MoveDirections = new()
         {
             { MoveDir.UP, new Vector3(0,0,1) },
             { MoveDir.DOWN, new Vector3(0,0,-1) },
