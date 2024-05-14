@@ -46,7 +46,7 @@ public class AmberVisual : MonoBehaviour
         // Set things to correspond with storydata on Awake (first value is a dummy value)
         UpdateBackpackVisual(false, StoryDatastore.Instance.PickedUpBackpack.Value);
         // An important distinction -- AmberWornClothing differs from ChosenClothing
-        UpdateClothesVisual(ClothingOption.Dirty, StoryDatastore.Instance.AmberWornClothing.Value);
+        UpdateClothesVisual(ClothingOption.DIRTY, StoryDatastore.Instance.AmberWornClothing.Value);
         // Update hair
         UpdateHairVisual(HairOption.BONNET, StoryDatastore.Instance.AmberHairOption.Value);
 
@@ -107,7 +107,7 @@ public class AmberVisual : MonoBehaviour
         _chefHat.SetActive(newValue);
     }
     void UpdateClothesVisual(ClothingOption oldValue, ClothingOption newValue) {
-        _towel.SetActive(newValue == ClothingOption.Towel);
+        _towel.SetActive(newValue == ClothingOption.TOWEL);
         Texture2D text = Resources.Load<Texture2D>("Textures/Clothing/" + Dresser.ClothingOptions[newValue]);
         _amberBodyMaterial.SetTexture("_Albedo", text);
     }

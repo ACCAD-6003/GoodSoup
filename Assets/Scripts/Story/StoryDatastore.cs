@@ -127,7 +127,7 @@ public class StoryDatastore : MonoBehaviour
     [SerializeField]
     public StoryData<bool> AmberDressed = new StoryData<bool>(false);
     [SerializeField]
-    public StoryData<ClothingOption> ChosenClothing = new StoryData<ClothingOption>(ClothingOption.Dirty);
+    public StoryData<ClothingOption> ChosenClothing = new StoryData<ClothingOption>(ClothingOption.DIRTY);
     [SerializeField]
     public StoryData<bool> ShirtPickedUp = new StoryData<bool>(false);
     [SerializeField]
@@ -135,7 +135,7 @@ public class StoryDatastore : MonoBehaviour
     [SerializeField]
     public StoryData<bool> PickedUpBackpack = new StoryData<bool>(false);
     [SerializeField]
-    public StoryData<ClothingOption> AmberWornClothing = new StoryData<ClothingOption>(ClothingOption.Pajamas);
+    public StoryData<ClothingOption> AmberWornClothing = new StoryData<ClothingOption>(ClothingOption.PAJAMAS);
     [SerializeField]
     public StoryData<HairOption> AmberHairOption = new StoryData<HairOption>(HairOption.CLEAN);
     [SerializeField]

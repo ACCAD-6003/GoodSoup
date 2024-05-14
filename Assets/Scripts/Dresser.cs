@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 // none is used for when there is no shirt on the hanger (after amber picks it up)
 public enum ClothingOption { 
-    Blue, Green, Orange, Dirty, Pajamas, Towel, None
+    BLUE, GREEN, ORANGE, DIRTY, PAJAMAS, TOWEL, NONE
 }
 public class Dresser : Interaction
 {
@@ -11,14 +11,14 @@ public class Dresser : Interaction
 
     public static Dictionary<ClothingOption, string> ClothingOptions = new()
     {
-        { ClothingOption.Dirty, "AmberDirtyClothes" },
-        { ClothingOption.Blue, "AmberDayClothes" },
-        { ClothingOption.Green, "AmberDayClothes2" },
-        { ClothingOption.Orange, "AmberDayClothes3" },
+        { ClothingOption.DIRTY, "AmberDirtyClothes" },
+        { ClothingOption.BLUE, "AmberDayClothes" },
+        { ClothingOption.GREEN, "AmberDayClothes2" },
+        { ClothingOption.ORANGE, "AmberDayClothes3" },
         // Untested idk if this is the name of the pajamas or not
-        { ClothingOption.Pajamas, "AmberPajamas" },
-        { ClothingOption.Towel, "AmberNaked" },
-        { ClothingOption.None, "AmberNaked" },
+        { ClothingOption.PAJAMAS, "AmberPajamas" },
+        { ClothingOption.TOWEL, "AmberNaked" },
+        { ClothingOption.NONE, "AmberNaked" },
     };
 
     void Awake()
@@ -45,7 +45,7 @@ public class Dresser : Interaction
         foreach (var shirt in shirtsOnBed.AllShirts) {
             shirt.Value.SetActive(false);
         }
-        StoryDatastore.Instance.ChosenClothing.Value = ClothingOption.None;
+        StoryDatastore.Instance.ChosenClothing.Value = ClothingOption.NONE;
         EndAction();
     }
 }

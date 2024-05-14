@@ -23,7 +23,7 @@ public class SwapShirt : Interaction
         foreach (var shirt in shirtOptions.AllShirts) {
             shirt.Value.SetActive(false);
         }
-        if (StoryDatastore.Instance.DisplayedShirts[ID].Value == ClothingOption.None) {
+        if (StoryDatastore.Instance.DisplayedShirts[ID].Value == ClothingOption.NONE) {
             return;
         } 
         shirtOptions.AllShirts[StoryDatastore.Instance.DisplayedShirts[ID].Value].SetActive(true);
@@ -47,7 +47,7 @@ public class SwapShirt : Interaction
         {
             shirt.Value.SetActive(false);
         }
-        if (clothes != ClothingOption.None)
+        if (clothes != ClothingOption.NONE)
         {
             shirtOnBed.AllShirts[clothes].SetActive(true);
         }
