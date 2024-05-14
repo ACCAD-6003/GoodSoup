@@ -10,7 +10,7 @@ public class BlowBooksOffShelf : IFanAction
     {
         foreach (var book in _books)
         {
-            StartCoroutine(book.Blow());
+            book.Blow();
         }
     }
 

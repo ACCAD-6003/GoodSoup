@@ -1,4 +1,3 @@
-
 using System.Collections;
 using UnityEngine;
 
@@ -12,18 +11,37 @@ public class PullObjectWithPhysics : Interaction
     bool _collided = false;
     [SerializeField] Interaction interactionToFinishOnceCollisionHits;
     [SerializeField] AudioSource _playSoundOnImpact;
+    [SerializeField] float modifier = 10f;
+
     private void Awake()
     {
         _rb = gameObject.GetComponent<Rigidbody>();
     }
+
     public override void DoAction()
     {
         StartCoroutine(nameof(PullOut));
     }
-/*    private void FixedUpdate()
+    public void Blow()
     {
-        
-    }*/
+        _blown = true;
+        StartCoroutine(StopBlowingAfterDuration(duration));
+    }
+
+    IEnumerator StopBlowingAfterDuration(float duration)
+    {
+        yield return new WaitForSeconds(duration);
+        _blown = false;
+    }
+
+    private void FixedUpdate()
+    {
+        if (_blown)
+        {
+            ApplyBlowForce();
+        }
+    }
+
     IEnumerator PullOut()
     {
         _rb.isKinematic = true;
@@ -42,40 +60,31 @@ public class PullObjectWithPhysics : Interaction
         transform.position = endPosition;
         EnableRigidBody();
     }
-    public IEnumerator Blow()
+
+    private void ApplyBlowForce()
     {
-        _blown = true;
-        PutInProgress();
         _inPhysicsMode = true;
-        float elapsedTime = 0f;
-        Vector3 initialVelocity = _rb.velocity;
-        float modifier = 100f;
         var blowDuration = 0.6f + (0.7f * interactionId);
-        while (elapsedTime < blowDuration)
-        {
-            // Calculate the current force based on elapsed time
-            float t = elapsedTime / blowDuration;
-            Vector3 currentForce = Vector3.Lerp(Vector3.zero, new Vector3 (-1f * modifier, 0, -1.5f * modifier), t);
 
-            // Apply the force
-            _rb.velocity = initialVelocity + currentForce * Time.deltaTime;
+        // Calculate the current force based on elapsed time
+        float t = Time.fixedDeltaTime / blowDuration;
+        Vector3 currentForce = Vector3.Lerp(Vector3.zero, new Vector3(-1f * modifier, 0, -1.5f * modifier), t);
 
-            // Increment elapsed time
-            elapsedTime += Time.deltaTime;
-
-            yield return null;
-        }
-        // Ensure the final force is applied
-        //_rb.velocity = initialVelocity + new Vector3(-0.25f * modifier, 0, -1f * modifier);
+        // Apply the force
+        _rb.AddForce(currentForce, ForceMode.VelocityChange);
     }
-    public void EnableRigidBody() {
+
+    public void EnableRigidBody()
+    {
         _rb.isKinematic = false;
         _rb.useGravity = true;
         _inPhysicsMode = true;
     }
+
     void OnCollisionEnter(Collision collision)
     {
-        if (!_inPhysicsMode || _collided) {
+        if (!_inPhysicsMode || _collided)
+        {
             return;
         }
         if (collision.collider.gameObject.layer == 8 || collision.collider.gameObject.name.Contains("Book"))
@@ -85,7 +94,8 @@ public class PullObjectWithPhysics : Interaction
         _collided = true;
         FindObjectOfType<CameraShake>().ShakeCamera();
         StoryDatastore.Instance.AnyBookDropped.Value = true;
-        if (_blown) {
+        if (_blown)
+        {
             StoryDatastore.Instance.BooksBlown.Value = true;
             if (StoryDatastore.Instance.CurrentGamePhase.Value == GamePhase.TUTORIAL_BEDROOM)
             {
@@ -100,7 +110,8 @@ public class PullObjectWithPhysics : Interaction
 
     public override void LoadData(StoryDatastore data)
     {
-        if (data.BooksDropped.ContainsKey(interactionId)) {
+        if (data.BooksDropped.ContainsKey(interactionId))
+        {
             _rb = gameObject.GetComponent<Rigidbody>();
             transform.position = data.BooksDropped[interactionId].location;
             transform.rotation = data.BooksDropped[interactionId].rotation;
@@ -110,7 +121,8 @@ public class PullObjectWithPhysics : Interaction
 
     public override void SaveData(StoryDatastore data)
     {
-        if (_inPhysicsMode) {
+        if (_inPhysicsMode)
+        {
             data.BooksDropped[interactionId] = (transform.position, transform.rotation);
         }
     }
