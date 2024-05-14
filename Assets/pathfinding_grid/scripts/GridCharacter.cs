@@ -1,3 +1,4 @@
+using Assets.Scripts.AI.Kitchen;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -39,7 +40,9 @@ public class GridCharacter : MonoBehaviour
             Vector3 tar_dir = db_moves[1].position - tr_body.position;
             tar_dir.y = 0; // Ensure no rotation in the y-axis
             Quaternion new_rot = Quaternion.LookRotation(tar_dir);
+            //tr_body.transform.rotation = Quaternion.LookRotation(MoveToTile.MoveDirections[MoveDir.DOWN]);
             tr_body.transform.rotation = new_rot;
+            //Debug.Log("Updating body looking to : " + tar_dir.ToString());
         }
 
         if (moving)
