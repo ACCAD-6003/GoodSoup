@@ -9,7 +9,7 @@ public class PullObjectWithPhysics : Interaction
     public float duration = 1f;
     bool _inPhysicsMode = false;
     Rigidbody _rb;
-    bool _blown = false;
+    bool _blowing = false, _blown = false;
     bool _collided = false;
     [SerializeField] Interaction interactionToFinishOnceCollisionHits;
     [SerializeField] AudioSource _playSoundOnImpact;
@@ -28,6 +28,7 @@ public class PullObjectWithPhysics : Interaction
     }
     public void Blow()
     {
+        _blowing = true;
         _blown = true;
         StartCoroutine(StopBlowingAfterDuration(duration));
     }
@@ -35,12 +36,12 @@ public class PullObjectWithPhysics : Interaction
     IEnumerator StopBlowingAfterDuration(float duration)
     {
         yield return new WaitForSeconds(duration);
-        _blown = false;
+        _blowing = false;
     }
 
     private void FixedUpdate()
     {
-        if (_blown)
+        if (_blowing)
         {
             ApplyBlowForce();
         }
@@ -100,9 +101,11 @@ public class PullObjectWithPhysics : Interaction
         StoryDatastore.Instance.AnyBookDropped.Value = true;
         if (_blown)
         {
+            Debug.Log("Blown book has collided");
             StoryDatastore.Instance.BooksBlown.Value = true;
             if (StoryDatastore.Instance.CurrentGamePhase.Value == GamePhase.TUTORIAL_BEDROOM)
             {
+                Debug.Log("Blown book has caused the annoyance to increase.");
                 StoryDatastore.Instance.Annoyance.Value += 0.5f;
             }
         }
