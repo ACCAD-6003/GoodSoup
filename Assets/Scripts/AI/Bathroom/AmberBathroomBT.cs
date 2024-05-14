@@ -56,31 +56,30 @@ namespace Assets.Scripts.AI
                         new AmberShower(interactions.Shower),
                         new SwitchAmberMount(navigation),
                         new WaitFor(0.5f),
+
                         new PerformAmberInteraction(interactions.ShowerCurtain.AmberInteraction),
                         //new MoveToTile(interactions.Grid, interactions.Towel.AssociatedTile),
                         new PerformAmberInteraction(interactions.Towel.AmberInteraction),
                         new WaitFor(0.5f),
+
+
                         new MoveToTile(interactions.Grid, interactions.LaundryBasketTile),
                         new EvaluateItemsPickedUp(new List<int>() { 0,1,2 }, UIElements.BubbleIcon.HAPPY_LAUNDRY, UIElements.BubbleIcon.SAD_LAUNDRY),
                         new WaitFor(2f),
                         new MoveToTile(interactions.Grid, interactions.sinkTile, new Vector3(0,0,1)),
                         //new UpdateAmberLookRot(interactions.Grid, new Vector3(1,0,0)),
+
                         new DebugNode(1),
                         new WrapperNode(
                             new SkipIfStoryDatastoreState<MirrorState>(StoryDatastore.Instance.MirrorState, MirrorState.DRAWN_ON, true),
                             new List<Node>() {
-                                new DebugNode(2),
                                 new WaitFor(0.25f),
-                                new DebugNode(3),
                                 new ModifyStat(StoryDatastore.Instance.Paranoia, 3f),
-                                new DebugNode(4),
                                 new ShowBubble(UIElements.BubbleIcon.PARANOID),
-                                new DebugNode(5),
                                 new WaitFor(1f),
-                                new DebugNode(6),
                             }
                         ),
-                        new DebugNode(7),
+
                         new WaitFor(0.5f),
                         new EvaluateItemsPickedUp(new List<int>() { 1000 }, UIElements.BubbleIcon.OH_WHERE_IS_MY_HAIRBRUSH, UIElements.BubbleIcon.BRUSH),
                         new WrapperNode(
@@ -94,12 +93,14 @@ namespace Assets.Scripts.AI
                                 new SwitchAmberMount(navigation)
                             }
                         ),
+
                         new WrapperNode(
                             new SkipIfStoryDatastoreState<bool>(StoryDatastore.Instance.ResultOfEvaluation, false),
                             new List<Node>() {
                                 new ImpactStoryData(StoryDatastore.Instance.Annoyance, 3f)
                             }
                         ),
+
                         new WaitFor(0.3f),
                         new SetGameObjectActive(phone, false),
                         new WaitFor(0.5f),

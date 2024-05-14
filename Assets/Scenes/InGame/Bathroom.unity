@@ -1533,7 +1533,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 750533334}
-  m_RootOrder: 17
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &88054855
 GameObject:
@@ -2098,7 +2098,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 750533334}
-  m_RootOrder: 16
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &102133172
 MonoBehaviour:
@@ -9870,7 +9870,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 656353135}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &343562823
 MonoBehaviour:
@@ -16677,9 +16677,9 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 343562822}
   - {fileID: 1161972645}
   - {fileID: 1098748237}
-  - {fileID: 343562822}
   - {fileID: 1594734920}
   m_Father: {fileID: 479377749}
   m_RootOrder: 1
@@ -16706,9 +16706,9 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   children:
+  - {fileID: 343562823}
   - {fileID: 1161972646}
   - {fileID: 1098748238}
-  - {fileID: 343562823}
   - {fileID: 1594734921}
 --- !u!1 &658258096
 GameObject:
@@ -18081,6 +18081,7 @@ Transform:
   - {fileID: 315434607}
   - {fileID: 126933144}
   - {fileID: 1484729520}
+  - {fileID: 1516649397}
   - {fileID: 102133171}
   - {fileID: 83707935}
   m_Father: {fileID: 479377749}
@@ -18124,6 +18125,7 @@ MonoBehaviour:
   - {fileID: 315434608}
   - {fileID: 126933145}
   - {fileID: 1484729521}
+  - {fileID: 1516649398}
   - {fileID: 102133172}
   - {fileID: 83707934}
 --- !u!1 &779833661
@@ -27076,7 +27078,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 656353135}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1098748238
 MonoBehaviour:
@@ -27101,7 +27103,7 @@ MonoBehaviour:
     SerializationNodes: []
   _grid: {fileID: 142665933}
   _tile: {fileID: 665349516}
-  _dirAtEnd: 1
+  _dirAtEnd: 3
 --- !u!1001 &1101943490
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -28647,7 +28649,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 656353135}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1161972646
 MonoBehaviour:
@@ -44642,6 +44644,60 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
+--- !u!1 &1516649396
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1516649397}
+  - component: {fileID: 1516649398}
+  m_Layer: 0
+  m_Name: Wait For Player
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1516649397
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1516649396}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 750533334}
+  m_RootOrder: 16
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1516649398
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1516649396}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ccb26db198f01c44b2e254751277dc6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  _shower: {fileID: 1096206247}
 --- !u!1 &1556217347
 GameObject:
   m_ObjectHideFlags: 0

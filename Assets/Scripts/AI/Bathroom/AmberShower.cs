@@ -10,10 +10,7 @@ public class AmberShower : Node
 {
     bool startedShowering = false;
     bool finishedShowering = false;
-    AmberUseShower _shower;
-    public AmberShower(AmberUseShower shower) { 
-        _shower = shower;
-    }
+    public AmberUseShower _shower;
     public override NodeState Evaluate()
     {
         if (!startedShowering) {

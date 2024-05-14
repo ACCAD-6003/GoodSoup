@@ -79,7 +79,8 @@ public class StoryDatastore : MonoBehaviour
             { StoryDataType.ActivelyCooking, Instance.ActivelyCooking },
         };
     }
-
+    [Header("This is a global setting that modifies the amount of time amber waits between actions.")]
+    public float AmberTimeModifier = 1f;
 
     // Not story data
     [SerializeField]

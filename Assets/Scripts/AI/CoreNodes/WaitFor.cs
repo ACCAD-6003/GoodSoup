@@ -10,7 +10,7 @@ namespace Assets.Scripts.AI
 
         public WaitFor(float seconds)
         {
-            _seconds = seconds;
+            _seconds = seconds * StoryDatastore.Instance.AmberTimeModifier;
         }
 
         public override NodeState Evaluate()

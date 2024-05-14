@@ -2573,6 +2573,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13c204556b7bfec4f9858a39fa93aa4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AmberTimeModifier: 1
   AnyBookDropped:
     _value: 0
   BurnerHeat:
