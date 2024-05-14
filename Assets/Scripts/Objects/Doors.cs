@@ -23,7 +23,7 @@ namespace Assets.Scripts.Objects
         public Dictionary<AmberRoom, tile> doors;
         public tile Entrance { get {
                 if (StoryDatastore.Instance.CurrentGamePhase.Value == GamePhase.TUTORIAL_BEDROOM) {
-                    return GameObject.Find("tile_5_1").GetComponent<tile>();
+                    return GameObject.Find("tile_7_3").GetComponent<tile>();
                 } 
                 return doors[StoryDatastore.Instance.EntryDoor.Value]; 
             } 
