@@ -24,7 +24,6 @@ namespace Assets.Scripts.AI.Kitchen
         bool _targetSet = false, _destReached = false;
         public tile _tile;
         public MoveDir _dirAtEnd;
-        public bool rotateAtTheEnd = false;
         private void ReachedDest() {
             _destReached = true;
             _grid.char_s.SetArbitraryRot(MoveDirections[_dirAtEnd]);
@@ -34,6 +33,7 @@ namespace Assets.Scripts.AI.Kitchen
             if (!_targetSet) {
                 _targetSet = true;
                 _grid.Target(_tile, ReachedDest);
+                _grid.char_s.SetLookRotWhenComplete(MoveDirections[_dirAtEnd]);
             }
             if (_destReached) {
                 state = NodeState.SUCCESS;

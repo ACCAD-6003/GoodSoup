@@ -49,11 +49,11 @@ public class grid_manager : MonoBehaviour
         dest_tile = t;
         char_s.PathfindingCompleted += destinationReachedEvent;
     }
-    public void SetLookRot(Vector3 rot) {
+    public void SetArbitraryLookRot(Vector3 rot) {
         if (char_s == null) {
             char_s = GameObject.FindGameObjectWithTag("Player").GetComponent<GridCharacter>();
         }
-        char_s.SetLookRotWhenComplete(rot);
+        char_s.SetArbitraryRot(rot);
     }
     private void Update()
     {

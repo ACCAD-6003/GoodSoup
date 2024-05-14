@@ -22,7 +22,7 @@ namespace Assets.Scripts.AI
         public override NodeState Evaluate()
         {
             if (!_interactionStarted) {
-                _grid.SetLookRot(_interactableObject.AmberInteraction.AssociatedDirection);
+                _grid.SetArbitraryLookRot(_interactableObject.AmberInteraction.AssociatedDirection);
                 _interactionStarted = true;
                 _interactableObject.AmberInteraction.StartAction();
                 _interactableObject.AmberInteraction.OnActionEnding += InteractionCompleted;
