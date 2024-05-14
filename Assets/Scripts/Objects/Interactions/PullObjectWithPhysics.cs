@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class PullObjectWithPhysics : Interaction
 {
+    [Header("Pull Settings")]
+    [Tooltip("These are modifiers for the book pull out sequence, not the blow settings.")]
     public float moveDistance = 1.184389f;
     public float duration = 1f;
     bool _inPhysicsMode = false;
@@ -11,6 +13,8 @@ public class PullObjectWithPhysics : Interaction
     bool _collided = false;
     [SerializeField] Interaction interactionToFinishOnceCollisionHits;
     [SerializeField] AudioSource _playSoundOnImpact;
+    [Header("Blow Settings")]
+    [Tooltip("These are modifiers for the book being blown.")]
     [SerializeField] float modifier = 10f;
 
     private void Awake()
@@ -68,7 +72,7 @@ public class PullObjectWithPhysics : Interaction
 
         // Calculate the current force based on elapsed time
         float t = Time.fixedDeltaTime / blowDuration;
-        Vector3 currentForce = Vector3.Lerp(Vector3.zero, new Vector3(-1f * modifier, 0, -1.5f * modifier), t);
+        Vector3 currentForce = Vector3.Lerp(Vector3.zero, new Vector3(-2f * modifier, 0, -1.5f * modifier), t);
 
         // Apply the force
         _rb.AddForce(currentForce, ForceMode.VelocityChange);
