@@ -2,6 +2,7 @@ using Assets.Scripts.Objects.Interactions;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using static UnityEngine.InputSystem.InputAction;
 
 public class ObjectInteraction : MonoBehaviour
@@ -22,6 +23,11 @@ public class ObjectInteraction : MonoBehaviour
     #nullable enable
 
     float searchDistance = 100f;
+
+    private System.Action<CallbackContext> interactAction;
+    private System.Action<CallbackContext> hoverAction;
+
+    private GhostInput interactions;
 
     public bool IsInAmberSightlines(InteractableObject o)
     {
@@ -77,36 +83,40 @@ public class ObjectInteraction : MonoBehaviour
     
     private void Start()
     {
-        GhostInput interactions = new();
+        interactions = new();
 
-        interactions.Interactions.Interact.performed += (CallbackContext c) =>
+        interactAction = (CallbackContext c) =>
         {
-            InteractableObject? targettedObject = GetTarget(c);
+            InteractableObject targettedObject = GetTarget(c);
 
-            if (
-                targettedObject != null 
-                && CanInteractWith(targettedObject)
-            )
+            if (targettedObject != null && CanInteractWith(targettedObject))
             {
                 targettedObject.PlayerInteraction.StartAction();
                 playerInteractSoundSource.PlayOneShot(playerInteractBlip);
             }
         };
 
-        interactions.Interactions.Hover.performed += (CallbackContext c) =>
+        hoverAction = (CallbackContext c) =>
         {
-            InteractableObject? targettedObject = GetTarget(c);
+            InteractableObject targettedObject = GetTarget(c);
 
             TurnOffOutlines();
 
-            if (
-                targettedObject != null
-                && CanInteractWith(targettedObject)
-            )
+            if (targettedObject != null && CanInteractWith(targettedObject))
             {
                 targettedObject.GetComponent<Outline>().enabled = true;
             }
         };
+
+        interactions.Interactions.Interact.performed += interactAction;
+        interactions.Interactions.Hover.performed += hoverAction;
+
         interactions.Interactions.Enable();
+    }
+
+    private void OnDestroy()
+    {
+        interactions.Interactions.Interact.performed -= interactAction;
+        interactions.Interactions.Hover.performed -= hoverAction;
     }
 }
