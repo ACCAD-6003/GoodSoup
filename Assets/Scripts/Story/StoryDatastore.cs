@@ -216,20 +216,37 @@ public class StoryDatastore : MonoBehaviour
         { typeof(int), (value) => DeserializeToInt(value) },
         { typeof(float), (value) => DeserializeToFloat(value) },
     };
+    public dynamic GetStoryDataObject(StoryDataType type)
+    {
+        if (Instance.StoryDataContainer == null)
+        {
+            Debug.LogError("Story data container is null in GetStoryDataObject.");
+            return null;
+        }
 
-    public dynamic GetStoryDataValue(StoryDataType type) {
-        if (Instance.StoryDataContainer == null) {
-            Debug.LogError("Story data container is null in GetStoryDataValue.");
-        }
-        if (!Instance.StoryDataContainer.ContainsKey(type)) {
+        if (!Instance.StoryDataContainer.ContainsKey(type))
+        {
             Debug.LogError($"No story data exists in the StoryDataDictionary with the specified key {type}");
+            return null;
         }
+
+        return Instance.StoryDataContainer[type];
+    }
+    public dynamic GetStoryDataValue(StoryDataType type)
+    {
+        var storyDataObject = GetStoryDataObject(type);
+
+        if (storyDataObject == null)
+        {
+            return null;
+        }
+
         // Get the type of the value stored in the dictionary
-        Type dataType = Instance.StoryDataContainer[type].GetDataType();
+        Type dataType = storyDataObject.GetDataType();
         // Use reflection to invoke the Value property of StoryData<> dynamically
         var valueProperty = typeof(StoryData<>).MakeGenericType(dataType).GetProperty("Value");
 
-        return valueProperty.GetValue(Instance.StoryDataContainer[type]);
+        return valueProperty.GetValue(storyDataObject);
     }
     public dynamic DeserializeStoryDataValue(StoryDataType type, string value) {
         if (!Instance.StoryDataContainer.ContainsKey(type))
