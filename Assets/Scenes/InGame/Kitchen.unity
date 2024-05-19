@@ -15658,7 +15658,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12345a9c906756f4890d2570e508fc65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _interactions: {fileID: 407089938}
+  _root: {fileID: 0}
 --- !u!4 &407089940
 Transform:
   m_ObjectHideFlags: 0
@@ -63156,7 +63156,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7782fb5cf0b21d44a95fce310e422e9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bubbleOffset: {x: 0, y: 0, z: 0}
   _mount: {fileID: 1964714358}
   _enabledOnLoad: 0
 --- !u!1 &1476945594
@@ -64470,7 +64469,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7782fb5cf0b21d44a95fce310e422e9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bubbleOffset: {x: -75, y: 150, z: 0}
   _mount: {fileID: 160247847}
   _enabledOnLoad: 0
 --- !u!1001 &1513492248
@@ -64823,6 +64821,7 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+  WakeUpTile: {fileID: 0}
 --- !u!114 &1523172014
 MonoBehaviour:
   m_ObjectHideFlags: 0
