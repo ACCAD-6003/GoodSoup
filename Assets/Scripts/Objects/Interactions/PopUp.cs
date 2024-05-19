@@ -15,6 +15,7 @@ namespace Assets.Scripts.Objects.Interactions
         {
             poppedUp = !poppedUp;
             popUp.SetActive(poppedUp);
+            // will need to change based on new stopwatch
             Time.timeScale = poppedUp ? 0 : 1;
             var objectInteraction = FindObjectOfType<ObjectInteraction>();
             objectInteraction.PopUpOpened = poppedUp;

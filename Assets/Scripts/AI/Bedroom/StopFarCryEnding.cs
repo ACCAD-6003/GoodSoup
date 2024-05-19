@@ -13,7 +13,9 @@ namespace Assets.Scripts.AI.Bedroom
         public FarCrySwitcher switcher;
         public override void Run()
         {
-            switcher.Stop();
+            if (switcher != null) {
+                switcher.Stop();
+            }
         }
     }
 }
