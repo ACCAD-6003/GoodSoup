@@ -8,7 +8,7 @@ namespace Assets.Scripts.AI.Bedroom
         public Dictionary<ClothingOption, AmberReaction> _reactions;
         public override void Run()
         {
-            _reactions[StoryDatastore.Instance.ChosenClothing.Value].PerformReaction();
+            _reactions[StoryDatastore.Instance.AmberWornClothing.Value].PerformReaction();
         }
     }
 }

@@ -12,7 +12,7 @@ public class AmberReaction : MonoBehaviour
         UIManager.Instance.DisplaySimpleBubbleTilInterrupted(icon);
         var value = StoryDatastore.Instance.GetStoryDataValue(type);
         value += impactOnStoryData;
-        StoryDatastore.Instance.SetStoryDataValue(type, value);
+        StoryDatastore.Instance.SetStoryDataValue(type, $"{value}");
         //StoryDatastore.Instance.Happiness.Value += 2f;
     }
 }
