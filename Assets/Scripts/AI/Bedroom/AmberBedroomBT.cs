@@ -162,7 +162,7 @@ namespace Assets.Scripts.AI
         }
     }
     **/
-    class HappyClothingReaction : IAmberReaction
+/*    class HappyClothingReaction : AmberReaction
     {
         public override void PerformReaction()
         {
@@ -170,12 +170,12 @@ namespace Assets.Scripts.AI
             StoryDatastore.Instance.Happiness.Value += 2f;
         }
     }
-    class DirtyClothingReaction : IAmberReaction
+    class DirtyClothingReaction : AmberReaction
     {
         public override void PerformReaction()
         {
             UIManager.Instance.DisplaySimpleBubbleTilInterrupted(UI.UIElements.BubbleIcon.DIRTY_OUTFIT);
             StoryDatastore.Instance.Annoyance.Value += 1f;
         }
-    }
+    }*/
 }
