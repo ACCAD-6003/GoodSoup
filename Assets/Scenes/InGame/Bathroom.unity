@@ -2914,6 +2914,7 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+  WakeUpTile: {fileID: 0}
 --- !u!1 &157014025
 GameObject:
   m_ObjectHideFlags: 0

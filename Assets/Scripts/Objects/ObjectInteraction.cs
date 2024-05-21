@@ -76,7 +76,10 @@ public class ObjectInteraction : MonoBehaviour
     {
         if (Amber == null)
         {
-            Amber = GameObject.FindGameObjectWithTag("Body").transform;
+            var amber = GameObject.FindGameObjectWithTag("Body");
+            if (amber != null) {
+                Amber = amber.transform;
+            }
         }
         TurnOffOutlines();
     }
