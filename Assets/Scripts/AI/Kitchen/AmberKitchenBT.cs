@@ -360,44 +360,6 @@ namespace Assets.Scripts.AI
                 return NodeState.SUCCESS;
             }
         }
-        class AmberNoticeRecipe : Node {
-            bool _increased = false;
-            bool _coolingDown = false;
-            float timePassed = 0f;
-            AmberKitchenBT _amberKitchenBT;
-            InteractableObject _floatingRecipe;
-            public AmberNoticeRecipe(AmberKitchenBT kitchenBT, InteractableObject floatingRecipe)
-            { 
-                _amberKitchenBT = kitchenBT;
-                _floatingRecipe = floatingRecipe;
-            }
-            public override NodeState Evaluate()
-            {
-                if (!StoryDatastore.Instance.GoodSoupPuzzleSolved.Value) {
-                    if (!_coolingDown && _amberKitchenBT.GetObjectInteraction().IsInAmberSightlines(_floatingRecipe) && _floatingRecipe.gameObject.activeInHierarchy)
-                    {
-                        if (!_increased)
-                        {
-                            _increased = true;
-                            StoryDatastore.Instance.Paranoia.Value += 3f;
-                        }
-                        UIManager.Instance.DisplaySimpleBubbleForSeconds(UIElements.BubbleIcon.PARANOID, 2f);
-                        _coolingDown = true;
-                    }
-                    else
-                    {
-                        timePassed += Time.deltaTime;
-                        if (timePassed > 7f)
-                        {
-                            timePassed = 0f;
-                            _coolingDown = false;
-                        }
-                    }
-                }
-                state = NodeState.SUCCESS;
-                return state;
-            }
-        }
         class CameraShakeNode : Node {
             bool _performed;
             CameraShake _shake;

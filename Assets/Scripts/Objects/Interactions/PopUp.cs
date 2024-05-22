@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,15 +14,16 @@ namespace Assets.Scripts.Objects.Interactions
         bool poppedUp = false;
         public override void DoAction()
         {
+
             poppedUp = !poppedUp;
             popUp.SetActive(poppedUp);
             // will need to change based on new stopwatch
             Time.timeScale = poppedUp ? 0 : 1;
             var objectInteraction = FindObjectOfType<ObjectInteraction>();
+            Debug.Log("Popped up");
             objectInteraction.PopUpOpened = poppedUp;
             EndAction();
         }
-
         public override void LoadData(StoryDatastore data)
         {
 

@@ -26,6 +26,7 @@ public class ObjectInteraction : MonoBehaviour
 
     private System.Action<CallbackContext> interactAction;
     private System.Action<CallbackContext> hoverAction;
+    private bool coolingDownClickAction = false;
 
     private GhostInput interactions;
 
@@ -92,10 +93,12 @@ public class ObjectInteraction : MonoBehaviour
         {
             InteractableObject targettedObject = GetTarget(c);
 
-            if (targettedObject != null && CanInteractWith(targettedObject))
+            if (targettedObject != null && CanInteractWith(targettedObject) && !coolingDownClickAction)
             {
+                coolingDownClickAction = true;
                 targettedObject.PlayerInteraction.StartAction();
                 playerInteractSoundSource.PlayOneShot(playerInteractBlip);
+                StartCoroutine(AllowClicking());
             }
         };
 
@@ -116,7 +119,10 @@ public class ObjectInteraction : MonoBehaviour
 
         interactions.Interactions.Enable();
     }
-
+    IEnumerator AllowClicking() {
+        yield return new WaitForSecondsRealtime(0.05f);
+        coolingDownClickAction = false;
+    }
     private void OnDestroy()
     {
         interactions.Interactions.Interact.performed -= interactAction;
