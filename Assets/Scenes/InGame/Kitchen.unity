@@ -72836,7 +72836,7 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  _floatingRecipe: {fileID: 0}
+  _floatingRecipe: {fileID: 8885586769099242525}
 --- !u!1 &1599199429
 GameObject:
   m_ObjectHideFlags: 0
