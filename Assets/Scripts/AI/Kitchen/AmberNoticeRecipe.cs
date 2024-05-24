@@ -10,7 +10,7 @@ class AmberNoticeRecipe : Node
     float timePassed = 0f;
     ObjectInteraction objInteraction;
     public InteractableObject _floatingRecipe;
-    public void Start()
+    void Awake()
     {
         objInteraction = FindObjectOfType<ObjectInteraction>();
     }

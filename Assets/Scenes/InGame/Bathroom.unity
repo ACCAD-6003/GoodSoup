@@ -17338,7 +17338,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5817474576940391884, guid: f9af67b3d9e422f4e9b927f67dafdc5d, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5817474576940391884, guid: f9af67b3d9e422f4e9b927f67dafdc5d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -18247,7 +18247,7 @@ Transform:
   m_Children:
   - {fileID: 1784581523}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &798631488
 GameObject:
@@ -31874,7 +31874,7 @@ Transform:
   - {fileID: 600488044}
   - {fileID: 59754163}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1354728249
 GameObject:
@@ -50895,7 +50895,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1989036884}
-  - component: {fileID: 1989036883}
+  - component: {fileID: 1989036886}
   - component: {fileID: 1989036885}
   m_Layer: 0
   m_Name: AmberAI
@@ -50904,19 +50904,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1989036883
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1989036882}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca50b1eac678459488e787ad60a5546d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _root: {fileID: 479377748}
 --- !u!4 &1989036884
 Transform:
   m_ObjectHideFlags: 0
@@ -50943,20 +50930,34 @@ MonoBehaviour:
   m_GameObject: {fileID: 1989036882}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82ef1ce9e695f854496bbbe58e570489, type: 3}
+  m_Script: {fileID: 11500000, guid: ef7aba8b1a789ef44afcc922b8971a64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Grid: {fileID: 142665933}
-  showerTile: {fileID: 1729526193}
-  LaundryBasketTile: {fileID: 317838807}
-  sinkTile: {fileID: 3685563}
-  Shower: {fileID: 1096206247}
-  FlushToilet: {fileID: 1337402739}
-  Towel: {fileID: 1614384895}
-  ShowerCurtain: {fileID: 8740906464636002067}
-  brushHierarchy: {fileID: 1829702951}
-  shower: {fileID: 692232566}
-  brushMount: {fileID: 779833662}
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  children:
+  - {fileID: 479377748}
+  - {fileID: 2044206995}
+--- !u!114 &1989036886
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1989036882}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4fad218ab33fde49b5a87ec8211f248, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _root: {fileID: 1989036885}
 --- !u!1 &1994145580
 GameObject:
   m_ObjectHideFlags: 0
