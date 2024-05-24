@@ -313,32 +313,7 @@ namespace Assets.Scripts.AI
                 return NodeState.SUCCESS;
             }
         }
-        public class RunFirstSequenceWhereSkipConditionIsTrue : Node {
-            private Dictionary<ISkipCondition, Sequence> dictionary;
-            Sequence sequenceWeAreRunning = null;
-            public RunFirstSequenceWhereSkipConditionIsTrue(Dictionary<ISkipCondition, Sequence> dictionary) {
-                this.dictionary = dictionary;
-            }
-            public override NodeState Evaluate()
-            {
-                if (sequenceWeAreRunning == null)
-                {
-                    foreach (var sequence in dictionary) {
-                        if (sequence.Key.ShouldSkip()) {
-                            sequenceWeAreRunning = sequence.Value;
-                            break;
-                        }
-                    }
-                    state = NodeState.RUNNING;
-                    return NodeState.RUNNING;
-                }
-                else {
-                    state = sequenceWeAreRunning.Evaluate();
-                    return state;
-                }
-            }
 
-        }
         public class EvaluateFood : Node
         {
             bool _evaluated = false;
@@ -374,40 +349,6 @@ namespace Assets.Scripts.AI
                 }
                 state = NodeState.SUCCESS;
                 return state;
-            }
-        }
-        class PutInProgress : Node {
-            bool _inProgress, _performed = false;
-            Interaction _interaction;
-            public PutInProgress(bool inProgress, Interaction interaction) { 
-                _inProgress = inProgress;
-                _interaction = interaction;
-            }
-            public override NodeState Evaluate()
-            {
-                if (!_performed) { 
-                    _performed  = true;
-                    if (_inProgress)
-                    {
-                        _interaction.PutInProgress();
-                    }
-                    else {
-                        _interaction.EndAction();
-                    }
-                }
-                state = NodeState.SUCCESS;
-                return state;
-            }
-        }
-        class MovePerformed : ISkipCondition
-        {
-            int ID;
-            public MovePerformed(int ID) { 
-                this.ID = ID;
-            }
-            public bool ShouldSkip()
-            {
-                return StoryDatastore.Instance.MoveObjects[ID].Value;
             }
         }
         class GoodSouped : ISkipCondition
