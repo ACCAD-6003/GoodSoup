@@ -904,6 +904,125 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 6512247150983423988, guid: 0828c4e363ef6494489d003bd2ae57d0, type: 3}
   m_PrefabInstance: {fileID: 259827323}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &288079195
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 288079197}
+  - component: {fileID: 288079196}
+  m_Layer: 0
+  m_Name: StoryDatastore
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &288079196
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 288079195}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13c204556b7bfec4f9858a39fa93aa4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AmberTimeModifier: 1
+  AnyBookDropped:
+    _value: 0
+  BurnerHeat:
+    _value: 100
+  CurtainsOpen:
+    _value: 0
+  EmailState:
+    _value: 0
+  AwaitingEmailReply:
+    _value: 0
+  CurrentAmberRoom:
+    _value: 0
+  CurrentGamePhase:
+    _value: 0
+  ShowerTemperature:
+    _value: 40
+  DoneShowering:
+    _value: 0
+  MirrorState:
+    _value: 0
+  SinkRoutineDone:
+    _value: 0
+  ResultOfEvaluation:
+    _value: 0
+  Paranoia:
+    _value: 0
+  Annoyance:
+    _value: 0
+  Happiness:
+    _value: 0
+  ChosenEnding:
+    _value: 0
+  AmberDressed:
+    _value: 0
+  ChosenClothing:
+    _value: 3
+  ShirtPickedUp:
+    _value: 0
+  BooksBlown:
+    _value: 0
+  PickedUpBackpack:
+    _value: 0
+  AmberWornClothing:
+    _value: 4
+  AmberHairOption:
+    _value: 2
+  PlayerTurnedShowerOff:
+    _value: 0
+  RadiatorHot:
+    _value: 0
+  HotShowerDuration:
+    _value: 0
+  ShowerCurtainsOpen:
+    _value: 1
+  TowelHot:
+    _value: 0
+  GoodSoupPuzzleSolved:
+    _value: 0
+  EntryDoor:
+    _value: 0
+  HallwayVisits:
+    _value: 0
+  AmberPickedUpKey:
+    _value: 0
+  WearingChefHat:
+    _value: 0
+  FaceOption:
+    _value: 3
+  HeatSetting:
+    _value: 0
+  FoodQuality:
+    _value: 0
+  ActivelyCooking:
+    _value: 0
+--- !u!4 &288079197
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 288079195}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 10.923555, y: 6.528953, z: 11.35638}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &344509736
 PrefabInstance:
   m_ObjectHideFlags: 0

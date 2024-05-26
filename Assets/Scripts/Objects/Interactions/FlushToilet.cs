@@ -10,6 +10,7 @@ namespace Assets.Scripts.Objects.Interactions
 {
     public class FlushToilet : Interaction
     {
+        public AmberUseShower shower;
         private StoryData<float> _temperature;
         bool _flushed = false;
         public override void LoadData(StoryDatastore data)
@@ -24,7 +25,7 @@ namespace Assets.Scripts.Objects.Interactions
 
         public override void DoAction()
         {
-            if (!_flushed) {
+            if (!_flushed && shower._showerState == AmberUseShower.ShowerState.SHOWERING) {
                 StoryDatastore.Instance.Annoyance.Value += 1.5f;
                 _flushed = true;
             }

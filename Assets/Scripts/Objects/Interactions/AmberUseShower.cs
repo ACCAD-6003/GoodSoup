@@ -13,10 +13,9 @@ namespace Assets.Scripts.Objects.Interactions
     public class AmberUseShower : Interaction
     {
         [SerializeField] private GameObject _tempHierarchy, _particleSystem;
-        [SerializeField] private TextMeshProUGUI temp;
         public enum ShowerState { RAISING_TEMP, SHOWERING, NOT_USING }
         bool _showering = false;
-        private ShowerState _showerState = ShowerState.NOT_USING;
+        public ShowerState _showerState = ShowerState.NOT_USING;
         private StoryData<float> _showerTemp;
         private StoryData<bool> _showered;
         private void Awake()
@@ -69,7 +68,6 @@ namespace Assets.Scripts.Objects.Interactions
                 _tempHierarchy.SetActive(false);
                 _showering = false;
             }
-            temp.text = MathF.Floor(_showerTemp.Value) + "F";
         }
         public void TurnOffShower() {
             _particleSystem.SetActive(false);        
@@ -81,10 +79,8 @@ namespace Assets.Scripts.Objects.Interactions
             _showerState = ShowerState.RAISING_TEMP;
             UIManager.Instance.DisplaySimpleBubbleForSeconds(UIElements.BubbleIcon.COLD, 2f);
             _tempHierarchy.SetActive(true);
-            temp.text = _showerTemp.Value.ToString();
             StoryDatastore.Instance.AmberHairOption.Value = AmberVisual.HairOption.MESSY;
             GameObject.FindObjectOfType<GridCharacter>().SetArbitraryRot(Vector3.back);
-            //transform.GetComponent<InteractableObject>().AmberInteraction = transform.AddComponent<StopShowering>();
             EndAction();
         }
     }
