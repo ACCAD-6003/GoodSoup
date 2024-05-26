@@ -11,7 +11,6 @@ public class UpdateTempVisual : MonoBehaviour
     private HeatSetting currHeat;
     private void Awake()
     {
-        // make sure u unsubscribe ur events aaron
         tempRanges = new Dictionary<(float min, float max), HeatSetting>()
         {
             {(float.MinValue, 85), HeatSetting.LOW_TEMP},
