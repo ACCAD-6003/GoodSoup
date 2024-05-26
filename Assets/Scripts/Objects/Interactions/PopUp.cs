@@ -12,16 +12,24 @@ namespace Assets.Scripts.Objects.Interactions
     {
         [SerializeField] GameObject popUp;
         bool poppedUp = false;
+        ObjectInteraction objInteraction;
+        private void Awake()
+        {
+            objInteraction = FindObjectOfType<ObjectInteraction>();
+        }
         public override void DoAction()
         {
-
+            if (objInteraction.PopUpOpened && !poppedUp)
+            {
+                return;
+            }
             poppedUp = !poppedUp;
             popUp.SetActive(poppedUp);
             // will need to change based on new stopwatch
             Time.timeScale = poppedUp ? 0 : 1;
-            var objectInteraction = FindObjectOfType<ObjectInteraction>();
             Debug.Log("Popped up");
-            objectInteraction.PopUpOpened = poppedUp;
+            objInteraction.PopUpOpened = poppedUp;
+            Debug.Log($"Set pop up opened to {poppedUp}");
             EndAction();
         }
         public override void LoadData(StoryDatastore data)

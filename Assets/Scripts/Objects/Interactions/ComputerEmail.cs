@@ -1,4 +1,5 @@
-﻿using Assets.Scripts.UI;
+﻿using Assets.Scripts.Objects.Interactions;
+using Assets.Scripts.UI;
 using System;
 using System.Collections;
 using UnityEngine;
@@ -9,6 +10,11 @@ public class ComputerEmail : Interaction
 {
     [SerializeField] GameObject PCUI, EmailHUDElement;
     [SerializeField] ComputerHUD hud;
+    private ObjectInteraction popUp;
+    private void Awake()
+    {
+        popUp = FindObjectOfType<ObjectInteraction>();
+    }
     private void Update()
     {
         if (StoryDatastore.Instance.AwaitingEmailReply.Value)
@@ -49,6 +55,7 @@ public class ComputerEmail : Interaction
     }
 
     public void CloseScreen() {
+        popUp.PopUpOpened = false;
         PCUI.SetActive(false);
         Time.timeScale = 1f;
         EndAction();
@@ -58,6 +65,8 @@ public class ComputerEmail : Interaction
         PCUI.SetActive(true);
         DisplayEmailScreen();
         Time.timeScale = 0f;
+        popUp.PopUpOpened = true;
+
     }
 
     public override void SaveData(StoryDatastore data)

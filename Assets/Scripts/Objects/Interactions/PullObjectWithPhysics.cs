@@ -103,7 +103,7 @@ public class PullObjectWithPhysics : Interaction
         {
             Debug.Log("Blown book has collided");
             StoryDatastore.Instance.BooksBlown.Value = true;
-            if (StoryDatastore.Instance.CurrentGamePhase.Value == GamePhase.TUTORIAL_BEDROOM)
+            if (StoryDatastore.Instance.CurrentGamePhase.Value == GamePhase.TUTORIAL_BEDROOM && !StoryDatastore.Instance.AmberOutOfBed.Value)
             {
                 Debug.Log("Blown book has caused the annoyance to increase.");
                 StoryDatastore.Instance.Annoyance.Value += 0.5f;

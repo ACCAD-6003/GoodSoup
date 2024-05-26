@@ -44,11 +44,12 @@ public class ObjectInteraction : MonoBehaviour
 
     bool CanInteractWith(InteractableObject o)
     {
+        Debug.Log("Checking if an object is interactable");
         if (o.PlayerInteraction == null || PopUpOpened)
         {
+            Debug.Log(1);
             return false;
         }
-
         return (!o.PlayerInteraction.IsInProgress && !IsInAmberSightlines(o)) || o.CanInteractWhileAmberLooking || o.TryGetComponent(out PopUp _);
     }
 

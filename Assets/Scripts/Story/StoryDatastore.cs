@@ -6,7 +6,6 @@ using UnityEngine;
 using static AmberVisual;
 using static ComputerHUD;
 using static MainSceneLoading;
-using static UnityEditor.LightingExplorerTableColumn;
 public enum GamePhase { TUTORIAL_BEDROOM, BEFORE_AMBER_LEAVES, AMBER_GONE, AMBER_BACK, SLEEP_TIME }
 public enum HeatSetting { LOW_TEMP, MEDIUM_TEMP, HIGH_TEMP }
 public class StoryDatastore : MonoBehaviour
@@ -77,6 +76,7 @@ public class StoryDatastore : MonoBehaviour
             { StoryDataType.HeatSetting, Instance.HeatSetting },
             { StoryDataType.FoodQuality, Instance.FoodQuality },
             { StoryDataType.ActivelyCooking, Instance.ActivelyCooking },
+            { StoryDataType.AmberOutOfBed, Instance.AmberOutOfBed }
         };
     }
     [Header("This is a global setting that modifies the amount of time amber waits between actions.")]
@@ -167,6 +167,8 @@ public class StoryDatastore : MonoBehaviour
     public StoryData<float> FoodQuality = new(0f);
     [SerializeField]
     public StoryData<bool> ActivelyCooking = new(false);
+    [SerializeField]
+    public StoryData<bool> AmberOutOfBed = new StoryData<bool>(false);
 
     public enum StoryDataType
     {
@@ -207,7 +209,8 @@ public class StoryDatastore : MonoBehaviour
         FaceOption,
         HeatSetting,
         FoodQuality,
-        ActivelyCooking
+        ActivelyCooking,
+        AmberOutOfBed
     }
 
     private Dictionary<StoryDataType, IStoryData> StoryDataContainer;

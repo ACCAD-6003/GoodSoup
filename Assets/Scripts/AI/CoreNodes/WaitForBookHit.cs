@@ -15,7 +15,10 @@ namespace Assets.Scripts.AI
             if (!b2) {
                 return;
             }
-            StoryDatastore.Instance.Annoyance.Value += 1f;
+            if (!StoryDatastore.Instance.AmberOutOfBed.Value)
+            {
+                StoryDatastore.Instance.Annoyance.Value += 1f;
+            }
             _performed = true;
         }
         public override NodeState Evaluate()
