@@ -1008,6 +1008,8 @@ MonoBehaviour:
     _value: 0
   ActivelyCooking:
     _value: 0
+  AmberOutOfBed:
+    _value: 0
 --- !u!4 &288079197
 Transform:
   m_ObjectHideFlags: 0
@@ -11472,7 +11474,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: d3375b4507e8e394898e4857e784527e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8cf5fd0f9a3006141a99215accc9a00c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -11776,7 +11778,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: dfbbfc6c7e6d849488d30d80a7dc7b16, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e3505ed6d3bc6d24ba85f090fb2dd233, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
