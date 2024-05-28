@@ -89,6 +89,8 @@ public class StoryDatastore : MonoBehaviour
     public Dictionary<int, StoryData<ClothingOption>> DisplayedShirts = new Dictionary<int, StoryData<ClothingOption>>();
     [SerializeField]
     public Dictionary<int, StoryData<bool>> MoveObjects = new Dictionary<int, StoryData<bool>>();
+    [SerializeField]
+    public float GameTimeSpeed = 1f;
 
     // Story data
     [SerializeField]
