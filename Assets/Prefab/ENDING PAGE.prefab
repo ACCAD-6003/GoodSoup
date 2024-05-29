@@ -399,8 +399,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: ???
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 88606dfb0f4c3ee4794c84da12fd5b96, type: 2}
-  m_sharedMaterial: {fileID: -5978640235278180942, guid: 88606dfb0f4c3ee4794c84da12fd5b96, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: d1dc57876d0804c43aba5dfe22867da2, type: 2}
+  m_sharedMaterial: {fileID: -6041779280584806200, guid: d1dc57876d0804c43aba5dfe22867da2, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -588,8 +588,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: DESCRIPTION
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 88606dfb0f4c3ee4794c84da12fd5b96, type: 2}
-  m_sharedMaterial: {fileID: -5978640235278180942, guid: 88606dfb0f4c3ee4794c84da12fd5b96, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: d1dc57876d0804c43aba5dfe22867da2, type: 2}
+  m_sharedMaterial: {fileID: -6041779280584806200, guid: d1dc57876d0804c43aba5dfe22867da2, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1066,8 +1066,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: REVEAL HINT
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 88606dfb0f4c3ee4794c84da12fd5b96, type: 2}
-  m_sharedMaterial: {fileID: -5978640235278180942, guid: 88606dfb0f4c3ee4794c84da12fd5b96, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: d1dc57876d0804c43aba5dfe22867da2, type: 2}
+  m_sharedMaterial: {fileID: -6041779280584806200, guid: d1dc57876d0804c43aba5dfe22867da2, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1103,7 +1103,7 @@ MonoBehaviour:
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
-  m_lineSpacing: -15
+  m_lineSpacing: -3.5
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
@@ -1168,7 +1168,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -65.500015, y: 1.4}
+  m_AnchoredPosition: {x: -65.500015, y: -1.1}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8667771838183850588
@@ -1202,8 +1202,8 @@ MonoBehaviour:
   m_text: YOU PUSHED AMBER TO MAKE THE GOOD SOUP RECIPE, BUT YOU MADE IT TURN OUT
     BADLY.
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 88606dfb0f4c3ee4794c84da12fd5b96, type: 2}
-  m_sharedMaterial: {fileID: -5978640235278180942, guid: 88606dfb0f4c3ee4794c84da12fd5b96, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: d1dc57876d0804c43aba5dfe22867da2, type: 2}
+  m_sharedMaterial: {fileID: -6041779280584806200, guid: d1dc57876d0804c43aba5dfe22867da2, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1239,7 +1239,7 @@ MonoBehaviour:
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
-  m_lineSpacing: -28.3
+  m_lineSpacing: -3.5
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
@@ -1337,8 +1337,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 88606dfb0f4c3ee4794c84da12fd5b96, type: 2}
-  m_sharedMaterial: {fileID: -5978640235278180942, guid: 88606dfb0f4c3ee4794c84da12fd5b96, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: d1dc57876d0804c43aba5dfe22867da2, type: 2}
+  m_sharedMaterial: {fileID: -6041779280584806200, guid: d1dc57876d0804c43aba5dfe22867da2, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1374,7 +1374,7 @@ MonoBehaviour:
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
-  m_lineSpacing: -28.3
+  m_lineSpacing: -3.5
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
