@@ -75,7 +75,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0.40000153, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &218950896421501080
@@ -108,8 +108,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Don't schedule me; I want to drop out this semester. Thanks, Amber
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 88606dfb0f4c3ee4794c84da12fd5b96, type: 2}
-  m_sharedMaterial: {fileID: 8245742415806652105, guid: f66bd58b7fbb9c646896b3710a07cb31, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: d1dc57876d0804c43aba5dfe22867da2, type: 2}
+  m_sharedMaterial: {fileID: -6041779280584806200, guid: d1dc57876d0804c43aba5dfe22867da2, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -133,8 +133,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 11.1
-  m_fontSizeBase: 11.1
+  m_fontSize: 9.27
+  m_fontSizeBase: 9.27
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -169,10 +169,10 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0, y: 0, z: 2.6511612, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &218950896462751508
@@ -256,8 +256,8 @@ MonoBehaviour:
 
     Your Advisor'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 88606dfb0f4c3ee4794c84da12fd5b96, type: 2}
-  m_sharedMaterial: {fileID: 8245742415806652105, guid: f66bd58b7fbb9c646896b3710a07cb31, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: d1dc57876d0804c43aba5dfe22867da2, type: 2}
+  m_sharedMaterial: {fileID: -6041779280584806200, guid: d1dc57876d0804c43aba5dfe22867da2, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -320,7 +320,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &218950896668924833
@@ -391,8 +391,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Yes, please sign me up for my classes! I am so sorry! Thanks, Amber
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 88606dfb0f4c3ee4794c84da12fd5b96, type: 2}
-  m_sharedMaterial: {fileID: 8245742415806652105, guid: f66bd58b7fbb9c646896b3710a07cb31, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: d1dc57876d0804c43aba5dfe22867da2, type: 2}
+  m_sharedMaterial: {fileID: -6041779280584806200, guid: d1dc57876d0804c43aba5dfe22867da2, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -416,8 +416,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 9.93
-  m_fontSizeBase: 9.93
+  m_fontSize: 9.27
+  m_fontSizeBase: 9.27
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -455,7 +455,7 @@ MonoBehaviour:
   m_margin: {x: 4.317589, y: 0, z: 3.0814667, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &218950897010011927
@@ -794,8 +794,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'NEW EMAIL:'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 88606dfb0f4c3ee4794c84da12fd5b96, type: 2}
-  m_sharedMaterial: {fileID: 8245742415806652105, guid: f66bd58b7fbb9c646896b3710a07cb31, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: d1dc57876d0804c43aba5dfe22867da2, type: 2}
+  m_sharedMaterial: {fileID: -6041779280584806200, guid: d1dc57876d0804c43aba5dfe22867da2, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -858,6 +858,6 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
