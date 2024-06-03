@@ -447,7 +447,6 @@ public class grid_manager : MonoBehaviour
 
     void Start()
     {
-        char_s = GameObject.FindGameObjectWithTag("Player").GetComponent<GridCharacter>();
         if (doors.Entrance != null) {
             start_tile = doors.Entrance;
         }

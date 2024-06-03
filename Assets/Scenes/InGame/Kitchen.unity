@@ -794,7 +794,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-562840
+  m_Name: pb_Mesh-89940
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -21899,6 +21899,10 @@ PrefabInstance:
     - target: {fileID: 8844714278429817943, guid: 91ea6eb7459a1ef45a76662ee2dcc55b, type: 3}
       propertyPath: m_Name
       value: Doorway
+      objectReference: {fileID: 0}
+    - target: {fileID: 8844714278429817943, guid: 91ea6eb7459a1ef45a76662ee2dcc55b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8844714278887356890, guid: 91ea6eb7459a1ef45a76662ee2dcc55b, type: 3}
       propertyPath: m_Mesh

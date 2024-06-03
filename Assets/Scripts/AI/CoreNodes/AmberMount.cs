@@ -15,6 +15,9 @@ namespace Assets.Scripts.AI
                 PerformMount();
                 return;
             }
+            if (_enabledOnLoad) {
+                PerformMount();
+            }
             _mount.SetActive(false);
         }
         public void Mount() {

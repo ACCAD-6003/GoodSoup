@@ -20,7 +20,7 @@ namespace Assets.Scripts.Objects
         }
         public void Start()
         {
-            FindObjectOfType<grid_manager>().FixCharacterBetweenScenes();
+            //FindObjectOfType<grid_manager>().FixCharacterBetweenScenes();
         }
         public Dictionary<AmberRoom, tile> doors;
         public tile Entrance { get {
