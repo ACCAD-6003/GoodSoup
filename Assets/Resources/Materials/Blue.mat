@@ -140,7 +140,7 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - _AmbientLight: {r: 0.2, g: 0.2, b: 0.2, a: 1}
-    - _BaseColor: {r: 0.48139507, g: 0.14983091, b: 0.8584906, a: 1}
+    - _BaseColor: {r: 0.1490196, g: 0.18888997, b: 0.85882354, a: 1}
     - _Color: {r: 0, g: 0.39272022, b: 1, a: 1}
     - _EdgeHighlightColor: {r: 0.5, g: 0.5, b: 0.5, a: 0}
     - _EmissionColor: {r: 0.069364965, g: 0.043654338, b: 0.084905684, a: 1}
