@@ -9,17 +9,18 @@ public class Stopwatch : Interaction
     public TextMeshPro text;
     private int index;
 
-    public override void DoAction()
-    {
-        index = (index + 1) % TimeIntervals.Count;
-        var timeScale = TimeIntervals[index];
-        text.text = $"{timeScale}x";
-        StoryDatastore.Instance.GameTimeSpeed = timeScale;
-        Time.timeScale = timeScale;
-        EndAction();
-    }
+	public override void DoAction()
+	{
+		index = (index + 1) % TimeIntervals.Count;
+		var timeScale = TimeIntervals[index];
+		// Format timeScale as x.x
+		text.text = $"{timeScale:F1}x";
+		StoryDatastore.Instance.GameTimeSpeed = timeScale;
+		Time.timeScale = timeScale;
+		EndAction();
+	}
 
-    public override void LoadData(StoryDatastore data)
+	public override void LoadData(StoryDatastore data)
     {
 
     }

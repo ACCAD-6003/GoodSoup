@@ -1,4 +1,3 @@
-using Sirenix.OdinInspector;
 using System.Collections.Generic;
 
 public class Globals {
@@ -11,7 +10,9 @@ public class Globals {
     public const float TEMP_INCREASE_MODIFIER = 8 * 3f;
     public const float TEMP_DECREASE_MODIFIER = 2f;
     public const float AMBER_PREFERABLE_SHOWER_TEMP = 100f;
+
     public static Dictionary<Ending, int> UnlockedEndings = new();
+
     public static List<Ending> EndingHintChecked = new();
     public static Ending LastEnding;
     public static bool FirstTitleScreen = true;

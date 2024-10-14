@@ -1047,7 +1047,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2683783138088793716, guid: 5e37746bbfad47b4db51217248e504e3, type: 3}
       propertyPath: m_text
-      value: Narrative Designer, Concept Artist, and Sleepy Boy
+      value: Narrative Designer and Sleepy Boy
       objectReference: {fileID: 0}
     - target: {fileID: 3238230306841333715, guid: 5e37746bbfad47b4db51217248e504e3, type: 3}
       propertyPath: m_text
@@ -3722,7 +3722,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
+    rgba: 4281086514
   m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.17254902, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -4549,7 +4549,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
+    rgba: 4281086514
   m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.17254902, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -5222,14 +5222,14 @@ Light:
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
-  m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 2
+    m_Type: 0
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -5314,7 +5314,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh211282
+  m_Name: pb_Mesh31818
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -5574,6 +5574,10 @@ PrefabInstance:
     - target: {fileID: 3238230306841333715, guid: 5e37746bbfad47b4db51217248e504e3, type: 3}
       propertyPath: m_text
       value: Natasha Phillips
+      objectReference: {fileID: 0}
+    - target: {fileID: 3238230306841333715, guid: 5e37746bbfad47b4db51217248e504e3, type: 3}
+      propertyPath: m_margin.z
+      value: -40.91719
       objectReference: {fileID: 0}
     - target: {fileID: 5604911059627939280, guid: 5e37746bbfad47b4db51217248e504e3, type: 3}
       propertyPath: m_Name
@@ -5842,7 +5846,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2683783138088793716, guid: 5e37746bbfad47b4db51217248e504e3, type: 3}
       propertyPath: m_text
-      value: Level Designer, 3D Artist, and Opponent to Touching Grass
+      value: Concept Artist and Opponent to Touching Grass
       objectReference: {fileID: 0}
     - target: {fileID: 3238230306841333715, guid: 5e37746bbfad47b4db51217248e504e3, type: 3}
       propertyPath: m_text
@@ -6846,7 +6850,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
+    rgba: 4281086514
   m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.17254902, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -7091,7 +7095,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh211198
+  m_Name: pb_Mesh31734
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -7539,6 +7543,10 @@ PrefabInstance:
     - target: {fileID: 2683783138088793716, guid: 5e37746bbfad47b4db51217248e504e3, type: 3}
       propertyPath: m_text
       value: Lead Programmer, Technical Artist, and Caffeine Addict
+      objectReference: {fileID: 0}
+    - target: {fileID: 2683783138088793716, guid: 5e37746bbfad47b4db51217248e504e3, type: 3}
+      propertyPath: m_margin.z
+      value: -39.895386
       objectReference: {fileID: 0}
     - target: {fileID: 5604911059627939280, guid: 5e37746bbfad47b4db51217248e504e3, type: 3}
       propertyPath: m_Name
