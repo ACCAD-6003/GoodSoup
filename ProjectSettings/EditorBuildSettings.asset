@@ -30,8 +30,8 @@ EditorBuildSettings:
     path: Assets/Scenes/InGame/Kitchen.unity
     guid: bda46539fbd954e709a33b104688459e
   - enabled: 1
-    path: Assets/Scenes/InGame/AmberGone.unity
-    guid: 9507cde3b31a2b7468b1a599fed3a362
+    path: Assets/Scenes/Testing/AtSchool.unity
+    guid: 4080ac08373b6a5448a3c7d56c2b8230
   - enabled: 1
     path: Assets/Scenes/InGame/GoodSoupCutscene.unity
     guid: 7bbad9557abdeab45a73f1c5278231e5

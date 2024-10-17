@@ -2018,6 +2018,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 11
       objectReference: {fileID: 0}
+    - target: {fileID: 6019518211714188289, guid: 20c19ff6004434442aae784fa8cb83f6, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6510825319568144824, guid: 20c19ff6004434442aae784fa8cb83f6, type: 3}
       propertyPath: m_Name
       value: body
@@ -2428,10 +2432,6 @@ MonoBehaviour:
   AssociatedDirection: {x: 0, y: 0, z: 1}
   isPlayer: 1
   _isInProgress: 0
-  TimeIntervals:
-  - 1
-  - 1.5
-  - 2
   text: {fileID: 1367494463}
 --- !u!114 &1404461455
 MonoBehaviour:

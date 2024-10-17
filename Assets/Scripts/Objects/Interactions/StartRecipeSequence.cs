@@ -117,8 +117,11 @@ public class StartRecipeSequence : Interaction
         Destroy(_follower);
         _follower = gameObj.AddComponent<SplineFollower>();
 
+        var parent = splinesInScene.transform.parent;
         Destroy(splinesInScene);
         splinesInScene = Instantiate(_splinesPrefab);
+
+        splinesInScene.transform.SetParent(parent, false);
 
         _follower.spline = GameObject.FindGameObjectWithTag("RecipeComputer").GetComponent<SplineComputer>();
 

@@ -90,7 +90,7 @@ public class StoryDatastore : MonoBehaviour
     [SerializeField]
     public Dictionary<int, StoryData<bool>> MoveObjects = new Dictionary<int, StoryData<bool>>();
     [SerializeField]
-    public float GameTimeSpeed = 1f;
+    public int GameTimeSpeedIndex = 0;
 
     // Story data
     [SerializeField]

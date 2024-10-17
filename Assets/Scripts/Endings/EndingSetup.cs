@@ -114,8 +114,7 @@ public class EndingSetup : SerializedMonoBehaviour
         starAssigner.Add(Ending.LOCKED_OUT, new InstantFiveStarEnding());
         starAssigner.Add(Ending.TOUCH_GRASS, new InstantFiveStarEnding());
         starAssigner.Add(Ending.BURNT_DOWN, new InstantFiveStarEnding());
-        //starAssigner.Add(Ending.PARANOID, new StatBasedEnding(StoryDatastore.Instance.Paranoia, 3f));
-        //starAssigner.Add(Ending.PARANOID, new StatBasedEnding(StoryDatastore.Instance.Paranoia, 3f));
+        starAssigner.Add(Ending.MID_SOUP, new InstantFiveStarEnding());
     }
 
     private IEnumerator ShowEndingRoutine()

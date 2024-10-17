@@ -12,7 +12,7 @@ public class MainSceneLoading : SerializedMonoBehaviour
         { AmberRoom.BATHROOM, "Bathroom" },
         { AmberRoom.KITCHEN, "Kitchen" },
         { AmberRoom.LIVING_ROOM, "LivingRoom" },
-        { AmberRoom.GONE, "AmberGone" },
+        { AmberRoom.GONE, "AtSchool" },
         { AmberRoom.HALLWAY, "Hallway" }
     };
     public enum AmberRoom { BEDROOM, BATHROOM, KITCHEN, HALLWAY, LIVING_ROOM, GONE }

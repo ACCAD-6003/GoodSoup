@@ -30,18 +30,7 @@ namespace Assets.Scripts.AI.GeneralNodes
             }
 
             StoryDatastore.Instance.ChosenEnding.Value = chosenEnding;
-            if (StoryDatastore.Instance.GoodSoupPuzzleSolved.Value && chosenEnding != Ending.BURNT_DOWN)
-            {
-                if (StoryDatastore.Instance.FoodQuality.Value < 0f)
-                {
-                    StoryDatastore.Instance.ChosenEnding.Value = Ending.MID_SOUP;
-                }
-                else {
-                    StoryDatastore.Instance.ChosenEnding.Value = Ending.GOOD_SOUP;
-                    SceneManager.LoadScene("GoodSoupCutscene");
-                }
-                return;
-            }
+
             Debug.Log(StoryDatastore.Instance.EmailState.Value + " EMAIL STATE");
             Debug.Log(StoryDatastore.Instance.FoodQuality.Value + " FOOD QUALITY");
             if (StoryDatastore.Instance.EmailState.Value == ComputerHUD.EmailState.NICE_EMAIL_CONFIRMED && StoryDatastore.Instance.FoodQuality.Value > 2.5f)

@@ -25,7 +25,7 @@ namespace Assets.Scripts.Objects.Interactions
             }
             poppedUp = !poppedUp;
             popUp.SetActive(poppedUp);
-            Time.timeScale = poppedUp ? 0 : StoryDatastore.Instance.GameTimeSpeed;
+            Time.timeScale = poppedUp ? 0 : Stopwatch.TimeIntervals[StoryDatastore.Instance.GameTimeSpeedIndex];
             Debug.Log("Popped up");
             objInteraction.PopUpOpened = poppedUp;
             Debug.Log($"Set pop up opened to {poppedUp}");
