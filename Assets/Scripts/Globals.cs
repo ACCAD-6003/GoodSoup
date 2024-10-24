@@ -1,4 +1,9 @@
+using Newtonsoft.Json;
 using System.Collections.Generic;
+using System;
+using Newtonsoft.Json;
+using System.IO;
+using UnityEngine;
 
 public class Globals {
     public const float HEAT_THRESHOLD = 150;
@@ -12,8 +17,51 @@ public class Globals {
     public const float AMBER_PREFERABLE_SHOWER_TEMP = 100f;
 
     public static Dictionary<Ending, int> UnlockedEndings = new();
-
     public static List<Ending> EndingHintChecked = new();
+	public static bool StopwatchUnlocked = false;
+
     public static Ending LastEnding;
     public static bool FirstTitleScreen = true;
+
+	private static string SaveFilePath => Path.Combine(Application.persistentDataPath, "gamedata.json");
+	public static void SaveGame()
+	{
+		GameData data = new GameData
+		{
+			UnlockedEndings = Globals.UnlockedEndings,
+			EndingHintChecked = Globals.EndingHintChecked,
+			StopwatchUnlocked = Globals.StopwatchUnlocked
+		};
+
+		string json = JsonConvert.SerializeObject(data);
+		Debug.Log($"Saving data to persistent data path {Application.persistentDataPath}");
+		File.WriteAllText(SaveFilePath, json);
+	}
+
+	public static void LoadGame()
+	{
+		if (File.Exists(SaveFilePath))
+		{
+			Debug.Log($"Loading file from persistent data path {Application.persistentDataPath}");
+			string json = File.ReadAllText(SaveFilePath);
+			GameData data = JsonConvert.DeserializeObject<GameData>(json);
+
+			Globals.UnlockedEndings = data.UnlockedEndings;
+			Globals.EndingHintChecked = data.EndingHintChecked;
+			Globals.StopwatchUnlocked = data.StopwatchUnlocked;
+		}
+		else
+		{
+			Debug.Log("No save file found.");
+		}
+	}
+
+	[Serializable]
+	public class GameData
+	{
+		public Dictionary<Ending, int> UnlockedEndings;
+		public List<Ending> EndingHintChecked;
+		public bool StopwatchUnlocked;
+	}
+
 }

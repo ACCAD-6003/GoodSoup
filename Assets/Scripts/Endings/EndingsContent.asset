@@ -110,7 +110,7 @@ MonoBehaviour:
       Data: 3|EndingContent, Assembly-CSharp
     - Name: DisplayName
       Entry: 1
-      Data: AMBER IS PARANOID
+      Data: A SPOOKY DAY
     - Name: Description
       Entry: 1
       Data: WEIRD THINGS KEEP HAPPENING IN AMBER'S LIFE...
@@ -158,7 +158,7 @@ MonoBehaviour:
       Data: AMBER HAD A GREAT DAY -- NOT A LIFE-CHANGING DAY THOUGH.
     - Name: Hint
       Entry: 1
-      Data: DO CHORES BEFORE AMBER DOES
+      Data: DO CHORES BEFORE AMBER DOES.
     - Name: imageSprite
       Entry: 10
       Data: 4
@@ -374,7 +374,7 @@ MonoBehaviour:
       Data: SHE WAS SO CLOSE TO A SPECIAL DAY.
     - Name: Hint
       Entry: 1
-      Data: MAKE IT LIKE GRANDMA DOES, BUT NOT QUITE AS GOOD.
+      Data: MAKE IT LIKE GRANDMA DOES, BUT NOT AS GOOD.
     - Name: imageSprite
       Entry: 10
       Data: 16

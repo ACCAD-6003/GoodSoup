@@ -58,7 +58,9 @@ public class EndingBookPage : MonoBehaviour
         }
         title.text = "???";
         descriptionText.enabled = false;
-        hintText.enabled = true;
+        revealButton.gameObject.SetActive(false);
+
+		hintText.enabled = true;
         endingInstructionsText.enabled = false;
         hintText.text = endingContent.Hint;
 

@@ -83,6 +83,8 @@ public class PullObjectWithPhysics : Interaction
     {
         _rb.isKinematic = false;
         _rb.useGravity = true;
+        _rb.interpolation = RigidbodyInterpolation.Interpolate;
+        _rb.sleepThreshold = 0;
         _inPhysicsMode = true;
     }
 

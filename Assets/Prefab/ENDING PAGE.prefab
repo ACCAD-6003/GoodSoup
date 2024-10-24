@@ -531,7 +531,7 @@ GameObject:
   - component: {fileID: 2065119390303569415}
   - component: {fileID: 2065119390303569412}
   - component: {fileID: 2065119390303569410}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Description
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -695,7 +695,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2151922505727014427}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -9.11}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1009,7 +1009,7 @@ GameObject:
   - component: {fileID: 2914378859541985728}
   - component: {fileID: 1747725070459214585}
   - component: {fileID: 3067825315711786680}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1024,7 +1024,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2545252440376024715}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 4.6}
   m_LocalScale: {x: 0.90278, y: 0.90278, z: 0.90278}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1144,7 +1144,7 @@ GameObject:
   - component: {fileID: 3766225555684946210}
   - component: {fileID: 8667771838183850588}
   - component: {fileID: 3456072763928335854}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: ENDINGTEXT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1280,7 +1280,7 @@ GameObject:
   - component: {fileID: 8559265304025358158}
   - component: {fileID: 5642056463140975871}
   - component: {fileID: 8259580671491094755}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: HINT
   m_TagString: Untagged
   m_Icon: {fileID: 0}

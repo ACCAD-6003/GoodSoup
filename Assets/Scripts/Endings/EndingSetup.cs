@@ -32,6 +32,12 @@ public class EndingSetup : SerializedMonoBehaviour
 
         var ending = StoryDatastore.Instance.ChosenEnding.Value;
 
+        var achId = ending.ToString();
+		var ach = new Steamworks.Data.Achievement(achId);
+        if (!ach.State) {
+            ach.Trigger();
+        }
+
         src.clip = content.EndingContent[ending].endingAudio;
         src.Play();
 
