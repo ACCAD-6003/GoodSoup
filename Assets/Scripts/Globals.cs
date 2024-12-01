@@ -1,7 +1,6 @@
 using Newtonsoft.Json;
 using System.Collections.Generic;
 using System;
-using Newtonsoft.Json;
 using System.IO;
 using UnityEngine;
 
@@ -19,6 +18,7 @@ public class Globals {
     public static Dictionary<Ending, int> UnlockedEndings = new();
     public static List<Ending> EndingHintChecked = new();
 	public static bool StopwatchUnlocked = false;
+	public static float Volume = 0.5f;
 
     public static Ending LastEnding;
     public static bool FirstTitleScreen = true;
@@ -30,7 +30,8 @@ public class Globals {
 		{
 			UnlockedEndings = Globals.UnlockedEndings,
 			EndingHintChecked = Globals.EndingHintChecked,
-			StopwatchUnlocked = Globals.StopwatchUnlocked
+			StopwatchUnlocked = Globals.StopwatchUnlocked,
+			Volume = Globals.Volume
 		};
 
 		string json = JsonConvert.SerializeObject(data);
@@ -49,6 +50,7 @@ public class Globals {
 			Globals.UnlockedEndings = data.UnlockedEndings;
 			Globals.EndingHintChecked = data.EndingHintChecked;
 			Globals.StopwatchUnlocked = data.StopwatchUnlocked;
+			Globals.Volume = data.Volume;
 		}
 		else
 		{
@@ -62,6 +64,7 @@ public class Globals {
 		public Dictionary<Ending, int> UnlockedEndings;
 		public List<Ending> EndingHintChecked;
 		public bool StopwatchUnlocked;
+		public float Volume;	
 	}
 
 }
