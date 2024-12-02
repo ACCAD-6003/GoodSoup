@@ -44,9 +44,8 @@ public class ObjectInteraction : MonoBehaviour
 
     bool CanInteractWith(InteractableObject o)
     {
-        if (o.PlayerInteraction == null || PopUpOpened)
+        if (o.PlayerInteraction == null || PopUpOpened || PauseScreen.Paused)
         {
-            Debug.Log(1);
             return false;
         }
         return (!o.PlayerInteraction.IsInProgress && !IsInAmberSightlines(o)) || o.CanInteractWhileAmberLooking || o.TryGetComponent(out PopUp _);

@@ -9,7 +9,7 @@ public class PauseScreen : MonoBehaviour
 	[SerializeField] Canvas pauseCanvas;
 	// Make sure GameLoader awake is called first in sort order
 	private float _timeScale;
-	private bool _paused = false;
+	public static bool Paused = false;
     private void Awake()
 	{
 		AudioListener.volume = Globals.Volume;
@@ -18,18 +18,18 @@ public class PauseScreen : MonoBehaviour
 	public void Update()
 	{
 		if (Input.GetKeyDown(KeyCode.Escape)) {
-			if (_paused) {
+			if (Paused) {
 				Resume();
 			}
             else
             {
-                 Pause();
+                Pause();
             }
 		}
 	}
 	private void OnDestroy()
 	{
-		if (_paused) {
+		if (Paused) {
 			Resume();
 		}
 	}
@@ -37,13 +37,13 @@ public class PauseScreen : MonoBehaviour
 		pauseCanvas.gameObject.SetActive(true);
 		_timeScale = Time.timeScale;
 		Time.timeScale = 0f;
-		_paused = true;
+		Paused = true;
 	}
 	public void Resume() 
 	{ 
 		Time.timeScale = _timeScale;
 		pauseCanvas.gameObject.SetActive(false);
-		_paused = false;
+		Paused = false;
 	}
 	public void UpdateVolume() 
 	{ 

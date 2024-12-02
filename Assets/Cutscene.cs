@@ -20,7 +20,7 @@ public class Cutscene : MonoBehaviour
         player.loopPointReached -= StartGame;
     }
     void Update() {
-        if (Input.GetKey(KeyCode.Space)) {
+        if (Input.GetKey(KeyCode.Space) && !PauseScreen.Paused) {
             StartGame(null);
         }
     }
