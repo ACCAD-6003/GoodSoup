@@ -1,4 +1,5 @@
 using Sirenix.OdinInspector;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -34,8 +35,15 @@ public class EndingSetup : SerializedMonoBehaviour
 
         var achId = ending.ToString();
 		var ach = new Steamworks.Data.Achievement(achId);
-        if (!ach.State) {
-            ach.Trigger();
+        try
+        {
+            if (!ach.State)
+            {
+                ach.Trigger();
+            }
+        }
+        catch (Exception e) { 
+        
         }
 
         src.clip = content.EndingContent[ending].endingAudio;
