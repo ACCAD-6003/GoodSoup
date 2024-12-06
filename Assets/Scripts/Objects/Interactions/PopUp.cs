@@ -17,7 +17,13 @@ namespace Assets.Scripts.Objects.Interactions
         {
             objInteraction = FindObjectOfType<ObjectInteraction>();
         }
-        public override void DoAction()
+		private void Update()
+		{
+            if (Input.GetKeyDown(KeyCode.Escape) && poppedUp && !PauseScreen.Paused) {
+                DoAction();
+            }
+		}
+		public override void DoAction()
         {
             if (objInteraction.PopUpOpened && !poppedUp)
             {
