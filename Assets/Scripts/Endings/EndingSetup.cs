@@ -68,10 +68,16 @@ public class EndingSetup : SerializedMonoBehaviour
                 highScoreText.text = $"New high score of {stars} stars!";
                 highScoreText.color = perfectPerformanceColor;
             }
-            else {
+            else if (stars != 5)
+            {
                 highScoreText.text = $"Did not surpass high score of {Globals.UnlockedEndings[ending]} stars.";
                 highScoreText.color = couldDoBetter;
             }
+            else
+            {
+                highScoreText.text = "Maybe try for a different ending?";
+				highScoreText.color = couldDoBetter;
+			}
             doingHighScoreAnimation = true;
         }
 
