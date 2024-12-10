@@ -534,7 +534,6 @@ GameObject:
   - component: {fileID: 1329361729}
   - component: {fileID: 1329361730}
   - component: {fileID: 1329361732}
-  - component: {fileID: 1329361731}
   - component: {fileID: 1329361734}
   - component: {fileID: 1329361733}
   m_Layer: 5
@@ -572,17 +571,17 @@ VideoPlayer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1329361728}
   m_Enabled: 1
-  m_VideoClip: {fileID: 32900000, guid: 11eedf45e86a43d4bb2835c958d55c2b, type: 3}
+  m_VideoClip: {fileID: 32900000, guid: 3b65a3ab89b0b8a4e9c31c2dcf9a1922, type: 3}
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
-  m_TargetCamera: {fileID: 0}
+  m_TargetCamera: {fileID: 1892880843}
   m_TargetTexture: {fileID: 8400000, guid: 6feeca5aba4b808488d0fa9ddac33df8, type: 2}
   m_TimeReference: 0
   m_TargetMaterialRenderer: {fileID: 0}
   m_TargetMaterialProperty: <noninit>
-  m_RenderMode: 2
+  m_RenderMode: 1
   m_AspectRatio: 2
-  m_DataSource: 1
+  m_DataSource: 0
   m_PlaybackSpeed: 1
   m_AudioOutputMode: 2
   m_TargetAudioSources:
@@ -599,33 +598,6 @@ VideoPlayer:
   m_WaitForFirstFrame: 1
   m_FrameReadyEventEnabled: 0
   m_VideoShaders: []
---- !u!114 &1329361731
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1329361728}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Texture: {fileID: 8400000, guid: 6feeca5aba4b808488d0fa9ddac33df8, type: 2}
-  m_UVRect:
-    serializedVersion: 2
-    x: 0
-    y: 0
-    width: 1
-    height: 1
 --- !u!222 &1329361732
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1172,5 +1144,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1329361730}
-  videoName: Good_Soup_TRUE_ENDING.mp4
+  videoName: 
   sceneNameToTransitionTo: Endings

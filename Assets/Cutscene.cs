@@ -9,8 +9,6 @@ public class Cutscene : MonoBehaviour
     private void Start()
     {
         if (player) {
-            var path = System.IO.Path.Combine(Application.streamingAssetsPath, videoName);
-            player.url = path;
             player.Play();
         }
 
