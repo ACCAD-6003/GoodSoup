@@ -1760,7 +1760,7 @@ MonoBehaviour:
   m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 1080, y: 1080}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -2483,13 +2483,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b49bbaf8d29b405408a1d7f1a68bd15a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactionId: 859132258
-  singleUse: 0
-  usedUp: 0
-  AssociatedDirection: {x: 0, y: 0, z: 1}
-  isPlayer: 1
-  _isInProgress: 0
-  text: {fileID: 1367494463}
+  _stopwatchSprites: []
+  _stopwatchImage: {fileID: 0}
 --- !u!114 &1404461455
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5881,7 +5876,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh105026
+  m_Name: pb_Mesh108960
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -9356,7 +9351,7 @@ MonoBehaviour:
   m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 1000, y: 1000}
+  m_ReferenceResolution: {x: 1920, y: 1000}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
