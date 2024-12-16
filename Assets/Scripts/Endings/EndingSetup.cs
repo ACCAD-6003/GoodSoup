@@ -3,6 +3,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -42,9 +43,7 @@ public class EndingSetup : SerializedMonoBehaviour
                 ach.Trigger();
             }
         }
-        catch (Exception e) { 
-        
-        }
+        catch { }
 
         src.clip = content.EndingContent[ending].endingAudio;
         src.Play();
@@ -89,8 +88,32 @@ public class EndingSetup : SerializedMonoBehaviour
         else {
             starPerformance.text = endingContent.FiveStarMessage;
             starPerformance.color = perfectPerformanceColor;
-        }
+		}
 
+        if (Globals.UnlockedEndings.Keys.Count == Enum.GetNames(typeof(Ending)).Length) 
+        {
+            bool allEndingsFiveStars = true;
+			foreach (Ending e in Enum.GetValues(typeof(Ending)))
+            {
+				if (Globals.UnlockedEndings[e] != 5)
+                {
+					allEndingsFiveStars = false;
+					break;
+				}
+			}
+			if (allEndingsFiveStars)
+			{
+				var achievement = new Steamworks.Data.Achievement("ALL_STAR");
+				try
+				{
+					if (!achievement.State)
+					{
+						achievement.Trigger();
+					}
+				}
+				catch { }
+			}
+		}
 
         foreach (GameObject obj in dontDestroyObjects)
         {

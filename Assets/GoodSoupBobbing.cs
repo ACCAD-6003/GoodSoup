@@ -14,7 +14,8 @@ public class GoodSoupBobbing : MonoBehaviour
     [SerializeField] Material _amberFaceMaterial;
     private void OnEnable()
     {
-        Texture2D text = Resources.Load<Texture2D>("Textures/FacialExpressions/" + AmberVisual.faceToTexture[StoryDatastore.Instance.FaceOption.Value]);
+        Screen.SetResolution(1920, 1080, FullScreenMode.ExclusiveFullScreen, 60);
+		Texture2D text = Resources.Load<Texture2D>("Textures/FacialExpressions/" + AmberVisual.faceToTexture[StoryDatastore.Instance.FaceOption.Value]);
         _amberFaceMaterial.SetTexture("_Albedo", text);
 
         if (initialPosition == Vector3.zero) {

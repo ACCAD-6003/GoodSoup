@@ -10551,7 +10551,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh544696
+  m_Name: pb_Mesh46898
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -12424,7 +12424,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh544602
+  m_Name: pb_Mesh46736
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -14569,6 +14569,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5393696018984560121, guid: 5c5435fbb019cbc41a702de06e1543af, type: 3}
       propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5393696019162520914, guid: 5c5435fbb019cbc41a702de06e1543af, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7931015150514768369, guid: 5c5435fbb019cbc41a702de06e1543af, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9054947796708325451, guid: 5c5435fbb019cbc41a702de06e1543af, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

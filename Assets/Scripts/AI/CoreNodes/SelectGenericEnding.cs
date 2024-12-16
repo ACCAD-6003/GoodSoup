@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-public enum Ending { FAR_CRY, PARANOID, GOOD_ENDING, BAD_ENDING, KICKED_OUT_OF_COLLEGE, GOOD_SOUP , ACADEMIC_WEAPON, BURNT_DOWN, MID_SOUP, LOCKED_OUT, TOUCH_GRASS, NULL }
+public enum Ending { FAR_CRY, PARANOID, GOOD_ENDING, BAD_ENDING, KICKED_OUT_OF_COLLEGE, GOOD_SOUP , ACADEMIC_WEAPON, BURNT_DOWN, MID_SOUP, LOCKED_OUT, TOUCH_GRASS }
 
 namespace Assets.Scripts.AI.GeneralNodes
 {

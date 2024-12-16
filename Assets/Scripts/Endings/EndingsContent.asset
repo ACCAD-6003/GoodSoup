@@ -155,7 +155,7 @@ MonoBehaviour:
       Data: YOU COULD PROBABLY STILL IMPROVE HER DAY.
     - Name: FiveStarMessage
       Entry: 1
-      Data: AMBER HAD A GREAT DAY -- NOT A LIFE-CHANGING DAY THOUGH.
+      Data: AMBER HAD A GREAT DAY -- NOT LIFE-CHANGING THOUGH.
     - Name: Hint
       Entry: 1
       Data: DO CHORES BEFORE AMBER DOES.
@@ -227,7 +227,7 @@ MonoBehaviour:
       Data: 
     - Name: FiveStarMessage
       Entry: 1
-      Data: YOU ARE A SOCIOPATH.. SHE WAS SO CLOSE TO GRADUATING.
+      Data: YOU ARE A SOCIOPATH.. SHE WAS CLOSE TO GRADUATING.
     - Name: Hint
       Entry: 1
       Data: RUIN HER LIFE VIA EMAIL.
@@ -335,7 +335,7 @@ MonoBehaviour:
       Data: 
     - Name: FiveStarMessage
       Entry: 1
-      Data: AMBER WAS NOT HARMED... FIRE FIGHTERS ARRIVED JUST IN TIME.
+      Data: FIREFIGHTERS ARRIVED JUST IN TIME.
     - Name: Hint
       Entry: 1
       Data: BRING THE HEAT!

@@ -29,6 +29,7 @@ namespace Assets.Scripts.Objects.Interactions
                 StoryDatastore.Instance.Annoyance.Value += 1.5f;
                 _flushed = true;
             }
+            FindObjectOfType<CameraShake>().ShakeCamera();
             _temperature.Value += Globals.FLUSH_SHOWER_TEMP_IMPACT;
             _temperature.Value = MathF.Max(0f, _temperature.Value);
             EndAction();

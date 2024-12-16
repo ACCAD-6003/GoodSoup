@@ -11,6 +11,7 @@ public class ComputerEmail : Interaction
     [SerializeField] GameObject PCUI, EmailHUDElement;
     [SerializeField] ComputerHUD hud;
     private ObjectInteraction popUp;
+    private float _timeScale;
     private void Awake()
     {
         popUp = FindObjectOfType<ObjectInteraction>();
@@ -57,14 +58,15 @@ public class ComputerEmail : Interaction
     public void CloseScreen() {
         popUp.PopUpOpened = false;
         PCUI.SetActive(false);
-        Time.timeScale = 1f;
+        Time.timeScale = _timeScale;
         EndAction();
     }
     public override void DoAction()
     {
         PCUI.SetActive(true);
         DisplayEmailScreen();
-        Time.timeScale = 0f;
+		_timeScale = Time.timeScale;
+		Time.timeScale = 0f;
         popUp.PopUpOpened = true;
 
     }

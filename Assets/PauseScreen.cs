@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class PauseScreen : MonoBehaviour
@@ -44,6 +45,16 @@ public class PauseScreen : MonoBehaviour
 		Time.timeScale = _timeScale;
 		pauseCanvas.gameObject.SetActive(false);
 		Paused = false;
+	}
+	public void ReturnToMenu()
+	{
+		GameObject[] dontDestroyObjects = GameObject.FindGameObjectsWithTag("DontDestroyOnLoad");
+		StoryDatastore.Instance.DestroyStoryData();
+		foreach (GameObject obj in dontDestroyObjects)
+		{
+			Destroy(obj);
+		}
+		SceneManager.LoadScene("Title Screen");
 	}
 	public void UpdateVolume() 
 	{ 
