@@ -46,7 +46,7 @@ public class PauseScreen : MonoBehaviour
 		pauseCanvas.gameObject.SetActive(false);
 		Paused = false;
 	}
-	public void ReturnToMenu()
+	public static void ReturnToMenu()
 	{
 		GameObject[] dontDestroyObjects = GameObject.FindGameObjectsWithTag("DontDestroyOnLoad");
 		StoryDatastore.Instance.DestroyStoryData();

@@ -77,7 +77,7 @@ MonoBehaviour:
       Data: AMBER'S DAY OFF
     - Name: Description
       Entry: 1
-      Data: YOU NEVER WOKE AMBER UP, SO SHE SLEPT IN!
+      Data: YOU NEVER WOKE AMBER UP!
     - Name: DoBetterMessage
       Entry: 6
       Data: 
@@ -113,7 +113,7 @@ MonoBehaviour:
       Data: A SPOOKY DAY
     - Name: Description
       Entry: 1
-      Data: WEIRD THINGS KEEP HAPPENING IN AMBER'S LIFE...
+      Data: WEIRD THINGS KEEP HAPPENING TO AMBER...
     - Name: DoBetterMessage
       Entry: 1
       Data: YOU COULD PROBABLY SCARE HER MORE.
@@ -155,7 +155,7 @@ MonoBehaviour:
       Data: YOU COULD PROBABLY STILL IMPROVE HER DAY.
     - Name: FiveStarMessage
       Entry: 1
-      Data: AMBER HAD A GREAT DAY -- NOT LIFE-CHANGING THOUGH.
+      Data: AMBER HAD A GREAT DAY -- BUT NOT LIFE-CHANGING.
     - Name: Hint
       Entry: 1
       Data: DO CHORES BEFORE AMBER DOES.
@@ -293,7 +293,7 @@ MonoBehaviour:
       Data: ACADEMIC WEAPON
     - Name: Description
       Entry: 1
-      Data: AMBER IS ON THE TRACK FOR SUCCESS IN SCHOOL!
+      Data: AMBER IS ON THE TRACK FOR SUCCESS!
     - Name: DoBetterMessage
       Entry: 1
       Data: YOU FEEL AS THOUGH YOU COULD DO SOMETHING MORE.
@@ -329,7 +329,7 @@ MonoBehaviour:
       Data: SOME LIKE IT HOT
     - Name: Description
       Entry: 1
-      Data: YOU FILLED AMBER'S APARTMENT WITH SMOKE!
+      Data: YOU FILLED THE APARTMENT WITH SMOKE!
     - Name: DoBetterMessage
       Entry: 6
       Data: 
@@ -401,7 +401,7 @@ MonoBehaviour:
       Data: TOUCH GRASS
     - Name: Description
       Entry: 1
-      Data: YOU PLAYED THE GAME 10x. THAT'S A LOT OF AMBER.
+      Data: YOU PLAYED THE GAME 10x.
     - Name: DoBetterMessage
       Entry: 6
       Data: 
@@ -443,7 +443,7 @@ MonoBehaviour:
       Data: 
     - Name: FiveStarMessage
       Entry: 1
-      Data: I GUESS SHE'S GOING TO HAVE TO CALL A LOCKSMITH...
+      Data: SHE'S GOING TO HAVE TO CALL A LOCKSMITH...
     - Name: Hint
       Entry: 1
       Data: THE RUG IS KEY.

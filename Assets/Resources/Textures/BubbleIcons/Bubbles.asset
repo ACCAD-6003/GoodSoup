@@ -1,0 +1,742 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 121820cf6d250664ba72788d02dc5fb4, type: 3}
+  m_Name: Bubbles
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects:
+    - {fileID: 21300000, guid: bd0a60103895d29499a51fc99fd505f4, type: 3}
+    - {fileID: 8300000, guid: c5983abfbc7b77f43b82f9453e332959, type: 3}
+    - {fileID: 8300000, guid: 4308f6e64f0dd514baf880ddea8094f9, type: 3}
+    - {fileID: 21300000, guid: 8511742181713224c8ffc1edca69e267, type: 3}
+    - {fileID: 21300000, guid: ccd3595d2d5b3304ea7b7708a7639d9e, type: 3}
+    - {fileID: 8300000, guid: c6a4a1707b6089b49b6d45c3b2beeb05, type: 3}
+    - {fileID: 21300000, guid: cc15c885556c8e24183b90fd6caa75f2, type: 3}
+    - {fileID: 8300000, guid: 72e9ebef1b1573044a6b31a33c7e77c6, type: 3}
+    - {fileID: 8300000, guid: e32f98e447229714285369a1cde393b0, type: 3}
+    - {fileID: 21300000, guid: 43b90b6d577e19740915720a3e310418, type: 3}
+    - {fileID: 8300000, guid: 8b641e923ffed6e4299191dad275f42b, type: 3}
+    - {fileID: 8300000, guid: 07c4b7a255e7f4046a300fd78dda9240, type: 3}
+    - {fileID: 21300000, guid: 9e5082e1fd0c1b34a8d614d4353027f3, type: 3}
+    - {fileID: 21300000, guid: 2a3d02324184deb4eab98b166a6ec09a, type: 3}
+    - {fileID: 8300000, guid: 0fdd04679899c2b49907daa56530a412, type: 3}
+    - {fileID: 8300000, guid: 145a44eec0625c74cb3fb768a9a074d4, type: 3}
+    - {fileID: 8300000, guid: f4174527439d6714db209f2a864eda28, type: 3}
+    - {fileID: 21300000, guid: 52a26282e14749d4facc681954bb6746, type: 3}
+    - {fileID: 21300000, guid: 0f3ee1ceeeb19f248abb7a759b6bc48a, type: 3}
+    - {fileID: 8300000, guid: 290fe4d9028da6b4fb61b965d0d4116f, type: 3}
+    - {fileID: 21300000, guid: 05253112d7dcf0a4b9289248c4f32ef0, type: 3}
+    - {fileID: 21300000, guid: d0c863da633a9de4985554093a3f30c9, type: 3}
+    - {fileID: 8300000, guid: 904f71a48b711c948995806d90c86d13, type: 3}
+    - {fileID: 21300000, guid: 9e480162780e3164dae0cc89cb1d6220, type: 3}
+    - {fileID: 8300000, guid: 5d923ad99959bec47b912cb56601c00a, type: 3}
+    - {fileID: 21300000, guid: 7df3dffe5c922ed4db199c4b45fe06eb, type: 3}
+    - {fileID: 8300000, guid: a3afe2722bd9de94e974f871f520c6ef, type: 3}
+    - {fileID: 8300000, guid: 74dbebceac610a44c9f2515d3dee526d, type: 3}
+    - {fileID: 8300000, guid: 594907efafd356648ab67dc66a607405, type: 3}
+    - {fileID: 21300000, guid: d1e24d0e9e49cb0408894095b6c227a4, type: 3}
+    - {fileID: 21300000, guid: 262319e553c3b404f834993df33353f6, type: 3}
+    - {fileID: 21300000, guid: 95096ed27a61e564bb426b780ec4eb10, type: 3}
+    - {fileID: 8300000, guid: c4547e41201c1ba4d9fd6c881c87038a, type: 3}
+    - {fileID: 21300000, guid: 8f3449e945c76244fb19102bff9f10cb, type: 3}
+    - {fileID: 21300000, guid: 47d6b417b747a0e44a8a87567e7429d7, type: 3}
+    - {fileID: 8300000, guid: 3628cf4963a0dd94db73a8167f378af4, type: 3}
+    - {fileID: 8300000, guid: ddbcfd84c4fa0d645b3699b39b0443a8, type: 3}
+    - {fileID: 8300000, guid: cbb578d6d7d87ee41b61a64beed32275, type: 3}
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: Bubbles
+      Entry: 7
+      Data: 0|System.Collections.Generic.Dictionary`2[[Assets.Scripts.UI.UIElements+BubbleIcon,
+        Assembly-CSharp],[Assets.Scripts.UI.UIElements+BubbleData, Assembly-CSharp]],
+        mscorlib
+    - Name: comparer
+      Entry: 7
+      Data: 1|System.Collections.Generic.EnumEqualityComparer`1[[Assets.Scripts.UI.UIElements+BubbleIcon,
+        Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 12
+      Data: 18
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 0
+    - Name: $v
+      Entry: 7
+      Data: 2|Assets.Scripts.UI.UIElements+BubbleData, Assembly-CSharp
+    - Name: icon
+      Entry: 10
+      Data: 0
+    - Name: audioClips
+      Entry: 7
+      Data: 3|System.Collections.Generic.List`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 10
+      Data: 1
+    - Name: 
+      Entry: 10
+      Data: 2
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 1
+    - Name: $v
+      Entry: 7
+      Data: 4|Assets.Scripts.UI.UIElements+BubbleData, Assembly-CSharp
+    - Name: icon
+      Entry: 10
+      Data: 3
+    - Name: audioClips
+      Entry: 7
+      Data: 5|System.Collections.Generic.List`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 10
+      Data: 1
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 2
+    - Name: $v
+      Entry: 7
+      Data: 6|Assets.Scripts.UI.UIElements+BubbleData, Assembly-CSharp
+    - Name: icon
+      Entry: 10
+      Data: 4
+    - Name: audioClips
+      Entry: 7
+      Data: 7|System.Collections.Generic.List`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 10
+      Data: 5
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 3
+    - Name: $v
+      Entry: 7
+      Data: 8|Assets.Scripts.UI.UIElements+BubbleData, Assembly-CSharp
+    - Name: icon
+      Entry: 10
+      Data: 6
+    - Name: audioClips
+      Entry: 7
+      Data: 9|System.Collections.Generic.List`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 10
+      Data: 7
+    - Name: 
+      Entry: 10
+      Data: 8
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 4
+    - Name: $v
+      Entry: 7
+      Data: 10|Assets.Scripts.UI.UIElements+BubbleData, Assembly-CSharp
+    - Name: icon
+      Entry: 10
+      Data: 9
+    - Name: audioClips
+      Entry: 7
+      Data: 11|System.Collections.Generic.List`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 10
+      Data: 10
+    - Name: 
+      Entry: 10
+      Data: 11
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 5
+    - Name: $v
+      Entry: 7
+      Data: 12|Assets.Scripts.UI.UIElements+BubbleData, Assembly-CSharp
+    - Name: icon
+      Entry: 10
+      Data: 12
+    - Name: audioClips
+      Entry: 7
+      Data: 13|System.Collections.Generic.List`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 7
+    - Name: $v
+      Entry: 7
+      Data: 14|Assets.Scripts.UI.UIElements+BubbleData, Assembly-CSharp
+    - Name: icon
+      Entry: 10
+      Data: 13
+    - Name: audioClips
+      Entry: 7
+      Data: 15|System.Collections.Generic.List`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 3
+    - Name: 
+      Entry: 10
+      Data: 14
+    - Name: 
+      Entry: 10
+      Data: 15
+    - Name: 
+      Entry: 10
+      Data: 16
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 8
+    - Name: $v
+      Entry: 7
+      Data: 16|Assets.Scripts.UI.UIElements+BubbleData, Assembly-CSharp
+    - Name: icon
+      Entry: 10
+      Data: 17
+    - Name: audioClips
+      Entry: 7
+      Data: 17|System.Collections.Generic.List`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 10
+      Data: 1
+    - Name: 
+      Entry: 10
+      Data: 2
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 11
+    - Name: $v
+      Entry: 7
+      Data: 18|Assets.Scripts.UI.UIElements+BubbleData, Assembly-CSharp
+    - Name: icon
+      Entry: 10
+      Data: 18
+    - Name: audioClips
+      Entry: 7
+      Data: 19|System.Collections.Generic.List`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 10
+      Data: 19
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 12
+    - Name: $v
+      Entry: 7
+      Data: 20|Assets.Scripts.UI.UIElements+BubbleData, Assembly-CSharp
+    - Name: icon
+      Entry: 10
+      Data: 20
+    - Name: audioClips
+      Entry: 7
+      Data: 21|System.Collections.Generic.List`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 10
+      Data: 1
+    - Name: 
+      Entry: 10
+      Data: 2
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 13
+    - Name: $v
+      Entry: 7
+      Data: 22|Assets.Scripts.UI.UIElements+BubbleData, Assembly-CSharp
+    - Name: icon
+      Entry: 10
+      Data: 21
+    - Name: audioClips
+      Entry: 7
+      Data: 23|System.Collections.Generic.List`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 10
+      Data: 5
+    - Name: 
+      Entry: 10
+      Data: 22
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 14
+    - Name: $v
+      Entry: 7
+      Data: 24|Assets.Scripts.UI.UIElements+BubbleData, Assembly-CSharp
+    - Name: icon
+      Entry: 10
+      Data: 23
+    - Name: audioClips
+      Entry: 7
+      Data: 25|System.Collections.Generic.List`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 10
+      Data: 24
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 15
+    - Name: $v
+      Entry: 7
+      Data: 26|Assets.Scripts.UI.UIElements+BubbleData, Assembly-CSharp
+    - Name: icon
+      Entry: 10
+      Data: 25
+    - Name: audioClips
+      Entry: 7
+      Data: 27|System.Collections.Generic.List`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 3
+    - Name: 
+      Entry: 10
+      Data: 26
+    - Name: 
+      Entry: 10
+      Data: 27
+    - Name: 
+      Entry: 10
+      Data: 28
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 16
+    - Name: $v
+      Entry: 7
+      Data: 28|Assets.Scripts.UI.UIElements+BubbleData, Assembly-CSharp
+    - Name: icon
+      Entry: 10
+      Data: 29
+    - Name: audioClips
+      Entry: 7
+      Data: 29|System.Collections.Generic.List`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 10
+      Data: 1
+    - Name: 
+      Entry: 10
+      Data: 2
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 17
+    - Name: $v
+      Entry: 7
+      Data: 30|Assets.Scripts.UI.UIElements+BubbleData, Assembly-CSharp
+    - Name: icon
+      Entry: 10
+      Data: 30
+    - Name: audioClips
+      Entry: 7
+      Data: 31|System.Collections.Generic.List`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 10
+      Data: 24
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 18
+    - Name: $v
+      Entry: 7
+      Data: 32|Assets.Scripts.UI.UIElements+BubbleData, Assembly-CSharp
+    - Name: icon
+      Entry: 10
+      Data: 31
+    - Name: audioClips
+      Entry: 7
+      Data: 33|System.Collections.Generic.List`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 10
+      Data: 1
+    - Name: 
+      Entry: 10
+      Data: 32
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 19
+    - Name: $v
+      Entry: 7
+      Data: 34|Assets.Scripts.UI.UIElements+BubbleData, Assembly-CSharp
+    - Name: icon
+      Entry: 10
+      Data: 33
+    - Name: audioClips
+      Entry: 7
+      Data: 35|System.Collections.Generic.List`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 10
+      Data: 24
+    - Name: 
+      Entry: 10
+      Data: 11
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 20
+    - Name: $v
+      Entry: 7
+      Data: 36|Assets.Scripts.UI.UIElements+BubbleData, Assembly-CSharp
+    - Name: icon
+      Entry: 10
+      Data: 34
+    - Name: audioClips
+      Entry: 7
+      Data: 37|System.Collections.Generic.List`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 3
+    - Name: 
+      Entry: 10
+      Data: 35
+    - Name: 
+      Entry: 10
+      Data: 36
+    - Name: 
+      Entry: 10
+      Data: 37
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 

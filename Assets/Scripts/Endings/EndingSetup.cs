@@ -25,7 +25,15 @@ public class EndingSetup : SerializedMonoBehaviour
     public AudioSource src;
     public AudioClip whoosh;
     [SerializeField] Image background;
-    private void Awake()
+	private void Update()
+	{
+		if (Input.GetKeyDown(KeyCode.R))
+		{
+            PauseScreen.ReturnToMenu();
+		}
+
+	}
+	private void Awake()
     {
 
         timesBeaten++;

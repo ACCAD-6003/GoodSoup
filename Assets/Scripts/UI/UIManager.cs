@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using UnityEngine;
 using static Assets.Scripts.UI.UIElements;
 
@@ -8,7 +9,8 @@ namespace Assets.Scripts.UI
     {
         [SerializeField] ThoughtBubble bubble;
         [SerializeField] UIElements icons;
-        private Coroutine bubbleCoroutine;
+		[SerializeField] AudioSource src;
+		private Coroutine bubbleCoroutine;
 
         private static UIManager instance;
         public static UIManager Instance { get => instance; private set { instance = value; } }
@@ -37,8 +39,22 @@ namespace Assets.Scripts.UI
         }
         private void DisplayIcon(BubbleIcon icon) {
             bubble.gameObject.SetActive(true);
-            bubble.mainIcon.sprite = icons.Bubbles[icon].icon;
-        }
+            var iconData = icons.Bubbles[icon];
+			bubble.mainIcon.sprite = iconData.icon;
+            var clips = iconData.audioClips.Count;
+            if (clips > 0) 
+            {
+				var clip = iconData.audioClips[UnityEngine.Random.Range(0, clips)];
+				if (clip != null)
+				{
+					src.PlayOneShot(clip);
+				}
+				else
+				{
+					Debug.LogWarning($"Null audio clip for icon: {icon}");
+				}
+			}
+		}
 
         public void DisplaySimpleBubbleTilInterrupted(BubbleIcon icon)
         {
@@ -59,6 +75,8 @@ namespace Assets.Scripts.UI
                 bubbleCoroutine = null;
             }
             ClearBubble();
+
+            Debug.Log(icon.ToString() + " ::: " + seconds.ToString());
 
             bubbleCoroutine = StartCoroutine(DisplayBubbleForSecondsCoroutine(icon, seconds));
         }
