@@ -37,7 +37,7 @@ namespace Assets.Scripts.UI
         }
         private void DisplayIcon(BubbleIcon icon) {
             bubble.gameObject.SetActive(true);
-            bubble.mainIcon.sprite = icons.IconImages[icon];
+            bubble.mainIcon.sprite = icons.Bubbles[icon].icon;
         }
 
         public void DisplaySimpleBubbleTilInterrupted(BubbleIcon icon)
@@ -74,11 +74,6 @@ namespace Assets.Scripts.UI
                 ClearBubble();
                 bubbleCoroutine = null;
             }
-        }
-
-        public void DisplayTimerBubbleForSeconds(BubbleIcon icon, float seconds)
-        {
-            // todo
         }
     }
 }
