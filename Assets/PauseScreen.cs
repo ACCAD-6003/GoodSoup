@@ -8,6 +8,7 @@ public class PauseScreen : MonoBehaviour
 {
     [SerializeField] Slider volSlider;
 	[SerializeField] Canvas pauseCanvas;
+	[SerializeField] GameObject mainMenu, confirmReturnMenu;
 	// Make sure GameLoader awake is called first in sort order
 	private float _timeScale;
 	public static bool Paused = false;
@@ -43,6 +44,8 @@ public class PauseScreen : MonoBehaviour
 	public void Resume() 
 	{ 
 		Time.timeScale = _timeScale;
+		mainMenu.SetActive(true);
+		confirmReturnMenu.SetActive(false);
 		pauseCanvas.gameObject.SetActive(false);
 		Paused = false;
 	}

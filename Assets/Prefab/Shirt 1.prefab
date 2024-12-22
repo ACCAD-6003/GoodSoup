@@ -95,7 +95,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 5115598889d576c4dabfd31dd38e54b1, type: 2}
+  - {fileID: 2100000, guid: 65601aaf4ca4cfa4ca39005a66fcb0d9, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -263,7 +263,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 5115598889d576c4dabfd31dd38e54b1, type: 2}
+  - {fileID: 2100000, guid: 65601aaf4ca4cfa4ca39005a66fcb0d9, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -539,10 +539,12 @@ MonoBehaviour:
   _isInProgress: 0
   beforeMoved: {fileID: 643158521016933344}
   afterMoved: {fileID: 0}
+  specialObject: 0
   _moved:
     _value: 0
   _optionalSrc: {fileID: 0}
   _optionalSoundForBeforeMovedToAfter: {fileID: 0}
+  putBackAfterTime: 0
 --- !u!114 &2293241395444237567
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -574,6 +576,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AssociatedTile: {fileID: 0}
+  CanInteractWhileAmberLooking: 0
 --- !u!1 &6448203713089457974
 GameObject:
   m_ObjectHideFlags: 0
