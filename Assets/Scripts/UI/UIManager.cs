@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using static Assets.Scripts.UI.UIElements;
 
 namespace Assets.Scripts.UI
@@ -9,6 +10,7 @@ namespace Assets.Scripts.UI
     {
         [SerializeField] ThoughtBubble bubble;
         [SerializeField] UIElements icons;
+        [SerializeField] GameObject primaryUI;
 		[SerializeField] AudioSource src;
 		private Coroutine bubbleCoroutine;
 
@@ -25,9 +27,23 @@ namespace Assets.Scripts.UI
             ClearBubble();
             Instance = this;
             DontDestroyOnLoad(gameObject);
-        }
 
-        public void ClearBubble()
+			SceneManager.sceneLoaded += OnSceneLoaded;
+		}
+
+		private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+		{
+			if (scene.name == "AtSchool")
+			{
+				primaryUI.SetActive(false);
+			}
+			else
+			{
+				primaryUI.SetActive(true);
+			}
+		}
+
+		public void ClearBubble()
         {
             if (bubbleCoroutine != null)
             {

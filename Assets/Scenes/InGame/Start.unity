@@ -8772,6 +8772,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bubble: {fileID: 694985061}
   icons: {fileID: 11400000, guid: b16932d3cbc75464fabf9916001330c3, type: 2}
+  primaryUI: {fileID: 1023373020}
   src: {fileID: 1792823920}
 --- !u!4 &1792823919
 Transform:

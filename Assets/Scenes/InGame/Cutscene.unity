@@ -232,10 +232,9 @@ GameObject:
   - component: {fileID: 1028138940}
   - component: {fileID: 1028138944}
   - component: {fileID: 1028138943}
-  - component: {fileID: 1028138942}
-  - component: {fileID: 1028138941}
+  - component: {fileID: 1028138945}
   m_Layer: 5
-  m_Name: Play Again
+  m_Name: Skip
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -261,33 +260,6 @@ RectTransform:
   m_AnchoredPosition: {x: -27, y: -451}
   m_SizeDelta: {x: 229.4118, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1028138941
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1028138939}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b47b67d1a071e42edaf71f49d94c69bb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1028138942
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1028138939}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_FirstSelected: {fileID: 0}
-  m_sendNavigationEvents: 1
-  m_DragThreshold: 10
 --- !u!114 &1028138943
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -385,6 +357,26 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1028138939}
   m_CullTransparentMesh: 1
+--- !u!95 &1028138945
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1028138939}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 79a5cba2fa8ed964f973db13aad3ff06, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &1032708716
 PrefabInstance:
   m_ObjectHideFlags: 0
