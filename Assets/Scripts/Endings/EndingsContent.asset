@@ -116,7 +116,7 @@ MonoBehaviour:
       Data: WEIRD THINGS KEEP HAPPENING TO AMBER...
     - Name: DoBetterMessage
       Entry: 1
-      Data: YOU COULD PROBABLY SCARE HER MORE.
+      Data: YOU CAN PROBABLY SCARE AMBER MORE.
     - Name: FiveStarMessage
       Entry: 1
       Data: WOW. YOU REALLY KNOW HOW TO FREAK HER OUT.
@@ -152,13 +152,13 @@ MonoBehaviour:
       Data: AMBER HAD A BETTER DAY THAN USUAL!
     - Name: DoBetterMessage
       Entry: 1
-      Data: YOU COULD PROBABLY STILL IMPROVE HER DAY.
+      Data: YOU CAN PROBABLY STILL IMPROVE HER DAY.
     - Name: FiveStarMessage
       Entry: 1
       Data: AMBER HAD A GREAT DAY -- BUT NOT LIFE-CHANGING.
     - Name: Hint
       Entry: 1
-      Data: DO CHORES BEFORE AMBER DOES.
+      Data: DO AMBER'S CHORES BEFORE SHE DOES.
     - Name: imageSprite
       Entry: 10
       Data: 4
@@ -188,13 +188,13 @@ MonoBehaviour:
       Data: AMBER HAD A SHITTIER DAY THAN USUAL.
     - Name: DoBetterMessage
       Entry: 1
-      Data: IF YOU'RE A SADIST, YOU COULD DEFINITELY MAKE HER DAY WORSE.
+      Data: YOU CAN STILL MAKE HER DAY WORSE, SADIST.
     - Name: FiveStarMessage
       Entry: 1
       Data: YOU'RE A FULL BLOWN ASSHOLE. CONGRATS?
     - Name: Hint
       Entry: 1
-      Data: GIRL TORTURE SIMULATOR TIME!
+      Data: IT'S GIRL TORTURE SIMULATOR TIME!
     - Name: imageSprite
       Entry: 10
       Data: 6
@@ -230,7 +230,7 @@ MonoBehaviour:
       Data: YOU ARE A SOCIOPATH.. SHE WAS CLOSE TO GRADUATING.
     - Name: Hint
       Entry: 1
-      Data: RUIN HER LIFE VIA EMAIL.
+      Data: RUIN AMBER'S LIFE VIA HER EMAIL.
     - Name: imageSprite
       Entry: 10
       Data: 8
@@ -296,13 +296,13 @@ MonoBehaviour:
       Data: AMBER IS ON THE TRACK FOR SUCCESS!
     - Name: DoBetterMessage
       Entry: 1
-      Data: YOU FEEL AS THOUGH YOU COULD DO SOMETHING MORE.
+      Data: YOU CAN STILL HELP AMBER IMPROVE AS A STUDENT.
     - Name: FiveStarMessage
       Entry: 1
       Data: YOU HAVE DONE EVERYTHING YOU CAN TO HELP!
     - Name: Hint
       Entry: 1
-      Data: A GOOD STUDENT SCHEDULES CLASSES AND COOKS A MEAN SOUFFLE.
+      Data: GOOD STUDENTS SCHEDULE CLASS & BAKE SOUFFLES.
     - Name: imageSprite
       Entry: 10
       Data: 12
@@ -410,7 +410,7 @@ MonoBehaviour:
       Data: GO OUTSIDE! BREATHE SOME FRESH AIR!
     - Name: Hint
       Entry: 1
-      Data: YOU'RE GONNA TRY OVER AND OVER TO GET THIS ONE.
+      Data: TRY OVER AND OVER TO GET THIS ONE.
     - Name: imageSprite
       Entry: 10
       Data: 18
