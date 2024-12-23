@@ -5,6 +5,7 @@ public class Cutscene : MonoBehaviour
 {
     [SerializeField] VideoPlayer player;
     [SerializeField] string videoName;
+    [SerializeField] bool willTransitionToStopwatchIfUnlocked;
     [SerializeField] string sceneNameToTransitionTo;
     private void Start()
     {
@@ -24,6 +25,14 @@ public class Cutscene : MonoBehaviour
     }
     void StartGame(VideoPlayer source) {
         player.loopPointReached -= StartGame;
-        SceneManager.LoadScene(sceneNameToTransitionTo);
+        if (willTransitionToStopwatchIfUnlocked && Globals.UnlockedEndings.Count >= 3 && !Globals.StopwatchUnlocked)
+        {
+            Globals.StopwatchUnlocked = true;
+            SceneManager.LoadScene("StopwatchUnlocked");
+        }
+        else 
+        {
+			SceneManager.LoadScene(sceneNameToTransitionTo);
+		}
     }
 }

@@ -627,9 +627,9 @@ VideoPlayer:
   m_AspectRatio: 2
   m_DataSource: 0
   m_PlaybackSpeed: 1
-  m_AudioOutputMode: 2
+  m_AudioOutputMode: 1
   m_TargetAudioSources:
-  - {fileID: 0}
+  - {fileID: 1329361734}
   m_DirectAudioVolumes:
   - 1
   m_Url: 
@@ -1189,4 +1189,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1329361730}
   videoName: 
+  willTransitionToStopwatchIfUnlocked: 0
   sceneNameToTransitionTo: Endings
