@@ -59,7 +59,8 @@ public class StartRecipeSequence : Interaction
             index = GetIndexFromOrientationFan1(rotateFans[0].orientationIndex);
             if (index == 2 || index == 0) {
                 src.PlayOneShot(whoosh);
-            }
+				FindObjectOfType<CameraShake>().ShakeCamera();
+			}
         }
         else if (node.node.gameObject.name == "Fan2Junction")
         {
@@ -67,7 +68,8 @@ public class StartRecipeSequence : Interaction
             if (index == 2 || index == 0)
             {
                 src.PlayOneShot(whoosh);
-            }
+				FindObjectOfType<CameraShake>().ShakeCamera();
+			}
         }
         else if (node.node.gameObject.name == "WON")
         {
@@ -179,7 +181,8 @@ public class StartRecipeSequence : Interaction
     public override void DoAction()
     {
         _moved.Value = !_moved.Value;
-        StoryDatastore.Instance.MoveObjects[interactionId].Value = _moved.Value;
+		src.PlayOneShot(whoosh);
+		StoryDatastore.Instance.MoveObjects[interactionId].Value = _moved.Value;
         RefreshObjects();
 
         if (!_recipeGone)
