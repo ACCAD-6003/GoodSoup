@@ -1,8 +1,9 @@
+using BehaviorTree;
 using Sirenix.OdinInspector;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.ProBuilder.Shapes;
 using UnityEngine.SceneManagement;
 
 public class MainSceneLoading : SerializedMonoBehaviour
@@ -70,12 +71,29 @@ public class MainSceneLoading : SerializedMonoBehaviour
             case GamePhase.AMBER_GONE:
                 break;
         }
-        UnloadAndLoadSceneAsync(room);
+
+        StartCoroutine(UnloadAndLoadSceneAsync(room));
     }
 
-    private void UnloadAndLoadSceneAsync(AmberRoom room)
+	private IEnumerator UnloadAndLoadSceneAsync(AmberRoom room)
     {
-        var unloadOperation = SceneManager.UnloadSceneAsync(rooms[CurrAdditiveScene]);
+        var fader = GameObject.FindAnyObjectByType<Fadeout>();
+        var bt = GameObject.FindAnyObjectByType<BehaviorTree.Tree>();
+		if (fader)
+        {
+            // stop amber from continuing routine
+            Debug.Log("Fading out");
+            Destroy(bt);
+            fader.RunAnim();
+			yield return new WaitForSeconds(1.25f);
+		}
+
+		else
+        {
+			Debug.LogWarning("FadeOut object not found. Please ensure it's in the active scene.");
+		}
+
+		var unloadOperation = SceneManager.UnloadSceneAsync(rooms[CurrAdditiveScene]);
         CurrAdditiveScene = room;
         unloadOperation.completed += (AsyncOperation operation) => {
             SceneManager.LoadScene(rooms[room], LoadSceneMode.Additive);
