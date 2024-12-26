@@ -15,7 +15,7 @@ public class AspectFix : MonoBehaviour
 
 		// current viewport height should be scaled by this amount
 		float scaleheight = windowaspect / targetaspect;
-
+		Application.targetFrameRate = 144;
 		// obtain camera component so we can modify its viewport
 		Camera camera = GetComponent<Camera>();
 

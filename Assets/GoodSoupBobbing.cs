@@ -44,7 +44,8 @@ public class GoodSoupBobbing : MonoBehaviour
 
     private IEnumerator TitleScreenAnimation()
     {
-        StartCoroutine(EndingSetup.EnlargeAndShrinkTransform(transform, titleSize.x * 1.35f, 1f, titleSize.x, 0.5f));
+		yield return new WaitForSeconds(1f);
+		StartCoroutine(EndingSetup.EnlargeAndShrinkTransform(transform, titleSize.x * 1.35f, 1f, titleSize.x, 0.5f));
         yield return new WaitForSeconds(0.5f);
         src.PlayOneShot(whoosh);
         yield return new WaitForSeconds(1f);
