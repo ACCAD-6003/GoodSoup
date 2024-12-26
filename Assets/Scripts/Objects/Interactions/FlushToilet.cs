@@ -12,6 +12,7 @@ namespace Assets.Scripts.Objects.Interactions
     {
         public AmberUseShower shower;
         private StoryData<float> _temperature;
+        public Animator _combspin;
         bool _flushed = false;
         public override void LoadData(StoryDatastore data)
         {
@@ -30,7 +31,9 @@ namespace Assets.Scripts.Objects.Interactions
                 _flushed = true;
             }
             FindObjectOfType<CameraShake>().ShakeCamera();
-            _temperature.Value += Globals.FLUSH_SHOWER_TEMP_IMPACT;
+            _combspin.SetTrigger("Flush");
+
+			_temperature.Value += Globals.FLUSH_SHOWER_TEMP_IMPACT;
             _temperature.Value = MathF.Max(0f, _temperature.Value);
             EndAction();
         }
