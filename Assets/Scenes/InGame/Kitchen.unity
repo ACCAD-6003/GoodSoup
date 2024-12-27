@@ -65856,7 +65856,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2751554096873882583, guid: 3b14105264604dc4aa1320068900c039, type: 3}
       propertyPath: orthographic size
-      value: 7
+      value: 6.35
       objectReference: {fileID: 0}
     - target: {fileID: 2751554096873882583, guid: 3b14105264604dc4aa1320068900c039, type: 3}
       propertyPath: m_OcclusionCulling

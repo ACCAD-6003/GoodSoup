@@ -1,8 +1,6 @@
 using Assets.Scripts.Objects.Interactions;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;
 using static UnityEngine.InputSystem.InputAction;
 
 public class ObjectInteraction : MonoBehaviour
@@ -91,6 +89,8 @@ public class ObjectInteraction : MonoBehaviour
         interactAction = (CallbackContext c) =>
         {
             InteractableObject targettedObject = GetTarget(c);
+
+            Debug.Log((targettedObject != null) + " " + CanInteractWith(targettedObject) + " " + !coolingDownClickAction);
 
             if (targettedObject != null && CanInteractWith(targettedObject) && !coolingDownClickAction)
             {
