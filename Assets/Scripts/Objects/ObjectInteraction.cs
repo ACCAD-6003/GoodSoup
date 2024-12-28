@@ -42,7 +42,7 @@ public class ObjectInteraction : MonoBehaviour
 
     bool CanInteractWith(InteractableObject o)
     {
-        if (o.PlayerInteraction == null || PopUpOpened || PauseScreen.Paused)
+        if (o == null || o.PlayerInteraction == null || PopUpOpened || PauseScreen.Paused)
         {
             return false;
         }

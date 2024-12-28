@@ -11,6 +11,7 @@ TagManager:
   - FanHit
   - RecipeComputer
   - Body
+  - Shelf
   layers:
   - Default
   - TransparentFX

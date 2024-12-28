@@ -30,21 +30,20 @@ public class PullObjectWithPhysics : Interaction
     {
         _blowing = true;
         _blown = true;
-        StartCoroutine(StopBlowingAfterDuration(duration));
-    }
-
-    IEnumerator StopBlowingAfterDuration(float duration)
-    {
-        yield return new WaitForSeconds(duration);
-        _blowing = false;
     }
 
     private void FixedUpdate()
     {
         if (_blowing)
         {
-            ApplyBlowForce();
-        }
+			_inPhysicsMode = true;
+			var blowDuration = 0.6f + (0.7f * interactionId);
+
+			float t = Time.fixedDeltaTime / blowDuration;
+			Vector3 currentForce = Vector3.Lerp(Vector3.zero, new Vector3(-2f * modifier, 0, -1.5f * modifier), t);
+
+			_rb.AddForce(currentForce, ForceMode.VelocityChange);
+		}
     }
 
     IEnumerator PullOut()
@@ -66,19 +65,6 @@ public class PullObjectWithPhysics : Interaction
         EnableRigidBody();
     }
 
-    private void ApplyBlowForce()
-    {
-        _inPhysicsMode = true;
-        var blowDuration = 0.6f + (0.7f * interactionId);
-
-        // Calculate the current force based on elapsed time
-        float t = Time.fixedDeltaTime / blowDuration;
-        Vector3 currentForce = Vector3.Lerp(Vector3.zero, new Vector3(-2f * modifier, 0, -1.5f * modifier), t);
-
-        // Apply the force
-        _rb.AddForce(currentForce, ForceMode.VelocityChange);
-    }
-
     public void EnableRigidBody()
     {
         _rb.isKinematic = false;
@@ -87,10 +73,16 @@ public class PullObjectWithPhysics : Interaction
         _rb.sleepThreshold = 0;
         _inPhysicsMode = true;
     }
-
-    void OnCollisionEnter(Collision collision)
+	private void OnTriggerEnter(Collider other)
+	{
+		if (other.gameObject.CompareTag("Shelf"))
+		{
+			_blowing = false;
+		}
+	}
+	void OnCollisionEnter(Collision collision)
     {
-        if (!_inPhysicsMode || _collided)
+		if (!_inPhysicsMode || _collided)
         {
             return;
         }
