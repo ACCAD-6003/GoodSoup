@@ -18976,7 +18976,7 @@ GameObject:
   m_Component:
   - component: {fileID: 793241149}
   m_Layer: 0
-  m_Name: SCENE LOL
+  m_Name: SCENE LOL WHY IS THE TRANSFORM ALSO NOT ZEROED
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28195,6 +28195,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionId: 2
+  interactionSound: {fileID: 0}
+  interactionVol: 0
   singleUse: 0
   usedUp: 0
   AssociatedDirection: {x: 0, y: 0, z: 1}
@@ -28258,6 +28260,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionId: 0
+  interactionSound: {fileID: 0}
+  interactionVol: 0
   singleUse: 0
   usedUp: 0
   AssociatedDirection: {x: -1, y: 0, z: 0}
@@ -28332,6 +28336,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionId: 0
+  interactionSound: {fileID: 0}
+  interactionVol: 0
   singleUse: 0
   usedUp: 0
   AssociatedDirection: {x: 0, y: 0, z: 1}
@@ -29346,6 +29352,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionId: 0
+  interactionSound: {fileID: 0}
+  interactionVol: 0
   singleUse: 0
   usedUp: 0
   AssociatedDirection: {x: 0, y: 0, z: 1}
@@ -32392,6 +32400,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionId: 0
+  interactionSound: {fileID: 0}
+  interactionVol: 0
   singleUse: 0
   usedUp: 0
   AssociatedDirection: {x: 0, y: 0, z: 1}
@@ -33384,6 +33394,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionId: 0
+  interactionSound: {fileID: 8300000, guid: dcf7f80e36250894087754c26c24c5db, type: 3}
+  interactionVol: 0
   singleUse: 0
   usedUp: 0
   AssociatedDirection: {x: 0, y: 0, z: 1}
@@ -48302,6 +48314,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionId: 0
+  interactionSound: {fileID: 0}
+  interactionVol: 0
   singleUse: 0
   usedUp: 0
   AssociatedDirection: {x: 0, y: 0, z: 1}
@@ -51488,6 +51502,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionId: 0
+  interactionSound: {fileID: 0}
+  interactionVol: 0
   singleUse: 0
   usedUp: 0
   AssociatedDirection: {x: 0, y: 0, z: 1}
@@ -51651,6 +51667,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionId: 1000
+  interactionSound: {fileID: 0}
+  interactionVol: 0
   singleUse: 0
   usedUp: 0
   AssociatedDirection: {x: 0, y: 0, z: 1}
@@ -52511,6 +52529,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionId: 0
+  interactionSound: {fileID: 0}
+  interactionVol: 0
   singleUse: 0
   usedUp: 0
   AssociatedDirection: {x: 0, y: 0, z: 1}
@@ -53195,6 +53215,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionId: 1
+  interactionSound: {fileID: 0}
+  interactionVol: 0
   singleUse: 0
   usedUp: 0
   AssociatedDirection: {x: 0, y: 0, z: 1}
@@ -64969,6 +64991,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionId: 0
+  interactionSound: {fileID: 0}
+  interactionVol: 0
   singleUse: 0
   usedUp: 0
   AssociatedDirection: {x: 0, y: 0, z: 1}

@@ -90,8 +90,6 @@ public class ObjectInteraction : MonoBehaviour
         {
             InteractableObject targettedObject = GetTarget(c);
 
-            Debug.Log((targettedObject != null) + " " + CanInteractWith(targettedObject) + " " + !coolingDownClickAction);
-
             if (targettedObject != null && CanInteractWith(targettedObject) && !coolingDownClickAction)
             {
                 coolingDownClickAction = true;

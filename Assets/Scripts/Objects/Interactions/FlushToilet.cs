@@ -26,11 +26,13 @@ namespace Assets.Scripts.Objects.Interactions
 
         public override void DoAction()
         {
-            if (!_flushed && shower._showerState == AmberUseShower.ShowerState.SHOWERING) {
-                StoryDatastore.Instance.Annoyance.Value += 1.5f;
-                _flushed = true;
-            }
-            FindObjectOfType<CameraShake>().ShakeCamera();
+            if (shower._showerState == AmberUseShower.ShowerState.SHOWERING) {
+				FindObjectOfType<CameraShake>().ShakeCamera();
+                if (!_flushed) {
+					StoryDatastore.Instance.Annoyance.Value += 1.5f;
+					_flushed = true;
+				}
+			}
             _combspin.SetTrigger("Flush");
 
 			_temperature.Value += Globals.FLUSH_SHOWER_TEMP_IMPACT;

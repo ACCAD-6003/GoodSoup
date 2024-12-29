@@ -1,27 +1,44 @@
+using Sirenix.Serialization;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public abstract class Interaction : MonoBehaviour
 {
     [Tooltip("Optional ID used for some objects for persistence")]
+    [SerializeField]
     public int interactionId;
 
-    public event Action OnActionStarted;
+    [Tooltip("Sound that plays when interaction is performed. Requires audiosou")]
+	[SerializeField]
+	public AudioClip interactionSound;
+
+	public event Action OnActionStarted;
     public event Action OnActionEnding;
-    public bool singleUse = false;
+	[SerializeField]
+	public bool singleUse = false;
+    [DoNotSerialize]
     public bool usedUp = false;
 
+    [SerializeField]
     public Vector3 AssociatedDirection = Vector3.forward;
 
-    public bool isPlayer = true;
+	[SerializeField]
+	public bool isPlayer = true;
 
     [SerializeField]
     private bool _isInProgress;
-    private void Start()
+
+    [NonSerialized]
+    private AudioSource _audioSource;
+	private void Start()
     {
         LoadData(StoryDatastore.Instance);
+        if (interactionSound) { 
+            _audioSource = gameObject.AddComponent<AudioSource>();
+		}
     }
     public abstract void LoadData(StoryDatastore data);
     public abstract void SaveData(StoryDatastore data);
@@ -67,7 +84,12 @@ public abstract class Interaction : MonoBehaviour
             return;
         }
 
-        IsInProgress = true;
+        if (_audioSource) {
+            Debug.Log("Playing sound");
+			_audioSource.PlayOneShot(interactionSound);
+		}
+
+		IsInProgress = true;
 
         DoAction();
     }
