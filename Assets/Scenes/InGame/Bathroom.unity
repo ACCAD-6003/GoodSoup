@@ -28197,11 +28197,13 @@ MonoBehaviour:
   interactionId: 2
   interactionSound: {fileID: 0}
   interactionVol: 0.5
+  toggleSound: 0
   singleUse: 0
   usedUp: 0
   AssociatedDirection: {x: 0, y: 0, z: 1}
   isPlayer: 1
   _isInProgress: 0
+  fadeDuration: 1
   beforeMoved: {fileID: 1925709980}
   afterMoved: {fileID: 6448203712121363093}
   specialObject: 0
@@ -28260,13 +28262,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionId: 0
-  interactionSound: {fileID: 0}
-  interactionVol: 0.5
+  interactionSound: {fileID: 8300000, guid: d79e4d7acca84bf49a01ca8b977a015b, type: 3}
+  interactionVol: 0.27
+  toggleSound: 1
   singleUse: 0
   usedUp: 0
   AssociatedDirection: {x: -1, y: 0, z: 0}
   isPlayer: 0
   _isInProgress: 0
+  fadeDuration: 1
   _tempHierarchy: {fileID: 746896440}
   _particleSystem: {fileID: 1500609112}
   _showerState: 2
@@ -28338,11 +28342,13 @@ MonoBehaviour:
   interactionId: 0
   interactionSound: {fileID: 0}
   interactionVol: 0.5
+  toggleSound: 0
   singleUse: 0
   usedUp: 0
   AssociatedDirection: {x: 0, y: 0, z: 1}
   isPlayer: 1
   _isInProgress: 0
+  fadeDuration: 1
 --- !u!1 &1096386976
 GameObject:
   m_ObjectHideFlags: 0
@@ -29352,13 +29358,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionId: 0
-  interactionSound: {fileID: 0}
-  interactionVol: 0.5
+  interactionSound: {fileID: 8300000, guid: 5a0dbf17226089946b1d456f949789e7, type: 3}
+  interactionVol: 0.226
+  toggleSound: 1
   singleUse: 0
   usedUp: 0
   AssociatedDirection: {x: 0, y: 0, z: 1}
   isPlayer: 1
   _isInProgress: 0
+  fadeDuration: 1
   radiatorMaterial: {fileID: 2100000, guid: 5a71c4b0b61432642ae520758b49b65b, type: 2}
   towelMaterial: {fileID: 2100000, guid: d51bb777a80f8404d862c5bc6c394896, type: 2}
 --- !u!114 &1123086082
@@ -32402,11 +32410,13 @@ MonoBehaviour:
   interactionId: 0
   interactionSound: {fileID: 0}
   interactionVol: 0.5
+  toggleSound: 0
   singleUse: 0
   usedUp: 0
   AssociatedDirection: {x: 0, y: 0, z: 1}
   isPlayer: 1
   _isInProgress: 0
+  fadeDuration: 1
   beforeMoved: {fileID: 1683951662}
   afterMoved: {fileID: 6448203713312506123}
   specialObject: 0
@@ -33396,11 +33406,13 @@ MonoBehaviour:
   interactionId: 0
   interactionSound: {fileID: 8300000, guid: dcf7f80e36250894087754c26c24c5db, type: 3}
   interactionVol: 0.115
+  toggleSound: 0
   singleUse: 0
   usedUp: 0
   AssociatedDirection: {x: 0, y: 0, z: 1}
   isPlayer: 1
   _isInProgress: 0
+  fadeDuration: 1
   shower: {fileID: 1096206247}
   _combspin: {fileID: 1726935445}
 --- !u!65 &1337402740
@@ -48316,11 +48328,13 @@ MonoBehaviour:
   interactionId: 0
   interactionSound: {fileID: 0}
   interactionVol: 0.5
+  toggleSound: 0
   singleUse: 0
   usedUp: 0
   AssociatedDirection: {x: 0, y: 0, z: 1}
   isPlayer: 0
   _isInProgress: 0
+  fadeDuration: 1
 --- !u!1 &1614554535
 GameObject:
   m_ObjectHideFlags: 0
@@ -51504,11 +51518,13 @@ MonoBehaviour:
   interactionId: 0
   interactionSound: {fileID: 0}
   interactionVol: 0.5
+  toggleSound: 0
   singleUse: 0
   usedUp: 0
   AssociatedDirection: {x: 0, y: 0, z: 1}
   isPlayer: 1
   _isInProgress: 0
+  fadeDuration: 1
   fogged: {fileID: 2100000, guid: 596aa6612d2deda4795482e93070049a, type: 2}
   not_fogged: {fileID: 2100000, guid: 7a1b90e3b0ddc5447a545c34291684c5, type: 2}
   drawn_on: {fileID: 2100000, guid: 3330849c51d47cc4a849689eb672e97a, type: 2}
@@ -51669,11 +51685,13 @@ MonoBehaviour:
   interactionId: 1000
   interactionSound: {fileID: 0}
   interactionVol: 0.5
+  toggleSound: 0
   singleUse: 0
   usedUp: 0
   AssociatedDirection: {x: 0, y: 0, z: 1}
   isPlayer: 1
   _isInProgress: 0
+  fadeDuration: 1
   beforeMoved: {fileID: 1244374736}
   afterMoved: {fileID: 1726935442}
   specialObject: 0
@@ -52531,11 +52549,13 @@ MonoBehaviour:
   interactionId: 0
   interactionSound: {fileID: 0}
   interactionVol: 0.5
+  toggleSound: 0
   singleUse: 0
   usedUp: 0
   AssociatedDirection: {x: 0, y: 0, z: 1}
   isPlayer: 1
   _isInProgress: 0
+  fadeDuration: 1
   popUp: {fileID: 950591734}
 --- !u!114 &1903450195
 MonoBehaviour:
@@ -53217,11 +53237,13 @@ MonoBehaviour:
   interactionId: 1
   interactionSound: {fileID: 0}
   interactionVol: 0.5
+  toggleSound: 0
   singleUse: 0
   usedUp: 0
   AssociatedDirection: {x: 0, y: 0, z: 1}
   isPlayer: 1
   _isInProgress: 0
+  fadeDuration: 1
   beforeMoved: {fileID: 6871026}
   afterMoved: {fileID: 6448203713157652125}
   specialObject: 0
@@ -64991,13 +65013,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionId: 0
-  interactionSound: {fileID: 0}
-  interactionVol: 0.5
+  interactionSound: {fileID: 8300000, guid: e0885e5139f878649b8f9c74b3f83670, type: 3}
+  interactionVol: 0.296
+  toggleSound: 0
   singleUse: 0
   usedUp: 0
   AssociatedDirection: {x: 0, y: 0, z: 1}
   isPlayer: 0
   _isInProgress: 0
+  fadeDuration: 1
   stateOne: {fileID: 8740906464636002065}
   stateTwo: {fileID: 8740906464636002064}
 --- !u!114 &8740906464636002067
