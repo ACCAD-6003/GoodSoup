@@ -14,6 +14,8 @@ public abstract class Interaction : MonoBehaviour
     [Tooltip("Sound that plays when interaction is performed. Requires audiosou")]
 	[SerializeField]
 	public AudioClip interactionSound;
+	[Range(0.0f, 1f)]
+	public float interactionVol = 0.5f;
 
 	public event Action OnActionStarted;
     public event Action OnActionEnding;
@@ -79,14 +81,16 @@ public abstract class Interaction : MonoBehaviour
 
     public void StartAction()
     {
+        Debug.Log("Starting action");
         if (IsInProgress)
         {
-            return;
+            Debug.Log("Action already in progress");
+			return;
         }
 
         if (_audioSource) {
             Debug.Log("Playing sound");
-			_audioSource.PlayOneShot(interactionSound);
+			_audioSource.PlayOneShot(interactionSound, interactionVol);
 		}
 
 		IsInProgress = true;

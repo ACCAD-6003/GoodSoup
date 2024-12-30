@@ -9,7 +9,6 @@ namespace Assets.Scripts.AI.GeneralNodes
 {
     public class PerformAmberInteraction : IEvaluateOnce
     {
-        private bool _performed = false;
         public InteractableObject interaction;
         public override void Run()
         {

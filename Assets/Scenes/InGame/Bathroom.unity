@@ -28196,7 +28196,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactionId: 2
   interactionSound: {fileID: 0}
-  interactionVol: 0
+  interactionVol: 0.5
   singleUse: 0
   usedUp: 0
   AssociatedDirection: {x: 0, y: 0, z: 1}
@@ -28261,7 +28261,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactionId: 0
   interactionSound: {fileID: 0}
-  interactionVol: 0
+  interactionVol: 0.5
   singleUse: 0
   usedUp: 0
   AssociatedDirection: {x: -1, y: 0, z: 0}
@@ -28337,7 +28337,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactionId: 0
   interactionSound: {fileID: 0}
-  interactionVol: 0
+  interactionVol: 0.5
   singleUse: 0
   usedUp: 0
   AssociatedDirection: {x: 0, y: 0, z: 1}
@@ -29353,7 +29353,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactionId: 0
   interactionSound: {fileID: 0}
-  interactionVol: 0
+  interactionVol: 0.5
   singleUse: 0
   usedUp: 0
   AssociatedDirection: {x: 0, y: 0, z: 1}
@@ -32401,7 +32401,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactionId: 0
   interactionSound: {fileID: 0}
-  interactionVol: 0
+  interactionVol: 0.5
   singleUse: 0
   usedUp: 0
   AssociatedDirection: {x: 0, y: 0, z: 1}
@@ -33395,7 +33395,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactionId: 0
   interactionSound: {fileID: 8300000, guid: dcf7f80e36250894087754c26c24c5db, type: 3}
-  interactionVol: 0
+  interactionVol: 0.115
   singleUse: 0
   usedUp: 0
   AssociatedDirection: {x: 0, y: 0, z: 1}
@@ -48315,7 +48315,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactionId: 0
   interactionSound: {fileID: 0}
-  interactionVol: 0
+  interactionVol: 0.5
   singleUse: 0
   usedUp: 0
   AssociatedDirection: {x: 0, y: 0, z: 1}
@@ -51503,7 +51503,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactionId: 0
   interactionSound: {fileID: 0}
-  interactionVol: 0
+  interactionVol: 0.5
   singleUse: 0
   usedUp: 0
   AssociatedDirection: {x: 0, y: 0, z: 1}
@@ -51668,7 +51668,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactionId: 1000
   interactionSound: {fileID: 0}
-  interactionVol: 0
+  interactionVol: 0.5
   singleUse: 0
   usedUp: 0
   AssociatedDirection: {x: 0, y: 0, z: 1}
@@ -52530,7 +52530,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactionId: 0
   interactionSound: {fileID: 0}
-  interactionVol: 0
+  interactionVol: 0.5
   singleUse: 0
   usedUp: 0
   AssociatedDirection: {x: 0, y: 0, z: 1}
@@ -53216,7 +53216,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactionId: 1
   interactionSound: {fileID: 0}
-  interactionVol: 0
+  interactionVol: 0.5
   singleUse: 0
   usedUp: 0
   AssociatedDirection: {x: 0, y: 0, z: 1}
@@ -64992,7 +64992,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactionId: 0
   interactionSound: {fileID: 0}
-  interactionVol: 0
+  interactionVol: 0.5
   singleUse: 0
   usedUp: 0
   AssociatedDirection: {x: 0, y: 0, z: 1}
