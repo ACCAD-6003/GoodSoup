@@ -2,6 +2,7 @@
 using Assets.Scripts.UI;
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using static Assets.Scripts.UI.UIElements;
 using static ComputerHUD;
@@ -10,11 +11,14 @@ public class ComputerEmail : Interaction
 {
     [SerializeField] GameObject PCUI, EmailHUDElement;
     [SerializeField] ComputerHUD hud;
-    private ObjectInteraction popUp;
+    [SerializeField] List<AudioClip> emailSounds;
+	private ObjectInteraction popUp;
     private float _timeScale;
+    private AudioSource _src;
     private void Awake()
     {
         popUp = FindObjectOfType<ObjectInteraction>();
+        _src = gameObject.GetComponent<AudioSource>();
     }
     private void Update()
     {
@@ -32,7 +36,9 @@ public class ComputerEmail : Interaction
         else if (!EmailHUDElement.activeInHierarchy)
         {
             EmailHUDElement.SetActive(true);
-        }
+            var random = new System.Random();
+            _src.PlayOneShot(emailSounds[random.Next(emailSounds.Count)]);
+		}
     }
     public override void LoadData(StoryDatastore data)
     {
