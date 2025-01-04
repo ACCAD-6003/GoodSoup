@@ -10,11 +10,13 @@ using UnityEngine.UI;
 
 public class EndingSetup : SerializedMonoBehaviour
 {
-    public EndingsContent content;
+    public bool debug = false;
+	public EndingsContent content;
     public Dictionary<Ending, GameObject> endingGameObjs;
     private Dictionary<Ending, EndingStars> starAssigner = new();
-    public TextMeshProUGUI endingTitle, endingDescription, starPerformance, highScoreText, playAgain;
-    public RectTransform starTransform, starBgImageTransform;
+    public TextMeshProUGUI endingTitle, endingDescription, starPerformance, highScoreText;
+    public GameObject playAgain;
+	public RectTransform starTransform, starBgImageTransform;
     public Color couldDoBetter, perfectPerformanceColor;
     public Image endingImage;
     public StarDisplayer starDisplayer;
@@ -24,15 +26,6 @@ public class EndingSetup : SerializedMonoBehaviour
     public static int timesBeaten = 0;
     public AudioSource src;
     public AudioClip whoosh;
-    [SerializeField] Image background;
-	private void Update()
-	{
-		if (Input.GetKeyDown(KeyCode.R))
-		{
-            PauseScreen.ReturnToMenu();
-		}
-
-	}
 	private void Awake()
     {
 
@@ -77,7 +70,7 @@ public class EndingSetup : SerializedMonoBehaviour
             }
             else if (stars != 5)
             {
-                highScoreText.text = $"Did not surpass high score of {Globals.UnlockedEndings[ending]} stars.";
+                highScoreText.text = $"You did not surpass high score..";
                 highScoreText.color = couldDoBetter;
             }
             else
@@ -128,29 +121,10 @@ public class EndingSetup : SerializedMonoBehaviour
             Destroy(obj);
         }
 
-        background.color = GetAverageColor(endingImage.sprite.texture);
     }
     private void Start()
     {
         StartCoroutine(ShowEndingRoutine());
-    }
-
-    Color GetAverageColor(Texture2D tex)
-    {
-        Color[] pixels = tex.GetPixels();
-
-        float r = 0, g = 0, b = 0;
-        int count = 0;
-
-        foreach (Color pixel in pixels)
-        {
-            r += pixel.r;
-            g += pixel.g;
-            b += pixel.b;
-            count++;
-        }
-
-        return new Color(r / count, g / count, b / count);
     }
     void ConstructStarAssigner() {
         // Create star assigner dictionary
@@ -174,17 +148,11 @@ public class EndingSetup : SerializedMonoBehaviour
         endingDescription.transform.localScale = Vector3.zero;
         starPerformance.transform.localScale = Vector3.zero;
         highScoreText.transform.localScale = Vector3.zero;
-        endingImage.transform.localScale = Vector3.zero;
         playAgain.transform.localScale = Vector3.zero;
 
-        src.PlayOneShot(whoosh);
-        yield return StartCoroutine(EnlargeAndShrinkTransform(endingImage.transform, 10f, 0.25f, 9f, 0.25f));
         yield return new WaitForSeconds(0.25f);
         src.PlayOneShot(whoosh);
         yield return StartCoroutine(EnlargeAndShrinkTransform(endingTitle.transform, 1.25f, 0.25f, 1f, 0.25f));
-        yield return new WaitForSeconds(0.25f);
-        src.PlayOneShot(whoosh);
-        yield return StartCoroutine(EnlargeAndShrinkTransform(endingDescription.transform, 1.1f, 0.25f, 1f, 0.25f));
         yield return new WaitForSeconds(0.25f);
         src.PlayOneShot(whoosh);
         yield return StartCoroutine(EnlargeAndShrinkTransform(starDisplayerParentTransform, 1.1f, 0.25f, 1f, 0.25f));
@@ -194,47 +162,19 @@ public class EndingSetup : SerializedMonoBehaviour
         yield return new WaitForSeconds(0.25f);
         if (doingHighScoreAnimation) {
             src.PlayOneShot(whoosh);
-            yield return StartCoroutine(PullDownAndHighScore(0.5f, -276f, 23.4754f, 161.2058f));
-            src.PlayOneShot(whoosh);
             yield return StartCoroutine(EnlargeAndShrinkTransform(highScoreText.transform, 1.1f, 0.25f, 1f, 0.25f));
             yield return new WaitForSeconds(0.25f);
         }
         src.PlayOneShot(whoosh);
-        yield return StartCoroutine(EnlargeAndShrinkTransform(starPerformance.transform, 1.1f, 0.25f, 1f, 0.25f));
-        yield return new WaitForSeconds(0.25f);
-        src.PlayOneShot(whoosh);
         yield return StartCoroutine(EnlargeAndShrinkTransform(playAgain.transform, 1.1f, 0.25f, 1f, 0.25f));
         yield return new WaitForSeconds(0.25f);
-/*        StoryDatastore.Instance.ChosenEnding.Value = StoryDatastore.Instance.ChosenEnding.Value + 1;
-        SceneManager.LoadScene("Endings");*/
-    }
-    private IEnumerator PullDownAndHighScore(float duration, float targetPosY1, float targetPosY2, float targetHeight2)
-    {
-        float elapsedTime = 0.0f;
-        Vector2 startPos1 = starTransform.anchoredPosition;
-        Vector2 startPos2 = starBgImageTransform.anchoredPosition;
-        float startHeight2 = starBgImageTransform.sizeDelta.y;
+        if(debug)
+		{
+			StoryDatastore.Instance.ChosenEnding.Value = StoryDatastore.Instance.ChosenEnding.Value + 1;
+			SceneManager.LoadScene("Endings");
+		}
 
-        while (elapsedTime < duration)
-        {
-            float t = elapsedTime / duration;
-            float sineT = Mathf.Sin(t * Mathf.PI * 0.5f); // Using sine function for easing out
-
-            starTransform.anchoredPosition = Vector2.Lerp(startPos1, new Vector2(startPos1.x, targetPosY1), sineT);
-            starBgImageTransform.anchoredPosition = Vector2.Lerp(startPos2, new Vector2(startPos2.x, targetPosY2), sineT);
-            starBgImageTransform.sizeDelta = new Vector2(starBgImageTransform.sizeDelta.x, Mathf.Lerp(startHeight2, targetHeight2, sineT));
-
-            elapsedTime += Time.deltaTime;
-            yield return null;
-        }
-
-        // Ensure final position is reached
-        starTransform.anchoredPosition = new Vector2(startPos1.x, targetPosY1);
-        starBgImageTransform.anchoredPosition = new Vector2(startPos2.x, targetPosY2);
-        starBgImageTransform.sizeDelta = new Vector2(starBgImageTransform.sizeDelta.x, targetHeight2);
-    }
-
-
+	}
     public static IEnumerator EnlargeAndShrinkTransform(Transform transformObject, float enlargeScale, float enlargeDuration, float shrinkScale, float shrinkDuration)
     {
         yield return EndingSetup.ChangeScale(transformObject, enlargeScale, enlargeDuration);
