@@ -5,6 +5,10 @@ public class AspectFix : MonoBehaviour
 	// Use this for initialization
 	void Awake()
 	{
+		// disabled for O-H build
+		//FixAspect();
+	}
+	void FixAspect() {
 		// set the desired aspect ratio (the values in this example are
 		// hard-coded for 16:9, but you could make them into public
 		// variables instead so you can set them at design time)
@@ -19,7 +23,8 @@ public class AspectFix : MonoBehaviour
 		// obtain camera component so we can modify its viewport
 		Camera camera = GetComponent<Camera>();
 
-		if (camera) {
+		if (camera)
+		{
 			// if scaled height is less than current height, add letterbox
 			if (scaleheight < 1.0f)
 			{
@@ -46,6 +51,5 @@ public class AspectFix : MonoBehaviour
 				camera.rect = rect;
 			}
 		}
-
 	}
 }
